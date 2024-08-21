@@ -1,0 +1,3 @@
+#!/bin/sh
+wall_dir=~/walls
+ln -sf "$(find $wall_dir -type f | sort -n | xargs -r0 | dmenu -l 15 -x 706 -y 182 -z 580 -p "Choose:")" $wall_dir/defwall && xwallpaper --zoom $wall_dir/defwall && notify-send -i "$wall_dir/defwall" "Wallpaper changed"

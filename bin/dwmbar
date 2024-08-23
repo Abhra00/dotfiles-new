@@ -2,7 +2,7 @@
 
 interval=0
 
-black=#1E1E2E
+black=#1E222A
 
 cpu() {
 	cpu_val=$(grep -o "^[^ ]*" /proc/loadavg)
@@ -68,7 +68,7 @@ clock() {
 	esac
 
 
-	printf "^c$black^ ^B4^ $icon"
+	printf "^c$black^^B4^ $icon"
 	printf "^d^^C4^ $(date '+%H:%M') "
 }
 
@@ -104,16 +104,10 @@ vol_bar() {
 	printf "^B1^^c$black^$icon^d^ $vol%% "
 }
 
-weather() {
-	LOCATION=Memari
-	DATA=$(curl -s wttr.in/$LOCATION?format=1 | grep -o ".[0-9].*")
-	printf "^c$black^^B3^  ^d^^C3^${DATA} "
-}
-
 while true; do
 
   [ $interval = 0 ] || [ $(($interval % 3600)) = 0 ] && updates=$(pkg_updates)
   interval=$((interval + 1))
 
-  sleep 1 && xsetroot -name "$updates $(weather) $(battery) $(brightness) $(vol_bar) $(cpu) $(mem) $(wlan) $(clock) $(calender)"
+  sleep 1 && xsetroot -name "$updates $(battery) $(brightness) $(vol_bar) $(cpu) $(mem) $(wlan) $(clock) $(calender)"
 done

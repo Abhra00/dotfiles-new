@@ -1,0 +1,2 @@
+#!/bin/sh
+curl wttr.in/Memari?format=j1 | sed 30q > ~/.config/weather.txt

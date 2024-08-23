@@ -17,6 +17,11 @@ export SUDO_PROMPT="$fg[red][sudo] $fg[yellow]password for $USER  :$fg[white]
 #  ╔═╗┬  ┬ ┬┌─┐┬┌┐┌┌─┐
 #  ╠═╝│  │ ││ ┬││││└─┐
 #  ╩  ┴─┘└─┘└─┘┴┘└┘└─┘
+zinit ice depth"1"
+zinit ice as"command" from"gh-r" \
+          atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
+          atpull"%atclone" src"init.zsh"
+zinit light starship/starship
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
@@ -98,14 +103,6 @@ setopt LIST_PACKED	    # The completion menu takes less space.
 setopt AUTO_LIST            # Automatically list choices on ambiguous completion.
 setopt COMPLETE_IN_WORD     # Complete from both ends of a word.
 
-
-#  ╔═╗┌─┐┌┐┌  ╔═╗┬─┐┌─┐┌┬┐┌─┐┌┬┐
-#  ╔═╝├┤ │││  ╠═╝├┬┘│ ││││├─┘ │ 
-#  ╚═╝└─┘┘└┘  ╩  ┴└─└─┘┴ ┴┴   ┴ 
-fpath+="$HOME/.config/zsh/zen.zsh"
-promptinit
-prompt zen
-
 #  ╦  ╦┬┌┬┐┌┐ ┬┌┐┌┌┬┐
 #  ╚╗╔╝││││├┴┐││││ ││
 #   ╚╝ ┴┴ ┴└─┘┴┘└┘─┴┘
@@ -158,3 +155,4 @@ alias stu='xrdb $HOME/.config/x11/xresources && pidof st | xargs kill -s USR1'
 #  ╚═╗├─┤├┤ │  │    ║│││ │ ├┤ │ ┬├┬┘├─┤ │ ││ ││││
 #  ╚═╝┴ ┴└─┘┴─┘┴─┘  ╩┘└┘ ┴ └─┘└─┘┴└─┴ ┴ ┴ ┴└─┘┘└┘
 eval "$(zoxide init --cmd cd zsh)"
+eval "$(starship init zsh)"

@@ -1,15 +1,16 @@
 #
-# █▀▄ █░█ █▄░█ █▀ ▀█▀ █▀█ █▀▀   █▀▀ █▀█ █░█ █░█ █▄▄ █▀█ ▀▄▀
-# █▄▀ █▄█ █░▀█ ▄█ ░█░ █▀▄ █▄▄   █▄█ █▀▄ █▄█ ▀▄▀ █▄█ █▄█ █░█
+# █▀▀▄ █░░█ █▀▀▄ █▀▀ ▀▀█▀▀ █▀▀█ █▀▀ ░░ █▀▀█ █▀▀▄ █▀▀ █▀▀▄ █▀▀█ █▀▀█ █░█ 
+# █░░█ █░░█ █░░█ ▀▀█ ░░█░░ █▄▄▀ █░░ ▀▀ █░░█ █░░█ █▀▀ █░░█ █▄▄█ █▄▄▀ █▀▄ 
+# ▀▀▀░ ░▀▀▀ ▀░░▀ ▀▀▀ ░░▀░░ ▀░▀▀ ▀▀▀ ░░ ▀▀▀▀ ▀░░▀ ▀▀▀ ▀▀▀░ ▀░░▀ ▀░▀▀ ▀░▀
 #
 
 [global]
 title                = Dunst
 class                = Dunst
 monitor              = 0
-follow               = mouse
-width 		     = 300
+width                = 300
 height               = 300
+follow               = mouse
 indicate_hidden      = yes
 shrink               = yes
 transparency         = 0
@@ -17,12 +18,12 @@ separator_height     = 2
 padding              = 8
 horizontal_padding   = 13
 frame_width          = 8
-frame_color          = "#282828"
-separator_color      = "#FE8019"
+frame_color          = "#1E222A"
+separator_color      = "#98C379"
 font                 = Roboto Bold 10
 line_height          = 0
 markup               = full
-format               = "<span size='x-large' font_desc='Roboto 10' weight='bold' foreground='#FE8019'>%s</span>\n\n%b"
+format               = "<span size='x-large' font_desc='Roboto 11' weight='bold' foreground='#98C379'>%s</span>\n\n%b"
 alignment            = center
 idle_threshold       = 120
 show_age_threshold   = 60
@@ -49,22 +50,22 @@ mouse_middle_click   = do_action
 mouse_right_click    = close_all
 
 [urgency_low]
-    background       = "#282828"
-    foreground       = "#EBDBB2"
-    highlight        = "#FE8019"
+    background       = "#1E222A"
+    foreground       = "#C8CCD4"
+    highlight        = "#98C379"
     default_icon     = "preferences-desktop-notification-bell"
-    timeout          = 5
+    timeout          = 3
 
 [urgency_normal]
-    background       = "#282828"
-    foreground       = "#EBDBB2"
-    highlight        = "#FE8019"
+    background       = "#1E222A"
+    foreground       = "#C8CCD4"
+    highlight        = "#98C379"
     default_icon     = "preferences-desktop-notification-bell"
-    timeout          = 5
+    timeout          = 3
 
 [urgency_critical]
-    background       = "#282828"
-    foreground       = "#CC241D"
-    highlight        = "#CC241D"
+    background       = "#1E222A"
+    foreground       = "#E06C75"
+    highlight        = "#E06C75"
     default_icon     = "dialog-error"
-    timeout          = 0
+    timeout          = 5

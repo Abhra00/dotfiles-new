@@ -113,7 +113,7 @@ setopt COMPLETE_IN_WORD     # Complete from both ends of a word.
 precmd_extra_space() { print "" }
 precmd_functions+=( precmd_extra_space )
 NEWLINE=$'\n'
-PROMPT='%B%F{004}󰣇  %f%b %B%F{015}%~%f%b${vcs_info_msg_0_}${NEWLINE}%(?.%B%F{green}∮.%F{red}∮)%f%b '
+PROMPT='%B%F{004}󰣇  %f%b %B%F{015}%~%f%b${vcs_info_msg_0_}${NEWLINE}%(?.%B%F{002}∮.%F{001}∮)%f%b '
 
 #  ╦  ╦┬┌┬┐┌┐ ┬┌┐┌┌┬┐
 #  ╚╗╔╝││││├┴┐││││ ││

@@ -79,6 +79,7 @@ bindkey "^I" expand-or-complete-with-dots
 #  ╦ ╦┬┌─┐┌┬┐┌─┐┬─┐┬ ┬
 #  ╠═╣│└─┐ │ │ │├┬┘└┬┘
 #  ╩ ╩┴└─┘ ┴ └─┘┴└─ ┴ 
+export HISTORY_IGNORE="(ls|cd|pwd|exit|sudo reboot|history|cd -|cd ..)"
 HISTSIZE=10000000
 SAVEHIST=10000000
 HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history"

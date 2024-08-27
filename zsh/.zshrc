@@ -6,6 +6,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+
 #╔═╗┌─┐┬ ┬┬─┐┌─┐┬┌┐┌┌─┐  ┌┬┐┬ ┬┌─┐  ┌─┐┬┌┐┌┬┌┬┐  ┌─┐┬  ┬ ┬┌─┐┬┌┐┌
 #╚═╗│ ││ │├┬┘│  │││││ ┬   │ ├─┤├┤   ┌─┘│││││ │   ├─┘│  │ ││ ┬││││
 #╚═╝└─┘└─┘┴└─└─┘┴┘└┘└─┘   ┴ ┴ ┴└─┘  └─┘┴┘└┘┴ ┴   ┴  ┴─┘└─┘└─┘┴┘└┘
@@ -20,9 +21,21 @@ export SUDO_PROMPT="$fg[red][sudo] $fg[yellow]password for $USER  :$fg[white]
 #  ╠═╝│  │ ││ ┬││││└─┐
 #  ╩  ┴─┘└─┘└─┘┴┘└┘└─┘
 zinit ice depth"1"
+zinit ice as"command" from"gh-r" \
+          atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
+          atpull"%atclone" src"init.zsh"
+zinit light starship/starship
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
+
+#  ╔═╗┌┐┌┬┌─┐┌─┐┌─┐┌┬┐┌─┐
+#  ╚═╗││││├─┘├─┘├┤  │ └─┐
+#  ╚═╝┘└┘┴┴  ┴  └─┘ ┴ └─┘
+zinit snippet OMZP::git
+zinit snippet OMZP::sudo
+zinit snippet OMZP::archlinux
+zinit snippet OMZP::command-not-found
 
 #  ╔═╗┌─┐┌┬┐┌─┐┬  ┌─┐┌┬┐┬┌─┐┌┐┌   ┬   ╦  ┌─┐┌─┐┌┬┐┬┌┐┌┌─┐  ╔═╗┌┐┌┌─┐┬┌┐┌┌─┐
 #  ║  │ ││││├─┘│  ├┤  │ ││ ││││  ┌┼─  ║  │ │├─┤ │││││││ ┬  ║╣ ││││ ┬││││├┤ 
@@ -34,10 +47,6 @@ for dump in ~/.config/zsh/zcompdump(N.mh+24); do
 done
 
 compinit -C -d ~/.config/zsh/zcompdump
-autoload -Uz add-zsh-hook
-autoload -Uz vcs_info
-precmd_vcs_info() { vcs_info }
-precmd_functions+=( precmd_vcs_info )
 _comp_options+=(globdots)
 
 #  ╔═╗┌─┐┌┬┐┌─┐┬  ┌─┐┌┬┐┬┌─┐┌┐┌┌─┐  ╔═╗┌┬┐┬ ┬┬  ┌─┐
@@ -52,13 +61,6 @@ zstyle ':completion:*' matcher-list \
 		'+l:|=*'
 zstyle ':completion:*:warnings' format "%B%F{red}No matches for:%f %F{magenta}%d%b"
 zstyle ':completion:*:descriptions' format '%F{yellow}[-- %d --]%f'
-zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:git*' formats ' %B%F{015}[%F{002} %b%u%c% %F{015}] '
-zstyle ':vcs_info:git*' actionformats '%F{14}⏱ %*%f'
-zstyle ':vcs_info:git*' unstagedstr '*'
-zstyle ':vcs_info:git*' stagedstr '+'
-zstyle ':vcs_info:*:*' check-for-changes true
-zmodload zsh/complist
 
 #  ╔═╗┬ ┬┌┬┐┌─┐  ┌─┐┬ ┬┌─┐┌─┐┌─┐┌─┐┌┬┐┬┌─┐┌┐┌  ┌─┐┌─┐┌┬┐┌┬┐┬┌┐┌┌─┐┌─┐
 #  ╠═╣│ │ │ │ │  └─┐│ ││ ┬│ ┬├┤ └─┐ │ ││ ││││  └─┐├┤  │  │ │││││ ┬└─┐
@@ -80,7 +82,6 @@ bindkey "^I" expand-or-complete-with-dots
 #  ╦ ╦┬┌─┐┌┬┐┌─┐┬─┐┬ ┬
 #  ╠═╣│└─┐ │ │ │├┬┘└┬┘
 #  ╩ ╩┴└─┘ ┴ └─┘┴└─ ┴ 
-export HISTORY_IGNORE="(ls|cd|pwd|exit|sudo reboot|history|cd -|cd ..)"
 HISTSIZE=10000000
 SAVEHIST=10000000
 HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history"
@@ -97,23 +98,12 @@ setopt hist_find_no_dups
 #  ║ ║├─┘ │ ││ ││││└─┐
 #  ╚═╝┴   ┴ ┴└─┘┘└┘└─┘
 stty stop undef		    # Disable ctrl-s to freeze terminal.
-setopt interactive_comments # Interactive comments
-setopt PROMPT_SUBST         # enable command substitution in prompt
+setopt interactive_comments
 setopt AUTOCD               # change directory just by typing its name
 setopt MENU_COMPLETE        # Automatically highlight first element of completion menu
 setopt LIST_PACKED	    # The completion menu takes less space.
 setopt AUTO_LIST            # Automatically list choices on ambiguous completion.
 setopt COMPLETE_IN_WORD     # Complete from both ends of a word.
-
-#
-#▒█▀▀█ ▒█▀▀█ ▒█▀▀▀█ ▒█▀▄▀█ ▒█▀▀█ ▀▀█▀▀ 
-#▒█▄▄█ ▒█▄▄▀ ▒█░░▒█ ▒█▒█▒█ ▒█▄▄█ ░▒█░░ 
-#▒█░░░ ▒█░▒█ ▒█▄▄▄█ ▒█░░▒█ ▒█░░░ ░▒█░░
-#
-precmd_extra_space() { print "" }
-precmd_functions+=( precmd_extra_space )
-NEWLINE=$'\n'
-PROMPT='%B%F{004}󰣇  %f%b %B%F{015}%~%f%b${vcs_info_msg_0_}${NEWLINE}%(?.%B%F{002}∮.%F{001}∮)%f%b '
 
 #  ╦  ╦┬┌┬┐┌┐ ┬┌┐┌┌┬┐
 #  ╚╗╔╝││││├┴┐││││ ││

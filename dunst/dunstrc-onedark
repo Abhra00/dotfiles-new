@@ -20,10 +20,10 @@ horizontal_padding   = 13
 frame_width          = 8
 frame_color          = "#1E222A"
 separator_color      = "#98C379"
-font                 = Roboto Bold 10
+font                 = JetBrains Mono Bold 10
 line_height          = 0
 markup               = full
-format               = "<span size='x-large' font_desc='Roboto 11' weight='bold' foreground='#98C379'>%s</span>\n\n%b"
+format               = "<span size='x-large' font_desc='JetBrains Mono 10' weight='bold' foreground='#98C379'>%s</span>\n\n%b"
 alignment            = center
 idle_threshold       = 120
 show_age_threshold   = 60

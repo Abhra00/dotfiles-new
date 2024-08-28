@@ -105,6 +105,7 @@ setopt LIST_PACKED	    # The completion menu takes less space.
 setopt AUTO_LIST            # Automatically list choices on ambiguous completion.
 setopt COMPLETE_IN_WORD     # Complete from both ends of a word.
 
+
 #  ╦  ╦┬┌┬┐┌┐ ┬┌┐┌┌┬┐
 #  ╚╗╔╝││││├┴┐││││ ││
 #   ╚╝ ┴┴ ┴└─┘┴┘└┘─┴┘
@@ -143,6 +144,21 @@ bindkey '^[w' kill-region
 bindkey '^y' autosuggest-accept
 bindkey -v '^?' backward-delete-char
 
+#  ╔═╗┬ ┬┌─┐┌┬┐┌─┐┌┬┐  ╔═╗┬ ┬┌┐┌┌─┐┌┬┐┬┌─┐┌┐┌┌─┐   ┬   ╦╔═┌─┐┬ ┬┌┐ ┬┌┐┌┌┬┐┌─┐
+#  ║  │ │└─┐ │ │ ││││  ╠╣ │ │││││   │ ││ ││││└─┐  ┌┼─  ╠╩╗├┤ └┬┘├┴┐││││ ││└─┐
+#  ╚═╝└─┘└─┘ ┴ └─┘┴ ┴  ╚  └─┘┘└┘└─┘ ┴ ┴└─┘┘└┘└─┘  └┘   ╩ ╩└─┘ ┴ └─┘┴┘└┘─┴┘└─┘
+function yy() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+bindkey -s '^o' '^uyy\n'
+bindkey -M vicmd "^[[3~" delete-char
+bindkey "^[[3~"  delete-char
+
 #  ╔═╗┬  ┬┌─┐┌─┐┌─┐┌─┐
 #  ╠═╣│  │├─┤└─┐├┤ └─┐
 #  ╩ ╩┴─┘┴┴ ┴└─┘└─┘└─┘
@@ -158,3 +174,4 @@ alias stu='xrdb $HOME/.config/x11/xresources && pidof st | xargs kill -s USR1'
 #  ╚═╝┴ ┴└─┘┴─┘┴─┘  ╩┘└┘ ┴ └─┘└─┘┴└─┴ ┴ ┴ ┴└─┘┘└┘
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(starship init zsh)"
+source <(fzf --zsh)

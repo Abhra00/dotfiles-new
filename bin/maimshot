@@ -15,7 +15,7 @@ option_5="󱑈 Capture in 10s"
 
 # Pass variables to rofi dmenu
 run_dmenu() {
-	echo -e "$option_1\n$option_2\n$option_3\n$option_4\n$option_5" | dmenu -l 7 -x 645 -y 370 -z 580 -i -p "Screenshot which area?"
+	echo -e "$option_1\n$option_2\n$option_3\n$option_4\n$option_5" | dmenu -l 7 -X 645 -Y 370 -W 580 -h -i -p "Screenshot which area?"
 }
 
 # Screenshot

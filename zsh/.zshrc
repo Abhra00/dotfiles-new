@@ -157,3 +157,4 @@ alias stu='xrdb $HOME/.config/x11/xresources && pidof st | xargs kill -s USR1'
 #  ╚═╗├─┤├┤ │  │    ║│││ │ ├┤ │ ┬├┬┘├─┤ │ ││ ││││
 #  ╚═╝┴ ┴└─┘┴─┘┴─┘  ╩┘└┘ ┴ └─┘└─┘┴└─┴ ┴ ┴ ┴└─┘┘└┘
 eval "$(zoxide init --cmd cd zsh)"
+eval "$(starship init zsh)"

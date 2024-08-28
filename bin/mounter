@@ -56,7 +56,7 @@ set -e
 test -n "$alldrives"
 
 # Feed all found drives to dmenu and get user choice.
-chosen="$(echo "$alldrives" | dmenu -p "Mount which drive?" -i -x 645 -y 370 -z 580)"
+chosen="$(echo "$alldrives" | dmenu -p "Mount which drive?" -i -X 645 -Y 370 -W 580)"
 
 # Function for prompting user for a mountpoint.
 getmount(){

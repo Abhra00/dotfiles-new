@@ -6,16 +6,16 @@
 ## Applets : Screenshot
 
 
-option_1=" Capture Desktop"
-option_2="󰩭 Capture Area"
-option_3=" Capture Window"
-option_4=" Capture in 5s"
-option_5="󱑈 Capture in 10s"
+option_1=":b  Capture Desktop"
+option_2=":b  Capture Area"
+option_3=":b  Capture Window"
+option_4=":b  Capture in 5s"
+option_5=":b  Capture in 10s"
 
 
 # Pass variables to rofi dmenu
 run_dmenu() {
-	echo -e "$option_1\n$option_2\n$option_3\n$option_4\n$option_5" | dmenu -l 7 -X 645 -Y 370 -W 580 -h -i -p "Screenshot which area?"
+	echo -e "$option_1\n$option_2\n$option_3\n$option_4\n$option_5" | dmenu -l 7 -X 645 -Y 370 -W 580 -i -p "Screenshot which area?"
 }
 
 # Screenshot

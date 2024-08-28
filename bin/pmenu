@@ -13,14 +13,14 @@ wmpid(){ # This function is needed if there are multiple instances of the window
 	echo "${tree%%)*}"
 }
 
-case "$(printf "󰌾 lock\n󰴩 leave $WM\n󰑌 renew $WM\n󱣻 hibernate\n reboot\n shutdown\n󰒲 sleep\n󰶐 display off" | dmenu -i -X 645 -Y 370 -W 580 -h -p 'Action: ')" in
-	'󰌾 lock') slock ;;
-	"󰴩 leave $WM") kill -TERM "$(wmpid)" ;;
-	"󰑌 renew $WM") kill -HUP "$(wmpid)" ;;
-	'󱣻 hibernate') slock $ctl hibernate -i ;;
-	'󰒲 sleep') slock $ctl suspend -i ;;
-	' reboot') $ctl reboot -i ;;
-	' shutdown') $ctl poweroff -i ;;
-	'󰶐 display off') xset dpms force off ;;
+case "$(printf ":p  lock\n:p  leave $WM\n:p  renew $WM\n:p  hibernate\n:p  reboot\n:p  shutdown\n:p  sleep\n:p  display off" | dmenu -i -l 10 -X 645 -Y 370 -W 580 -p 'Action: ')" in
+	':p  lock') slock ;;
+	':p  leave $WM') kill -TERM "$(wmpid)" ;;
+	':p  renew $WM') kill -HUP "$(wmpid)" ;;
+	':p  hibernate') slock $ctl hibernate -i ;;
+	':p  sleep') slock $ctl suspend -i ;;
+	':p  reboot') $ctl reboot -i ;;
+	':p  shutdown') $ctl poweroff -i ;;
+	':p  display off') xset dpms force off ;;
 	*) exit 1 ;;
 esac

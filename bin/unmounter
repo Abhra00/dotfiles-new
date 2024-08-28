@@ -13,7 +13,7 @@ allunmountable="$(echo "$mounteddroids
 $mounteddrives" | sed "/^$/d;s/ *$//")"
 test -n "$allunmountable"
 
-chosen="$(echo "$allunmountable" | dmenu -i -x 645 -y 370 -z 580 -p "Unmount which drive?")"
+chosen="$(echo "$allunmountable" | dmenu -i -X 645 -Y 370 -W 580 -p "Unmount which drive?")"
 chosen="${chosen%% *}"
 test -n "$chosen"
 

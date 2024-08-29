@@ -112,6 +112,12 @@ setopt COMPLETE_IN_WORD     # Complete from both ends of a word.
 bindkey -v
 export KEYTIMEOUT=1
 
+bindkey '^j' history-search-backward
+bindkey '^k' history-search-forward
+bindkey '^[w' kill-region
+bindkey '^y' autosuggest-accept
+bindkey -v '^?' backward-delete-char
+
 #Cursor Shapes For Different Vim Mode
 #Cursor style cheat sheet
 # Set cursor style (DECSCUSR), VT520.
@@ -138,12 +144,6 @@ zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup
 preexec() { echo -ne '\e[5 q' ;} # USE beam shape cursor for each new prompt
 
-bindkey '^j' history-search-backward
-bindkey '^k' history-search-forward
-bindkey '^[w' kill-region
-bindkey '^y' autosuggest-accept
-bindkey -v '^?' backward-delete-char
-
 #  ╔═╗┬ ┬┌─┐┌┬┐┌─┐┌┬┐  ╔═╗┬ ┬┌┐┌┌─┐┌┬┐┬┌─┐┌┐┌┌─┐   ┬   ╦╔═┌─┐┬ ┬┌┐ ┬┌┐┌┌┬┐┌─┐
 #  ║  │ │└─┐ │ │ ││││  ╠╣ │ │││││   │ ││ ││││└─┐  ┌┼─  ╠╩╗├┤ └┬┘├┴┐││││ ││└─┐
 #  ╚═╝└─┘└─┘ ┴ └─┘┴ ┴  ╚  └─┘┘└┘└─┘ ┴ ┴└─┘┘└┘└─┘  └┘   ╩ ╩└─┘ ┴ └─┘┴┘└┘─┴┘└─┘
@@ -156,6 +156,7 @@ function yy() {
 	rm -f -- "$tmp"
 }
 bindkey -s '^o' '^uyy\n'
+bindkey -s '^f' '^utmux-seesionizer'
 bindkey -M vicmd "^[[3~" delete-char
 bindkey "^[[3~"  delete-char
 

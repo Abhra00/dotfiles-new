@@ -141,8 +141,8 @@ zle-line-init(){
     echo -ne "\e[5 q"
 }
 zle -N zle-line-init
-echo -ne '\e[5 q' # Use beam shape cursor on startup
-preexec() { echo -ne '\e[5 q' ;} # USE beam shape cursor for each new prompt
+echo -ne '\e[5 q' # Use blinking bar shape cursor on startup
+preexec() { echo -ne '\e[5 q' ;} # USE blinking bar shape cursor for each new prompt
 
 #  ╔═╗┬ ┬┌─┐┌┬┐┌─┐┌┬┐  ╔═╗┬ ┬┌┐┌┌─┐┌┬┐┬┌─┐┌┐┌┌─┐   ┬   ╦╔═┌─┐┬ ┬┌┐ ┬┌┐┌┌┬┐┌─┐
 #  ║  │ │└─┐ │ │ ││││  ╠╣ │ │││││   │ ││ ││││└─┐  ┌┼─  ╠╩╗├┤ └┬┘├┴┐││││ ││└─┐
@@ -156,7 +156,7 @@ function yy() {
 	rm -f -- "$tmp"
 }
 bindkey -s '^o' '^uyy\n'
-bindkey -s '^f' '^utmux-seesionizer'
+bindkey -s '^f' '^utmux-sessionizer'
 bindkey -M vicmd "^[[3~" delete-char
 bindkey "^[[3~"  delete-char
 

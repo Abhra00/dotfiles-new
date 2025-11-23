@@ -13,8 +13,7 @@
 
 ;; Enable native compilation
 (setq native-comp-speed 3
-      native-comp-deferred-compilation t
-      native-comp-jit-compilation t)
+      native-comp-deferred-compilation t)
 
 ;; Silence native compilation warnings
 (setq native-comp-async-report-warnings-errors nil)

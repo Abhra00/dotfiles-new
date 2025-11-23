@@ -50,11 +50,11 @@
 ;;; Custom Welcome Banner
 (setopt eshell-banner-message
         (concat
-         (propertize "   Welcome to the Emacs EShell  \n\n" 'face '(:weight bold :foreground "#a9c77d"))
-         (propertize " C-c t" 'face '(:foreground "#c792ea" :weight bold)) " - toggles between prompts (full / minimum)\n"
-         (propertize " C-c T" 'face '(:foreground "#c792ea" :weight bold)) " - toggles between full prompts (lighter / heavier)\n"
-         (propertize " C-c l" 'face '(:foreground "#c792ea" :weight bold)) " - searches history\n"
-         (propertize " C-l  " 'face '(:foreground "#c792ea" :weight bold)) " - clears scrolling\n\n"))
+         (propertize "   Welcome to the Emacs EShell  \n\n" 'face '(:weight bold :foreground "#A7C080"))
+         (propertize " C-c t" 'face '(:foreground "#D699B6" :weight bold)) " - toggles between prompts (full / minimum)\n"
+         (propertize " C-c T" 'face '(:foreground "#D699B6" :weight bold)) " - toggles between full prompts (lighter / heavier)\n"
+         (propertize " C-c l" 'face '(:foreground "#D699B6" :weight bold)) " - searches history\n"
+         (propertize " C-l  " 'face '(:foreground "#D699B6" :weight bold)) " - clears scrolling\n\n"))
 
 ;;; Disable Conservative Scrolling
 (defun rc/reset-scrolling-vars-for-term ()
@@ -171,12 +171,12 @@ Pre-fills the minibuffer with current Eshell input (from prompt to point)."
     (eshell-reset)))
 
 ;;; Color Variables (gruber darker)
-(defvar eshell-rc/color-bg-dark "#1c1f2b")
-(defvar eshell-rc/color-bg-mid "#4c5374")
-(defvar eshell-rc/color-fg-user "#d1aaff")
-(defvar eshell-rc/color-fg-host "#ef5350")
-(defvar eshell-rc/color-fg-dir "#a9c77d")
-(defvar eshell-rc/color-fg-git "#ffca28")
+(defvar eshell-rc/color-bg-dark "#1E2326")
+(defvar eshell-rc/color-bg-mid "#495156")
+(defvar eshell-rc/color-fg-user "#D699B6")
+(defvar eshell-rc/color-fg-host "#E67E80")
+(defvar eshell-rc/color-fg-dir "#A7C080")
+(defvar eshell-rc/color-fg-git "#DBBC7F")
 
 ;;; Icon Definitions
 (defvar rc/eshell-icons

@@ -99,6 +99,25 @@
          (face-attribute 'default :background)))
     (set-face-background 'default "unspecified-bg" frame)))
 
+;; -------------------------------------
+;; Window divider
+;; -------------------------------------
+(setq window-divider-default-right-width 15
+      window-divider-default-bottom-width 15
+      window-divider-default-places t)
+
+(window-divider-mode 1)
+
+(defun rc/style-window-dividers ()
+  "Make window dividers match background."
+  (modus-themes-with-colors
+    (custom-set-faces
+     `(window-divider ((,c :foreground ,bg-main)))
+     `(window-divider-first-pixel ((,c :foreground ,bg-main)))
+     `(window-divider-last-pixel ((,c :foreground ,bg-main))))))
+
+(add-hook 'modus-themes-after-load-theme-hook #'rc/style-window-dividers)
+
 ;; ------------------------------------------
 ;; Install & load modus-vivendi-tinted theme
 ;; ------------------------------------------
@@ -106,5 +125,6 @@
 (rc/apply-palenight-style)
 (load-theme 'modus-vivendi-tinted t)
 (add-hook 'modus-themes-after-load-theme-hook #'rc/clear-background-color)
+(rc/style-window-dividers)
 
 (provide 'theme-rc)

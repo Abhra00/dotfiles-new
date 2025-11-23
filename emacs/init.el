@@ -8,15 +8,8 @@
 ;;; Code:
 
 ;;; ============================================================================
-;;; Performance & Startup
+;;; Startup
 ;;; ============================================================================
-
-;; Enable native compilation
-(setq native-comp-speed 3
-      native-comp-deferred-compilation t)
-
-;; Silence native compilation warnings
-(setq native-comp-async-report-warnings-errors nil)
 
 ;; Required for rc.el
 (package-initialize)
@@ -194,17 +187,6 @@
         (setcar entry "")))))
 
 (add-hook 'after-change-major-mode-hook #'rc/purge-minor-modes)
-
-;; Add frame borders and window dividers
-(modify-all-frames-parameters
- '((right-divider-width . 25)
-   (internal-border-width . 25)))
-(dolist (face '(window-divider
-                window-divider-first-pixel
-                window-divider-last-pixel))
-  (face-spec-reset-face face)
-  (set-face-foreground face (face-attribute 'default :background)))
-(set-face-attribute 'fringe nil :inherit 'default)
 
 ;;; ============================================================================
 ;;; Editor Behavior
@@ -615,7 +597,7 @@
  'racket-mode
  'qml-mode
  'ag
- 'elpy
+ 'python-mode
  'typescript-mode
  'rfc-mode
  'sml-mode

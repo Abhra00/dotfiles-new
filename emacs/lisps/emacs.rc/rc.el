@@ -30,7 +30,4 @@
 (rc/require 'dash)
 (require 'dash)
 
-(rc/require 'dash-functional)
-(require 'dash-functional)
-
 (provide 'rc)

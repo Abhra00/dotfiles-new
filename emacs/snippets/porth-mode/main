@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-# name: main
-# key: main
-# --
-include "std.porth"
-
-proc main in
-  $0
-end

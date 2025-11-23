@@ -1,7 +1,6 @@
 # -*- mode: snippet -*-
-# name: <tag>\n...\n</tag>
-# key: tag
+# contributor : Anders Bach Nielsen <abachn@abachn.net>
+# name: <tag>...</tag>
+# key: t
 # --
-<${1:tag}$2>
-$0
-</$1>
+<${1:tag}>$2</$1>$0

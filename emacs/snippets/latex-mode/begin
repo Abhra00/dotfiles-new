@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# name: \begin{environment} ... \end{environment}
+# name: begin
 # key: begin
 # --
 \begin{${1:environment}}

@@ -3,54 +3,15 @@
 #    ┗┛┗┛┗┛┗┛┛┗┗┛
 #
 
-GruberDarker = [
-    ["#181818", "#181818",], # color[0] -> bg
-    ["#e4e4ef", "#e4e4ef",], # color[1] -> fg
-    ["#f43841", "#f43841",], # color[2] -> red
-    ["#73c936", "#73c936",], # color[3] -> green
-    ["#ffdd33", "#ffdd33",], # color[4] -> yellow
-    ["#96a6c8", "#96a6c8",], # color[5] -> blue
-    ["#9e95c7", "#9e95c7",], # color[6] -> magenta
-    ["#95a99f", "#95a99f",], # color[7] -> cyan
-    ["#cc8c3c", "#cc8c3c",], # color[8] -> brown
-    ["#453d41", "#453d41",]  # color[9] -> bg->light
+Everforest = [
+    ["#272e33", "#272e33",], # color[0] -> bg
+    ["#d3c6aa", "#d3c6aa",], # color[1] -> fg
+    ["#e67e80", "#e67e80",], # color[2] -> red
+    ["#a7c080", "#a7c080",], # color[3] -> green
+    ["#dbbc7f", "#dbbc7f",], # color[4] -> yellow
+    ["#7fbbb3", "#7fbbb3",], # color[5] -> blue
+    ["#d699b6", "#d699b6",], # color[6] -> magenta
+    ["#83c092", "#83c092",], # color[7] -> cyan
+    ["#e69875", "#e69875",], # color[8] -> orange
+    ["#495156", "#495156",]  # color[9] -> bg->light
         ]
-
-Nord = [
-    ["#2e3440", "#2e3440",], # color[0] -> bg
-    ["#eceff4", "#eceff4",], # color[1] -> fg
-    ["#bf616a", "#bf616a",], # color[2] -> red
-    ["#a3be8c", "#a3be8c",], # color[3] -> green
-    ["#ebcb8b", "#ebcb8b",], # color[4] -> yellow
-    ["#5e81ac", "#5e81ac",], # color[5] -> blue
-    ["#b48ead", "#b48ead",], # color[6] -> magenta
-    ["#88c0d0", "#88c0d0",], # color[7] -> cyan
-    ["#8fbcbb", "#8fbcbb",], # color[8] -> frost
-    ["#4c566a", "#4c566a",]  # color[9] -> bg->light
-        ]
-
-ModusVivendiTinted = [
-    ["#0d0e1c", "#0d0e1c",], # color[0] -> bg
-    ["#ffffff", "#ffffff",], # color[1] -> fg
-    ["#ff5f59", "#ff5f59",], # color[2] -> red
-    ["#44bc44", "#44bc44",], # color[3] -> green
-    ["#d0bc00", "#d0bc00",], # color[4] -> yellow
-    ["#2fafff", "#2fafff",], # color[5] -> blue
-    ["#feacd0", "#feacd0",], # color[6] -> magenta
-    ["#00d3d0", "#00d3d0",], # color[7] -> cyan
-    ["#ff66ff", "#ff66ff",], # color[8] -> magenta intense
-    ["#484d67", "#484d67",]  # color[9] -> bg->light
-        ]
-
-Palenight = [
-    ["#292D3E", "#292D3E"],  # 0 -> background (bg-main)
-    ["#eeffff", "#eeffff"],  # 1 -> foreground (fg-alt)
-    ["#ff5572", "#ff5572"],  # 2 -> red
-    ["#C3E88D", "#C3E88D"],  # 3 -> green
-    ["#FFCB6B", "#FFCB6B"],  # 4 -> yellow
-    ["#82AAFF", "#82AAFF"],  # 5 -> blue
-    ["#C792EA", "#C792EA"],  # 6 -> magenta
-    ["#89DDFF", "#89DDFF"],  # 7 -> cyan
-    ["#a9c77d", "#a9c77d"],  # 8 -> brown/olive
-    ["#676E95", "#676E95"]   # 9 -> light background / alt-bg
-]

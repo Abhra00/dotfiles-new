@@ -1,87 +1,70 @@
 /****************************************************
- *   PALENIGHT GTK THEME   *
+ *   EVERFOREST GTK THEME   *
  ****************************************************/
-
 /* Accent / Primary (purple) */
-@define-color accent_color #7E57C2;
-@define-color accent_bg_color alpha(#7E57C2, 0.4);
-@define-color accent_fg_color #EEFFFF;
-
+@define-color accent_color #D699B6;
+@define-color accent_bg_color alpha(#D699B6, 0.4);
+@define-color accent_fg_color #D3C6AA;
 /* Destructive (red) */
-@define-color destructive_color #FF5572;
-@define-color destructive_bg_color #FF5572;
-@define-color destructive_fg_color #EEFFFF;
-
+@define-color destructive_color #E67E80;
+@define-color destructive_bg_color #E67E80;
+@define-color destructive_fg_color #D3C6AA;
 /* Success (green) */
-@define-color success_color #C3E88D;
-@define-color success_bg_color #2F822F;
-@define-color success_fg_color #EEFFFF;
-
+@define-color success_color #A7C080;
+@define-color success_bg_color #3C4841;
+@define-color success_fg_color #D3C6AA;
 /* Warning (yellow) */
-@define-color warning_color #FFCB6B;
-@define-color warning_bg_color #FFCB6B;
-@define-color warning_fg_color #292D3E;
-
+@define-color warning_color #DBBC7F;
+@define-color warning_bg_color #DBBC7F;
+@define-color warning_fg_color #272E33;
 /* Error (bright red) */
-@define-color error_color #EF5350;
-@define-color error_bg_color #EF5350;
-@define-color error_fg_color #EEFFFF;
-
+@define-color error_color #E67E80;
+@define-color error_bg_color #E67E80;
+@define-color error_fg_color #D3C6AA;
 /* Window / View */
-@define-color window_bg_color #292D3E;
-@define-color window_fg_color #EEFFFF;
-@define-color view_bg_color   #292D3E;
-@define-color view_fg_color   #EEFFFF;
-
+@define-color window_bg_color #272E33;
+@define-color window_fg_color #D3C6AA;
+@define-color view_bg_color   #272E33;
+@define-color view_fg_color   #D3C6AA;
 /* Header bar */
 @define-color headerbar_bg_color @window_bg_color;
 @define-color headerbar_fg_color @window_fg_color;
 @define-color headerbar_border_color @window_bg_color;
 @define-color headerbar_backdrop_color @window_bg_color;
 @define-color headerbar_shade_color @window_bg_color;
-
 /* Card / Popover / Dialog */
-@define-color card_bg_color #31364A;  /* darker neutral from Palenight */
-@define-color card_fg_color #EEFFFF;
+@define-color card_bg_color #2E383C;  /* bg1 from Everforest */
+@define-color card_fg_color #D3C6AA;
 @define-color card_shade_color rgba(0,0,0,0.07);
-
 @define-color dialog_bg_color @card_bg_color;
 @define-color dialog_fg_color @card_fg_color;
-
 @define-color popover_bg_color @card_bg_color;
 @define-color popover_fg_color @card_fg_color;
-
 /* Misc */
 @define-color shade_color rgba(0, 0, 0, 0.36);
-@define-color scrollbar_outline_color rgba(140,170,200,0.5); /* Palenight blueish */
-
+@define-color scrollbar_outline_color rgba(127,187,179,0.5); /* Everforest blue */
 /* Sidebar */
-@define-color sidebar_bg_color #31364A;
+@define-color sidebar_bg_color #2E383C;
 @define-color secondary_sidebar_bg_color @sidebar_bg_color;
 @define-color sidebar_backdrop_color @sidebar_bg_color;
 @define-color secondary_sidebar_backdrop_color @sidebar_bg_color;
-
 .navigation-sidebar {
   background-color: @sidebar_bg_color;
   color: @window_fg_color;
 }
-
 headerbar.default-decoration {
   margin-bottom: 50px;
   margin-top: -100px;
 }
-
 /* Disable outlines */
 *:focus {
   outline: none;
   box-shadow: none;
 }
-
 window.csd,
 window.csd decoration {
   box-shadow: none;
 }
-
 /* Square corners everywhere */
 dialog,
 window.dialog,
@@ -115,7 +98,6 @@ button {
   box-shadow: none;
   outline: none;
 }
-
 /* Tooltip */
 tooltip {
   background-color: @card_bg_color;
@@ -123,7 +105,6 @@ tooltip {
   padding: 6px 10px;
   border: 1px solid @accent_color;
 }
-
 tooltip.background label {
   color: @card_fg_color;
 }

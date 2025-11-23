@@ -208,7 +208,7 @@ for i in group_names:
     )
 
 #---------------------- Select colors ----------------------#
-colors = colors.Palenight
+colors = colors.Everforest
 
 
 #---------------------- Layout management ----------------------#

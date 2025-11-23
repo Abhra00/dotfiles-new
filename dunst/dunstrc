@@ -2,100 +2,76 @@
 #  ┃┃┃┃┃┃┗┓ ┃ ┣┫┃
 #  ┻┛┗┛┛┗┗┛ ┻ ┛┗┗┛
 # --------------------------------------
-
 [global]
-
 monitor = 0
 follow = mouse
-
 width = (300, 400)
 origin = top-right
 offset = (20, 60)
 scale = 0
-
 notification_limit = 20
 indicate_hidden = yes
-
 transparency = 0
 corner_radius = 0
-
 gap_size = 4
 separator_height = 1
-separator_color = "#31364A"
-
+separator_color = "#2E383C"
 padding = 15
 horizontal_padding = 15
 text_icon_padding = 0
-
 frame_width = 0
-frame_color = "#31364A"
-
+frame_color = "#2E383C"
 sort = no
 idle_threshold = 0
-
 font = Iosevka NF Medium 9
 line_height = 0
-
 markup = full
-format = "<span size='xx-large' font_desc='Iosevka NF Medium 9' weight='bold' foreground='#C792EA'>%s</span>\n%b"
+format = "<span size='xx-large' font_desc='Iosevka Etoile Medium 9' weight='bold' foreground='#D699B6'>%s</span>\n%b"
 alignment = center
 vertical_alignment = center
-
 show_age_threshold = 60
 ignore_newline = no
 stack_duplicates = false
 hide_duplicate_count = true
-
 show_indicators = yes
-
 enable_recursive_icon_lookup = true
 icon_theme = "Papirus-Dark, Adwaita"
 icon_position = left
 min_icon_size = 60
 max_icon_size = 90
 icon_corner_radius = 0
-
 sticky_history = yes
 history_length = 25
-
 browser = /usr/bin/xdg-open
 always_run_script = true
 ignore_dbusclose = false
-
 force_xinerama = false
-
 mouse_left_click = close_current
 mouse_middle_click = do_action, close_current
 mouse_right_click = close_all
-
 progress_bar = true
 progress_bar_height = 10
 progress_bar_frame_width = 0
 progress_bar_min_width = 125
 progress_bar_max_width = 250
 progress_bar_corner_radius = 1
-
 title = Dunst
 class = Dunst
-
 # --------------------------------------
 #           URGENCIES
 # --------------------------------------
-
 [urgency_low]
 timeout = 3
-background = "#292D3E"
-foreground = "#EEFFFF"
-highlight = "#82AAFF"
-
+background = "#1E2326"
+foreground = "#D3C6AA"
+highlight = "#7FBBB3"
 [urgency_normal]
 timeout = 5
-background = "#292D3E"
-foreground = "#EEFFFF"
-highlight = "#C792EA"
-
+background = "#1E2326"
+foreground = "#D3C6AA"
+highlight = "#D699B6"
 [urgency_critical]
 timeout = 0
-background = "#292D3E"
-foreground = "#ff5572"
-highlight = "#EF5350"
+background = "#1E2326"
+foreground = "#E67E80"
+highlight = "#E67E80"

@@ -3,53 +3,122 @@
 #    ┗┛ ┻ ┛┗┛┗┗┛┛┗┻┣┛
 #
 
-format = """
-[$git_branch$git_status](bright-yellow)
-\\[[$username@](bright-white)\
-[$hostname](red) \
-[$directory](bright-white)\
-\\]$character"""
+# ─────────────────────────────────────────
+#  Starship Prompt — Everforest Hard Dark
+# ─────────────────────────────────────────
 
-[username]
-format = "[$user]($style)"
-style_user = "bright-white"
-style_root = "bright-white"
-show_always = true
-disabled = false
+palette = "everforest_hard_dark"
 
-[hostname]
-format = "[$hostname]($style)"
-style = "red"
-ssh_only = false
-disabled = false
+format = "$cmd_duration$directory$git_branch$git_status$character"
+add_newline = true
+
+# Disable languages
+[python]
+disabled = true
+[ruby]
+disabled = true
+[perl]
+disabled = true
+[package]
+disabled = true
+[c]
+disabled = true
+[cmake]
+disabled = true
+[haskell]
+disabled = true
+[lua]
+disabled = true
+[nodejs]
+disabled = true
+[java]
+disabled = true
+[rust]
+disabled = true
+[golang]
+disabled = true
+
+# ─────────────────────────────────────────
+# Prompt Symbols
+# ─────────────────────────────────────────
+
+[character]
+success_symbol = "[](green)"
+error_symbol = "[](red)"
+
+# ─────────────────────────────────────────
+# Directory
+# ─────────────────────────────────────────
+
+[directory]
+format = "[]($style)[ ](bg:base-dim fg:yellow)[$path](bg:base-dim fg:fg0)[ ]($style)"
+style = "bg:none fg:base-dim"
+truncation_length = 3
+truncate_to_repo = false
+
+# ─────────────────────────────────────────
+# Git Branch
+# ─────────────────────────────────────────
 
 [git_branch]
-format = "\\[[$symbol$branch]($style) "
-style = "bright-white"
-symbol = ""
+format = "[]($style)[[ ](bg:base-dim fg:green)$branch](bg:base-dim fg:fg0)[ ]($style)"
+style = "bg:none fg:base-dim"
+
+# ─────────────────────────────────────────
+# Git Status
+# ─────────────────────────────────────────
 
 [git_status]
-format = "[$all_status$ahead_behind]($style)\\] "
-style = "yellow"
+format = "[]($style)[$all_status$ahead_behind](bg:base-dim fg:yellow)[ ]($style)"
+style = "bg:none fg:base-dim"
+
 conflicted = "="
 ahead = "⇡${count}"
 behind = "⇣${count}"
 diverged = "⇕⇡${ahead_count}⇣${behind_count}"
-up_to_date = ""
-untracked = "?"
+up_to_date = ""
+untracked = "?${count}"
 stashed = "$"
-modified = "!"
-staged = "+"
-renamed = "»"
-deleted = "✘"
+modified = "!${count}"
+staged = "+${count}"
+renamed = "»${count}"
+deleted = "-${count}"
 
-[directory]
-format = "[$path]($style)"
-style = "bright-white"
-truncation_length = 1
-truncate_to_repo = false
-fish_style_pwd_dir_length = 0
+# ─────────────────────────────────────────
+# Cmd Duration
+# ─────────────────────────────────────────
 
-[character]
-success_symbol = "[\\$](bright-white)"
-error_symbol = "[\\$](bright-white)"
+[cmd_duration]
+min_time = 1
+format = "[]($style)[[󰪣 ](bg:base-dim fg:orange)$duration](bg:base-dim fg:fg0)[ ]($style)"
+style = "bg:none fg:base-dim"
+disabled = false
+
+# ─────────────────────────────────────────
+# Everforest Hard Dark Palette
+# ─────────────────────────────────────────
+
+[palettes.everforest_hard_dark]
+# Hard dark background
+base-dim   = "#1e2326"
+base       = "#272e33"
+base-black = "#101010"
+
+# Foreground
+fg0       = "#d3c6aa"
+fg1       = "#a7c080"
+fg2       = "#83c092"
+fg3       = "#e67e80"
+
+# Colors
+red       = "#e67e80"
+orange    = "#e69875"
+yellow    = "#dbbc7f"
+green     = "#a7c080"
+aqua      = "#83c092"
+blue      = "#7fbbb3"
+purple    = "#d699b6"
+
+# Extra accents
+grey0     = "#7a8478"
+grey1     = "#4b565c"

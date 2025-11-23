@@ -2,7 +2,6 @@
 #  ┏┛┣┫ ┃ ┣┫┃┃┣┫┣┫┣┫┃
 #  ┗┛┛┗ ┻ ┛┗┗┛┛┗┛┗┛┗┗┛
 # --------------------------------------
-
 # Options
 set recolor                      "true"
 set recolor-keephue              "true"
@@ -10,7 +9,6 @@ set window-title-home-tilde      true
 set statusbar-basename           true
 set selection-clipboard          clipboard
 set database                     null
-
 # Keymaps (unchanged)
 map u                             scroll half-up
 map d                             scroll half-down
@@ -22,7 +20,6 @@ map J                             zoom out
 map i                             recolor
 map p                             print
 map g                             goto top
-
 map [fullscreen] u                scroll half-up
 map [fullscreen] d                scroll half-down
 map [fullscreen] D                toggle_page_mode
@@ -33,48 +30,36 @@ map [fullscreen] J                zoom out
 map [fullscreen] i                recolor
 map [fullscreen] p                print
 map [fullscreen] g                goto top
-
 # --------------------------------------
 #           Colors
 # --------------------------------------
-
 # Background / Foreground
-set default-bg                    "#292D3E"
-set default-fg                    "#EEFFFF"
-
+set default-bg                    "#272E33"
+set default-fg                    "#D3C6AA"
 # Status Bar
-set statusbar-fg                  "#EEFFFF"
-set statusbar-bg                  "#31364A"
-
+set statusbar-fg                  "#D3C6AA"
+set statusbar-bg                  "#2E383C"
 # Input Bar
-set inputbar-bg                   "#31364A"
-set inputbar-fg                   "#EEFFFF"
-
+set inputbar-bg                   "#2E383C"
+set inputbar-fg                   "#D3C6AA"
 # Notifications
-set notification-bg               "#31364A"
-set notification-fg               "#EEFFFF"
-
-set notification-error-bg         "#31364A"
-set notification-error-fg         "#ff5572"     # palenight red
-
-set notification-warning-bg       "#31364A"
-set notification-warning-fg       "#FFCA28"     # palenight yellow
-
+set notification-bg               "#2E383C"
+set notification-fg               "#D3C6AA"
+set notification-error-bg         "#2E383C"
+set notification-error-fg         "#E67E80"     # everforest red
+set notification-warning-bg       "#2E383C"
+set notification-warning-fg       "#DBBC7F"     # everforest yellow
 # Highlights
-set highlight-color               "#82AAFF"     # palenight blue
-set highlight-active-color        "#C792EA"     # palenight magenta
-
+set highlight-color               "#7FBBB3"     # everforest blue
+set highlight-active-color        "#D699B6"     # everforest magenta
 # Completion Menu
-set completion-bg                 "#292D3E"
-set completion-fg                 "#EEFFFF"
-
-set completion-highlight-bg       "#7e57c2"     # purple accent
-set completion-highlight-fg       "#EEFFFF"
-
+set completion-bg                 "#272E33"
+set completion-fg                 "#D3C6AA"
+set completion-highlight-bg       "#D699B6"     # purple accent
+set completion-highlight-fg       "#D3C6AA"
 # Recolor (PDF dark mode)
-set recolor-lightcolor            "#292D3E"
-set recolor-darkcolor             "#EEFFFF"
-
+set recolor-lightcolor            "#272E33"
+set recolor-darkcolor             "#D3C6AA"
 # Fonts / GUI
 set font                          "Iosevka Nerd Font"
 set guioptions                    none

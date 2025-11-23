@@ -2,21 +2,19 @@
  *    ┏┓┏┓┓ ┏┓┳┓┏┓
  *    ┃ ┃┃┃ ┃┃┣┫┗┓
  *    ┗┛┗┛┗┛┗┛┛┗┗┛
- *          Palenight Colors
+ *          Everforest Colors
  */
-
 /*--------Color definitions------------*/
-
 * {
-       background:                 #292D3E;
-       background-alpha:           #292D3Ed3;
-       background-alt:             #31364A;
-       background-alt-alpha:       #31364Ad3;
-       foreground:                 #EEFFFF;
-       border-color:               #82AAFF;
-       selected:                   #7E57C2;
-       selected-alpha:             #7E57C2d3;
-       selected-text:              #EEFFFF;
-       active:                     #C3E88D;
-       urgent:                     #FF5572;
+       background:                 #272E33;
+       background-alpha:           #272E33d3;
+       background-alt:             #2E383C;
+       background-alt-alpha:       #2E383Cd3;
+       foreground:                 #D3C6AA;
+       border-color:               #7FBBB3;
+       selected:                   #D699B6;
+       selected-alpha:             #D699B6d3;
+       selected-text:              #272E23;
+       active:                     #A7C080;
+       urgent:                     #E67E80;
 }

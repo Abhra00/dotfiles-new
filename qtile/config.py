@@ -18,7 +18,7 @@ mod         = "mod4"            # Sets mod key to SUPER/WINDOWS
 alt         = "mod1"            # Sets the alt key to left-alt key
 myTerm      = "ghostty"         # My terminal of choice
 myBrowser   = "firefox"         # My browser of choice
-myEditor    = "emacs"           # My editor of choice
+myEditor    = "emacsclient"     # My editor of choice
 myLauncher  = "rofi -show drun" # My launcher of choice
 
 #---------------------- Define useful functions ----------------------#

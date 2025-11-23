@@ -12,7 +12,17 @@
 ;;; ============================================================================
 
 ;; Restore normal GC threshold after startup
-(add-hook 'emacs-startup-hook (lambda () (setq gc-cons-threshold 800000)))
+(add-hook 'emacs-startup-hook
+          (lambda ()
+            (setq gc-cons-threshold (* 64 1024 1024))))
+
+;; Enable native compilation
+(setq native-comp-speed 3
+      native-comp-deferred-compilation t
+      native-comp-jit-compilation t)
+
+;; Silence native compilation warnings
+(setq native-comp-async-report-warnings-errors nil)
 
 ;; Required for rc.el
 (package-initialize)
@@ -36,18 +46,9 @@
 ;; Load icons rc file
 (require 'icons-rc)
 
-
-;; Suppress compiler warnings
-(setq native-comp-async-report-warnings-errors nil)
-
 ;;; ============================================================================
 ;;; UI Configuration
 ;;; ============================================================================
-
-;; Disable unnecessary UI elements
-(menu-bar-mode -1)
-(tool-bar-mode -1)
-(scroll-bar-mode -1)
 
 ;; Set theme
 (require 'theme-rc)

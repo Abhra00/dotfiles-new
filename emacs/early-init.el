@@ -5,7 +5,7 @@
 ;; Schedule garbage collection sensible defaults for after booting
 (add-hook 'after-init-hook
           (lambda ()
-            (setq gc-cons-threshold (* 100 1024 1024)
+            (setq gc-cons-threshold (* 128 1024 1024)
                   gc-cons-percentage 0.1)))
 
 ;; Single VC backend inscreases booting speed

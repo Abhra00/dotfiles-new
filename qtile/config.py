@@ -231,7 +231,7 @@ layouts = [
     #layout.Stack(**layout_theme, num_stacks=2),
     #layout.Columns(**layout_theme),
     #layout.TreeTab(
-    #     font = "IosevkaNerdFontPropo",
+    #     font = "BlexMonoNerdFontPropo",
     #     fontsize = 11,
     #     border_width = 0,
     #     bg_color = colors[0],
@@ -258,7 +258,7 @@ layouts = [
 
 #---------------------- Widgets ----------------------#
 widget_defaults = dict(
-    font="IosevkaNerdFontPropo",
+    font="BlexMonoNerdFontPropo",
     fontsize = 12,
     padding = 0,
     background=colors[0]
@@ -276,7 +276,7 @@ def init_widgets_list():
                  mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn("emacs")},
                  ),
         widget.Prompt(
-                 font = "IosevkaNerdFontPropo",
+                 font = "BlexMonoNerdFontPropo",
                  fontsize=14,
                  foreground = colors[5]
         ),
@@ -300,7 +300,7 @@ def init_widgets_list():
                  ),
         widget.TextBox(
                  text = '|',
-                 font = "IosevkaNerdFontPropo",
+                 font = "BlexMonoNerdFontPropo",
                  foreground = colors[1],
                  padding = 2,
                  fontsize = 14
@@ -317,7 +317,7 @@ def init_widgets_list():
                  ),
         widget.TextBox(
                  text = '|',
-                 font = "IosevkaNerdFontPropo",
+                 font = "BlexMonoNerdFontPropo",
                  foreground = colors[1],
                  padding = 2,
                  fontsize = 14
@@ -328,7 +328,7 @@ def init_widgets_list():
                  ),
         widget.TextBox(
                  text = '|',
-                 font = "IosevkaNerdFontPropo",
+                 font = "BlexMonoNerdFontPropo",
                  foreground = colors[1],
                  padding = 2,
                  fontsize = 14
@@ -350,7 +350,7 @@ def init_widgets_list():
                  ),
         widget.TextBox(
                  text = '|',
-                 font = "IosevkaNerdFontPropo",
+                 font = "BlexMonoNerdFontPropo",
                  foreground = colors[1],
                  padding = 2,
                  fontsize = 14
@@ -369,7 +369,7 @@ def init_widgets_list():
                  ),
         widget.TextBox(
                  text = '|',
-                 font = "IosevkaNerdFontPropo",
+                 font = "BlexMonoNerdFontPropo",
                  foreground = colors[1],
                  padding = 2,
                  fontsize = 14
@@ -382,7 +382,7 @@ def init_widgets_list():
                  ),
         widget.TextBox(
                  text = '|',
-                 font = "IosevkaNerdFontPropo",
+                 font = "BlexMonoNerdFontPropo",
                  foreground = colors[1],
                  padding = 2,
                  fontsize = 14
@@ -396,7 +396,7 @@ def init_widgets_list():
                  ),
         widget.TextBox(
                  text = '|',
-                 font = "IosevkaNerdFontPropo",
+                 font = "BlexMonoNerdFontPropo",
                  foreground = colors[1],
                  padding = 2,
                  fontsize = 14
@@ -413,7 +413,7 @@ def init_widgets_list():
                  ),
         widget.TextBox(
                  text = '|',
-                 font = "IosevkaNerdFontPropo",
+                 font = "BlexMonoNerdFontPropo",
                  foreground = colors[1],
                  padding = 2,
                  fontsize = 14
@@ -425,7 +425,7 @@ def init_widgets_list():
                  ),
         widget.TextBox(
                  text = '|',
-                 font = "IosevkaNerdFontPropo",
+                 font = "BlexMonoNerdFontPropo",
                  foreground = colors[1],
                  padding = 2,
                  fontsize = 14

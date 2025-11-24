@@ -18,6 +18,6 @@ notify-send -i "$HOME/.config/dunst/assets/pacman.png" "UPGRADABLE PACKAGES" "CO
 total=$((repo_updates + aur_updates))
 
 # Output total for Qtile widget
-echo "󰏔 Pkgs: $total"
+echo "󰏔 $total"
 
 

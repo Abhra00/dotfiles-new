@@ -167,7 +167,7 @@ keys = [
 # Group properties
 groups = []
 group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
-group_labels = ["dev", "sys", "www", "doc", "vbox", "chat", "mus", "vid", "gfx", "misc"]
+group_labels = ["", "", "", "", "", "", "", "", "", ""]
 group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall"]
 
 # Add regular groups
@@ -258,7 +258,7 @@ layouts = [
 
 #---------------------- Widgets ----------------------#
 widget_defaults = dict(
-    font="BlexMonoNerdFontPropo",
+    font="BlexMonoNerdFontPropo Medium",
     fontsize = 12,
     padding = 0,
     background=colors[0]
@@ -269,19 +269,27 @@ extension_defaults = widget_defaults.copy()
 def init_widgets_list():
     widgets_list = [
         widget.Spacer(length = 8),
-        widget.TextBox(
-                 fmt = ' ',
-                 fontsize = 35,
+        widget.CurrentLayout(
+                 mode = "text",
+                 fmt = "󰕰 {}",
                  foreground = colors[6],
-                 mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn("emacs")},
+                 padding = 5
                  ),
-        widget.Prompt(
+        widget.TextBox(
+                 text = '|',
                  font = "BlexMonoNerdFontPropo",
-                 fontsize=14,
-                 foreground = colors[5]
-        ),
+                 foreground = colors[9],
+                 padding = 2,
+                 fontsize = 14
+                 ),
+        widget.WindowName(
+                 foreground = colors[5],
+                 padding = 8,
+                 max_chars = 40
+                 ),
+        widget.Spacer(length=bar.STRETCH),
         widget.GroupBox(
-                 fontsize = 12,
+                 fontsize = 16,
                  margin_y = 5,
                  margin_x = 14,
                  padding_y = 0,
@@ -290,53 +298,22 @@ def init_widgets_list():
                  active = colors[1],
                  inactive = colors[9],
                  rounded = False,
-                 hide_unused = True,
+                 hide_unused = False,
                  highlight_color = colors[0],
-                 highlight_method = "line",
-                 this_current_screen_border = colors[4],
-                 this_screen_border = colors [4],
-                 other_current_screen_border = colors[1],
-                 other_screen_border = colors[1],
+                 highlight_method = "text",
+                 this_current_screen_border = colors[6],
+                 this_screen_border = colors [6],
+                 other_current_screen_border = colors[4],
+                 other_screen_border = colors[4],
                  ),
+        widget.Spacer(length=bar.STRETCH),
+        widget.Systray(padding = 6),
         widget.TextBox(
                  text = '|',
                  font = "BlexMonoNerdFontPropo",
-                 foreground = colors[1],
+                 foreground = colors[9],
                  padding = 2,
                  fontsize = 14
-                 ),
-        widget.LaunchBar(
-                 progs = [("🦊", "firefox", "Firefox web browser"),
-                          ("👻", "ghostty", "Ghostty terminal"),
-                          ("📁", "thunar", "Thunar file manager"),
-                          ("🎦", "obs", "Video Recorder")
-                         ],
-                 fontsize = 12,
-                 padding = 6,
-                 foreground = colors[3],
-                 ),
-        widget.TextBox(
-                 text = '|',
-                 font = "BlexMonoNerdFontPropo",
-                 foreground = colors[1],
-                 padding = 2,
-                 fontsize = 14
-                 ),
-        widget.CurrentLayout(
-                 foreground = colors[1],
-                 padding = 5
-                 ),
-        widget.TextBox(
-                 text = '|',
-                 font = "BlexMonoNerdFontPropo",
-                 foreground = colors[1],
-                 padding = 2,
-                 fontsize = 14
-                 ),
-        widget.WindowName(
-                 foreground = colors[6],
-                 padding = 8,
-                 max_chars = 40
                  ),
         widget.GenPollText(
                  name = 'updates',
@@ -351,12 +328,12 @@ def init_widgets_list():
         widget.TextBox(
                  text = '|',
                  font = "BlexMonoNerdFontPropo",
-                 foreground = colors[1],
+                 foreground = colors[9],
                  padding = 2,
                  fontsize = 14
                  ),
         widget.Battery(
-                 format='󰁹 Fairy Dust: {percent:2.0%} {char}',
+                 format='󰁹 {percent:2.0%} {char}',
                  charge_char='CHR',
                  discharge_char='DIS',
                  empty_char='EMP',
@@ -370,63 +347,19 @@ def init_widgets_list():
         widget.TextBox(
                  text = '|',
                  font = "BlexMonoNerdFontPropo",
-                 foreground = colors[1],
-                 padding = 2,
-                 fontsize = 14
-                 ),
-        widget.CPU(
-                 foreground = colors[4],
-                 padding = 2,
-                 mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e btop')},
-                 format = '󰘚 Tea: {load_percent}%',
-                 ),
-        widget.TextBox(
-                 text = '|',
-                 font = "BlexMonoNerdFontPropo",
-                 foreground = colors[1],
-                 padding = 2,
-                 fontsize = 14
-                 ),
-        widget.Memory(
-                 foreground = colors[2],
-                 padding = 2,
-                 mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e btop')},
-                 format = '{MemUsed:.0f}{mm}',
-                 fmt = ' Hot Loads: {}',
-                 ),
-        widget.TextBox(
-                 text = '|',
-                 font = "BlexMonoNerdFontPropo",
-                 foreground = colors[1],
-                 padding = 2,
-                 fontsize = 14
-                 ),
-        widget.DF(
-                 update_interval = 60,
-                 foreground = colors[5],
-                 padding = 2,
-                 mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn('notify-disk')},
-                 partition = '/',
-                 format = '{uf}{m} free',
-                 fmt = ' Penger Folder: {}',
-                 visible_on_warn = False,
-                 ),
-        widget.TextBox(
-                 text = '|',
-                 font = "BlexMonoNerdFontPropo",
-                 foreground = colors[1],
+                 foreground = colors[9],
                  padding = 2,
                  fontsize = 14
                  ),
         widget.Volume(
                  foreground = colors[7],
                  padding = 2,
-                 fmt = ' Boom Box: {}',
+                 fmt = ' {}',
                  ),
         widget.TextBox(
                  text = '|',
                  font = "BlexMonoNerdFontPropo",
-                 foreground = colors[1],
+                 foreground = colors[9],
                  padding = 2,
                  fontsize = 14
                  ),
@@ -434,11 +367,9 @@ def init_widgets_list():
                  foreground = colors[8],
                  padding = 2,
                  mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn('notify-date')},
-                 format = "󰥔 %a, %b %d - %H:%M",
+                 format = "󰥔 %H:%M",
                  ),
-        widget.Systray(padding = 6),
         widget.Spacer(length = 8),
-
         ]
     return widgets_list
 

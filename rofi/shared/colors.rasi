@@ -6,10 +6,10 @@
  */
 /*--------Color definitions------------*/
 * {
-       background:                 #272E33;
-       background-alpha:           #272E33d3;
-       background-alt:             #2E383C;
-       background-alt-alpha:       #2E383Cd3;
+       background:                 #1E2326;
+       background-alpha:           #1E2326d3;
+       background-alt:             #272E33;
+       background-alt-alpha:       #272E33d3;
        foreground:                 #D3C6AA;
        border-color:               #7FBBB3;
        selected:                   #D699B6;

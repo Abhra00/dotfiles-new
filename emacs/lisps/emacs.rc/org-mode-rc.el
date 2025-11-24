@@ -90,20 +90,20 @@
   (setq org-modern-todo-faces
         '(("TODO" . org-todo)
           ("DONE" . org-done)))
-  (set-face-attribute 'org-modern-symbol nil :family "Iosevka Etoile")
+  (set-face-attribute 'org-modern-symbol nil :family "BlexMono Nerd Font")
 
   ;; Allow different heading sizes again
-  (dolist (pair '((org-level-1 . 3.00)
-                  (org-level-2 . 2.85)
-                  (org-level-3 . 2.75)
-                  (org-level-4 . 2.55)
-                  (org-level-5 . 2.45)
-                  (org-level-6 . 2.45)
-                  (org-level-7 . 2.45)
-                  (org-level-8 . 2.45)))
+  (dolist (pair '((org-level-1 . 2.85)
+                  (org-level-2 . 2.65)
+                  (org-level-3 . 2.45)
+                  (org-level-4 . 2.25)
+                  (org-level-5 . 2.25)
+                  (org-level-6 . 2.25)
+                  (org-level-7 . 2.25)
+                  (org-level-8 . 2.25)))
     (set-face-attribute (car pair) nil
-                        :family "Iosevka Aile"
-                        :weight 'Medium
+                        :family "BlexMono Nerd Font"
+                        :weight 'Bold
                         :slant 'normal
                         :height (floor (* 110 (cdr pair))))))
 

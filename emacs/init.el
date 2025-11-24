@@ -42,66 +42,26 @@
 
 ;; Global Font Settings
 (set-face-attribute 'default nil
-                    :family "Iosevka"
+                    :family "BlexMono Nerd Font"
                     :weight 'regular
-                    :height 210)
+                    :height 170)
 
 (set-face-attribute 'bold nil
-                    :family "Iosevka"
-                    :weight 'semibold)
+                    :family "BlexMono Nerd Font"
+                    :weight 'medium)
 
 (set-face-attribute 'italic nil
-                    :family "Iosevka"
-                    :slant 'oblique)
+                    :family "BlexMono Nerd Font"
+                    :slant 'italic)
 
 (set-face-attribute 'bold-italic nil
-                    :family "Iosevka"
+                    :family "BlexMono Nerd Font"
                     :weight 'semibold
-                    :slant 'oblique)
+                    :slant 'italic)
 
-;; Fallback for icons/symbols
-(when (member "Symbols Nerd Font Mono" (font-family-list))
-  (set-fontset-font t nil (font-spec :family "Symbols Nerd Font Mono") nil 'append))
-
-;; Make sure both pitch types use Iosevka
-(set-face-attribute 'fixed-pitch nil :family "Iosevka" :height 210)
-(set-face-attribute 'variable-pitch nil :family "Iosevka Etoile" :height 210)
-
-;; Enable ligatures
-(dolist (char/ligature-re
-         `((?-  . ,(rx (or (or "-->" "-<<" "->>" "-|" "-~" "-<" "->") (+ "-"))))
-           (?/  . ,(rx (or (or "/==" "/=" "/>" "/**" "/*") (+ "/"))))
-           (?*  . ,(rx (or (or "*>" "*/") (+ "*"))))
-           (?<  . ,(rx (or (or "<<=" "<<-" "<|||" "<==>" "<!--" "<=>" "<||" "<|>" "<-<"
-                               "<==" "<=<" "<-|" "<~>" "<=|" "<~~" "<$>" "<+>" "</>"
-                               "<*>" "<->" "<=" "<|" "<:" "<>"  "<$" "<-" "<~" "<+"
-                               "</" "<*")
-                           (+ "<"))))
-           (?:  . ,(rx (or (or ":?>" "::=" ":>" ":<" ":?" ":=") (+ ":"))))
-           (?=  . ,(rx (or (or "=>>" "==>" "=/=" "=!=" "=>" "=:=") (+ "="))))
-           (?!  . ,(rx (or (or "!==" "!=") (+ "!"))))
-           (?>  . ,(rx (or (or ">>-" ">>=" ">=>" ">]" ">:" ">-" ">=") (+ ">"))))
-           (?&  . ,(rx (+ "&")))
-           (?|  . ,(rx (or (or "|->" "|||>" "||>" "|=>" "||-" "||=" "|-" "|>"
-                               "|]" "|}" "|=")
-                           (+ "|"))))
-           (?.  . ,(rx (or (or ".?" ".=" ".-" "..<") (+ "."))))
-           (?+  . ,(rx (or "+>" (+ "+"))))
-           (?\[ . ,(rx (or "[<" "[|")))
-           (?\{ . ,(rx "{|"))
-           (?\? . ,(rx (or (or "?." "?=" "?:") (+ "?"))))
-           (?#  . ,(rx (or (or "#_(" "#[" "#{" "#=" "#!" "#:" "#_" "#?" "#(")
-                           (+ "#"))))
-           (?\; . ,(rx (+ ";")))
-           (?_  . ,(rx (or "_|_" "__")))
-           (?~  . ,(rx (or "~~>" "~~" "~>" "~-" "~@")))
-           (?$  . ,(rx "$>"))
-           (?^  . ,(rx "^="))
-           (?\] . ,(rx "]#"))))
-  (let ((char (car char/ligature-re))
-        (ligature-re (cdr char/ligature-re)))
-    (set-char-table-range composition-function-table char
-                          `([,ligature-re 0 font-shape-gstring]))))
+;; Make sure both pitch types use BlexMono Nerd Font
+(set-face-attribute 'fixed-pitch nil :family "BlexMono Nerd Font" :height 170)
+(set-face-attribute 'variable-pitch nil :family "BlexMono Nerd Font" :height 170)
 
 ;; Custom scratch buffer
 (with-current-buffer (get-buffer-create "*scratch*")
@@ -135,7 +95,7 @@
 (defun rc/shorten-vc-mode (vc)
   "Shorten VC string to at most 20 characters & replace `Git-' with a branch symbol."
   (let* ((vc (replace-regexp-in-string "^ Git[:-]"
-                                       (if (char-displayable-p ?) "  " "Git: ")
+                                       (if (char-displayable-p ?) "  " "Git: ")
                                        vc)))
     (if (> (length vc) 20)
         (concat (substring vc 0 20)
@@ -143,7 +103,7 @@
       vc)))
 (setq-default mode-line-format
               '("%e" "  "
-                (:propertize " " display (raise +0.35)) ;; Top padding
+                (:propertize " " display (raise +0.40)) ;; Top padding
                 (:propertize
                  (if (char-displayable-p ?λ) "λ  " "   ") face font-lock-keyword-face)
 
@@ -163,7 +123,7 @@
                 mode-line-modes
                 mode-line-misc-info
                 "  "
-                (:propertize " " display (raise -0.35))) ;; Bottom padding
+                (:propertize " " display (raise -0.40))) ;; Bottom padding
               project-mode-line t
               mode-line-buffer-identification '(" %b")
               mode-line-position-column-line-format '(" %l:%c"))

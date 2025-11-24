@@ -18,7 +18,7 @@ theme = everforest
 
 #---------Fonts----------#
 #------------------------#
-font-family = "Iosevka Term"
+font-family = "BlexMono Nerd Font"
 font-size = 18
 adjust-cell-height = 20%
 

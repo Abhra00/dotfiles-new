@@ -19,8 +19,9 @@ theme = everforest
 #---------Fonts----------#
 #------------------------#
 font-family = "BlexMono Nerd Font"
+font-family-bold = "BlexMono Nerd Font SemiBold"
+font-family-bold-italic = "BlexMono Nerd Font SemiBold Italic"
 font-size = 18
-adjust-cell-height = 20%
 
 #---Shell Integration---#
 #-----------------------#

@@ -102,7 +102,7 @@
                   (org-level-7 . 2.25)
                   (org-level-8 . 2.25)))
     (set-face-attribute (car pair) nil
-                        :family "BlexMono Nerd Font"
+                        :family "UbuntuMono"
                         :weight 'Bold
                         :slant 'normal
                         :height (floor (* 110 (cdr pair))))))

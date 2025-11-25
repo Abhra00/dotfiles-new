@@ -90,7 +90,7 @@
   (setq org-modern-todo-faces
         '(("TODO" . org-todo)
           ("DONE" . org-done)))
-  (set-face-attribute 'org-modern-symbol nil :family "BlexMono Nerd Font")
+  (set-face-attribute 'org-modern-symbol nil :family "JetbrainsMono Nerd Font")
 
   ;; Allow different heading sizes again
   (dolist (pair '((org-level-1 . 2.85)
@@ -102,7 +102,7 @@
                   (org-level-7 . 2.25)
                   (org-level-8 . 2.25)))
     (set-face-attribute (car pair) nil
-                        :family "UbuntuMono"
+                        :family "Ubuntu"
                         :weight 'Bold
                         :slant 'normal
                         :height (floor (* 110 (cdr pair))))))

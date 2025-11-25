@@ -40,28 +40,8 @@
 ;; Set theme
 (require 'theme-rc)
 
-;; Global Font Settings
-(set-face-attribute 'default nil
-                    :family "BlexMono Nerd Font"
-                    :weight 'regular
-                    :height 170)
-
-(set-face-attribute 'bold nil
-                    :family "BlexMono Nerd Font"
-                    :weight 'medium)
-
-(set-face-attribute 'italic nil
-                    :family "BlexMono Nerd Font"
-                    :slant 'italic)
-
-(set-face-attribute 'bold-italic nil
-                    :family "BlexMono Nerd Font"
-                    :weight 'semibold
-                    :slant 'italic)
-
-;; Make sure both pitch types use BlexMono Nerd Font
-(set-face-attribute 'fixed-pitch nil :family "BlexMono Nerd Font" :height 170)
-(set-face-attribute 'variable-pitch nil :family "BlexMono Nerd Font" :height 170)
+;; Set fonts
+(require 'font-rc)
 
 ;; Custom scratch buffer
 (with-current-buffer (get-buffer-create "*scratch*")
@@ -88,8 +68,6 @@
                   (number-to-string (length package-activated-list)))))
 
 (message (emacs-init-time))
-
-
 
 ;; Setup clean modern mode line
 (defun rc/shorten-vc-mode (vc)

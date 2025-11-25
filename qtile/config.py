@@ -16,7 +16,7 @@ import colors
 #---------------------- Define programs ----------------------#
 mod         = "mod4"                       # Sets mod key to SUPER/WINDOWS
 alt         = "mod1"                       # Sets the alt key to left-alt key
-myTerm      = "ghostty"                    # My terminal of choice
+myTerm      = "kitty"                      # My terminal of choice
 myBrowser   = "firefox"                    # My browser of choice
 myEditor    = "emacsclient -c -a 'emacs'"  # My editor of choice
 myLauncher  = "rofi -show drun"            # My launcher of choice
@@ -183,9 +183,9 @@ for i in range(len(group_names)):
 # Add scratchpads separately (outside the loop since they're not tied to each group)
 groups.extend([
     ScratchPad("SPWALL", [DropDown("WallSelector", "nsxiv /home/bugs/walls/", x=0.25, y=0.05, width=0.5, height=0.7, on_focus_lost_hide=False)]),
-    ScratchPad("SPFM", [DropDown("FileManager", "ghostty -e yazi", x=0.2, y=0.02, width=0.55, height=0.75, on_focus_lost_hide=False)]),
-    ScratchPad("SPCALC", [DropDown("Calculator", "ghostty -e bc", x=0.2, y=0.02, width=0.50, height=0.50, on_focus_lost_hide=False)]),
-    ScratchPad("SPTERM", [DropDown("Term", "ghostty -e zsh", x=0.2, y=0.02, width=0.50, height=0.50, on_focus_lost_hide=False)]),
+    ScratchPad("SPFM", [DropDown("FileManager", "kitty -e yazi", x=0.2, y=0.02, width=0.55, height=0.75, on_focus_lost_hide=False)]),
+    ScratchPad("SPCALC", [DropDown("Calculator", "kitty -e bc", x=0.2, y=0.02, width=0.50, height=0.50, on_focus_lost_hide=False)]),
+    ScratchPad("SPTERM", [DropDown("Term", "kitty -e bash", x=0.2, y=0.02, width=0.50, height=0.50, on_focus_lost_hide=False)]),
 ])
 
 # Only bind keys for regular groups (not scratchpads)
@@ -231,7 +231,7 @@ layouts = [
     #layout.Stack(**layout_theme, num_stacks=2),
     #layout.Columns(**layout_theme),
     #layout.TreeTab(
-    #     font = "BlexMonoNerdFontPropo",
+    #     font = "JetbrainsMonoNerdFontPropo",
     #     fontsize = 11,
     #     border_width = 0,
     #     bg_color = colors[0],
@@ -258,7 +258,7 @@ layouts = [
 
 #---------------------- Widgets ----------------------#
 widget_defaults = dict(
-    font="BlexMonoNerdFontPropo Medium",
+    font="JetbrainsMonoNerdFontPropo Bold",
     fontsize = 12,
     padding = 0,
     background=colors[0]
@@ -269,15 +269,31 @@ extension_defaults = widget_defaults.copy()
 def init_widgets_list():
     widgets_list = [
         widget.Spacer(length = 8),
+        widget.TextBox(
+                 text = '->> Find',
+                 font = "JetbrainsMono Bold",
+                 foreground = colors[6],
+                 padding = 2,
+                 fontsize = 14,
+		 mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myLauncher)},
+                 ),
+	widget.Spacer(length = 8),
+        widget.TextBox(
+                 text = '|',
+                 font = "JetbrainsMonoNerdFontPropo Bold",
+                 foreground = colors[9],
+                 padding = 2,
+                 fontsize = 14
+                 ),
         widget.CurrentLayout(
                  mode = "text",
                  fmt = "󰕰 {}",
-                 foreground = colors[6],
+                 foreground = colors[7],
                  padding = 5
                  ),
         widget.TextBox(
                  text = '|',
-                 font = "BlexMonoNerdFontPropo",
+                 font = "JetbrainsMonoNerdFontPropo Bold",
                  foreground = colors[9],
                  padding = 2,
                  fontsize = 14
@@ -310,7 +326,7 @@ def init_widgets_list():
         widget.Systray(padding = 6),
         widget.TextBox(
                  text = '|',
-                 font = "BlexMonoNerdFontPropo",
+                 font = "JetbrainsMonoNerdFontPropo Bold",
                  foreground = colors[9],
                  padding = 2,
                  fontsize = 14
@@ -327,7 +343,7 @@ def init_widgets_list():
                  ),
         widget.TextBox(
                  text = '|',
-                 font = "BlexMonoNerdFontPropo",
+                 font = "JetbrainsMonoNerdFontPropo Bold",
                  foreground = colors[9],
                  padding = 2,
                  fontsize = 14
@@ -346,7 +362,7 @@ def init_widgets_list():
                  ),
         widget.TextBox(
                  text = '|',
-                 font = "BlexMonoNerdFontPropo",
+                 font = "JetbrainsMonoNerdFontPropo Bold",
                  foreground = colors[9],
                  padding = 2,
                  fontsize = 14
@@ -358,7 +374,7 @@ def init_widgets_list():
                  ),
         widget.TextBox(
                  text = '|',
-                 font = "BlexMonoNerdFontPropo",
+                 font = "JetbrainsMonoNerdFontPropo Bold",
                  foreground = colors[9],
                  padding = 2,
                  fontsize = 14
@@ -368,6 +384,22 @@ def init_widgets_list():
                  padding = 2,
                  mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn('notify-date')},
                  format = "󰥔 %H:%M",
+                 ),
+        widget.TextBox(
+                 text = '|',
+                 font = "JetbrainsMonoNerdFontPropo Bold",
+                 foreground = colors[9],
+                 padding = 2,
+                 fontsize = 14
+                 ),
+	widget.Spacer(length = 8),
+        widget.TextBox(
+                 text = 'Exit ->>',
+                 font = "JetbrainsMono Bold",
+                 foreground = colors[2],
+                 padding = 2,
+                 fontsize = 14,
+		 mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn("pmenu")},
                  ),
         widget.Spacer(length = 8),
         ]

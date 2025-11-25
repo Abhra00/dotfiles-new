@@ -61,5 +61,5 @@ set completion-highlight-fg       "#D3C6AA"
 set recolor-lightcolor            "#272E33"
 set recolor-darkcolor             "#D3C6AA"
 # Fonts / GUI
-set font                          "BlexMono Nerd Font"
+set font                          "JetBrainsMono Nerd Font"
 set guioptions                    none

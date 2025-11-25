@@ -11,7 +11,7 @@ unsetopt PROMPT_SP 2>/dev/null
 # Default programs:
 export EDITOR="emacsclient -t"
 export VISUAL="emacsclient -c"
-export TERMINAL="ghostty"
+export TERMINAL="kitty"
 export TERMINAL_PROG="ghostty"
 export BROWSER="firefox"
 

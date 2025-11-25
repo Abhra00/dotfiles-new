@@ -23,10 +23,10 @@ frame_width = 0
 frame_color = "#2E383C"
 sort = no
 idle_threshold = 0
-font = BlexMono Nerd Font Medium 9
+font = JetBrainsMono Nerd Font Medium 9
 line_height = 0
 markup = full
-format = "<span size='xx-large' font_desc='BlexMono Nerd Font Medium 9' weight='bold' foreground='#D699B6'>%s</span>\n%b"
+format = "<span size='xx-large' font_desc='JetBrainsMono Nerd Font Medium 9' weight='bold' foreground='#D699B6'>%s</span>\n%b"
 alignment = center
 vertical_alignment = center
 show_age_threshold = 60

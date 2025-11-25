@@ -13,7 +13,7 @@ export EDITOR="emacsclient -t"
 export VISUAL="emacsclient -c"
 export TERMINAL="kitty"
 export TERMINAL_PROG="ghostty"
-export BROWSER="firefox"
+export BROWSER="chromium"
 
 # ~/ Clean-up:
 export XDG_CONFIG_HOME="$HOME/.config"

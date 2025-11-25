@@ -1,11 +1,9 @@
 /**
- *
- * Author : Aditya Shakya (adi1090x)
- * Github : @adi1090x
- * 
- * Rofi Theme File
- * Rofi Version: 1.7.3
- **/
+ *    ┳┳┓┏┓┳┳┳┓┏┓┓┏┏┓┏┳┓
+ *    ┃┃┃┣┫┃┃┃┃┗┓┣┫┃┃ ┃ 
+ *    ┛ ┗┛┗┻┛ ┗┗┛┛┗┗┛ ┻ 
+ *                      
+ */
 
 /*****----- Configuration -----*****/
 configuration {
@@ -122,7 +120,7 @@ element {
     cursor:                      pointer;
 }
 element-text {
-    font:                        "BlexMonoNerdFontPropo 24";
+    font:                        "JetBrainsMono Nerd Font Propo 24";
     background-color:            transparent;
     text-color:                  inherit;
     cursor:                      inherit;

@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-$TERMINAL -e paru
-qtile cmd-obj -o widget updates -f force_update

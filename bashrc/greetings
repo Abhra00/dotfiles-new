@@ -2,13 +2,8 @@
 #    ┃┓┣┫┣ ┣  ┃ ┃┃┃┃┓┗┓
 #    ┗┛┛┗┗┛┗┛ ┻ ┻┛┗┗┛┗┛
 #                      
-echo "┳┓       ┏━┓  ┏┓          ┓    ┓     "
-echo "┣┫┓┏┏┓┏  ┃┗┛  ┏┛┏┓┏┳┓┏┓┓┏┏┫┏┓┏┓┃┏┏┓┏┓"
-echo "┻┛┗┻┗┫┛  ┗━┛  ┗┛┗ ┛┗┗┗ ┗┫┗┻┗┻┛ ┛┗┗┛┛┗"
-echo "     ┛                  ┛            "
-
 if [[ $(tty) == *"pts"* ]]; then
-    fastfetch -c $HOME/.config/fastfetch/config.jsonc
+    sexyFetch.sh
 else
     if [ -f /bin/qtile ]; then
         echo "Start qtile with exec qtile start"

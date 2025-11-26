@@ -72,8 +72,6 @@ announce "Arch Spring‑Clean starting $(date)  —  using $AUR"
 if $DO_UPGRADE; then
     announce "System upgrade ($AUR)"
     $AUR -Syu --ask 4 # interactive for .pacnew merges
-    announce "Update waybar pacman module"
-    slstatus-upd
     echo "Run 'sudo pacdiff' after the script to merge new config files."
 fi
 

@@ -34,32 +34,32 @@ map [fullscreen] g                goto top
 #           Colors
 # --------------------------------------
 # Background / Foreground
-set default-bg                    "#272E33"
-set default-fg                    "#D3C6AA"
+set default-bg                    "#000000"
+set default-fg                    "#e0def4"
 # Status Bar
-set statusbar-fg                  "#D3C6AA"
-set statusbar-bg                  "#2E383C"
+set statusbar-fg                  "#e0def4"
+set statusbar-bg                  "#191724"
 # Input Bar
-set inputbar-bg                   "#2E383C"
-set inputbar-fg                   "#D3C6AA"
+set inputbar-bg                   "#191724"
+set inputbar-fg                   "#e0def4"
 # Notifications
-set notification-bg               "#2E383C"
-set notification-fg               "#D3C6AA"
-set notification-error-bg         "#2E383C"
-set notification-error-fg         "#E67E80"     # everforest red
-set notification-warning-bg       "#2E383C"
-set notification-warning-fg       "#DBBC7F"     # everforest yellow
+set notification-bg               "#191724"
+set notification-fg               "#e0def4"
+set notification-error-bg         "#191724"
+set notification-error-fg         "#eb6f92"     # rosé pine love
+set notification-warning-bg       "#191724"
+set notification-warning-fg       "#f6c177"     # rosé pine gold
 # Highlights
-set highlight-color               "#7FBBB3"     # everforest blue
-set highlight-active-color        "#D699B6"     # everforest magenta
+set highlight-color               "#31748f"     # rosé pine pine
+set highlight-active-color        "#c4a7e7"     # rosé pine iris
 # Completion Menu
-set completion-bg                 "#272E33"
-set completion-fg                 "#D3C6AA"
-set completion-highlight-bg       "#D699B6"     # purple accent
-set completion-highlight-fg       "#D3C6AA"
+set completion-bg                 "#000000"
+set completion-fg                 "#e0def4"
+set completion-highlight-bg       "#c4a7e7"     # iris accent
+set completion-highlight-fg       "#e0def4"
 # Recolor (PDF dark mode)
-set recolor-lightcolor            "#272E33"
-set recolor-darkcolor             "#D3C6AA"
+set recolor-lightcolor            "#000000"
+set recolor-darkcolor             "#e0def4"
 # Fonts / GUI
-set font                          "JetBrainsMono Nerd Font"
+set font                          "FiraCode Nerd Font"
 set guioptions                    none

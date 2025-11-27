@@ -15,18 +15,18 @@ transparency = 0
 corner_radius = 0
 gap_size = 4
 separator_height = 1
-separator_color = "#2E383C"
+separator_color = "#26233a"
 padding = 15
 horizontal_padding = 15
 text_icon_padding = 0
 frame_width = 0
-frame_color = "#2E383C"
+frame_color = "#6e6a86"
 sort = no
 idle_threshold = 0
-font = JetBrainsMono Nerd Font Medium 9
+font = FiraCode Nerd Font Semibold 9
 line_height = 0
 markup = full
-format = "<span size='xx-large' font_desc='JetBrainsMono Nerd Font Medium 9' weight='bold' foreground='#D699B6'>%s</span>\n%b"
+format = "<span size='xx-large' font_desc='MapleMono Medium 9' weight='bold' foreground='#D699B6'>%s</span>\n%b"
 alignment = center
 vertical_alignment = center
 show_age_threshold = 60
@@ -62,16 +62,19 @@ class = Dunst
 # --------------------------------------
 [urgency_low]
 timeout = 3
-background = "#1E2326"
-foreground = "#D3C6AA"
-highlight = "#7FBBB3"
+background = "#000000"
+foreground = "#e0def4"
+highlight = "#c4a7e7"
+
 [urgency_normal]
 timeout = 5
-background = "#1E2326"
-foreground = "#D3C6AA"
-highlight = "#D699B6"
+background = "#000000"
+foreground = "#e0def4"
+highlight = "#c4a7e7"
+
 [urgency_critical]
 timeout = 0
-background = "#1E2326"
-foreground = "#E67E80"
-highlight = "#E67E80"
+timeout = 3
+background = "#000000"
+foreground = "#eb6f92"
+highlight = "#eb6f92"

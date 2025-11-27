@@ -2,7 +2,7 @@
  *    ┏┓┏┓┓ ┏┏┓┳┓┳┳┓┏┓┳┓┳┳
  *    ┃┃┃┃┃┃┃┣ ┣┫┃┃┃┣ ┃┃┃┃
  *    ┣┛┗┛┗┻┛┗┛┛┗┛ ┗┗┛┛┗┗┛
- *                        
+ *
  */
 
 
@@ -128,7 +128,7 @@ listview {
     reverse:                     false;
     fixed-height:                true;
     fixed-columns:               true;
-    
+
     spacing:                     15px;
     margin:                      0px;
     padding:                     0px;
@@ -154,7 +154,7 @@ element {
     cursor:                      pointer;
 }
 element-text {
-    font:                        "JetBrainsMono Nerd Font Propo bold 24";
+    font:                        "FiraCode Nerd Font Propo bold 24";
     background-color:            transparent;
     text-color:                  inherit;
     cursor:                      inherit;

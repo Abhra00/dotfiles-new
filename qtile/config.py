@@ -208,7 +208,7 @@ for i in group_names:
     )
 
 #---------------------- Select colors ----------------------#
-colors = colors.Everforest
+colors = colors.BlackPine
 
 
 #---------------------- Layout management ----------------------#
@@ -231,7 +231,7 @@ layouts = [
     #layout.Stack(**layout_theme, num_stacks=2),
     #layout.Columns(**layout_theme),
     #layout.TreeTab(
-    #     font = "JetbrainsMonoNerdFontPropo",
+    #     font = "FiraCodeNerdFontPropo",
     #     fontsize = 11,
     #     border_width = 0,
     #     bg_color = colors[0],
@@ -258,7 +258,7 @@ layouts = [
 
 #---------------------- Widgets ----------------------#
 widget_defaults = dict(
-    font="JetbrainsMonoNerdFontPropo Bold",
+    font="FiraCodeNerdFontPropo Bold",
     fontsize = 12,
     padding = 0,
     background=colors[0]
@@ -271,7 +271,7 @@ def init_widgets_list():
         widget.Spacer(length = 8),
         widget.TextBox(
                  text = '->> Find',
-                 font = "JetbrainsMono Bold",
+                 font = "FiraCodeNerdFontPropo Bold",
                  foreground = colors[6],
                  padding = 2,
                  fontsize = 14,
@@ -280,7 +280,7 @@ def init_widgets_list():
 	widget.Spacer(length = 8),
         widget.TextBox(
                  text = '|',
-                 font = "JetbrainsMonoNerdFontPropo Bold",
+                 font = "FiraCodeNerdFontPropo Bold",
                  foreground = colors[9],
                  padding = 2,
                  fontsize = 14
@@ -293,7 +293,7 @@ def init_widgets_list():
                  ),
         widget.TextBox(
                  text = '|',
-                 font = "JetbrainsMonoNerdFontPropo Bold",
+                 font = "FiraCodeNerdFontPropo Bold",
                  foreground = colors[9],
                  padding = 2,
                  fontsize = 14
@@ -326,7 +326,7 @@ def init_widgets_list():
         widget.Systray(padding = 6),
         widget.TextBox(
                  text = '|',
-                 font = "JetbrainsMonoNerdFontPropo Bold",
+                 font = "FiraCodeNerdFontPropo Bold",
                  foreground = colors[9],
                  padding = 2,
                  fontsize = 14
@@ -343,7 +343,7 @@ def init_widgets_list():
                  ),
         widget.TextBox(
                  text = '|',
-                 font = "JetbrainsMonoNerdFontPropo Bold",
+                 font = "FiraCodeNerdFontPropo Bold",
                  foreground = colors[9],
                  padding = 2,
                  fontsize = 14
@@ -362,7 +362,7 @@ def init_widgets_list():
                  ),
         widget.TextBox(
                  text = '|',
-                 font = "JetbrainsMonoNerdFontPropo Bold",
+                 font = "FiraCodeNerdFontPropo Bold",
                  foreground = colors[9],
                  padding = 2,
                  fontsize = 14
@@ -374,7 +374,7 @@ def init_widgets_list():
                  ),
         widget.TextBox(
                  text = '|',
-                 font = "JetbrainsMonoNerdFontPropo Bold",
+                 font = "FiraCodeNerdFontPropo Bold",
                  foreground = colors[9],
                  padding = 2,
                  fontsize = 14
@@ -387,7 +387,7 @@ def init_widgets_list():
                  ),
         widget.TextBox(
                  text = '|',
-                 font = "JetbrainsMonoNerdFontPropo Bold",
+                 font = "FiraCodeNerdFontPropo Bold",
                  foreground = colors[9],
                  padding = 2,
                  fontsize = 14
@@ -395,7 +395,7 @@ def init_widgets_list():
 	widget.Spacer(length = 8),
         widget.TextBox(
                  text = 'Exit ->>',
-                 font = "JetbrainsMono Bold",
+                 font = "FiraCodeNerdFontPropo Bold",
                  foreground = colors[2],
                  padding = 2,
                  fontsize = 14,

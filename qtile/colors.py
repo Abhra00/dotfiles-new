@@ -3,15 +3,15 @@
 #    ┗┛┗┛┗┛┗┛┛┗┗┛
 #
 
-Everforest = [
-    ["#272e33", "#272e33",], # color[0] -> bg
-    ["#d3c6aa", "#d3c6aa",], # color[1] -> fg
-    ["#e67e80", "#e67e80",], # color[2] -> red
-    ["#a7c080", "#a7c080",], # color[3] -> green
-    ["#dbbc7f", "#dbbc7f",], # color[4] -> yellow
-    ["#7fbbb3", "#7fbbb3",], # color[5] -> blue
-    ["#d699b6", "#d699b6",], # color[6] -> magenta
-    ["#83c092", "#83c092",], # color[7] -> cyan
-    ["#e69875", "#e69875",], # color[8] -> orange
-    ["#495156", "#495156",]  # color[9] -> bg->light
+BlackPine = [
+    ["#000000", "#000000",], # color[0] -> bg
+    ["#e0def4", "#e0def4",], # color[1] -> fg
+    ["#eb6f92", "#eb6f92",], # color[2] -> red
+    ["#31748f", "#31748f",], # color[3] -> green
+    ["#f6c177", "#f6c177",], # color[4] -> yellow
+    ["#9ccfd8", "#9ccfd8",], # color[5] -> blue
+    ["#c4a7e7", "#c4a7e7",], # color[6] -> magenta
+    ["#ebbcba", "#ebbcba",], # color[7] -> cyan
+    ["#31748f", "#31748f",], # color[8] -> teal
+    ["#26233a", "#26233a",]  # color[9] -> bg->light
         ]

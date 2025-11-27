@@ -1,31 +1,31 @@
 /****************************************************
- *   EVERFOREST GTK THEME   *
+ *   ROSÉ PINE GTK THEME   *
  ****************************************************/
-/* Accent / Primary (purple) */
-@define-color accent_color #D699B6;
-@define-color accent_bg_color alpha(#D699B6, 0.4);
-@define-color accent_fg_color #D3C6AA;
-/* Destructive (red) */
-@define-color destructive_color #E67E80;
-@define-color destructive_bg_color #E67E80;
-@define-color destructive_fg_color #D3C6AA;
-/* Success (green) */
-@define-color success_color #A7C080;
-@define-color success_bg_color #3C4841;
-@define-color success_fg_color #D3C6AA;
-/* Warning (yellow) */
-@define-color warning_color #DBBC7F;
-@define-color warning_bg_color #DBBC7F;
-@define-color warning_fg_color #272E33;
-/* Error (bright red) */
-@define-color error_color #E67E80;
-@define-color error_bg_color #E67E80;
-@define-color error_fg_color #D3C6AA;
+/* Accent / Primary (iris) */
+@define-color accent_color #c4a7e7;
+@define-color accent_bg_color alpha(#c4a7e7, 0.4);
+@define-color accent_fg_color #e0def4;
+/* Destructive (love) */
+@define-color destructive_color #eb6f92;
+@define-color destructive_bg_color #eb6f92;
+@define-color destructive_fg_color #e0def4;
+/* Success (foam) */
+@define-color success_color #9ccfd8;
+@define-color success_bg_color #1f1d2e;
+@define-color success_fg_color #e0def4;
+/* Warning (gold) */
+@define-color warning_color #f6c177;
+@define-color warning_bg_color #f6c177;
+@define-color warning_fg_color #191724;
+/* Error (love) */
+@define-color error_color #eb6f92;
+@define-color error_bg_color #eb6f92;
+@define-color error_fg_color #e0def4;
 /* Window / View */
-@define-color window_bg_color #272E33;
-@define-color window_fg_color #D3C6AA;
-@define-color view_bg_color   #272E33;
-@define-color view_fg_color   #D3C6AA;
+@define-color window_bg_color #000000;
+@define-color window_fg_color #e0def4;
+@define-color view_bg_color   #000000;
+@define-color view_fg_color   #e0def4;
 /* Header bar */
 @define-color headerbar_bg_color @window_bg_color;
 @define-color headerbar_fg_color @window_fg_color;
@@ -33,8 +33,8 @@
 @define-color headerbar_backdrop_color @window_bg_color;
 @define-color headerbar_shade_color @window_bg_color;
 /* Card / Popover / Dialog */
-@define-color card_bg_color #2E383C;  /* bg1 from Everforest */
-@define-color card_fg_color #D3C6AA;
+@define-color card_bg_color #1f1d2e;  /* surface from Rosé Pine */
+@define-color card_fg_color #e0def4;
 @define-color card_shade_color rgba(0,0,0,0.07);
 @define-color dialog_bg_color @card_bg_color;
 @define-color dialog_fg_color @card_fg_color;
@@ -42,9 +42,9 @@
 @define-color popover_fg_color @card_fg_color;
 /* Misc */
 @define-color shade_color rgba(0, 0, 0, 0.36);
-@define-color scrollbar_outline_color rgba(127,187,179,0.5); /* Everforest blue */
+@define-color scrollbar_outline_color rgba(49,116,143,0.5); /* Rosé Pine pine */
 /* Sidebar */
-@define-color sidebar_bg_color #2E383C;
+@define-color sidebar_bg_color #1f1d2e;
 @define-color secondary_sidebar_bg_color @sidebar_bg_color;
 @define-color sidebar_backdrop_color @sidebar_bg_color;
 @define-color secondary_sidebar_backdrop_color @sidebar_bg_color;

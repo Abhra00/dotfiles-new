@@ -2,19 +2,19 @@
  *    ┏┓┏┓┓ ┏┓┳┓┏┓
  *    ┃ ┃┃┃ ┃┃┣┫┗┓
  *    ┗┛┗┛┗┛┗┛┛┗┗┛
- *          Everforest Colors
+ *          Black Colors
  */
 /*--------Color definitions------------*/
 * {
-       background:                 #1E2326;
-       background-alpha:           #1E2326d3;
-       background-alt:             #272E33;
-       background-alt-alpha:       #272E33d3;
-       foreground:                 #D3C6AA;
-       border-color:               #7FBBB3;
-       selected:                   #D699B6;
-       selected-alpha:             #D699B6d3;
-       selected-text:              #272E23;
-       active:                     #A7C080;
-       urgent:                     #E67E80;
+       background:                 #000000;
+       background-alpha:           #000000d3;
+       background-alt:             #191724;
+       background-alt-alpha:       #191724d3;
+       foreground:                 #e0def4;
+       border-color:               #c4a7e7;
+       selected:                   #ebbcba;
+       selected-alpha:             #ebbcbad3;
+       selected-text:              #000000;
+       active:                     #31748f;
+       urgent:                     #eb6f92;
 }

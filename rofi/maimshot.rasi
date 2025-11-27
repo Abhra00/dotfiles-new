@@ -1,8 +1,8 @@
 /**
  *    ┳┳┓┏┓┳┳┳┓┏┓┓┏┏┓┏┳┓
- *    ┃┃┃┣┫┃┃┃┃┗┓┣┫┃┃ ┃ 
- *    ┛ ┗┛┗┻┛ ┗┗┛┛┗┗┛ ┻ 
- *                      
+ *    ┃┃┃┣┫┃┃┃┃┗┓┣┫┃┃ ┃
+ *    ┛ ┗┛┗┻┛ ┗┗┛┛┗┗┛ ┻
+ *
  */
 
 /*****----- Configuration -----*****/
@@ -102,7 +102,7 @@ listview {
     cycle:                       true;
     scrollbar:                   false;
     layout:                      vertical;
-    
+
     spacing:                     15px;
     background-color:            transparent;
     cursor:                      "default";
@@ -120,7 +120,7 @@ element {
     cursor:                      pointer;
 }
 element-text {
-    font:                        "JetBrainsMono Nerd Font Propo 24";
+    font:                        "FiraCode Nerd Font Propo 24";
     background-color:            transparent;
     text-color:                  inherit;
     cursor:                      inherit;

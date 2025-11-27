@@ -2,10 +2,10 @@
  *    ┏┓┏┓┳┓┏┳┓┏┓
  *    ┣ ┃┃┃┃ ┃ ┗┓
  *    ┻ ┗┛┛┗ ┻ ┗┛
- *               
+ *
  */
 
 
 * {
-    font: "JetbrainsMono Nerd Font Propo 14";
+    font: "FiraCode Nerd Font Propo 14";
 }

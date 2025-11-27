@@ -15,8 +15,8 @@
             (6 . (variable-pitch bold 2.25))
             (7 . (variable-pitch bold 2.25))
             (8 . (variable-pitch bold 2.25))
-            (t . (variable-pitch 1.1)))
-            modus-themes-prompts '(semibold)
+            (t . (variable-pitch 1.1))
+            modus-themes-prompts '(semibold italic)
             modus-themes-common-palette-overrides
             `((accent-0                      "#7FBBB3")
               (accent-1                      "#83C092")

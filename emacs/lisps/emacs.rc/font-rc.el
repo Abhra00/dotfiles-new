@@ -23,7 +23,7 @@
 
 ;; Make sure both pitch types use JetBrains Mono
 (set-face-attribute 'fixed-pitch nil :family "JetBrains Mono" :height 170)
-(set-face-attribute 'variable-pitch nil :family "Ubuntu" :height 170)
+(set-face-attribute 'variable-pitch nil :family "SpaceGrotesk" :height 170)
 
 ;; Enable ligatures
 (dolist (char/ligature-re

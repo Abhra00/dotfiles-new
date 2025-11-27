@@ -82,30 +82,15 @@
  org-agenda-tags-column 0
  org-ellipsis "…")  ;; Display this instead of '...'
 
-;; when org-modern is ready, set org modern symbol font
+;; when org-modern is ready, set org modern settings
 (with-eval-after-load 'org-modern
   (setq org-modern-star 'replace
         org-modern-replace-stars
-        ["◉" "◎" "○" "◌" "◍" "●" "◯" "∙"])
+        ["◈" "◆" "★" "♠" "✸" "✿" "❀" "∙"])
   (setq org-modern-todo-faces
         '(("TODO" . org-todo)
           ("DONE" . org-done)))
-  (set-face-attribute 'org-modern-symbol nil :family "JetbrainsMono Nerd Font")
-
-  ;; Allow different heading sizes again
-  (dolist (pair '((org-level-1 . 2.85)
-                  (org-level-2 . 2.65)
-                  (org-level-3 . 2.45)
-                  (org-level-4 . 2.25)
-                  (org-level-5 . 2.25)
-                  (org-level-6 . 2.25)
-                  (org-level-7 . 2.25)
-                  (org-level-8 . 2.25)))
-    (set-face-attribute (car pair) nil
-                        :family "Ubuntu"
-                        :weight 'Bold
-                        :slant 'normal
-                        :height (floor (* 110 (cdr pair))))))
+  (set-face-attribute 'org-modern-symbol nil :family "JetbrainsMono Nerd Font Propo"))
 
 ;;; enable org-modern in all Org buffers
 (global-org-modern-mode)

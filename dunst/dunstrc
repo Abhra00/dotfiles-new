@@ -22,10 +22,10 @@ text_icon_padding = 0
 frame_width = 0
 sort = no
 idle_threshold = 0
-font = FiraCode Nerd Font Semibold 9
+font = Mononoki Nerd Font Semibold 9
 line_height = 0
 markup = full
-format = "<span size='xx-large' font_desc='MapleMono Medium 9' weight='bold' foreground='#c7a9ff'>%s</span>\n%b"
+format = "<span size='xx-large' font_desc='Mononoki Nerd Font Medium 9' weight='bold' foreground='#c7a9ff'>%s</span>\n%b"
 alignment = center
 vertical_alignment = center
 show_age_threshold = 60

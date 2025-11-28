@@ -4,10 +4,7 @@
 #
 
 # Fonts
-font-family = "Fira Code"
-font-family-bold = "Fira Code"
-font-family-italic = "Maple Mono"
-font-family-bold-italic = "Maple Mono"
+font-family = "Mononoki Nerd Font"
 font-family = "Symbols Nerd Font Mono"
 font-size = 14
 adjust-cell-height = 30%
@@ -57,8 +54,8 @@ gtk-single-instance = true
 gtk-tabs-location = bottom
 gtk-wide-tabs = false
 gtk-toolbar-style = flat
-window-padding-x = 20,20
-window-padding-y = 20,20
+window-padding-x = 20
+window-padding-y = 20
 window-padding-balance = true
 window-decoration = false
 

@@ -120,7 +120,7 @@ element {
     cursor:                      pointer;
 }
 element-text {
-    font:                        "FiraCode Nerd Font Propo 24";
+    font:                        "Mononoki Nerd Font Propo 24";
     background-color:            transparent;
     text-color:                  inherit;
     cursor:                      inherit;

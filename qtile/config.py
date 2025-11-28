@@ -18,7 +18,7 @@ mod         = "mod4"                       # Sets mod key to SUPER/WINDOWS
 alt         = "mod1"                       # Sets the alt key to left-alt key
 myTerm      = "ghostty"                    # My terminal of choice
 myBrowser   = "chromium"                   # My browser of choice
-myEditor    = "emacsclient -c -a 'emacs'"  # My editor of choice
+myEditor    = "ghostty -e nvim"            # My editor of choice
 myLauncher  = "rofi -show drun"            # My launcher of choice
 
 #---------------------- Define useful functions ----------------------#
@@ -208,7 +208,7 @@ for i in group_names:
     )
 
 #---------------------- Select colors ----------------------#
-colors = colors.BlackPine
+colors = colors.TokyoNight
 
 
 #---------------------- Layout management ----------------------#

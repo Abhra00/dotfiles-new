@@ -3,15 +3,15 @@
 #    ┗┛┗┛┗┛┗┛┛┗┗┛
 #
 
-BlackPine = [
-    ["#000000", "#000000",], # color[0] -> bg
-    ["#e0def4", "#e0def4",], # color[1] -> fg
-    ["#eb6f92", "#eb6f92",], # color[2] -> red
-    ["#31748f", "#31748f",], # color[3] -> green
-    ["#f6c177", "#f6c177",], # color[4] -> yellow
-    ["#9ccfd8", "#9ccfd8",], # color[5] -> blue
-    ["#c4a7e7", "#c4a7e7",], # color[6] -> magenta
-    ["#ebbcba", "#ebbcba",], # color[7] -> cyan
-    ["#31748f", "#31748f",], # color[8] -> teal
-    ["#26233a", "#26233a",]  # color[9] -> bg->light
+TokyoNight = [
+    ["#1a1b26", "#1a1b26",], # color[0] -> bg
+    ["#c0caf5", "#c0caf5",], # color[1] -> fg
+    ["#ff899d", "#ff899d",], # color[2] -> red
+    ["#9fe044", "#9fe044",], # color[3] -> green
+    ["#faba4a", "#faba4a",], # color[4] -> yellow
+    ["#8db0ff", "#8db0ff",], # color[5] -> blue
+    ["#c7a9ff", "#c7a9ff",], # color[6] -> magenta
+    ["#a4daff", "#a4daff",], # color[7] -> cyan
+    ["#1abc9c", "#1abc9c",], # color[8] -> teal
+    ["#414868", "#414868",]  # color[9] -> bg->light
         ]

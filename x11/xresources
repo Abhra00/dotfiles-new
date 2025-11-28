@@ -15,47 +15,24 @@ Xft.lcdfilter:	lcddefault
 /* Font */
 *.font:            FiraCode Nerd Font:style=Medium:size=10:antialias=true:autohint=true
 
-/*
-    ┏┓┓┏┏┓┳┓┏┓┏┓┳┓┏┓┏┓┏┳┓  
-    ┣ ┃┃┣ ┣┫┣ ┃┃┣┫┣ ┗┓ ┃   
-    ┗┛┗┛┗┛┛┗┻ ┗┛┛┗┗┛┗┛ ┻   
-*/                         
+/* Tokyonight */
+*background: #1a1b26
+*foreground: #c0caf5
 
-! Background and Foreground
-*.background: #272e33
-*.foreground: #d3c6aa
+*color0: #15161e
+*color1: #f7768e
+*color2: #9ece6a
+*color3: #e0af68
+*color4: #7aa2f7
+*color5: #bb9af7
+*color6: #7dcfff
+*color7: #a9b1d6
 
-! Cursor
-*.cursorColor: #d3c6aa
-
-! Black
-*.color0:  #495156
-*.color8:  #495156
-
-! Red
-*.color1:  #e67e80
-*.color9:  #e67e80
-
-! Green
-*.color2:  #a7c080
-*.color10: #a7c080
-
-! Yellow
-*.color3:  #dbbc7f
-*.color11: #dbbc7f
-
-! Blue
-*.color4:  #7fbbb3
-*.color12: #7fbbb3
-
-! Magenta
-*.color5:  #d699b6
-*.color13: #d699b6
-
-! Cyan
-*.color6:  #83c092
-*.color14: #83c092
-
-! White
-*.color7:  #d3c6aa
-*.color15: #d3c6aa
+*color8: #414868
+*color9: #f7768e
+*color10: #9ece6a
+*color11: #e0af68
+*color12: #7aa2f7
+*color13: #bb9af7
+*color14: #7dcfff
+*color15: #c0caf5

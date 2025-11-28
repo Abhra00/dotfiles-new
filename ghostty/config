@@ -3,60 +3,72 @@
 #  ┗┛┛┗┗┛┗┛ ┻  ┻ ┗┛
 #
 
-
-
-#--------Appearance----------#
-#----------------------------#
-background-opacity = 0.95
-window-padding-x = 20
-window-padding-y = 20
-window-padding-balance = 1
-
-#---------Theme-----------#
-#-------------------------#
-theme = blackpine
-
-#---------Fonts----------#
-#------------------------#
+# Fonts
 font-family = "Fira Code"
 font-family-bold = "Fira Code"
 font-family-italic = "Maple Mono"
 font-family-bold-italic = "Maple Mono"
 font-family = "Symbols Nerd Font Mono"
+font-size = 14
 adjust-cell-height = 30%
-font-size = 18
+adjust-underline-position = 4
 
-#---Shell Integration---#
-#-----------------------#
-shell-integration-features = no-cursor
+# Mouse
+mouse-hide-while-typing = true
 
-#--------Cursor----------#
-#------------------------#
+# Theme
+theme = tokyonight
+cursor-invert-fg-bg = true
+background-opacity = 0.97
+window-theme = ghostty
+
+# Cursor
 cursor-style = "block"
 adjust-cursor-thickness = 120%
 adjust-cursor-height = 40%
 cursor-style-blink = true
 
-#---------Shaders----------#
-#--------------------------#
-custom-shader-animation = always
-custom-shader = "/home/bugs/.config/ghostty/shaders/cursor_warp.glsl"
-custom-shader = "/home/bugs/.config/ghostty/shaders/sonic_boom_cursor.glsl"
-
-#--------Keybinds----------#
-#--------------------------#
+# keybindings
+keybind = clear
+keybind = ctrl+shift+h=goto_split:left
+keybind = ctrl+shift+j=goto_split:bottom
+keybind = ctrl+shift+k=goto_split:top
+keybind = ctrl+shift+l=goto_split:right
+keybind = alt+shift+t=new_tab
+keybind = alt+shift+h=previous_tab
+keybind = alt+shift+l=next_tab
+keybind = alt+shift+comma=move_tab:-1
+keybind = alt+shift+period=move_tab:1
+keybind = alt+shift+c=copy_to_clipboard
+keybind = alt+shift+v=paste_from_clipboard
+keybind = alt+shift+enter=new_split:auto
+keybind = alt+shift+i=inspector:toggle
+keybind = alt+shift+m=toggle_split_zoom
+keybind = alt+shift+r=reload_config
+keybind = alt+shift+s=write_screen_file:open
+keybind = alt+shift+w=close_surface
 keybind = alt+shift+page_up=increase_font_size:1
 keybind = alt+shift+page_down=decrease_font_size:1
 keybind = alt+z=jump_to_prompt:-1
 keybind = alt+x=jump_to_prompt:1
 
-
-#----------Misc--------#
-#----------------------#
-window-inherit-working-directory = false
-working-directory = home
+# Window
+gtk-single-instance = true
+gtk-tabs-location = bottom
+gtk-wide-tabs = false
+gtk-toolbar-style = flat
+window-padding-x = 20,20
+window-padding-y = 20,20
+window-padding-balance = true
 window-decoration = false
-gtk-titlebar = false
-confirm-close-surface = false
-copy-on-select = true
-clipboard-trim-trailing-spaces = true
+
+# Shaders
+custom-shader-animation = always
+custom-shader = "shaders/cursor_warp.glsl"
+custom-shader = "shaders/sonic_boom_cursor.glsl"
+
+# Other
+window-inherit-working-directory = false
+copy-on-select = clipboard
+shell-integration-features = no-cursor,sudo,no-title,ssh-env
+app-notifications = no-clipboard-copy

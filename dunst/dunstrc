@@ -15,18 +15,17 @@ transparency = 0
 corner_radius = 0
 gap_size = 4
 separator_height = 1
-separator_color = "#26233a"
+separator_color = "#414868"
 padding = 15
 horizontal_padding = 15
 text_icon_padding = 0
 frame_width = 0
-frame_color = "#6e6a86"
 sort = no
 idle_threshold = 0
 font = FiraCode Nerd Font Semibold 9
 line_height = 0
 markup = full
-format = "<span size='xx-large' font_desc='MapleMono Medium 9' weight='bold' foreground='#D699B6'>%s</span>\n%b"
+format = "<span size='xx-large' font_desc='MapleMono Medium 9' weight='bold' foreground='#c7a9ff'>%s</span>\n%b"
 alignment = center
 vertical_alignment = center
 show_age_threshold = 60
@@ -61,20 +60,19 @@ class = Dunst
 #           URGENCIES
 # --------------------------------------
 [urgency_low]
-timeout = 3
-background = "#000000"
-foreground = "#e0def4"
-highlight = "#c4a7e7"
+    background = "#16161e"
+    foreground = "#c0caf5"
+    frame_color = "#c0caf5"
+    highlight = "#9fe044"
 
 [urgency_normal]
-timeout = 5
-background = "#000000"
-foreground = "#e0def4"
-highlight = "#c4a7e7"
+    background = "#1a1b26"
+    foreground = "#c0caf5"
+    frame_color = "#c0caf5"
+    highlight = "#9fe044"
 
 [urgency_critical]
-timeout = 0
-timeout = 3
-background = "#000000"
-foreground = "#eb6f92"
-highlight = "#eb6f92"
+    background = "#292e42"
+    foreground = "#db4b4b"
+    frame_color = "#db4b4b"
+    highlight = "#ff899d"

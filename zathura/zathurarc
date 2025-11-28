@@ -8,6 +8,7 @@ set recolor-keephue              "true"
 set window-title-home-tilde      true
 set statusbar-basename           true
 set selection-clipboard          clipboard
+set render-loading 		 true
 set database                     null
 # Keymaps (unchanged)
 map u                             scroll half-up
@@ -33,33 +34,31 @@ map [fullscreen] g                goto top
 # --------------------------------------
 #           Colors
 # --------------------------------------
-# Background / Foreground
-set default-bg                    "#000000"
-set default-fg                    "#e0def4"
-# Status Bar
-set statusbar-fg                  "#e0def4"
-set statusbar-bg                  "#191724"
-# Input Bar
-set inputbar-bg                   "#191724"
-set inputbar-fg                   "#e0def4"
-# Notifications
-set notification-bg               "#191724"
-set notification-fg               "#e0def4"
-set notification-error-bg         "#191724"
-set notification-error-fg         "#eb6f92"     # rosé pine love
-set notification-warning-bg       "#191724"
-set notification-warning-fg       "#f6c177"     # rosé pine gold
-# Highlights
-set highlight-color               "#31748f"     # rosé pine pine
-set highlight-active-color        "#c4a7e7"     # rosé pine iris
-# Completion Menu
-set completion-bg                 "#000000"
-set completion-fg                 "#e0def4"
-set completion-highlight-bg       "#c4a7e7"     # iris accent
-set completion-highlight-fg       "#e0def4"
-# Recolor (PDF dark mode)
-set recolor-lightcolor            "#000000"
-set recolor-darkcolor             "#e0def4"
-# Fonts / GUI
-set font                          "FiraCode Nerd Font"
-set guioptions                    none
+set notification-error-bg 	 "#f7768e"
+set notification-error-fg 	 "#c0caf5"
+set notification-warning-bg 	 "#e0af68"
+set notification-warning-fg 	 "#414868"
+set notification-bg 		 "#1a1b26"
+set notification-fg 		 "#c0caf5"
+set completion-bg 		 "#1a1b26"
+set completion-fg 		 "#a9b1d6"
+set completion-group-bg 	 "#1a1b26"
+set completion-group-fg 	 "#a9b1d6"
+set completion-highlight-bg 	 "#414868"
+set completion-highlight-fg 	 "#c0caf5"
+set index-bg 			 "#1a1b26"
+set index-fg 			 "#c0caf5"
+set index-active-bg 		 "#414868"
+set index-active-fg 		 "#c0caf5"
+set inputbar-bg 		 "#1a1b26"
+set inputbar-fg 		 "#c0caf5"
+set statusbar-bg 		 "#1a1b26"
+set statusbar-fg 		 "#c0caf5"
+set highlight-color 		 "#e0af68"
+set highlight-active-color 	 "#9ece6a"
+set default-bg 			 "#1a1b26"
+set default-fg 			 "#c0caf5"
+set render-loading-fg 		 "#1a1b26"
+set render-loading-bg 		 "#c0caf5"
+set recolor-lightcolor 		 "#1a1b26"
+set recolor-darkcolor 		 "#c0caf5"

@@ -167,7 +167,7 @@ keys = [
 # Group properties
 groups = []
 group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
-group_labels = ["", "", "", "", "", "", "", "", "", ""]
+group_labels = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
 group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall"]
 
 # Add regular groups
@@ -305,16 +305,16 @@ def init_widgets_list():
                  ),
         widget.Spacer(length=bar.STRETCH),
         widget.GroupBox(
-                 fontsize = 16,
+                 fontsize = 15,
                  margin_y = 5,
-                 margin_x = 14,
-                 padding_y = 0,
-                 padding_x = 2,
+                 margin_x = 5,
+                 padding_y = 4,
+                 padding_x = 4,
                  borderwidth = 3,
                  active = colors[1],
                  inactive = colors[9],
                  rounded = False,
-                 hide_unused = False,
+                 hide_unused = True,
                  highlight_color = colors[0],
                  highlight_method = "text",
                  this_current_screen_border = colors[6],
@@ -411,7 +411,7 @@ def init_widgets_screen1():
 
 
 def init_screens():
-    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), margin=[8, 12, 0, 12], size=44))]
+    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), margin=[8, 12, 0, 12], size=48))]
 
 screens = init_screens()
 

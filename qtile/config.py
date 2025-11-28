@@ -185,7 +185,7 @@ groups.extend([
     ScratchPad("SPWALL", [DropDown("WallSelector", "nsxiv /home/bugs/walls/", x=0.25, y=0.05, width=0.5, height=0.7, on_focus_lost_hide=False)]),
     ScratchPad("SPFM", [DropDown("FileManager", "ghostty -e yazi", x=0.2, y=0.02, width=0.55, height=0.75, on_focus_lost_hide=False)]),
     ScratchPad("SPCALC", [DropDown("Calculator", "ghostty -e bc", x=0.2, y=0.02, width=0.50, height=0.50, on_focus_lost_hide=False)]),
-    ScratchPad("SPTERM", [DropDown("Term", "ghostty -e bash", x=0.2, y=0.02, width=0.50, height=0.50, on_focus_lost_hide=False)]),
+    ScratchPad("SPTERM", [DropDown("Term", "ghostty -e zsh", x=0.2, y=0.02, width=0.50, height=0.50, on_focus_lost_hide=False)]),
 ])
 
 # Only bind keys for regular groups (not scratchpads)

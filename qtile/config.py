@@ -16,7 +16,7 @@ import colors
 #---------------------- Define programs ----------------------#
 mod         = "mod4"                       # Sets mod key to SUPER/WINDOWS
 alt         = "mod1"                       # Sets the alt key to left-alt key
-myTerm      = "kitty"                      # My terminal of choice
+myTerm      = "ghostty"                    # My terminal of choice
 myBrowser   = "chromium"                   # My browser of choice
 myEditor    = "emacsclient -c -a 'emacs'"  # My editor of choice
 myLauncher  = "rofi -show drun"            # My launcher of choice
@@ -183,9 +183,9 @@ for i in range(len(group_names)):
 # Add scratchpads separately (outside the loop since they're not tied to each group)
 groups.extend([
     ScratchPad("SPWALL", [DropDown("WallSelector", "nsxiv /home/bugs/walls/", x=0.25, y=0.05, width=0.5, height=0.7, on_focus_lost_hide=False)]),
-    ScratchPad("SPFM", [DropDown("FileManager", "kitty -e yazi", x=0.2, y=0.02, width=0.55, height=0.75, on_focus_lost_hide=False)]),
-    ScratchPad("SPCALC", [DropDown("Calculator", "kitty -e bc", x=0.2, y=0.02, width=0.50, height=0.50, on_focus_lost_hide=False)]),
-    ScratchPad("SPTERM", [DropDown("Term", "kitty -e bash", x=0.2, y=0.02, width=0.50, height=0.50, on_focus_lost_hide=False)]),
+    ScratchPad("SPFM", [DropDown("FileManager", "ghostty -e yazi", x=0.2, y=0.02, width=0.55, height=0.75, on_focus_lost_hide=False)]),
+    ScratchPad("SPCALC", [DropDown("Calculator", "ghostty -e bc", x=0.2, y=0.02, width=0.50, height=0.50, on_focus_lost_hide=False)]),
+    ScratchPad("SPTERM", [DropDown("Term", "ghostty -e bash", x=0.2, y=0.02, width=0.50, height=0.50, on_focus_lost_hide=False)]),
 ])
 
 # Only bind keys for regular groups (not scratchpads)

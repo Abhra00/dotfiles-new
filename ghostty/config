@@ -1,0 +1,62 @@
+#  ┏┓┓┏┏┓┏┓┏┳┓┏┳┓┓┏
+#  ┃┓┣┫┃┃┗┓ ┃  ┃ ┗┫
+#  ┗┛┛┗┗┛┗┛ ┻  ┻ ┗┛
+#
+
+
+
+#--------Appearance----------#
+#----------------------------#
+background-opacity = 0.95
+window-padding-x = 20
+window-padding-y = 20
+window-padding-balance = 1
+
+#---------Theme-----------#
+#-------------------------#
+theme = blackpine
+
+#---------Fonts----------#
+#------------------------#
+font-family = "Fira Code"
+font-family-bold = "Fira Code"
+font-family-italic = "Maple Mono"
+font-family-bold-italic = "Maple Mono"
+font-family = "Symbols Nerd Font Mono"
+adjust-cell-height = 30%
+font-size = 18
+
+#---Shell Integration---#
+#-----------------------#
+shell-integration-features = no-cursor
+
+#--------Cursor----------#
+#------------------------#
+cursor-style = "block"
+adjust-cursor-thickness = 120%
+adjust-cursor-height = 40%
+cursor-style-blink = true
+
+#---------Shaders----------#
+#--------------------------#
+custom-shader-animation = always
+custom-shader = "/home/bugs/.config/ghostty/shaders/cursor_warp.glsl"
+custom-shader = "/home/bugs/.config/ghostty/shaders/sonic_boom_cursor.glsl"
+
+#--------Keybinds----------#
+#--------------------------#
+keybind = alt+shift+page_up=increase_font_size:1
+keybind = alt+shift+page_down=decrease_font_size:1
+keybind = alt+z=jump_to_prompt:-1
+keybind = alt+x=jump_to_prompt:1
+
+
+#----------Misc--------#
+#----------------------#
+window-inherit-working-directory = false
+working-directory = home
+window-decoration = false
+gtk-titlebar = false
+confirm-close-surface = false
+copy-on-select = true
+clipboard-trim-trailing-spaces = true

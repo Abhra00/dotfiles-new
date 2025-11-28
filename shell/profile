@@ -9,9 +9,9 @@ export PATH="$PATH:$(find ~/.local/bin -type d | paste -sd ':' -)"
 unsetopt PROMPT_SP 2>/dev/null
 
 # Default programs:
-export EDITOR="emacsclient -t"
-export VISUAL="emacsclient -c"
-export TERMINAL="kitty"
+export EDITOR="nvim"
+export VISUAL="nvim"
+export TERMINAL="ghostty"
 export TERMINAL_PROG="ghostty"
 export BROWSER="chromium"
 

@@ -22,7 +22,7 @@ window-theme = ghostty
 # Cursor
 cursor-style = "block"
 adjust-cursor-thickness = 120%
-adjust-cursor-height = 40%
+adjust-cursor-height = 30%
 cursor-style-blink = true
 
 # keybindings

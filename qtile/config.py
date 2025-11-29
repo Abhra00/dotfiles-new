@@ -11,7 +11,6 @@ import threading
 from libqtile import bar, extension, hook, layout, qtile, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen, ScratchPad, DropDown
 from libqtile.lazy import lazy
-import colors
 
 #---------------------- Define programs ----------------------#
 mod         = "mod4"                       # Sets mod key to SUPER/WINDOWS
@@ -167,7 +166,7 @@ keys = [
 # Group properties
 groups = []
 group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
-group_labels = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+group_labels = ["", "", "", "", "", "", "", "", "", ""]
 group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall"]
 
 # Add regular groups
@@ -207,24 +206,20 @@ for i in group_names:
         ]
     )
 
-#---------------------- Select colors ----------------------#
-colors = colors.TokyoNight
-
-
 #---------------------- Layout management ----------------------#
-layout_theme = { "border_width": 1,
+layout_theme = { "border_width": 2,
                  "margin": 10,
-                 "border_focus": colors[5],
-                 "border_normal": colors[0]
+                 "border_focus": "#7DCFFF",
+                 "border_normal": "#292E42"
                 }
 
 layouts = [
     layout.MonadTall(**layout_theme),
-    layout.MonadWide(**layout_theme),
     layout.Tile(**layout_theme),
     layout.Max(**layout_theme),
-    #layout.Bsp(**layout_theme),
+    layout.Bsp(**layout_theme),
     #layout.Floating(**layout_theme)
+    #layout.MonadWide(**layout_theme),
     #layout.RatioTile(**layout_theme),
     #layout.VerticalTile(**layout_theme),
     #layout.Matrix(**layout_theme),
@@ -234,17 +229,17 @@ layouts = [
     #     font = "MononokiNerdFontPropo",
     #     fontsize = 11,
     #     border_width = 0,
-    #     bg_color = colors[0],
-    #     active_bg = colors[8],
-    #     active_fg = colors[2],
-    #     inactive_bg = colors[1],
-    #     inactive_fg = colors[0],
+    #     bg_color = "#1A1B26",
+    #     active_bg = "#FF9E64",
+    #     active_fg = "#1A1B26",
+    #     inactive_bg = "#292E42",
+    #     inactive_fg = "#C0CAF5",
     #     padding_left = 8,
     #     padding_x = 8,
     #     padding_y = 6,
     #     sections = ["ONE", "TWO", "THREE"],
     #     section_fontsize = 10,
-    #     section_fg = colors[7],
+    #     section_fg = "#1ABC9C",
     #     section_top = 15,
     #     section_bottom = 15,
     #     level_shift = 8,
@@ -259,149 +254,219 @@ layouts = [
 #---------------------- Widgets ----------------------#
 widget_defaults = dict(
     font="MononokiNerdFontPropo Bold",
-    fontsize = 12,
-    padding = 0,
-    background=colors[0]
+    fontsize=14,
+    padding=0,
+    background="#1A1b26",
 )
 
 extension_defaults = widget_defaults.copy()
 
 def init_widgets_list():
     widgets_list = [
-        widget.Spacer(length = 8),
-        widget.TextBox(
-                 text = '  Find',
-                 font = "MononokiNerdFontPropo Bold",
-                 foreground = colors[6],
-                 padding = 2,
-                 fontsize = 14,
-		 mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myLauncher)},
+        widget.Spacer(
+                 length=15,
+                 background='#1A1B26',
                  ),
-	widget.Spacer(length = 8),
-        widget.TextBox(
-                 text = '|',
-                 font = "MononokiNerdFontPropo Bold",
-                 foreground = colors[9],
-                 padding = 2,
-                 fontsize = 14
+        widget.Image(
+                 filename='~/.config/qtile/assets/launcher_icon.png',
+                 margin = 2,
+                 background='#1A1B26',
+		         mouse_callbacks={'Button1': lambda: qtile.cmd_spawn('pmenu')},
+                 ),
+        widget.Image(
+                 filename='~/.config/qtile/assets/curve_right.png',
+                 ),
+        widget.GroupBox(
+                 font="Symbols Nerd Font",
+                 fontsize=24,
+                 borderwidth=3,
+                 highlight_method='block',
+                 active='#FF9E64',
+                 block_highlight_text_color="#BB9AF7",
+                 highlight_color='#7AA2F7',
+                 inactive='#1A1B26',
+                 foreground='#C0CAF5',
+                 background='#292E42',
+                 this_current_screen_border='#292E42',
+                 this_screen_border='#292E42',
+                 other_current_screen_border='#292E42',
+                 other_screen_border='#292E42',
+                 urgent_border='#292E42',
+                 rounded=True,
+                 disable_drag=True,
+                 ),
+        widget.Spacer(
+                 length=8,
+                 background='#292E42',
+                 ),
+        widget.Image(
+                 filename='~/.config/qtile/assets/slant_right.png',
                  ),
         widget.CurrentLayout(
-                 mode = "text",
-                 fmt = "󰕰 {}",
-                 foreground = colors[7],
-                 padding = 5
+                 mode = 'icon',
+                 custom_icon_paths=["~/.config/qtile/assets/layout"],
+                 background='#292E42',
+                 scale=0.50,
+                 ),
+        widget.Spacer(
+                 length=4,
+                 background='#292E42',
+                 ),
+        widget.CurrentLayout(
+                 mode='text',
+                 fontsize = 14,
+                 background='#292E42',
+                 foreground='#9D7CD8',
+                 ),
+        widget.Image(
+                 filename='~/.config/qtile/assets/curve_left.png',
                  ),
         widget.TextBox(
-                 text = '|',
-                 font = "MononokiNerdFontPropo Bold",
-                 foreground = colors[9],
-                 padding = 2,
-                 fontsize = 14
+                 text=" ",
+                 font="Symbols Nerd Font",
+                 fontsize=20,
+                 background='#1A1B26',
+                 foreground='#1ABC9C',
+		         mouse_callbacks={'Button1': lambda: qtile.cmd_spawn(myLauncher)},
+                 ),
+        widget.TextBox(
+                 fmt='Search',
+                 background='#1A1B26',
+                 font="Mononoki Nerd Font Propo Bold",
+                 fontsize=14,
+                 foreground='#1ABC9C',
+		         mouse_callbacks={'Button1': lambda: qtile.cmd_spawn(myLauncher)},
+                 ),
+        widget.Image(
+                 filename='~/.config/qtile/assets/right_half_circle.png',
                  ),
         widget.WindowName(
-                 foreground = colors[5],
-                 padding = 8,
-                 max_chars = 40
+                 background='#292E42',
+                 font="Mononoki Nerd Font Propo Bold Italic",
+                 fontsize=14,
+                 empty_group_string="Desktop",
+                 max_chars=130,
+                 foreground='#FF9E64',
                  ),
-        widget.Spacer(length=bar.STRETCH),
-        widget.GroupBox(
-                 fontsize = 15,
-                 margin_y = 5,
-                 margin_x = 5,
-                 padding_y = 4,
-                 padding_x = 4,
-                 borderwidth = 3,
-                 active = colors[1],
-                 inactive = colors[9],
-                 rounded = False,
-                 hide_unused = True,
-                 highlight_color = colors[0],
-                 highlight_method = "text",
-                 this_current_screen_border = colors[6],
-                 this_screen_border = colors [6],
-                 other_current_screen_border = colors[4],
-                 other_screen_border = colors[4],
+        widget.Image(
+                 filename='~/.config/qtile/assets/left_half_circle.png',
                  ),
-        widget.Spacer(length=bar.STRETCH),
-        widget.Systray(padding = 6),
+        widget.Systray(
+                 background='#1A1B26',
+                 fontsize=2,
+                 ),
         widget.TextBox(
-                 text = '|',
-                 font = "MononokiNerdFontPropo Bold",
-                 foreground = colors[9],
-                 padding = 2,
-                 fontsize = 14
+                 text=' ',
+                 background='#1A1B25',
+                 ),
+        widget.Image(
+                 filename='~/.config/qtile/assets/curve_right.png',
+                 background='#292E42',
+                 ),
+        widget.TextBox(
+                 text="󰛀 ",
+                 font="Symbols Nerd Font",
+                 fontsize=20,
+                 background='#292E42',
+                 foreground='#7AA2F7',
+                 mouse_callbacks = {
+                     'Button1': lazy.function(run_paru_and_refresh)
+                     },
                  ),
         widget.GenPollText(
                  name = 'updates',
                  func = lambda: subprocess.check_output(['pacupdates']).decode('utf-8').strip(),
                  update_interval = 3600,
-                 foreground = colors[2],
+                 background='#292E42',
+                 foreground='#7AA2F7',
                  padding = 2,
                  mouse_callbacks = {
                      'Button1': lazy.function(run_paru_and_refresh)
                      },
                  ),
+        widget.Image(
+                 filename='~/.config/qtile/assets/slant_left.png',
+                 ),
         widget.TextBox(
-                 text = '|',
-                 font = "MononokiNerdFontPropo Bold",
-                 foreground = colors[9],
-                 padding = 2,
-                 fontsize = 14
+                 text="󰍛",
+                 font="Symbols Nerd Font",
+                 fontsize=20,
+                 background='#292E42',
+                 foreground='#7AA2F7',
+                 ),
+        widget.Memory(
+                 background='#292E42',
+                 format='{MemUsed: .0f}{mm}',
+                 foreground='#7AA2F7',
+                 font="Mononoki Nerd Font Propo Bold",
+                 fontsize=14,
+                 update_interval=5,
+                 ),
+        widget.Image(
+                 filename='~/.config/qtile/assets/slant_left.png',
+                 ),
+        widget.Spacer(
+                 length=8,
+                 background='#292E42',
+                ),
+        widget.TextBox(
+                 text=" ",
+                 font="Symbols Nerd Font",
+                 fontsize=20,
+                 background='#292E42',
+                 foreground='#7AA2F7',
                  ),
         widget.Battery(
-                 format='󰁹 {percent:2.0%} {char}',
-                 charge_char='CHR',
-                 discharge_char='DIS',
-                 empty_char='EMP',
-                 full_char='FUL',
-                 unknown_char='UKN',
-                 not_charging_char = 'NOT',
-                 foreground = colors[3],
-                 update_interval=30,
-                 padding = 2,
+                 font="Mononoki Nerd Font Propo Bold",
+                 fontsize=14,
+                 background='#292E42',
+                 foreground='#7AA2F7',
+                 format='{percent:2.0%}',
+                 ),
+        widget.Image(
+                 filename='~/.config/qtile/assets/slant_left.png',
+                 ),
+        widget.Spacer(
+                 length=8,
+                 background='#292E42',
                  ),
         widget.TextBox(
-                 text = '|',
-                 font = "MononokiNerdFontPropo Bold",
-                 foreground = colors[9],
-                 padding = 2,
-                 fontsize = 14
+                 text=" ",
+                 font="Symbols Nerd Font",
+                 fontsize=20,
+                 background='#292E42',
+                 foreground='#7AA2F7',
                  ),
-        widget.Volume(
-                 foreground = colors[7],
-                 padding = 2,
-                 fmt = ' {}',
+		widget.Volume(
+				 font="Mononoki Nerd Font Propo Bold",
+				 fontsize=14,
+                 background='#292E42',
+                 foreground='#7AA2F7',
+				 unmute_format="{volume}%",
+				 mute_format="M",
+				 ),
+        widget.Image(
+                 filename='~/.config/qtile/assets/slant_left.png',
+                 background='#292E42',
                  ),
         widget.TextBox(
-                 text = '|',
-                 font = "MononokiNerdFontPropo Bold",
-                 foreground = colors[9],
-                 padding = 2,
-                 fontsize = 14
+                 text=" ",
+                 font="Symbols Nerd Font",
+                 fontsize=20,
+                 background='#292E42',
+                 foreground='#7AA2F7',
                  ),
         widget.Clock(
-                 foreground = colors[8],
-                 padding = 2,
-                 mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn('notify-date')},
-                 format = "󰥔 %H:%M",
+                 format='%I:%M %p',
+                 background='#292E42',
+                 foreground='#7AA2F7',
+                 font="Mononoki Nerd Font Propo Bold",
+                 fontsize=14,
                  ),
-        widget.TextBox(
-                 text = '|',
-                 font = "MononokiNerdFontPropo Bold",
-                 foreground = colors[9],
-                 padding = 2,
-                 fontsize = 14
-                 ),
-	widget.Spacer(length = 8),
-        widget.TextBox(
-                 text = 'Exit  ',
-                 font = "MononokiNerdFontPropo Bold",
-                 foreground = colors[2],
-                 padding = 2,
-                 fontsize = 14,
-		 mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn("pmenu")},
-                 ),
-        widget.Spacer(length = 8),
+        widget.Spacer(
+                 length=18,
+                 background='#292E42',
+                ),
         ]
     return widgets_list
 
@@ -411,7 +476,7 @@ def init_widgets_screen1():
 
 
 def init_screens():
-    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), margin=[8, 12, 0, 12], size=48))]
+    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), margin=[8, 12, 0, 12], size=44))]
 
 screens = init_screens()
 
@@ -429,8 +494,8 @@ dgroups_app_rules = []  # type: list
 follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
-floating_layout = layout.Floating(
-    border_focus=colors[8],
+floating_layout=layout.Floating(
+    border_focus="#FF9E64",
     border_width=2,
     float_rules=[
         # Run the utility of `xprop` to see the wm class and name of an X client.

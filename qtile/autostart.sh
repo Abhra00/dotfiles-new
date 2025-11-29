@@ -44,9 +44,6 @@ if [ -f /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 ]; then
         || /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 fi
 
-# Emacs daemon
-pgrep -x emacs >/dev/null || emacs --daemon &
-
 # Copyq daemon
 pgrep -x copyq >/dev/null || copyq --start-server &
 

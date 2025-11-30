@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# This script does the following:
+#	Run by itself, set the wallpaper (at X start).
+#	If given a file, set that as the new wallpaper.
+#	If given a directory, choose random file in it.
+
+# Location of link to wallpaper link.
+bgloc="${XDG_DATA_HOME:-$HOME/walls}/bg"
+bgsqreloc="${XDG_DATA_HOME:-$HOME/walls}/bg.sqre"
+
+# Give -s as parameter to make notifications silent.
+while getopts "s" o; do case "${o}" in
+    s) silent='1' ;;
+    esac done
+
+shift $((OPTIND - 1))
+
+trueloc="$(readlink -f "$1")" &&
+    case "$(file --mime-type -b "$trueloc")" in
+    image/*) ln -sf "$trueloc" "$bgloc" && magick "$trueloc" -strip -thumbnail 500x500^ -gravity center -extent 500x500 "$bgsqreloc" && [ -z "$silent" ] && notify-send -i "$bgsqreloc" "Wallpaper Changed" ;;
+    inode/directory) ln -sf "$(find "$trueloc" -iregex '.*.\(jpg\|jpeg\|png\|gif\)' -type f | shuf -n 1)" "$bgloc" && [ -z "$silent" ] && notify-send -i "$bgloc" "Random Wallpaper chosen." ;;
+    *)
+        [ -z "$silent" ] && notify-send "🖼️ Error" "Not a valid image or directory."
+        exit 1
+        ;;
+    esac
+
+xwallpaper --zoom "$bgloc"

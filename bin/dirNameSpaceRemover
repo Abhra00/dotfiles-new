@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# Root directory (default: current directory)
+root_dir="${1:-.}"
+
+# Find only subdirectories (depth 1), sort longest names first to avoid renaming conflicts
+find "$root_dir" -mindepth 1 -maxdepth 1 -type d | sort -r | while IFS= read -r dir; do
+  base=$(basename "$dir")
+  clean_base=$(echo "$base" | tr -d ' ')
+  parent=$(dirname "$dir")
+  new_path="$parent/$clean_base"
+
+  if [ "$dir" != "$new_path" ]; then
+    mv -n "$dir" "$new_path"
+    echo "Renamed: $dir → $new_path"
+  fi
+done

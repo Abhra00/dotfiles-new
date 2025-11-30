@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+
+# Unmount USB drives or Android phones. Replaces the older `dmenuumount`. Fewer
+# prompts and also de-decrypts LUKS drives that are unmounted.
+
+set -e
+
+mounteddroids="$(grep simple-mtpfs /etc/mtab | awk '{print "📱" $2}')"
+
+lsblkoutput="$(lsblk -nrpo "name,type,size,mountpoint")"
+
+# Fix the awk comparison typo: use == for crypt type
+mounteddrives="$(echo "$lsblkoutput" | awk '($2=="part" || $2=="crypt") && $4 !~ /\/boot|\/home$|SWAP/ && length($4) > 1 {printf "💾%s (%s)\n", $4, $3}')"
+
+allunmountable="$(echo "$mounteddroids
+$mounteddrives" | sed '/^$/d;s/ *$//')"
+
+test -n "$allunmountable"
+
+chosen="$(echo "$allunmountable" | rofi -dmenu -theme $HOME/.config/rofi/generalMenu.rasi -i -p "Unmount which drive?")"
+test -n "$chosen"
+
+# Extract the mountpoint path from chosen.
+# chosen looks like: 💾/mnt/usbdrive (16G)
+# So strip prefix icon (💾 or 📱), and also remove size info after space.
+
+# Remove first character (emoji) and split off size in parenthesis:
+mountpoint="$(echo "$chosen" | sed 's/^.\(.*\) (.*)$/\1/')"
+
+# Double-check mountpoint exists:
+if [ ! -d "$mountpoint" ]; then
+    echo "Mountpoint $mountpoint does not exist."
+    exit 1
+fi
+
+sudo -A umount -l "$mountpoint"
+notify-send "Device unmounted." "$mountpoint has been unmounted."
+
+# Now check if this is a decrypted LUKS device and close it if so.
+
+# Find device name associated with this mountpoint
+cryptid="$(echo "$lsblkoutput" | awk -v mp="$mountpoint" '$4 == mp {print $1; exit}')"
+
+# Check if /dev/mapper/<name> exists and close it
+mappername="${cryptid##*/}"  # basename
+
+if [ -b "/dev/mapper/$mappername" ]; then
+    sudo -A cryptsetup close "$mappername"
+    notify-send "🔒 Device decryption closed." "Drive $mappername is now securely locked again."
+fi
+

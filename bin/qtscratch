@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# Scratchpad window title
+TITLE="ChatGPT_Scratchpad"
+
+# Check if a qutebrowser window with that title already exists
+if ! xdotool search --name "$TITLE" >/dev/null 2>&1; then
+    # Not found, launch new window
+    qutebrowser \
+        --target window \
+        :set window.title_format "$TITLE" \
+        :set tabs.show never \
+        :set statusbar.show never \
+        :set window.hide_decoration true \
+        https://chat.openai.com &
+else
+    # Found, toggle it using dwm's scratchpad mechanism
+    # (This part is handled by dwm's keybinding)
+    :
+fi
+

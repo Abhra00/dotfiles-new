@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+notify-send -i drive-harddisk "Disk Usage Summary" "$(df -h --total | awk '/total/ {print "Used: " $3 "\nTotal: " $2 "\nUsage: " $5}')"
+

@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+
+DOCUMENTS_DIR=$(xdg-user-dir DOCUMENTS)
+ROFI_THEME="$HOME/.config/rofi/generalMenu.rasi"
+
+# Find supported document formats
+CHOICE=$(find "$DOCUMENTS_DIR" \
+    -type f \
+    -iregex ".*\\.\(pdf\|epub\|djvu\|cbz\|cbr\)$" \
+    | sort \
+    | rofi -dmenu -p "Choose 📖" -theme "$ROFI_THEME")
+
+# No choice exit
+[ -z "$CHOICE" ] && exit 0
+
+# Launch zathura detached
+setsid -f zathura "$CHOICE"

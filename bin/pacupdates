@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# Count official repo updates
+repo_updates=$(checkupdates 2>/dev/null | wc -l)
+
+# Count AUR updates
+aur_updates=0
+if command -v paru &>/dev/null; then
+    aur_updates=$(paru -Qum 2>/dev/null | wc -l)
+elif command -v yay &>/dev/null; then
+    aur_updates=$(yay -Qum 2>/dev/null | wc -l)
+fi
+
+# Send notification
+notify-send -i "$HOME/.config/dunst/assets/pacman.png" "UPGRADABLE PACKAGES" "CORE: $repo_updates\nAUR: $aur_updates"
+
+# Total updates
+total=$((repo_updates + aur_updates))
+
+# Output total for Qtile widget
+echo "$total"
+
+

@@ -41,14 +41,14 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*:descriptions' format '[%d]'
 zstyle ':completion:*:default' list-colors ${(s.:.)ZLS_COLORS} 'ma=1\;33'
 zstyle ':completion:*' matcher-list \
-		'm:{a-zA-Z}={A-Za-z}' \
-		'+r:|[._-]=* r:|=*' \
-		'+l:|=*'
+  'm:{a-zA-Z}={A-Za-z}' \
+  '+r:|[._-]=* r:|=*' \
+  '+l:|=*'
 zstyle ':fzf-tab:*' fzf-flags --style=full --height=90% --pointer '>' \
-                --color 'pointer:green:bold,bg+:-1:,fg+:green:bold,info:blue:bold,marker:yellow:bold,hl:gray:bold,hl+:yellow:bold' \
-                --input-label ' Search ' --color 'input-border:blue,input-label:blue:bold' \
-                --list-label ' Results ' --color 'list-border:green,list-label:green:bold' \
-                --preview-label ' Preview ' --color 'preview-border:magenta,preview-label:magenta:bold'
+  --color 'pointer:green:bold,bg+:-1:,fg+:green:bold,info:blue:bold,marker:yellow:bold,hl:gray:bold,hl+:yellow:bold' \
+  --input-label ' Search ' --color 'input-border:blue,input-label:blue:bold' \
+  --list-label ' Results ' --color 'list-border:green,list-label:green:bold' \
+  --preview-label ' Preview ' --color 'preview-border:magenta,preview-label:magenta:bold'
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --icons=always --color=always -a $realpath'
 zstyle ':fzf-tab:complete:eza:*' fzf-preview 'eza -1 --icons=always --color=always -a $realpath'
 zstyle ':fzf-tab:complete:bat:*' fzf-preview 'bat --color=always --theme=base16 $realpath'

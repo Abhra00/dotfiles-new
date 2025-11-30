@@ -15,17 +15,17 @@ transparency = 0
 corner_radius = 0
 gap_size = 4
 separator_height = 1
-separator_color = "#414868"
+separator_color = "#292E42"
 padding = 15
 horizontal_padding = 15
 text_icon_padding = 0
 frame_width = 0
 sort = no
 idle_threshold = 0
-font = Mononoki Nerd Font Semibold 9
+font = GeistMono Nerd Font Bold 9
 line_height = 0
 markup = full
-format = "<span size='xx-large' font_desc='Mononoki Nerd Font Medium 9' weight='bold' foreground='#c7a9ff'>%s</span>\n%b"
+format = "<span size='xx-large' font_desc='MapleMono Bold Italic 9' weight='bold' foreground='#FF9E64'>%s</span>\n%b"
 alignment = center
 vertical_alignment = center
 show_age_threshold = 60
@@ -60,19 +60,19 @@ class = Dunst
 #           URGENCIES
 # --------------------------------------
 [urgency_low]
-    background = "#16161e"
-    foreground = "#c0caf5"
-    frame_color = "#c0caf5"
-    highlight = "#9fe044"
+    background  = "#16161E"
+    foreground  = "#C0CAF5"
+    frame_color = "#C0CAF5"
+    highlight   = "#FF9E64"
 
 [urgency_normal]
-    background = "#1a1b26"
-    foreground = "#c0caf5"
-    frame_color = "#c0caf5"
-    highlight = "#9fe044"
+    background  = "#1A1B26"
+    foreground  = "#C0CAF5"
+    frame_color = "#C0CAF5"
+    highlight   = "#FF9E64"
 
 [urgency_critical]
-    background = "#292e42"
-    foreground = "#db4b4b"
-    frame_color = "#db4b4b"
-    highlight = "#ff899d"
+    background  = "#292E42"
+    foreground  = "#DB4B4B"
+    frame_color = "#DB4B4B"
+    highlight   = "#FF899D"

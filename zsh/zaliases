@@ -4,8 +4,6 @@
 #  ┛┗┗┛┻┛┗┗┛┗┛┗┛
 #
 
-
-
 # settings for common commands
 alias cp="cp -iv"
 alias mv="mv -iv"
@@ -15,8 +13,6 @@ alias mkd="mkdir -pv"
 alias ls="exa --icons --group-directories-first -lh"
 alias lf="lfcd"
 alias locate="plocate"
-alias tp="trash-put"
-alias tpr="trash-restore"
 alias cat='bat --theme=base16'
 alias grep='grep --color=always'
 
@@ -27,16 +23,11 @@ alias vim="$EDITOR"
 alias p="paru"
 alias nb="newsboat"
 alias za="zathura"
-alias code="vscodium"
 alias ytdl="yt-dlp --no-mtime"
-alias swi="swayimg-hyprland.sh"
 alias sysm="sysmaintenance.sh"
 
 # aliases to clean up home directory
 alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
-
-# anifetch alias
-alias af="anifetch ~/.config/fastfetch/fetch.gif -r 10 -W 40 -H 20 -C -c '--symbols braille --fg-only' --sound ~/.config/fastfetch/fetch.mp3 -ff"
 
 # git aliases
 alias g="git"

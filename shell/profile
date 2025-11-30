@@ -6,9 +6,6 @@
 # Add all directories in `~/.local/bin` to $PATH
 export PATH="$PATH:$(find ~/.local/bin -type d | paste -sd ':' -)"
 
-# Add cargo bin to $PATH
-export PATH="$CARGO_HOME/bin:$PATH"
-
 # Reset prompt
 unsetopt PROMPT_SP 2>/dev/null
 
@@ -45,6 +42,9 @@ export MBSYNCRC="$XDG_CONFIG_HOME/mbsync/config"
 export ELECTRUMDIR="$XDG_DATA_HOME/electrum"
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
 export SQLITE_HISTORY="$XDG_DATA_HOME/sqlite_history"
+
+# Add cargo bin to $PATH
+export PATH="$CARGO_HOME/bin:$PATH"
 
 # FZF opts
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \

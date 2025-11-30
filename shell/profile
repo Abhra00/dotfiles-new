@@ -6,6 +6,10 @@
 # Add all directories in `~/.local/bin` to $PATH
 export PATH="$PATH:$(find ~/.local/bin -type d | paste -sd ':' -)"
 
+# Add cargo bin to $PATH
+export PATH="$CARGO_HOME/bin:$PATH"
+
+# Reset prompt
 unsetopt PROMPT_SP 2>/dev/null
 
 # Default programs:

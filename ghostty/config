@@ -4,13 +4,10 @@
 #
 
 # Fonts
-font-family = "Fira Code"
-font-family-bold = "Fira Code"
-font-family-italic = "Maple Mono"
-font-family-bold-italic = "Maple Mono"
+font-family = "JetBrainsMono"
 font-family = "Symbols Nerd Font Mono"
 font-size = 14
-adjust-cell-height = 30%
+adjust-cell-height = 20%
 adjust-underline-position = 4
 
 # Mouse

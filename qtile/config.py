@@ -389,7 +389,7 @@ def init_widgets_list():
             filename='~/.config/qtile/assets/slant_left.png',
         ),
         widget.TextBox(
-            text="󰍛",
+            text="󰘚",
             font="Symbols Nerd Font",
             fontsize=20,
             background='#292E42',
@@ -411,7 +411,7 @@ def init_widgets_list():
             background='#292E42',
         ),
         widget.TextBox(
-            text=" ",
+            text="󰁹",
             font="Symbols Nerd Font",
             fontsize=20,
             background='#292E42',
@@ -419,10 +419,19 @@ def init_widgets_list():
         ),
         widget.Battery(
             font="JetBrainsMono Nerd Font Propo Bold",
+            format='{percent: 2.0%} {char}',
+            discharge_char='',
+            empty_char='󰈿',
+            charge_char='',
+            full_char='󰉁',
+            not_charging_char='',
             fontsize=14,
             background='#292E42',
             foreground='#7AA2F7',
-            format='{percent:2.0%}',
+            charging_foreground='#73DACA',
+            low_foreground='#DB4B4B',
+            notify_below=17,
+            notification_timeout=0
         ),
         widget.Image(
             filename='~/.config/qtile/assets/slant_left.png',
@@ -432,7 +441,7 @@ def init_widgets_list():
             background='#292E42',
         ),
         widget.TextBox(
-            text=" ",
+            text="",
             font="Symbols Nerd Font",
             fontsize=20,
             background='#292E42',
@@ -443,7 +452,7 @@ def init_widgets_list():
             fontsize=14,
             background='#292E42',
             foreground='#7AA2F7',
-            unmute_format="{volume}%",
+            unmute_format=" {volume}%",
             mute_format="M",
         ),
         widget.Image(

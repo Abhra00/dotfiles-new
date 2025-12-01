@@ -7,10 +7,6 @@
 # Current Theme
 theme='powermenu.rasi'
 
-# CMDs
-uptime="$(uptime -p | sed -e 's/up //g')"
-host=$(hostnamectl hostname)
-
 # Options
 shutdown='󰐥'
 reboot='󰜉'
@@ -22,10 +18,8 @@ no=''
 
 # Rofi CMD
 rofi_cmd() {
-    rofi -dmenu \
-        -p "Goodbye ${USER}@${host}" \
-        -mesg "Uptime: $uptime" \
-        -theme ${theme}
+  rofi -dmenu \
+    -theme ${theme}
 }
 
 # Confirmation CMD

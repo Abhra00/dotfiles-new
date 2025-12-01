@@ -22,11 +22,25 @@ ICON_DIR="$HOME/.config/dunst/assets"
 # Rofi theme
 ROFI_THEME="$HOME/.config/rofi/dunstActionsMenu.rasi"
 
+# Rofi theme elements
+list_col='1'
+list_row='3'
+win_width='120px'
+
+# Rofi menu command
+rofi_cmd() {
+  rofi -theme-str "window {width: $win_width;}" \
+    -theme-str "listview {columns: $list_col; lines: $list_row;}" \
+    -dmenu \
+    -markup-rows \
+    -theme $ROFI_THEME
+}
+
 CHOICE=$(printf "%s\n%s\n%s\n" \
     "$TOGGLE" \
     "$POP_ONE" \
     "$CLEAR_ALL" \
-    | rofi -dmenu -theme $ROFI_THEME)
+    | rofi_cmd)
 
 case "$CHOICE" in
   "$ICON_DND_ON")

@@ -7,10 +7,6 @@ option_3=""
 option_4=""
 option_5=""
 
-# Theme Elements
-prompt='Screenshot'
-mesg="DIR: `xdg-user-dir PICTURES`/Screenshots"
-
 # Notification icon
 icon="$HOME/.config/dunst/assets/screenshot.png"
 
@@ -21,14 +17,11 @@ win_width='120px'
 
 # Rofi CMD
 rofi_cmd() {
-	rofi -theme-str "window {width: $win_width;}" \
-		-theme-str "listview {columns: $list_col; lines: $list_row;}" \
-		-theme-str 'textbox-prompt-colon {str: "";}' \
-		-dmenu \
-		-p "$prompt" \
-		-mesg "$mesg" \
-		-markup-rows \
-		-theme $HOME/.config/rofi/maimshot.rasi
+  rofi -theme-str "window {width: $win_width;}" \
+    -theme-str "listview {columns: $list_col; lines: $list_row;}" \
+    -dmenu \
+    -markup-rows \
+    -theme $HOME/.config/rofi/maimshot.rasi
 }
 
 # Pass variables to rofi dmenu

@@ -59,11 +59,6 @@ window-padding-y = 5,5
 window-padding-balance = true
 window-decoration = false
 
-# Shaders
-custom-shader-animation = always
-custom-shader = "shaders/cursor_warp.glsl"
-custom-shader = "shaders/sonic_boom_cursor.glsl"
-
 # Other
 window-inherit-working-directory = false
 copy-on-select = clipboard

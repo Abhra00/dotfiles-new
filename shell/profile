@@ -46,6 +46,9 @@ export SQLITE_HISTORY="$XDG_DATA_HOME/sqlite_history"
 # Add cargo bin to $PATH
 export PATH="$CARGO_HOME/bin:$PATH"
 
+# Add npm bin to $PATH
+export PATH=$HOME/.local/share/npm/bin:$PATH
+
 # FZF opts
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
   --highlight-line \

@@ -10,6 +10,7 @@ font-family-italic = "Maple Mono"
 font-family-bold-italic = "Maple Mono"
 font-family = "Symbols Nerd Font Mono"
 adjust-cell-height = 25%
+font-size = 14
 adjust-underline-position = 4
 
 # Mouse

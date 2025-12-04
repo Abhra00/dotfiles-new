@@ -13,7 +13,7 @@ Xft.rgba:	rgb
 Xft.lcdfilter:	lcddefault
 
 /* Font */
-*.font:            JetBrainsMono Nerd Font:style=Medium:size=10:antialias=true:autohint=true
+*.font:            GeistMono Nerd Font:style=Regular:size=10:antialias=true:autohint=true
 
 /* Tokyonight */
 *background: #1a1b26

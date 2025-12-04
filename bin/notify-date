@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 cal_text=$(cal | sed "s/\<$(date +'%e' | sed 's/ //g')\>/<b><span color='#FF9E64'>&<\/span><\/b>/")
-notify-send "This Month" "<span font_family='JetBrainsMono Nerd Font'>$cal_text</span>"
+notify-send "This Month" "<span font_family='GeistMono Nerd Font'>$cal_text</span>"

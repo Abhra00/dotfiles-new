@@ -227,7 +227,7 @@ layouts = [
     #layout.Stack(**layout_theme, num_stacks=2),
     #layout.Columns(**layout_theme),
     #layout.TreeTab(
-    #     font = "JetBrainsMonoNerdFontPropo",
+    #     font = "GeistMonoNerdFontPropo",
     #     fontsize = 11,
     #     border_width = 0,
     #     bg_color = "#1A1B26",
@@ -254,7 +254,7 @@ layouts = [
 
 #---------------------- Widgets ----------------------#
 widget_defaults = dict(
-    font="JetBrainsMonoNerdFontPropo Bold",
+    font="GeistMonoNerdFontPropo Bold",
     fontsize=14,
     padding=0,
     background="#1A1B26",
@@ -333,7 +333,7 @@ def init_widgets_list():
         widget.TextBox(
             fmt='Search',
             background='#1A1B26',
-            font="JetBrainsMono Nerd Font Propo Bold",
+            font="GeistMono Nerd Font Propo Bold",
             fontsize=14,
             foreground='#1ABC9C',
             mouse_callbacks={'Button1': lambda: qtile.cmd_spawn(myLauncher)},
@@ -342,7 +342,7 @@ def init_widgets_list():
             filename='~/.config/qtile/assets/right_half_circle.png',
         ),
         widget.WindowName(
-            font="JetBrainsMono Nerd Font Propo Bold",
+            font="GeistMono Nerd Font Propo Bold",
             fontsize=14,
             empty_group_string="Desktop",
             max_chars=130,
@@ -399,7 +399,7 @@ def init_widgets_list():
             background='#292E42',
             format='{MemUsed: .0f}{mm}',
             foreground='#7AA2F7',
-            font="JetBrainsMono Nerd Font Propo Bold",
+            font="GeistMono Nerd Font Propo Bold",
             fontsize=14,
             update_interval=5,
         ),
@@ -418,7 +418,7 @@ def init_widgets_list():
             foreground='#FF9E64',
         ),
         widget.Battery(
-            font="JetBrainsMono Nerd Font Propo Bold",
+            font="GeistMono Nerd Font Propo Bold",
             format='{percent: 2.0%} {char}',
             discharge_char='',
             empty_char='󰈿',
@@ -448,7 +448,7 @@ def init_widgets_list():
             foreground='#FF9E64',
         ),
         widget.Volume(
-            font="JetBrainsMono Nerd Font Propo Bold",
+            font="GeistMono Nerd Font Propo Bold",
             fontsize=14,
             background='#292E42',
             foreground='#7AA2F7',
@@ -473,7 +473,7 @@ def init_widgets_list():
             format='%I:%M %p',
             background='#292E42',
             foreground='#7AA2F7',
-            font="JetBrainsMono Nerd Font Propo Bold",
+            font="GeistMono Nerd Font Propo Bold",
             fontsize=14,
             mouse_callbacks = {
                 'Button1': lambda: qtile.cmd_spawn('notify-date')

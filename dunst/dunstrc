@@ -22,10 +22,10 @@ text_icon_padding = 0
 frame_width = 0
 sort = no
 idle_threshold = 0
-font = JetBrainsMono Nerd Font Bold 9
+font = GeistMono Nerd Font Bold 9
 line_height = 0
 markup = full
-format = "<span size='xx-large' font_desc='JetBrainsMono Bold 9' weight='bold' foreground='#FF9E64'>%s</span>\n%b"
+format = "<span size='xx-large' font_desc='MapleMono Bold 9' weight='bold' foreground='#FF9E64'>%s</span>\n%b"
 alignment = center
 vertical_alignment = center
 show_age_threshold = 60

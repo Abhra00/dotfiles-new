@@ -28,7 +28,7 @@ done
 compinit -C -d ~/.config/zsh/zcompdump
 autoload -Uz colors && colors # Enabling colors
 autoload -Uz add-zsh-hook     # Adding zsh hook for custom functions
-autoload -Uz vcs_info		  # Enabling vcs_info
+autoload -Uz vcs_info         # Enabling vcs_info
 _comp_options+=(globdots)
 
 
@@ -54,6 +54,15 @@ zstyle ':fzf-tab:complete:eza:*' fzf-preview 'eza -1 --icons=always --color=alwa
 zstyle ':fzf-tab:complete:bat:*' fzf-preview 'bat --color=always --theme=base16 $realpath'
 zstyle ':fzf-tab:*' fzf-bindings 'space:accept'
 zstyle ':fzf-tab:*' accept-line enter
+
+# Vcs info styling
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:git:*' miscstr '● '
+zstyle ':vcs_info:git:*' unstagedstr '■ '
+zstyle ':vcs_info:git:*' stagedstr '▣ '
+zstyle ':vcs_info:git:*' formats " %{$fg[blue]%}[%{$fg[red]%}%m%u%c%{$fg[yellow]%}%{$fg[magenta]%} %b%{$fg[blue]%}]%{$reset_color%}"
 
 #  ┓ ┏┏┓┳┏┳┓┳┳┓┏┓  ┳┓┏┓┏┳┓┏┓
 #  ┃┃┃┣┫┃ ┃ ┃┃┃┃┓  ┃┃┃┃ ┃ ┗┓
@@ -190,7 +199,19 @@ export SUDO_PROMPT="$fg[white]Deploying $fg[magenta]root access for %u $fg[blue]
 #   ┃ ┣┫┣   ┃┃┣┫┃┃┃┃┃┃┃ ┃
 #   ┻ ┛┗┗┛  ┣┛┛┗┗┛┛ ┗┣┛ ┻
 #
-# !!! USING PURE PROMPT !!!!
++vi-git-untracked(){
+   if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
+       git status --porcelain | grep '??' &> /dev/null ; then
+       hook_com[staged]+='!' # signify new files with a bang
+   fi
+}
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+precmd_new_line() { echo "" }
+precmd_functions+=( precmd_new_line )
+
+PROMPT="%b%{$fg[magenta]%}λ % %(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )%{$fg[cyan]%}%c%{$reset_color%}"
+PROMPT+="\$vcs_info_msg_0_ "
 
 #  ┏┓┓ ┳┳┏┓┳┳┓┏┓  ┏┓  ┏┓┓ ┳┳┏┓┳┳┓  ┏┓┏┓┏┓┏┓┳┏┓┳┏┓  ┓┏┓┏┓┓┏┳┓┳┳┓┳┓┏┓
 #  ┃┃┃ ┃┃┃┓┃┃┃┗┓  ┣╋  ┃┃┃ ┃┃┃┓┃┃┃  ┗┓┃┃┣ ┃ ┃┣ ┃┃   ┃┫ ┣ ┗┫┣┫┃┃┃┃┃┗┓
@@ -222,7 +243,6 @@ function plugin-load {
 
 # list of github repos of plugins
 repos=(
-	sindresorhus/pure
 	Aloxaf/fzf-tab
 	zdharma-continuum/fast-syntax-highlighting
 	zsh-users/zsh-autosuggestions

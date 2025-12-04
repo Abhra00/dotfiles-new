@@ -112,6 +112,12 @@ function M:setup()
             'java.lang.Math.*',
           },
         },
+        format = {
+          settings = {
+            url = vim.fn.expand '~/.local/share/java/Formatter/google-style.xml',
+            profile = 'GoogleStyle',
+          },
+        },
       },
     },
     capabilities = require('blink-cmp').get_lsp_capabilities(),

@@ -248,4 +248,6 @@ source <(fzf --zsh)
 # Load custom fast syntax highlighting theme
 [[ -r ${ZDOTDIR:-$HOME}/fsh_theme.ini ]] && fast-theme ${ZDOTDIR:-$HOME}/fsh_theme.ini > /dev/null
 # Fetch
-sexyFetch.sh
+echo ""
+figlet -f slant "Endeavour OS"
+fastfetch

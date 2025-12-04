@@ -20,7 +20,7 @@ alias grep='grep --color=always'
 alias e="$EDITOR"
 alias edit="$EDITOR"
 alias vim="$EDITOR"
-alias p="paru"
+alias i="yay -S"
 alias nb="newsboat"
 alias za="zathura"
 alias ytdl="yt-dlp --no-mtime"

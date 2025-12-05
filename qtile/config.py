@@ -76,7 +76,8 @@ keys = [
     Key([mod], "f4", lazy.spawn("dunst_action_menu"), desc="Rofi dunst action menu applet"),
     Key([], "Print", lazy.spawn("maimshot"), desc="Screenshot menu"),
     Key([mod, alt], "x", lazy.spawn("pmenu"), desc="Logout menu"),
-    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    Key([mod, "control"], "up", lazy.spawn("picom-trans -c +3"), desc="Increase opacity of focused window"),
+    Key([mod, "control"], "down", lazy.spawn("picom-trans -c -3"), desc="Decrease opacity of focused window"),
 
     # Window management
     Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),

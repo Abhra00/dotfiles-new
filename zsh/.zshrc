@@ -269,5 +269,5 @@ source <(fzf --zsh)
 [[ -r ${ZDOTDIR:-$HOME}/fsh_theme.ini ]] && fast-theme ${ZDOTDIR:-$HOME}/fsh_theme.ini > /dev/null
 # Fetch
 echo ""
-figlet -f slant "Endeavour OS"
+figlet -f digital "Endeavour OS"
 fastfetch

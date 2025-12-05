@@ -60,8 +60,8 @@ zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:git:*' miscstr '● '
-zstyle ':vcs_info:git:*' unstagedstr '■ '
-zstyle ':vcs_info:git:*' stagedstr '▣ '
+zstyle ':vcs_info:git:*' unstagedstr '✱ '
+zstyle ':vcs_info:git:*' stagedstr '✦ '
 zstyle ':vcs_info:git:*' formats " %{$fg[blue]%}[%{$fg[red]%}%m%u%c%{$fg[yellow]%}%{$fg[magenta]%} %b%{$fg[blue]%}]%{$reset_color%}"
 
 #  ┓ ┏┏┓┳┏┳┓┳┳┓┏┓  ┳┓┏┓┏┳┓┏┓

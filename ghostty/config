@@ -4,29 +4,30 @@
 #
 
 # Fonts
-font-family = "Fira Code"
-font-family-bold = "Fira Code"
-font-family-italic = "Maple Mono"
-font-family-bold-italic = "Maple Mono"
+font-family = "Mononoki"
+font-family-bold = "Mononoki"
+font-family-italic = "Mononoki"
+font-family-bold-italic = "Mononoki"
 font-family = "Symbols Nerd Font Mono"
-adjust-cell-height = 30%
-font-size = 14
+adjust-cell-height = 35%
+font-size = 10
 adjust-underline-position = 4
 
 # Mouse
 mouse-hide-while-typing = true
+mouse-scroll-multiplier = 1
 
 # Theme
 theme = tokyonight
-cursor-invert-fg-bg = true
 background-opacity = 1.0
 window-theme = ghostty
 
 # Cursor
 cursor-style = "block"
 adjust-cursor-thickness = 140%
-adjust-cursor-height = 30%
+adjust-cursor-height = 35%
 cursor-style-blink = true
+cursor-invert-fg-bg = true
 
 # keybindings
 keybind = clear
@@ -49,8 +50,14 @@ keybind = alt+shift+s=write_screen_file:open
 keybind = alt+shift+w=close_surface
 keybind = alt+shift+page_up=increase_font_size:1
 keybind = alt+shift+page_down=decrease_font_size:1
-keybind = alt+z=jump_to_prompt:-1
+keybind = page_down=scroll_page_down
+keybind = page_up=scroll_page_up
+keybind = alt+down=adjust_selection:down
+keybind = alt+left=adjust_selection:left
+keybind = alt+right=adjust_selection:right
+keybind = alt+up=adjust_selection:up
 keybind = alt+x=jump_to_prompt:1
+keybind = alt+z=jump_to_prompt:-1
 
 # Window
 gtk-single-instance = true
@@ -65,5 +72,5 @@ window-decoration = false
 # Other
 window-inherit-working-directory = false
 copy-on-select = clipboard
-shell-integration-features = no-cursor,sudo,no-title,ssh-env
+shell-integration-features = cursor,sudo,no-title,ssh-env
 app-notifications = no-clipboard-copy

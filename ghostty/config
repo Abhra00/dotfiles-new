@@ -9,7 +9,7 @@ font-family-bold = "Fira Code"
 font-family-italic = "Maple Mono"
 font-family-bold-italic = "Maple Mono"
 font-family = "Symbols Nerd Font Mono"
-adjust-cell-height = 25%
+adjust-cell-height = 30%
 font-size = 14
 adjust-underline-position = 4
 
@@ -24,7 +24,7 @@ window-theme = ghostty
 
 # Cursor
 cursor-style = "block"
-adjust-cursor-thickness = 120%
+adjust-cursor-thickness = 140%
 adjust-cursor-height = 30%
 cursor-style-blink = true
 

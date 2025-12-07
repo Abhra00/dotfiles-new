@@ -22,11 +22,6 @@ xmodmap -e "clear control" -e "add control = Control_L" \
 xmodmap -e "clear mod1" -e "add mod1 = Alt_L" \
   -e "clear mod5" -e "add mod5 = Alt_R" &
 
-# Wallpaper helper (replace `setbg` if needed)
-if command -v setbg >/dev/null; then
-  setbg "$(readlink -f "$HOME/.local/share/bg")"
-fi
-
 # Apps to autostart once
 apps=(
   "dunst"

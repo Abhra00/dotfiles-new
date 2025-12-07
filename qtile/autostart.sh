@@ -1,47 +1,48 @@
 #!/usr/bin/env bash
 #    ┏┓┳┳┏┳┓┏┓┏┓┏┳┓┏┓┳┓┏┳┓
-#    ┣┫┃┃ ┃ ┃┃┗┓ ┃ ┣┫┣┫ ┃ 
-#    ┛┗┗┛ ┻ ┗┛┗┛ ┻ ┛┗┛┗ ┻ 
+#    ┣┫┃┃ ┃ ┃┃┗┓ ┃ ┣┫┣┫ ┃
+#    ┛┗┗┛ ┻ ┗┛┗┛ ┻ ┛┗┛┗ ┻
 #
 
 # DPI (optional; Qtile can also set DPI in config)
 xrandr --dpi 96
 
 # Keyboard rate
-xset r rate 200 55 &
+sleep 1
+xset r rate 200 55
 
 # Xresources colors/settings on startup
 xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources &
-xrdbpid=$! 
+xrdbpid=$!
 
 # Modifier tuning
 xmodmap -e "clear control" -e "add control = Control_L" \
-        -e "clear mod3"    -e "add mod3 = Control_R"
+  -e "clear mod3" -e "add mod3 = Control_R"
 
 xmodmap -e "clear mod1" -e "add mod1 = Alt_L" \
-        -e "clear mod5" -e "add mod5 = Alt_R" &
+  -e "clear mod5" -e "add mod5 = Alt_R" &
 
 # Wallpaper helper (replace `setbg` if needed)
 if command -v setbg >/dev/null; then
-    setbg "$(readlink -f "$HOME/.local/share/bg")"
+  setbg "$(readlink -f "$HOME/.local/share/bg")"
 fi
 
 # Apps to autostart once
 apps=(
-    "dunst"
-    "picom"
-    "nm-applet"
-    "unclutter"
+  "dunst"
+  "picom"
+  "nm-applet"
+  "unclutter"
 )
 
 for app in "${apps[@]}"; do
-    pgrep -x "$app" >/dev/null || "$app" &
+  pgrep -x "$app" >/dev/null || "$app" &
 done
 
 # Polkit agent
 if [ -f /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 ]; then
-    pgrep -f polkit-gnome-authentication-agent-1 >/dev/null \
-        || /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+  pgrep -f polkit-gnome-authentication-agent-1 >/dev/null ||
+    /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 fi
 
 # Copyq daemon

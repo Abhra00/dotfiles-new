@@ -487,13 +487,19 @@ def init_widgets_list():
     ]
     return widgets_list
 
-def init_widgets_screen1():
+def init_widgets_screen():
     widgets_screen1 = init_widgets_list()
     return widgets_screen1
 
 
 def init_screens():
-    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), margin=[8, 12, 0, 12], size=44))]
+    return [Screen(
+        wallpaper=os.path.expanduser("~/.local/share/bg"),
+        wallpaper_mode='fill',  # or 'stretch', 'fit', 'tile'
+        top=bar.Bar(widgets=init_widgets_screen(),
+                    margin=[8, 12, 0, 12],
+                    size=44)
+    )]
 
 screens = init_screens()
 

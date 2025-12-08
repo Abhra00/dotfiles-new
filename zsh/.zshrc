@@ -62,7 +62,7 @@ zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:git:*' miscstr '● '
 zstyle ':vcs_info:git:*' unstagedstr '✱ '
 zstyle ':vcs_info:git:*' stagedstr '✦ '
-zstyle ':vcs_info:git:*' formats " %{$fg[blue]%}[%{$fg[red]%}%m%u%c%{$fg[yellow]%}%{$fg[magenta]%} %b%{$fg[blue]%}]%{$reset_color%}"
+zstyle ':vcs_info:git:*' formats " %F{012}[%F{009}%m%u%c%F{011}%F{013}%b%F{012}]%f"
 
 #  ┓ ┏┏┓┳┏┳┓┳┳┓┏┓  ┳┓┏┓┏┳┓┏┓
 #  ┃┃┃┣┫┃ ┃ ┃┃┃┃┓  ┃┃┃┃ ┃ ┗┓
@@ -82,11 +82,9 @@ bindkey "^I" expand-or-complete-with-dots
 #  ┗┛┗┛┛ ┗┛ ┗┛┗┛┗┻┛  ┛┗┗┛ ┻   ┻ ┗┛┗┛┛┗┻┛  ┛┗┛┗┛┗┻┛┗┛┗┛┛┗
 #
 command_not_found_handler() {
-	printf "%s%s? WTF!!  you are typing\n" "$acc" "$0" >&2
+	printf "\e[31m%s%s?  WTF!!  you are typing\e[0m\n" "$acc" "$0" >&2
     	return 127
 }
-
-
 
 #  ┓┏┳┏┓┏┳┓┏┓┳┓┓┏
 #  ┣┫┃┗┓ ┃ ┃┃┣┫┗┫
@@ -126,19 +124,35 @@ setopt COMPLETE_IN_WORD     # Complete from both ends of a word.
 bindkey -v
 export KEYTIMEOUT=1
 
-# Change cursor shape for different vi modes.
+# Vi-mode prompt characters
+PROMPT_NORMAL_CHAR="%F{011}❮%f"
+PROMPT_INSERT_CHAR="%F{011}❯%f"
+typeset -g PROMPT_VI_MODE="$PROMPT_INSERT_CHAR"
+
+# Change cursor shape and prompt character for different vi modes.
 function zle-keymap-select () {
     case $KEYMAP in
-        vicmd) echo -ne '\e[1 q';;      # block
-        viins|main) echo -ne '\e[1 q';; # block
+        vicmd)
+            echo -ne '\e[1 q'
+            PROMPT_VI_MODE="$PROMPT_NORMAL_CHAR"
+            ;;
+        viins|main)
+            echo -ne '\e[1 q'
+            PROMPT_VI_MODE="$PROMPT_INSERT_CHAR"
+            ;;
     esac
+    zle reset-prompt
 }
 zle -N zle-keymap-select
+
 zle-line-init() {
-    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
+    zle -K viins
     echo -ne "\e[1 q"
+    PROMPT_VI_MODE="$PROMPT_INSERT_CHAR"
+    zle reset-prompt
 }
 zle -N zle-line-init
+
 echo -ne '\e[1 q' # Use block shape cursor on startup.
 preexec() { echo -ne '\e[1 q' ;} # Use block shape cursor for each new prompt.
 
@@ -193,8 +207,6 @@ bindkey '^O' yazicd_widget
 #
 export SUDO_PROMPT="$fg[white]Deploying $fg[magenta]root access for %u $fg[blue]password pls: $fg[white]"
 
-
-
 #  ┏┳┓┓┏┏┓  ┏┓┳┓┏┓┳┳┓┏┓┏┳┓
 #   ┃ ┣┫┣   ┃┃┣┫┃┃┃┃┃┃┃ ┃
 #   ┻ ┛┗┗┛  ┣┛┛┗┗┛┛ ┗┣┛ ┻
@@ -210,7 +222,7 @@ precmd_functions+=( precmd_vcs_info )
 precmd_new_line() { echo "" }
 precmd_functions+=( precmd_new_line )
 
-PROMPT="%b%{$fg[magenta]%}λ % %(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )%{$fg[cyan]%}%c%{$reset_color%}"
+PROMPT="%b%F{%(?.013.009)}λ % %B\$PROMPT_VI_MODE%b %F{012}%c%f"
 PROMPT+="\$vcs_info_msg_0_ "
 
 #  ┏┓┓ ┳┳┏┓┳┳┓┏┓  ┏┓  ┏┓┓ ┳┳┏┓┳┳┓  ┏┓┏┓┏┓┏┓┳┏┓┳┏┓  ┓┏┓┏┓┓┏┳┓┳┳┓┳┓┏┓
@@ -241,7 +253,7 @@ function plugin-load {
 	done
 }
 
-# list of github repos of plugins
+# List of github repos of plugins
 repos=(
 	Aloxaf/fzf-tab
 	zdharma-continuum/fast-syntax-highlighting

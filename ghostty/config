@@ -4,14 +4,15 @@
 #
 
 # Fonts
-font-family = "Mononoki"
-font-family-bold = "Mononoki"
-font-family-italic = "Mononoki"
-font-family-bold-italic = "Mononoki"
+font-family = "Monaspace Neon"
+font-family-bold = "Monaspace Neon"
+font-family-italic = "Monaspace Radon"
+font-family-bold-italic = "Monaspace Radon"
 font-family = "Symbols Nerd Font Mono"
+font-feature = +ss01,+ss02,+ss03,+ss04,+ss05,+ss06,+ss07,+ss08,+ss09,+ss10
 adjust-cell-height = 35%
 font-size = 10
-adjust-underline-position = 4
+adjust-underline-position = 5
 
 # Mouse
 mouse-hide-while-typing = true

@@ -1,5 +1,5 @@
 -- ================================================================================================
--- TITLE : todo-commenrs.nvim
+-- TITLE : todo-comments.nvim
 -- LINKS :
 --   > github : https://github.com/lewis6991/gitsigns.nvim
 -- ABOUT : To highlight and search for todo comments like TODO, HACK, BUG in your code base.

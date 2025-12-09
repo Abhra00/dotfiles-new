@@ -1,7 +1,6 @@
 globals = {
   'vim',
   'Snacks',
-  'vim.loop.os_uname',
 }
 
 read_globals = {

@@ -15,7 +15,7 @@ function M:setup()
   local jdtls_path = mason_path .. '/packages/jdtls'
   local launcher_path = vim.fn.glob(jdtls_path .. '/plugins/org.eclipse.equinox.launcher_*.jar')
   local lombok_path = jdtls_path .. '/lombok.jar'
-  local os_name = vim.loop.os_uname().sysname
+  local os_name = vim.uv.os_uname().sysname
   local config_dir = jdtls_path .. '/config_' .. (os_name == 'Linux' and 'linux' or os_name == 'Darwin' and 'mac' or 'win')
   local java_debug_path = mason_path .. '/packages/java-debug-adapter'
   local java_test_path = mason_path .. '/packages/java-test'
@@ -24,6 +24,21 @@ function M:setup()
   local extendedClientCapabilities = require('jdtls').extendedClientCapabilities
   -- Modify one property called resolveAdditionalTextEditsSupport and set it to true
   extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
+
+  -- Merge jdtls capabilities with blink.cmp capablities
+  local capabilities = {
+    workspace = {
+      configuration = true,
+    },
+    textDocument = {
+      completion = {
+        snippetSupport = true,
+      },
+    },
+  }
+
+  local lsp_capabilities = require('blink.cmp').get_lsp_capabilities()
+  capabilities = vim.tbl_deep_extend('force', lsp_capabilities, capabilities)
 
   -- Setup java specific keymaps
   local function java_keymaps()
@@ -120,7 +135,7 @@ function M:setup()
         },
       },
     },
-    capabilities = require('blink-cmp').get_lsp_capabilities(),
+    capabilities = capabilities,
     init_options = {
       bundles = get_bundles(),
       extendedClientCapabilities = extendedClientCapabilities,

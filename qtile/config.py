@@ -48,7 +48,7 @@ def maximize_by_switching_layout(qtile):
 def run_paru_and_refresh(qtile):
     def task():
         # run update in a blocking way, but inside a THREAD
-        subprocess.run([myTerm, "-e", "yay"])
+        subprocess.run([myTerm, "-e", "paru"])
 
         # refresh widget
         try:

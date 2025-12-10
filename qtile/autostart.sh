@@ -26,7 +26,7 @@ xmodmap -e "clear mod1" -e "add mod1 = Alt_L" \
 apps=(
   "dunst"
   "picom"
-  "nm-applet"
+  "blueman-applet"
   "unclutter"
 )
 

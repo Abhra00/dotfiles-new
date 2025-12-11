@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Deepseek
+Comment=Deepseek
+Exec=webAppLaunch.sh https://chat.deepseek.com/
+Terminal=false
+Type=Application
+Icon=/home/bugs/.local/share/applications/icons/Deepseek.png
+StartupNotify=true

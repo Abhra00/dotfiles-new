@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Chatgpt
+Comment=Chatgpt
+Exec=webAppLaunch.sh https://chatgpt.com/
+Terminal=false
+Type=Application
+Icon=/home/bugs/.local/share/applications/icons/Chatgpt.png
+StartupNotify=true

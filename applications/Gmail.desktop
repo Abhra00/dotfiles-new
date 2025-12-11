@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Gmail
+Comment=Gmail
+Exec=webAppLaunch.sh https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox
+Terminal=false
+Type=Application
+Icon=/home/bugs/.local/share/applications/icons/Gmail.png
+StartupNotify=true

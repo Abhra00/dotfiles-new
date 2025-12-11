@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Google Drive
+Comment=Google Drive
+Exec=webAppLaunch.sh https://drive.google.com/drive/my-drive
+Terminal=false
+Type=Application
+Icon=/home/bugs/.local/share/applications/icons/Google Drive.png
+StartupNotify=true

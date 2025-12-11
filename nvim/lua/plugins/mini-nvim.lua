@@ -6,13 +6,13 @@
 -- ================================================================================================
 
 return {
-  { 'nvim-mini/mini.ai', version = false, opts = {} },
-  { 'nvim-mini/mini.comment', version = false, opts = {} },
-  { 'nvim-mini/mini.move', version = false, opts = {} },
-  { 'nvim-mini/mini.surround', version = false, opts = {} },
-  { 'nvim-mini/mini.cursorword', version = false, opts = {} },
-  { 'nvim-mini/mini.pairs', version = false, opts = {} },
-  { 'nvim-mini/mini.trailspace', version = false, opts = {} },
+  { 'echasnovski/mini.ai', event = 'VeryLazy', opts = {} },
+  { 'echasnovski/mini.comment', event = 'VeryLazy', opts = {} },
+  { 'echasnovski/mini.move', event = 'VeryLazy', opts = {} },
+  { 'echasnovski/mini.surround', event = 'VeryLazy', opts = {} },
+  { 'echasnovski/mini.cursorword', event = 'VeryLazy', opts = {} },
+  { 'echasnovski/mini.pairs', event = 'VeryLazy', opts = {} },
+  { 'echasnovski/mini.trailspace', event = 'VeryLazy', opts = {} },
   -- Set up mini icons and make it act as web-dev icons
   {
     'nvim-mini/mini.icons',

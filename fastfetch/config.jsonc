@@ -1,120 +1,92 @@
+/**
+ *    ┏┓┏┓┏┓┏┳┓┏┓┏┓┏┳┓┏┓┓┏
+ *    ┣ ┣┫┗┓ ┃ ┣ ┣  ┃ ┃ ┣┫
+ *    ┻ ┛┗┗┛ ┻ ┻ ┗┛ ┻ ┗┛┛┗
+ *
+ */
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+
   "logo": {
-    "type": "auto",
-    "source": "~/.config/fastfetch/logo.png",
+    "type": "small",
     "padding": {
-      "top": 1,
+      "top": 2,
+      "bottom": 2,
     },
   },
+
   "display": {
-    "separator": "->   ",
+    "separator": "  ",
     "color": {
-      "separator": "1", // Bold
-    },
-    "constants": ["───────────────────────────"],
-    "key": {
-      "type": "both",
-      "paddingLeft": 4,
+      "keys": "white",
     },
   },
+
   "modules": [
     "break",
-    "break",
-    "break",
-    {
-      "type": "title",
-      "format": "                             {user-name-colored}{at-symbol-colored}{host-name-colored}",
-    },
-    "break",
+
     {
       "type": "custom",
-      "format": "┌{$1} {#1}System Information{#} {$1}┐",
+      "format": "┌───────────────────────────────────┐",
     },
-    "break",
+
     {
-      "key": "OS           ",
-      "keyColor": "red",
-      "type": "os",
-    },
-    {
-      "key": "Machine      ",
-      "keyColor": "green",
-      "type": "host",
-    },
-    {
-      "key": "Kernel       ",
-      "keyColor": "magenta",
       "type": "kernel",
+      "key": "│ {#bright_green}  kernel",
+      "format": "{#bright_green}{release>22}{#white} │",
     },
+
     {
-      "key": "Uptime       ",
-      "keyColor": "red",
-      "type": "uptime",
+      "type": "command",
+      "key": "│   uptime",
+      "text": "uptime -p | cut -d ' ' -f 2-",
+      "format": "{>22} │",
     },
+
     {
-      "key": "Resolution   ",
-      "keyColor": "yellow",
-      "type": "display",
-      "compactType": "original-with-refresh-rate",
-    },
-    {
-      "key": "WM           ",
-      "keyColor": "blue",
-      "type": "wm",
-    },
-    {
-      "key": "DE           ",
-      "keyColor": "green",
-      "type": "de",
-    },
-    {
-      "key": "Shell        ",
-      "keyColor": "cyan",
       "type": "shell",
+      "key": "│ {#bright_green}  shell ",
+      "format": "{#bright_green}{pretty-name>22}{#white} │",
     },
+
     {
-      "key": "Terminal     ",
-      "keyColor": "red",
-      "type": "terminal",
+      "type": "command",
+      "key": "│ {#bright_yellow}  mem   ",
+      "text": "free -m | awk 'NR==2{printf \"%.2f GiB / %.2f GiB\",$3/1024,$2/1024}'",
+      "format": "{#bright_yellow}{>22}{#white} │",
     },
+
     {
-      "key": "CPU          ",
-      "keyColor": "yellow",
-      "type": "cpu",
+      "type": "packages",
+      "key": "│   pkgs  ",
+      "format": "{all>22} │",
     },
+
     {
-      "key": "GPU          ",
-      "keyColor": "blue",
-      "type": "gpu",
+      "type": "command",
+      "key": "│ {#bright_green}  user  ",
+      "text": "echo $USER",
+      "format": "{#bright_green}{>22}{#white} │",
     },
+
     {
-      "key": "Memory       ",
-      "keyColor": "magenta",
-      "type": "memory",
+      "type": "command",
+      "key": "│   hname ",
+      "text": "hostnamectl hostname",
+      "format": "{>22} │",
     },
+
     {
-      "key": "Local IP     ",
-      "keyColor": "red",
-      "type": "localip",
-      "compact": true,
+      "type": "os",
+      "key": "│ {#bright_blue}󰻀  distro",
+      "format": "{#bright_blue}{pretty-name>22}{#white} │",
     },
-    {
-      "key": "Public IP    ",
-      "keyColor": "cyan",
-      "type": "publicip",
-      "timeout": 1000,
-    },
-    "break",
+
     {
       "type": "custom",
-      "format": "└{$1}────────────────────{$1}┘",
+      "format": "└───────────────────────────────────┘",
     },
+
     "break",
-    {
-      "type": "colors",
-      "paddingLeft": 34,
-      "symbol": "circle",
-    },
   ],
 }

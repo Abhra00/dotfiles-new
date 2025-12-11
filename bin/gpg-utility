@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+
+# ------------------------------
+# Define directories
+# ------------------------------
+GPG_DIR="$HOME/.local/share/gnupg"
+CRLS_DIR="$GPG_DIR/crls.d"
+PRIVATE_KEYS_DIR="$GPG_DIR/private-keys-v1.d"
+TOKEN_DIR="$HOME/.local/share/tokens"
+TOKEN_FILE="$TOKEN_DIR/github_token.gpg"
+RECIPIENT="abhramondal9674@gmail.com"
+
+# ------------------------------
+# Create directories safely
+# ------------------------------
+for dir in "$GPG_DIR" "$CRLS_DIR" "$PRIVATE_KEYS_DIR" "$TOKEN_DIR"; do
+    if [ -d "$dir" ]; then
+        echo "$dir already exists. Skipping creation."
+    else
+        gum spin --spinner dots "Creating $dir..." sleep 0.5
+        mkdir -p "$dir"
+        chmod 700 "$dir"
+        echo "$dir created and permissions set."
+    fi
+done
+
+# ------------------------------
+# Check for existing GPG keys
+# ------------------------------
+if gpg --list-keys >/dev/null 2>&1; then
+    if gum confirm "GPG keys already exist. Do you want to generate a new one?"; then
+        gpg --full-generate-key
+    else
+        echo "Skipping key generation."
+    fi
+else
+    if gum confirm "No GPG keys found. Generate a new key now?"; then
+        gpg --full-generate-key
+    fi
+fi
+
+# ------------------------------
+# Encrypt GitHub token safely
+# ------------------------------
+if [ -f "$TOKEN_FILE" ]; then
+    if gum confirm "GitHub token already exists. Overwrite?"; then
+        echo -n "..." | gpg --encrypt --armor -r "$RECIPIENT" > "$TOKEN_FILE"
+        gum spin --spinner dots "GitHub token encrypted and saved."
+    else
+        echo "Skipping GitHub token encryption."
+    fi
+else
+    echo -n "..." | gpg --encrypt --armor -r "$RECIPIENT" > "$TOKEN_FILE"
+    gum spin --spinner dots "GitHub token encrypted and saved."
+fi

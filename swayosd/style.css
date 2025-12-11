@@ -1,0 +1,37 @@
+/***
+ *    ┏┓┓ ┏┏┓┓┏┏┓┏┓┳┓  ┏┓┏┓┏┓
+ *    ┗┓┃┃┃┣┫┗┫┃┃┗┓┃┃━━┃ ┗┓┗┓
+ *    ┗┛┗┻┛┛┗┗┛┗┛┗┛┻┛  ┗┛┗┛┗┛
+ *
+ */
+
+/* Define colors */
+@define-color background        #1A1B26;
+@define-color foreground        #C0CAF5;
+@define-color border-color      #7AA2F7;
+@define-color progressbar-color #FF9E64;
+
+/* Main css config */
+window {
+  border-radius: 0;
+  border: 2px solid @border-color;
+  background-color: @background;
+}
+
+label {
+  font-family: "CaskaydiaCove Nerd Font Propo";
+  font-size: 11pt;
+  color: @foreground;
+}
+
+image {
+  color: @color10;
+}
+
+progressbar {
+  border-radius: 0;
+}
+
+progress {
+  background-color: @progressbar-color;
+}

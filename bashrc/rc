@@ -9,5 +9,4 @@ source ~/.config/bashrc/keybindings
 source ~/.config/bashrc/init
 source ~/.config/bashrc/prompt
 source ~/.config/bashrc/greetings
-source ~/.config/bashrc/envs
 [[ $- == *i* ]] && bind -f ~/.config/bashrc/inputrc

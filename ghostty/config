@@ -4,12 +4,11 @@
 #
 
 # Fonts
-font-family = "Monaspace Neon"
-font-family-bold = "Monaspace Neon"
-font-family-italic = "Monaspace Radon"
-font-family-bold-italic = "Monaspace Radon"
+font-family = "Cascadia Code"
+font-family-bold = "Cascadia Code"
+font-family-italic = "Cascadia Code"
+font-family-bold-italic = "Cascadia Code"
 font-family = "Symbols Nerd Font Mono"
-font-feature = +ss01,+ss02,+ss03,+ss04,+ss05,+ss06,+ss07,+ss08,+ss09,+ss10
 adjust-cell-height = 35%
 font-size = 10
 adjust-underline-position = 5
@@ -73,5 +72,5 @@ window-decoration = false
 # Other
 window-inherit-working-directory = false
 copy-on-select = clipboard
-shell-integration-features = cursor,sudo,no-title,ssh-env
+shell-integration-features = no-cursor,sudo,no-title,ssh-env
 app-notifications = no-clipboard-copy

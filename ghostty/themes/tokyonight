@@ -2,6 +2,8 @@
 #     ┃ ┃┃┃┫ ┗┫┃┃┃┃┃┃┓┣┫ ┃   
 #     ┻ ┗┛┛┗┛┗┛┗┛┛┗┻┗┛┛┗ ┻   
 #     Author: Folke                            
+
+# Basic 16 palettes
 palette = 0=#15161e
 palette = 1=#f7768e
 palette = 2=#9ece6a
@@ -19,6 +21,7 @@ palette = 13=#c7a9ff
 palette = 14=#a4daff
 palette = 15=#c0caf5
 
+# Background,Foreground,Selection-Background,Selection-Foreground,Cusrsor Colors
 background = #1a1b26
 foreground = #c0caf5
 cursor-color = #c0caf5

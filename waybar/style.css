@@ -1,0 +1,145 @@
+/***
+ *    ┓ ┏┏┓┓┏┳┓┏┓┳┓  ┏┓┏┳┓┓┏┓ ┏┓
+ *    ┃┃┃┣┫┗┫┣┫┣┫┣┫━━┗┓ ┃ ┗┫┃ ┣
+ *    ┗┻┛┛┗┗┛┻┛┛┗┛┗  ┗┛ ┻ ┗┛┗┛┗┛
+ */
+
+/*------------Defining Colors---------------*/
+@define-color background #1A1B26;
+@define-color background-alt #292E42;
+@define-color foreground #C0CAF5;
+@define-color foreground-alt #1A1B26;
+@define-color red #F7768E;
+@define-color green #9ECE6A;
+@define-color yellow #E0AF68;
+@define-color blue #7AA2F7;
+@define-color magenta #BB9AF7;
+@define-color cyan #7DCFFF;
+
+* {
+  font-family: "CaskaydiaCove Nerd Font Propo";
+  font-weight: 600;
+  font-size: 14px;
+}
+
+window#waybar {
+  background-color: @background;
+  color: @foreground;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+button {
+  box-shadow: inset 0 -3px transparent;
+  border: none;
+  border-radius: 0;
+}
+
+#workspaces button:hover {
+  color: @magenta;
+  box-shadow: inherit;
+  text-shadow: inherit;
+  background: none;
+  border: none;
+}
+
+#workspaces button {
+  padding: 0 5px;
+  color: @foreground;
+  margin: 4px 0 4px 6px;
+  transition: color 200ms ease-in-out;
+}
+
+#workspaces button.empty {
+  color: @background-alt;
+}
+
+#workspaces button.visible {
+  color: @foreground;
+}
+
+#workspaces button.active {
+  color: @foreground;
+}
+
+#workspaces button.urgent {
+  color: @red;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#backlight,
+#network,
+#bluetooth,
+#pulseaudio,
+#custom-pacman,
+#custom-colorpicker,
+#custom-swaync,
+#custom-weather,
+#custom-expand-icon,
+#tray,
+#mode,
+#mpd {
+  padding: 0 9px;
+  color: @foreground;
+  border-radius: 15px;
+  margin: 5px 0;
+}
+
+#custom-pacman {
+  color: @yellow;
+}
+
+#window,
+#workspaces {
+  margin: 0 4px;
+}
+
+#clock {
+  color: @magenta;
+}
+
+#custom-swaync {
+  color: @magenta;
+}
+
+#pulseaudio.muted {
+  color: @red;
+}
+
+#network.disconnected {
+  color: @red;
+}
+
+#battery {
+  color: @green;
+}
+
+#battery.warning:not(.charging) {
+  color: @red;
+}
+
+#custom-expand-icon:hover {
+  color: @green;
+}
+
+tooltip {
+  background-color: @background;
+  border: 2px solid @blue;
+  border-radius: 0px;
+}
+
+tooltip label {
+  color: @foreground;
+}
+
+/* If workspaces is the leftmost module, reduce left margin */
+.modules-left > widget:first-child > #workspaces {
+  margin-left: 2px;
+}

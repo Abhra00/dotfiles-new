@@ -36,5 +36,5 @@ notify-send \
     string:x-canonical-private-synchronous:refreshing \
     -i "$HOME/.config/swaync/assets/bell.png" \
     "✨ Refresh ✨" \
-    "WAYBAR\nROFI\nSWAYOSD\nSWAYNC\n✨restarted ✨"
+    "✨ WAYBAR ✨\n✨ ROFI ✨\n✨ SWAYOSD ✨\n✨ SWAYNC ✨\n✨ Restarted ✨"
 exit 0

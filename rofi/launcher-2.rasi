@@ -1,21 +1,21 @@
-/***
-* ┓ ┏┓┳┳┳┓┏┓┓┏┏┓┳┓  ┏┓
-* ┃ ┣┫┃┃┃┃┃ ┣┫┣ ┣┫━━┣┓
-* ┗┛┛┗┗┛┛┗┗┛┛┗┗┛┛┗  ┗┛
-***/                
-
+/**
+ *    ┓ ┏┓┳┳┳┓┏┓┓┏┏┓┳┓  ┏┓
+ *    ┃ ┣┫┃┃┃┃┃ ┣┫┣ ┣┫━━┏┛
+ *    ┗┛┛┗┗┛┛┗┗┛┛┗┗┛┛┗  ┗━
+ *
+ */
 
 /*****----- Configuration -----*****/
 configuration {
-    modi:                       "drun";
-    show-icons:                 true;
-    display-drun:               "";
-    drun-display-format:        "{name}";
+  modi:                       "drun";
+  show-icons:                 true;
+  display-drun:               " Applications";
+  drun-display-format:        "{name}";
 }
 
 /*****----- Global Properties -----*****/
-@import                          "shared/colors.rasi"
-@import                          "shared/fonts.rasi"
+@import                          "~/.config/rofi/shared/colors.rasi"
+@import                          "~/.config/rofi/shared/fonts.rasi"
 
 /*****----- Main Window -----*****/
 window {
@@ -23,10 +23,9 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       500px;
+    width:                       450px;
     x-offset:                    0px;
     y-offset:                    0px;
-
     enabled:                     true;
     margin:                      0px;
     padding:                     0px;
@@ -40,46 +39,23 @@ window {
 /*****----- Main Box -----*****/
 mainbox {
     enabled:                     true;
-    spacing:                     20px;
+    spacing:                     0px;
     margin:                      0px;
-    padding:                     20px;
+    padding:                     0px;
     border:                      0px solid;
     border-radius:               0px 0px 0px 0px;
     border-color:                @selected;
     background-color:            transparent;
-    children:                    [ "inputbar", "listview" ];
+    children:                    [ "listview", "entry" ];
 }
 
 /*****----- Inputbar -----*****/
-inputbar {
-    enabled:                     true;
-    spacing:                     10px;
-    margin:                      0px;
-    padding:                     0px;
-    border:                      0px solid;
-    border-radius:               0px;
-    border-color:                @selected;
-    background-color:            @background;
-    text-color:                  @foreground;
-    children:                    [ "entry" ];
-}
-
-prompt {
-    enabled:                     true;
-    background-color:            inherit;
-    text-color:                  inherit;
-}
-textbox-prompt-colon {
-    enabled:                     true;
-    expand:                      false;
-    str:                         "::";
-    background-color:            inherit;
-    text-color:                  inherit;
-}
 entry {
     enabled:                     true;
-    background-color:            inherit;
-    text-color:                  inherit;
+    expand:                      false;
+    padding:                     20px 0px;
+    background-color:            @selected;
+    text-color:                  @background;
     cursor:                      text;
     placeholder:                 "Search...";
     placeholder-color:           inherit;
@@ -90,8 +66,8 @@ entry {
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     2;
-    lines:                       1;
+    columns:                     3;
+    lines:                       3;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
@@ -99,10 +75,9 @@ listview {
     reverse:                     false;
     fixed-height:                true;
     fixed-columns:               true;
-    
-    spacing:                     10px;
+    spacing:                     0px;
     margin:                      0px;
-    padding:                     0px;
+    padding:                     20px;
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @selected;
@@ -135,10 +110,6 @@ element normal.normal {
     background-color:            @background;
     text-color:                  @foreground;
 }
-element alternate.normal {
-    background-color:            @background;
-    text-color:                  @foreground;
-}
 element selected.normal {
     background-color:            @background-alt;
     text-color:                  @foreground;
@@ -146,7 +117,7 @@ element selected.normal {
 element-icon {
     background-color:            transparent;
     text-color:                  inherit;
-    size:                        128px;
+    size:                        64px;
     cursor:                      inherit;
 }
 element-text {
@@ -160,15 +131,15 @@ element-text {
 
 /*****----- Message -----*****/
 error-message {
-    padding:                     20px;
+    padding:                     15px;
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @selected;
-    background-color:            black / 10%;
+    background-color:            @background;
     text-color:                  @foreground;
 }
 textbox {
-    background-color:            transparent;
+    background-color:            @background;
     text-color:                  @foreground;
     vertical-align:              0.5;
     horizontal-align:            0.0;

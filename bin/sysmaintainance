@@ -73,6 +73,8 @@ if $DO_UPGRADE; then
     announce "System upgrade ($AUR)"
     $AUR -Syu --ask 4 # interactive for .pacnew merges
     echo "Run 'sudo pacdiff' after the script to merge new config files."
+    echo "Reloading Waybar…"
+    pkill -SIGRTMIN+8 waybar || echo "Waybar not running"
 fi
 
 # ---------- 2. Pacman cache trim ------------------------------------------

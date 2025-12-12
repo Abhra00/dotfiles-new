@@ -61,7 +61,7 @@
     "return-type": "json",
     "exec": "~/.config/waybar/scripts/pacman-updates.sh",
     "exec-if": "exit 0",
-    "on-click": "$TERMINAL -e paru; pkill -SIGRTMIN+8 waybar",
+    "on-click": "$TERMINAL -e yay; pkill -SIGRTMIN+8 waybar",
     "signal": 8,
   },
   "clock": {

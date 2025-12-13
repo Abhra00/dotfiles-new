@@ -1,19 +1,17 @@
 #    ┳┳┓┳┏┳┓
 #    ┃┃┃┃ ┃
 #    ┻┛┗┻ ┻
-#           
+#
 
-
-# Starship
-if command -v starship &> /dev/null; then
-  eval "$(starship init bash)"
+# Git prompt
+if [ -f /usr/share/git/git-prompt.sh ]; then
+    source /usr/share/git/git-prompt.sh
 fi
 
 # Zoxide
 if command -v zoxide &> /dev/null; then
   eval "$(zoxide init bash)"
 fi
-
 
 # FZF
 if command -v fzf &> /dev/null; then

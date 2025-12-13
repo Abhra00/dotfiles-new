@@ -57,7 +57,7 @@ all = no
 fsmon = yes
 
 [font]
-name = CascadiaCode
+name = JetBrains Mono
 size = 14
 color = #c0caf5ff
 shadow = #000000d0

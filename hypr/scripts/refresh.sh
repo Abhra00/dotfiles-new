@@ -4,12 +4,6 @@
 #  ┛┗┗┛┻ ┛┗┗┛┗┛┛┗
 #
 
-#!/usr/bin/env bash
-#  ┳┓┏┓┏┓┳┓┏┓┏┓┓┏
-#  ┣┫┣ ┣ ┣┫┣ ┗┓┣┫
-#  ┛┗┗┛┻ ┛┗┗┛┗┛┛┗
-#
-
 # kill already running processes
 _ps=(waybar swaync swayosd-server rofi)
 for _prs in "${_ps[@]}"; do

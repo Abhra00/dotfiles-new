@@ -19,7 +19,7 @@ window {
 }
 
 label {
-  font-family: "CaskaydiaCove Nerd Font Propo";
+  font-family: "JetBrainsMono Nerd Font Propo";
   font-size: 11pt;
   color: @foreground;
 }

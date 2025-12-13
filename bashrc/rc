@@ -6,7 +6,7 @@ source ~/.config/bashrc/shell
 source ~/.config/bashrc/aliases
 source ~/.config/bashrc/functions
 source ~/.config/bashrc/keybindings
-source ~/.config/bashrc/init
 source ~/.config/bashrc/prompt
+source ~/.config/bashrc/init
 source ~/.config/bashrc/greetings
 [[ $- == *i* ]] && bind -f ~/.config/bashrc/inputrc

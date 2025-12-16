@@ -18,7 +18,7 @@
   "display": {
     "separator": "  ",
     "color": {
-      "keys": "white",
+      "keys": "default",
     },
   },
 
@@ -33,53 +33,53 @@
     {
       "type": "kernel",
       "key": "│ {#bright_green}  kernel",
-      "format": "{#bright_green}{release>22}{#white} │",
+      "format": "{#bright_green}{release>22}{#default} │",
     },
 
     {
       "type": "command",
       "key": "│   uptime",
       "text": "uptime -p | cut -d ' ' -f 2-",
-      "format": "{>22} │",
+      "format": "{>22}{#default} │",
     },
 
     {
       "type": "shell",
       "key": "│ {#bright_green}  shell ",
-      "format": "{#bright_green}{pretty-name>22}{#white} │",
+      "format": "{#bright_green}{pretty-name>22}{#default} │",
     },
 
     {
       "type": "command",
       "key": "│ {#bright_yellow}  mem   ",
       "text": "free -m | awk 'NR==2{printf \"%.2f GiB / %.2f GiB\",$3/1024,$2/1024}'",
-      "format": "{#bright_yellow}{>22}{#white} │",
+      "format": "{#bright_yellow}{>22}{#default} │",
     },
 
     {
       "type": "packages",
       "key": "│   pkgs  ",
-      "format": "{all>22} │",
+      "format": "{all>22}{#default} │",
     },
 
     {
       "type": "command",
       "key": "│ {#bright_green}  user  ",
       "text": "echo $USER",
-      "format": "{#bright_green}{>22}{#white} │",
+      "format": "{#bright_green}{>22}{#default} │",
     },
 
     {
       "type": "command",
       "key": "│   hname ",
       "text": "hostnamectl hostname",
-      "format": "{>22} │",
+      "format": "{>22}{#default} │",
     },
 
     {
       "type": "os",
       "key": "│ {#bright_blue}󰻀  distro",
-      "format": "{#bright_blue}{pretty-name>22}{#white} │",
+      "format": "{#bright_blue}{pretty-name>22}{#default} │",
     },
 
     {

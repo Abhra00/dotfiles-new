@@ -3,6 +3,9 @@
 # ┗┛┛┗┗┛┗┛┗┛
 #
 
+# Vi mode
+set -o vi
+
 # History control
 shopt -s histappend
 HISTCONTROL=ignoreboth
@@ -19,4 +22,3 @@ fi
 
 # Disable command hashing so Bash always searches PATH for executables
 set +h
-

@@ -3,9 +3,9 @@
 #    ┻┛┗┻ ┻
 #
 
-# Git prompt
-if [ -f /usr/share/git/git-prompt.sh ]; then
-    source /usr/share/git/git-prompt.sh
+# Starship
+if command -v starship &> /dev/null; then
+  eval "$(starship init bash)"
 fi
 
 # Zoxide

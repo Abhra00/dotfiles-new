@@ -3,7 +3,6 @@
 #    ┗┛┗┛┛┗┻ ┻┗┛
 
 # Greeting
-set -g fish_greeting "Welcome, $USER ✨"
 if status is-interactive
     if test (tty) = /dev/tty1
         if test -f /bin/hyprland
@@ -11,5 +10,6 @@ if status is-interactive
         end
     else
         fastfetch -c $HOME/.config/fastfetch/config.jsonc
+        echo ""
     end
 end

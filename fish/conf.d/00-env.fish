@@ -3,6 +3,9 @@
 #    ┗┛┛┗┗┛
 #
 
+# Suppress fish greetings message
+set -gx fish_greeting ""
+
 # Programs & Editors
 set -gx TERMINAL ghostty
 set -gx BROWSER chromium

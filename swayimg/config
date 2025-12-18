@@ -57,7 +57,7 @@ all = no
 fsmon = yes
 
 [font]
-name = JetBrains Mono
+name = GeistMono Nerd Font Propo
 size = 14
 color = #c0caf5ff
 shadow = #000000d0

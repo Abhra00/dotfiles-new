@@ -4,10 +4,10 @@
 #
 
 # Fonts
-font-family = "Lilex"
-font-family-bold = "Lilex"
-font-family-italic = "Lilex"
-font-family-bold-italic = "Lilex"
+font-family = "Fira Code"
+font-family-bold = "Fira Code"
+font-family-italic = "Maple Mono CN"
+font-family-bold-italic = "Maple Mono CN"
 font-family = "Symbols Nerd Font Mono"
 adjust-cell-height = 20%
 font-size = 10

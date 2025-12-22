@@ -40,11 +40,15 @@ set -gx PYTHONSTARTUP $XDG_CONFIG_HOME/python/pythonrc
 set -gx SQLITE_HISTORY $XDG_DATA_HOME/sqlite_history
 set -gx STARSHIP_CONFIG $XDG_CONFIG_HOME/starship/starship.toml
 
+# Set pyenv root path
+set -gx PYENV_ROOT $XDG_DATA_HOME/.pyenv
+
 # PATH modifications
 fish_add_path $HOME/.local/bin
 fish_add_path $HOME/.config/hypr/scripts
 fish_add_path $CARGO_HOME/bin
 fish_add_path $HOME/.local/share/npm/bin
+fish_add_path $PYENV_ROOT/bin
 
 # FZF opts
 set -gx FZF_DEFAULT_OPTS "\

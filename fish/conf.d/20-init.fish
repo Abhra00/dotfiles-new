@@ -2,6 +2,11 @@
 #    ┃┃┃┃ ┃
 #    ┻┛┗┻ ┻
 
+# Pyenv
+if command -q pyenv
+    pyenv init - | source
+end
+
 # Starship
 if command -q starship
     starship init fish | source

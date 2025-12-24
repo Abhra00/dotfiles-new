@@ -29,6 +29,7 @@ set -gx PASSWORD_STORE_DIR $XDG_DATA_HOME/password-store
 set -gx TMUX_TMPDIR $XDG_RUNTIME_DIR
 set -gx ANDROID_SDK_HOME $XDG_CONFIG_HOME/android
 set -gx CARGO_HOME $XDG_DATA_HOME/cargo
+set -gx RUSTUP_HOME $XDG_DATA_HOME/rustup
 set -gx GOPATH $XDG_DATA_HOME/go
 set -gx GOMODCACHE $XDG_CACHE_HOME/go/mod
 set -gx ANSIBLE_CONFIG $XDG_CONFIG_HOME/ansible/ansible.cfg

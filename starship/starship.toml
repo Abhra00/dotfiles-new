@@ -43,7 +43,7 @@ vimcmd_replace_one_symbol = "[❮](bright-yellow)"
 
 # Cmd duration
 [cmd_duration]
-format = "[took $duration]($style) "
+format = "[took $duration]($style)"
 style = "italic bright-yellow"
 
 # Directory
@@ -90,7 +90,7 @@ style = "bold bright-red"
 [jobs]
 symbol = ' '
 style = 'bright-purple'
-format = '[$symbol$number]($style) '
+format = '[ $symbol$number]($style)'
 
 # Sudo
 [sudo]
@@ -104,21 +104,21 @@ format = '[$symbol]($style)'
 [c]
 symbol = ' '
 style = 'bright-blue'
-format = '[$symbol$version ]($style)'
+format = '[ $symbol$version]($style)'
 
 [lua]
 symbol = ' '
 style = 'bright-cyan'
-format = '[$symbol$version ]($style)'
+format = '[ $symbol$version]($style)'
 
 [python]
 style = 'bright-yellow'
 symbol = ' '
-format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+format = '[ ${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)'
 pyenv_version_name = true
 pyenv_prefix = ''
 
 [rust]
 symbol = ' '
 style = 'bright-red'
-format = '[$symbol$version ]($style) '
+format = '[ $symbol$version]($style)'

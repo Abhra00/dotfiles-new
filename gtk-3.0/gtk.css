@@ -1,61 +1,51 @@
 /****************************************************
- *    TOKYONIGHT GTK THEME   *
+ *    SOLARIZED DARK GTK THEME   *
  ****************************************************/
-/* Updated GTK Theme with Tokyonight Palette */
-
-/* Accent / Primary (use palette 5 = #bb9af7) */
-@define-color accent_color #bb9af7;
-@define-color accent_bg_color alpha(#bb9af7, 0.4);
-@define-color accent_fg_color #c0caf5; /* palette 15 */
-
-/* Destructive (use palette 1 = #f7768e) */
-@define-color destructive_color #f7768e;
-@define-color destructive_bg_color #f7768e;
-@define-color destructive_fg_color #c0caf5;
-
-/* Success (use palette 2 = #9ece6a) */
-@define-color success_color #9ece6a;
-@define-color success_bg_color #1a1b26; /* palette 0 */
-@define-color success_fg_color #c0caf5;
-
-/* Warning (use palette 3 = #e0af68) */
-@define-color warning_color #e0af68;
-@define-color warning_bg_color #e0af68;
-@define-color warning_fg_color #1a1b26;
-
-/* Error (use palette 1 = #f7768e) */
-@define-color error_color #f7768e;
-@define-color error_bg_color #f7768e;
-@define-color error_fg_color #c0caf5;
-
+/* Custom GTK Theme with Solarized-inspired Palette */
+/* Accent / Primary (cyan) */
+@define-color accent_color #29a298;
+@define-color accent_bg_color alpha(#29a298, 0.4);
+@define-color accent_fg_color #fdf5e2;
+/* Destructive (red) */
+@define-color destructive_color #db302d;
+@define-color destructive_bg_color #db302d;
+@define-color destructive_fg_color #fdf5e2;
+/* Success (green) */
+@define-color success_color #849900;
+@define-color success_bg_color #001419;
+@define-color success_fg_color #fdf5e2;
+/* Warning (orange) */
+@define-color warning_color #c94c16;
+@define-color warning_bg_color #c94c16;
+@define-color warning_fg_color #001419;
+/* Error (red) */
+@define-color error_color #db302d;
+@define-color error_bg_color #db302d;
+@define-color error_fg_color #fdf5e2;
 /* Window / View */
-@define-color window_bg_color #1a1b26; /* palette 0 */
-@define-color window_fg_color #c0caf5; /* palette 15 */
-@define-color view_bg_color   #1a1b26;
-@define-color view_fg_color   #c0caf5;
-
+@define-color window_bg_color #001419;
+@define-color window_fg_color #839395;
+@define-color view_bg_color   #001419;
+@define-color view_fg_color   #839395;
 /* Header bar */
-@define-color headerbar_bg_color @window_bg_color;
-@define-color headerbar_fg_color @window_fg_color;
-@define-color headerbar_border_color @window_bg_color;
-@define-color headerbar_backdrop_color @window_bg_color;
-@define-color headerbar_shade_color @window_bg_color;
-
+@define-color headerbar_bg_color #002c38;
+@define-color headerbar_fg_color #adb7b7;
+@define-color headerbar_border_color #063540;
+@define-color headerbar_backdrop_color #002c38;
+@define-color headerbar_shade_color #001419;
 /* Card / Popover / Dialog */
-@define-color card_bg_color #414868; /* palette 8 */
-@define-color card_fg_color #c0caf5; /* palette 15 */
+@define-color card_bg_color #063540;
+@define-color card_fg_color #adb7b7;
 @define-color card_shade_color rgba(0,0,0,0.07);
 @define-color dialog_bg_color @card_bg_color;
 @define-color dialog_fg_color @card_fg_color;
 @define-color popover_bg_color @card_bg_color;
 @define-color popover_fg_color @card_fg_color;
-
 /* Misc */
 @define-color shade_color rgba(0, 0, 0, 0.36);
-@define-color scrollbar_outline_color #7dcfff; /* palette 6 */
-
+@define-color scrollbar_outline_color #268bd3;
 /* Sidebar */
-@define-color sidebar_bg_color #414868; /* palette 8 */
+@define-color sidebar_bg_color #002c38;
 @define-color secondary_sidebar_bg_color @sidebar_bg_color;
 @define-color sidebar_backdrop_color @sidebar_bg_color;
 @define-color secondary_sidebar_backdrop_color @sidebar_bg_color;

@@ -1,1 +1,118 @@
-/usr/share/themes/adw-gtk3-dark/gtk-4.0/gtk.css
+/****************************************************
+ *    SOLARIZED DARK GTK THEME   *
+ ****************************************************/
+/* Custom GTK Theme with Solarized-inspired Palette */
+/* Accent / Primary (cyan) */
+@define-color accent_color #29a298;
+@define-color accent_bg_color alpha(#29a298, 0.4);
+@define-color accent_fg_color #fdf5e2;
+/* Destructive (red) */
+@define-color destructive_color #db302d;
+@define-color destructive_bg_color #db302d;
+@define-color destructive_fg_color #fdf5e2;
+/* Success (green) */
+@define-color success_color #849900;
+@define-color success_bg_color #001419;
+@define-color success_fg_color #fdf5e2;
+/* Warning (orange) */
+@define-color warning_color #c94c16;
+@define-color warning_bg_color #c94c16;
+@define-color warning_fg_color #001419;
+/* Error (red) */
+@define-color error_color #db302d;
+@define-color error_bg_color #db302d;
+@define-color error_fg_color #fdf5e2;
+/* Window / View */
+@define-color window_bg_color #001419;
+@define-color window_fg_color #839395;
+@define-color view_bg_color   #001419;
+@define-color view_fg_color   #839395;
+/* Header bar */
+@define-color headerbar_bg_color #002c38;
+@define-color headerbar_fg_color #adb7b7;
+@define-color headerbar_border_color #063540;
+@define-color headerbar_backdrop_color #002c38;
+@define-color headerbar_shade_color #001419;
+/* Card / Popover / Dialog */
+@define-color card_bg_color #063540;
+@define-color card_fg_color #adb7b7;
+@define-color card_shade_color rgba(0,0,0,0.07);
+@define-color dialog_bg_color @card_bg_color;
+@define-color dialog_fg_color @card_fg_color;
+@define-color popover_bg_color @card_bg_color;
+@define-color popover_fg_color @card_fg_color;
+/* Misc */
+@define-color shade_color rgba(0, 0, 0, 0.36);
+@define-color scrollbar_outline_color #268bd3;
+/* Sidebar */
+@define-color sidebar_bg_color #002c38;
+@define-color secondary_sidebar_bg_color @sidebar_bg_color;
+@define-color sidebar_backdrop_color @sidebar_bg_color;
+@define-color secondary_sidebar_backdrop_color @sidebar_bg_color;
+
+.navigation-sidebar {
+  background-color: @sidebar_bg_color;
+  color: @window_fg_color;
+}
+
+headerbar.default-decoration {
+  margin-bottom: 50px;
+  margin-top: -100px;
+}
+
+/* Disable outlines */
+*:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+window.csd,
+window.csd decoration {
+  box-shadow: none;
+}
+
+/* Square corners everywhere */
+dialog,
+window.dialog,
+.message-dialog,
+.dialog,
+messagedialog,
+.dialog-vbox,
+.dialog-action-area,
+.action-bar,
+popover,
+.popover,
+menu,
+.menu,
+.menubar,
+.context-menu,
+menuitem,
+.modelbutton,
+headerbar,
+.titlebar,
+infobar,
+.message-bar,
+.toast,
+dialog button,
+.dialog-action-area button,
+.action-bar button,
+menuitem,
+modelbutton,
+button {
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  outline: none;
+}
+
+/* Tooltip */
+tooltip {
+  background-color: @card_bg_color;
+  border-radius: 0;
+  padding: 6px 10px;
+  border: 1px solid @accent_color;
+}
+
+tooltip.background label {
+  color: @card_fg_color;
+}

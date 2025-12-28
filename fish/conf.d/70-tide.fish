@@ -3,7 +3,7 @@
 #  ┻ ┻┻┛┗┛
 #         
 
-set -g tide_git_bg_color 268bd2
+set -g tide_git_bg_color 268BD2
 set -g tide_git_bg_color_unstable C4A000
 set -g tide_git_bg_color_urgent CC0000
 set -g tide_git_branch_color 000000

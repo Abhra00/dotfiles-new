@@ -6,15 +6,15 @@
  */
 /*--------Color definitions------------*/
 * {
-       background:                 #001419;
-       background-alpha:           #001419D3;
-       background-alt:             #002C38;
-       background-alt-alpha:       #002C38D3;
-       foreground:                 #FDF5E2;
-       border-color:               #B28500;
-       selected:                   #29A298;
-       selected-alpha:             #29A298D3;
-       selected-text:              #001419;
-       active:                     #849900;
-       urgent:                     #DB302D;
+       background:                 #1A1B26;
+       background-alpha:           #1A1B26D3;
+       background-alt:             #292E42;
+       background-alt-alpha:       #292E42D3;
+       foreground:                 #C0CAF5;
+       border-color:               #FF9E64;
+       selected:                   #C7A9FF;
+       selected-alpha:             #C7A9FFD3;
+       selected-text:              #1A1B26;
+       active:                     #31748F;
+       urgent:                     #FF899D;
 }

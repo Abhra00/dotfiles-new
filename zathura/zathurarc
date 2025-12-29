@@ -2,10 +2,6 @@
 #  ┏┛┣┫ ┃ ┣┫┃┃┣┫┣┫┣┫┃
 #  ┗┛┛┗ ┻ ┛┗┗┛┛┗┛┗┛┗┗┛
 # --------------------------------------
-#  ┏┓┏┓┏┳┓┓┏┳┳┳┓┏┓┳┓┏┓
-#  ┏┛┣┫ ┃ ┣┫┃┃┣┫┣┫┣┫┃
-#  ┗┛┛┗ ┻ ┛┗┗┛┛┗┛┗┛┗┗┛
-# --------------------------------------
 # Options
 set recolor                      "true"
 set recolor-keephue              "true"
@@ -38,27 +34,27 @@ map [fullscreen] g                goto top
 # --------------------------------------
 #           Colors
 # --------------------------------------
-set notification-error-bg 	 "#DB302D"
-set notification-error-fg 	 "#FDF5E2"
-set notification-warning-bg 	 "#C94C16"
-set notification-warning-fg 	 "#001419"
-set notification-bg 		 "#001419"
-set notification-fg 		 "#ADB7B7"
-set completion-bg 		 "#001419"
-set completion-fg 		 "#839395"
-set completion-group-bg 	 "#002C38"
-set completion-group-fg 	 "#9EABAC"
-set completion-highlight-bg 	 "#063540"
-set completion-highlight-fg 	 "#FDF5E2"
-set inputbar-bg 		 "#002C38"
-set inputbar-fg 		 "#ADB7B7"
-set statusbar-bg 		 "#001419"
-set statusbar-fg 		 "#839395"
-set highlight-color 		 "#B28500"
-set highlight-active-color 	 "#29A298"
-set default-bg 			 "#001419"
-set default-fg 			 "#839395"
-set render-loading-fg 		 "#001419"
-set render-loading-bg 		 "#29A298"
-set recolor-lightcolor 		 "#001419"
-set recolor-darkcolor 		 "#ADB7B7"
+set notification-error-bg 	 "#f7768e"
+set notification-error-fg 	 "#c0caf5"
+set notification-warning-bg 	 "#e0af68"
+set notification-warning-fg 	 "#414868"
+set notification-bg 		 "#1a1b26"
+set notification-fg 		 "#c0caf5"
+set completion-bg 		 "#1a1b26"
+set completion-fg 		 "#a9b1d6"
+set completion-group-bg 	 "#1a1b26"
+set completion-group-fg 	 "#a9b1d6"
+set completion-highlight-bg 	 "#414868"
+set completion-highlight-fg 	 "#c0caf5"
+set inputbar-bg 		 "#1a1b26"
+set inputbar-fg 		 "#c0caf5"
+set statusbar-bg 		 "#1a1b26"
+set statusbar-fg 		 "#c0caf5"
+set highlight-color 		 "#e0af68"
+set highlight-active-color 	 "#9ece6a"
+set default-bg 			 "#1a1b26"
+set default-fg 			 "#c0caf5"
+set render-loading-fg 		 "#1a1b26"
+set render-loading-bg 		 "#c0caf5"
+set recolor-lightcolor 		 "#1a1b26"
+set recolor-darkcolor 		 "#c0caf5"

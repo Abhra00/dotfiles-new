@@ -5,16 +5,16 @@
  */
 
 /*------------Defining Colors---------------*/
-@define-color background #001419;
-@define-color background-alt #002C38;
-@define-color foreground #FDF5E2;
-@define-color foreground-alt #001419;
-@define-color red #DB302D;
-@define-color green #849900;
-@define-color yellow #B28500;
-@define-color blue #268BD3;
-@define-color magenta #D23681;
-@define-color cyan #29A298;
+@define-color background #1A1B26;
+@define-color background-alt #292E42;
+@define-color foreground #C0CAF5;
+@define-color foreground-alt #1A1B26;
+@define-color red #F7768E;
+@define-color green #9ECE6A;
+@define-color yellow #E0AF68;
+@define-color blue #7AA2F7;
+@define-color magenta #BB9AF7;
+@define-color cyan #7DCFFF;
 
 * {
   font-family: "GeistMono Nerd Font Propo";

@@ -2,6 +2,7 @@
 #    ┗┓┃┃┃┣┫┗┫┃┃┃┃┃┓
 #    ┗┛┗┻┛┛┗┗┛┻┛ ┗┗┛
 #
+
 [general]
 mode = viewer
 size = 1280,720
@@ -11,26 +12,30 @@ decoration = no
 sigusr1 = reload
 sigusr2 = next_file
 app_id = swayimg
+
 [drm]
 path = auto
 connector = auto
 mode = auto
+
 [viewer]
-window = #001419ff
-transparency = #001419ff
+window = #1a1b26ff
+transparency = #1a1b26ff
 scale = optimal
 position = center
 antialiasing = mks13
 loop = yes
 history = 1
 preload = 1
+
 [slideshow]
 time = 3
-window = #001419ff
-transparency = #001419ff
+window = #1a1b26ff
+transparency = #1a1b26ff
 scale = fit
 position = center
 antialiasing = mks13
+
 [gallery]
 size = 200
 cache = 100
@@ -38,43 +43,50 @@ preload = no
 pstore = no
 fill = yes
 antialiasing = mks13
-window = #001419ff
-background = #002c38ff
-select = #063540ff
-border = #29a298ff
+window = #1a1b26ff
+background = #16161eff
+select = #24283bff
+border = #7aa2f7ff
 shadow = #00000099
+
 [list]
 order = alpha
 reverse = no
 recursive = no
 all = no
 fsmon = yes
+
 [font]
 name = GeistMono Nerd Font Propo
 size = 14
-color = #adb7b7ff
-shadow = #001419d0
+color = #c0caf5ff
+shadow = #000000d0
 background = #00000000
+
 [info]
 show = yes
 padding = 10
 info_timeout = 5
 status_timeout = 3
+
 [info.viewer]
 top_left = +name,+format,+filesize,+imagesize,+exif
 top_right = index
 bottom_left = scale,frame
 bottom_right = status
+
 [info.slideshow]
 top_left = none
 top_right = none
 bottom_left = none
 bottom_right = dir,status
+
 [info.gallery]
 top_left = none
 top_right = index
 bottom_left = none
 bottom_right = name,status
+
 [keys.viewer]
 F1 = help
 Home = first_file
@@ -131,6 +143,7 @@ Alt+ScrollDown = next_frame
 MouseLeft = drag
 MouseSide = prev_file
 MouseExtra = next_file
+
 [keys.slideshow]
 F1 = help
 Home = first_file
@@ -146,6 +159,7 @@ f = fullscreen
 Return = mode
 Escape = exit
 q = exit
+
 [keys.gallery]
 F1 = help
 Home = first_file

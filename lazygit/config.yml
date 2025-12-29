@@ -1,27 +1,32 @@
+#    ┓ ┏┓┏┓┓┏┏┓┳┏┳┓
+#    ┃ ┣┫┏┛┗┫┃┓┃ ┃
+#    ┗┛┛┗┗┛┗┛┗┛┻ ┻
+#
+
 gui:
   nerdFontsVersion: "3"
   theme:
     activeBorderColor:
-      - "#c94c16"
+      - "#ff9e64"
       - "bold"
     inactiveBorderColor:
-      - "#664c00"
+      - "#27a1b9"
     searchingActiveBorderColor:
-      - "#c94c16"
+      - "#ff9e64"
       - "bold"
     optionsTextColor:
-      - "#268bd3"
+      - "#7aa2f7"
     selectedLineBgColor:
-      - "#1a6397"
+      - "#283457"
     cherryPickedCommitFgColor:
-      - "#268bd3"
+      - "#7aa2f7"
     cherryPickedCommitBgColor:
-      - "#d23681"
+      - "#bb9af7"
     markedBaseCommitFgColor:
-      - "#268bd3"
+      - "#7aa2f7"
     markedBaseCommitBgColor:
-      - "#b28500"
+      - "#e0af68"
     unstagedChangesColor:
-      - "#f55350"
+      - "#db4b4b"
     defaultFgColor:
-      - "#839395"
+      - "#c0caf5"

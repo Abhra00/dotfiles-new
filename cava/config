@@ -230,17 +230,29 @@ framerate = 60
 # show waveform instead of frequency spectrum, 1 = on, 0 = off
 ; waveform = 0
 
-# Solarized osaka theme for cava
 [color]
+
+# Colors can be one of seven predefined: black, blue, cyan, green, magenta, red, white, yellow.
+# Or defined by hex code '#xxxxxx' (hex code must be within ''). User defined colors requires
+# a terminal that can change color definitions such as Gnome-terminal or rxvt.
+# default is to keep current terminal color
+# Background (matches the TokyoNight Night main bg)
 background = 'default'
-foreground = '#FDF5E2'
+
+# Foreground bars (default color if no gradient)
+foreground = '#c0caf5'
+
+
+# Gradient mode, only hex defined colors are supported,
+# background must also be defined in hex or remain commented out. 1 = on, 0 = off.
+# You can define as many as 8 different colors. They range from bottom to top of screen
 gradient = 1
-gradient_color_1 = '#29A298'  
-gradient_color_2 = '#B28500'  
-gradient_color_3 = '#C94C16'  
-gradient_color_4 = '#DB302D'  
-gradient_color_5 = '#D23681'  
-gradient_color_6 = '#268BD3'  
+gradient_color_1 = '#7aa2f7'  
+gradient_color_2 = '#7dcfff'  
+gradient_color_3 = '#9ece6a'  
+gradient_color_4 = '#e0af68'  
+gradient_color_5 = '#bb9af7'  
+gradient_color_6 = '#f7768e'  
 
 
 # Horizontal is only supported on noncurses output.

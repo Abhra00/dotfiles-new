@@ -1,0 +1,124 @@
+#    ┏┓┏┳┓┏┓┳┓┏┓┓┏┳┏┓
+#    ┗┓ ┃ ┣┫┣┫┗┓┣┫┃┃┃
+#    ┗┛ ┻ ┛┗┛┗┗┛┛┗┻┣┛
+#                    
+
+# A Simple yet elegant starship config
+# Created by BUGS
+
+# Schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Options
+add_newline = true
+command_timeout = 200
+
+# Prompt format
+format = """
+$username\
+$hostname\
+$sudo\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$git_metrics\
+$fill\
+$cmd_duration\
+$jobs\
+$c\
+$lua\
+$python\
+$rust
+$character"""
+
+# Character
+[character]
+error_symbol = "[❯](bright-red)"
+success_symbol = "[❯](bright-green)"
+vimcmd_symbol = "[❮](bright-green)"
+vimcmd_visual_symbol = "[❮](bright-cyan)"
+vimcmd_replace_symbol = "[❮](bright-yellow)"
+vimcmd_replace_one_symbol = "[❮](bright-yellow)"
+
+# Cmd duration
+[cmd_duration]
+format = "[took $duration]($style)"
+style = "italic bright-yellow"
+
+# Directory
+[directory]
+style = 'bright-blue'
+read_only_style = 'bright-red'
+home_symbol = 'home'
+read_only = ' '
+truncation_length = 2
+truncation_symbol = '…/'
+truncate_to_repo = true
+format = '[$path]($style)[$read_only]($read_only_style) '
+repo_root_format = '[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) '
+
+# Fill
+[fill]
+symbol = ' '
+
+# Git branch
+[git_branch]
+symbol = " "
+format = "[$symbol$branch]($style) "
+style = "bright-black"
+
+# Git metrics
+[git_metrics]
+disabled = false
+added_style = 'bright-green'
+deleted_style = 'bright-red'
+format = '([+$added]($added_style) )([-$deleted]($deleted_style) ) '
+
+# Git state
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
+
+# Git status
+[git_status]
+stashed = "≡"
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = "bold bright-red"
+
+# Background jobs
+[jobs]
+symbol = ' '
+style = 'bright-purple'
+format = '[ $symbol$number]($style)'
+
+# Sudo
+[sudo]
+disabled = false
+style = "bold bright-red"
+symbol = " "
+format = '[$symbol]($style)'
+
+# Languages
+
+[c]
+symbol = ' '
+style = 'bright-blue'
+format = '[ $symbol$version]($style)'
+
+[lua]
+symbol = ' '
+style = 'bright-cyan'
+format = '[ $symbol$version]($style)'
+
+[python]
+style = 'bright-yellow'
+symbol = ' '
+format = '[ ${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)'
+pyenv_version_name = true
+pyenv_prefix = ''
+
+[rust]
+symbol = ' '
+style = 'bright-red'
+format = '[ $symbol$version]($style)'

@@ -1,128 +1,89 @@
 /****************************************************
- *    TOKYONIGHT GTK THEME   *
+ *              TOKYONIGHT GTK THEME
+ *                (Night Palette)
  ****************************************************/
-/* Updated GTK Theme with Tokyonight Palette */
 
-/* Accent / Primary (use palette 5 = #bb9af7) */
-@define-color accent_color #bb9af7;
-@define-color accent_bg_color alpha(#bb9af7, 0.4);
-@define-color accent_fg_color #c0caf5; /* palette 15 */
-
-/* Destructive (use palette 1 = #f7768e) */
-@define-color destructive_color #f7768e;
-@define-color destructive_bg_color #f7768e;
-@define-color destructive_fg_color #c0caf5;
-
-/* Success (use palette 2 = #9ece6a) */
-@define-color success_color #9ece6a;
-@define-color success_bg_color #1a1b26; /* palette 0 */
-@define-color success_fg_color #c0caf5;
-
-/* Warning (use palette 3 = #e0af68) */
-@define-color warning_color #e0af68;
-@define-color warning_bg_color #e0af68;
-@define-color warning_fg_color #1a1b26;
-
-/* Error (use palette 1 = #f7768e) */
-@define-color error_color #f7768e;
-@define-color error_bg_color #f7768e;
-@define-color error_fg_color #c0caf5;
-
-/* Window / View */
-@define-color window_bg_color #1a1b26; /* palette 0 */
-@define-color window_fg_color #c0caf5; /* palette 15 */
-@define-color view_bg_color   #1a1b26;
-@define-color view_fg_color   #c0caf5;
-
-/* Header bar */
-@define-color headerbar_bg_color @window_bg_color;
-@define-color headerbar_fg_color @window_fg_color;
-@define-color headerbar_border_color @window_bg_color;
+@define-color window_bg_color #1a1b26;
+@define-color window_fg_color #c0caf5;
+@define-color view_bg_color #16161e;
+@define-color view_fg_color #c0caf5;
+@define-color accent_bg_color #7aa2f7;
+@define-color accent_fg_color #1a1b26;
+@define-color headerbar_bg_color #1f2335;
+@define-color headerbar_fg_color #c0caf5;
 @define-color headerbar_backdrop_color @window_bg_color;
-@define-color headerbar_shade_color @window_bg_color;
+@define-color popover_bg_color #24283b;
+@define-color popover_fg_color @view_fg_color;
+@define-color dialog_bg_color #24283b;
+@define-color dialog_fg_color @view_fg_color;
+@define-color card_bg_color #24283b;
+@define-color card_fg_color @view_fg_color;
+@define-color sidebar_bg_color #1f2335;
+@define-color sidebar_fg_color #c0caf5;
+@define-color sidebar_backdrop_color @window_bg_color;
+@define-color sidebar_shade_color rgba(0,0,0,0.25);
+@define-color sidebar_border_color rgba(0, 0, 0, 0.36);
+@define-color destructive_bg_color #f7768e;
+@define-color success_bg_color #9ece6a;
+@define-color warning_bg_color #e0af68;
+@define-color error_bg_color #f7768e;
 
-/* Card / Popover / Dialog */
-@define-color card_bg_color #414868; /* palette 8 */
-@define-color card_fg_color #c0caf5; /* palette 15 */
-@define-color card_shade_color rgba(0,0,0,0.07);
-@define-color dialog_bg_color @card_bg_color;
-@define-color dialog_fg_color @card_fg_color;
-@define-color popover_bg_color @card_bg_color;
-@define-color popover_fg_color @card_fg_color;
-
-/* Misc */
-@define-color shade_color rgba(0, 0, 0, 0.36);
-@define-color scrollbar_outline_color #7dcfff; /* palette 6 */
-
-/* Sidebar */
-@define-color sidebar_bg_color #414868; /* palette 8 */
-@define-color secondary_sidebar_bg_color @sidebar_bg_color;
-@define-color sidebar_backdrop_color @sidebar_bg_color;
-@define-color secondary_sidebar_backdrop_color @sidebar_bg_color;
-
-.navigation-sidebar {
-  background-color: @sidebar_bg_color;
-  color: @window_fg_color;
-}
-
-headerbar.default-decoration {
-  margin-bottom: 50px;
-  margin-top: -100px;
-}
-
-/* Disable outlines */
-*:focus {
-  outline: none;
-  box-shadow: none;
-}
-
-window.csd,
-window.csd decoration {
-  box-shadow: none;
-}
-
-/* Square corners everywhere */
-dialog,
-window.dialog,
-.message-dialog,
-.dialog,
-messagedialog,
-.dialog-vbox,
-.dialog-action-area,
-.action-bar,
-popover,
-.popover,
-menu,
-.menu,
-.menubar,
-.context-menu,
-menuitem,
-.modelbutton,
-headerbar,
-.titlebar,
-infobar,
-.message-bar,
-.toast,
-dialog button,
-.dialog-action-area button,
-.action-bar button,
-menuitem,
-modelbutton,
-button {
+/* Remove all rounded corners */
+* {
   border-radius: 0;
-  border: none;
-  box-shadow: none;
-  outline: none;
 }
 
-/* Tooltip */
-tooltip {
-  background-color: @card_bg_color;
+decoration {
   border-radius: 0;
-  padding: 6px 10px;
-  border: 1px solid @accent_color;
+  box-shadow: 0 3px 12px 1px rgba(0, 0, 0, 0.7), 0 0 0 1px mix(white,@window_bg_color,0.9);
 }
 
-tooltip.background label {
-  color: @card_fg_color;
+decoration:backdrop {
+  border-radius: 0;
+  box-shadow: 0 3px 12px 1px transparent, 0 2px 6px 2px rgba(0, 0, 0, 0.4), 0 0 0 1px mix(white,@window_bg_color,0.95);
+}
+
+.tiled decoration, .tiled-top decoration, .tiled-bottom decoration, .tiled-right decoration, .tiled-left decoration {
+  border-radius: 0;
+  box-shadow: 0 0 0 1px mix(white,@window_bg_color,0.95), 0 0 0 20px transparent;
+}
+
+messagedialog.csd decoration, .csd.popup decoration, .maximized .csd.popup decoration {
+  border-radius: 0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.8), 0 0 0 1px alpha(mix(white,@window_bg_color,0.9),0.9);
+}
+
+tooltip.csd decoration {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.maximized decoration, .fullscreen decoration {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.ssd decoration {
+  border-radius: 0;
+  box-shadow: 0 0 0 1px mix(white,@window_bg_color,0.9);
+}
+
+.ssd decoration:backdrop {
+  border-radius: 0;
+  box-shadow: 0 0 0 1px mix(white,@window_bg_color,0.95);
+}
+
+.ssd.maximized decoration, .ssd.maximized decoration:backdrop {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.solid-csd decoration {
+  border-radius: 0;
+  box-shadow: inset 0 0 0 5px alpha(currentColor,0.5), inset 0 0 0 4px @headerbar_bg_color, inset 0 0 0 1px alpha(currentColor,0.5);
+}
+
+.solid-csd decoration:backdrop {
+  border-radius: 0;
+  box-shadow: inset 0 0 0 3px @window_bg_color;
 }

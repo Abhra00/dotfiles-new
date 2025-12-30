@@ -11,20 +11,20 @@ MAX=1.0
 
 ACTION=$1
 
-# Get current alpha (dynamic multiplier)
-CURR_ALPHA=$(hyprctl getprop active alpha)
+# Get current opacity (dynamic multiplier)
+CURR_ALPHA=$(hyprctl getprop active opacity)
 
 
 case "$ACTION" in
   up)
     NEW_ALPHA=$(echo "$CURR_ALPHA + $STEP" | bc -l)
     NEW_ALPHA=$(echo "if ($NEW_ALPHA > $MAX) $MAX else $NEW_ALPHA" | bc -l)
-    hyprctl dispatch setprop active alpha $NEW_ALPHA
+    hyprctl dispatch setprop active opacity $NEW_ALPHA
     ;;
   down)
     NEW_ALPHA=$(echo "$CURR_ALPHA - $STEP" | bc -l)
     NEW_ALPHA=$(echo "if ($NEW_ALPHA < $MIN) $MIN else $NEW_ALPHA" | bc -l)
-    hyprctl dispatch setprop active alpha $NEW_ALPHA
+    hyprctl dispatch setprop active opacity $NEW_ALPHA
     ;;
   toggle)
     hyprctl dispatch setprop active opaque toggle

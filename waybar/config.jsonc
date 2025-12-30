@@ -68,7 +68,7 @@
     "tooltip": true,
     "tooltip-format": "<tt>{calendar}</tt>",
     "format": "{:%d %b | %H:%M}",
-    "on-click": "hyprctl dispatch exec '[float]' '$TERMINAL -e calcurse'",
+    "on-click": "hyprctl dispatch exec '[float on; center on; size 1100 800]' '$TERMINAL -e calcurse'",
     "actions": {
       "on-click-right": "mode",
       "on-click-forward": "tz_up",
@@ -93,11 +93,11 @@
   "cpu": {
     "interval": 5,
     "format": "",
-    "on-click": "hyprctl dispatch exec '[float; size 1100 800]' '$TERMINAL --adjust-cell-height=0% -e btop'",
+    "on-click": "hyprctl dispatch exec '[float on; center on; size 1100 800]' '$TERMINAL --adjust-cell-height=0% -e btop'",
   },
   "memory": {
     "format": "",
-    "on-click": "hyprctl dispatch exec '[float; size 1100 800]' '$TERMINAL --adjust-cell-height=0% -e btop'",
+    "on-click": "hyprctl dispatch exec '[float on; center on; size 1100 800]' '$TERMINAL --adjust-cell-height=0% -e btop'",
     "tooltip": true,
   },
   "backlight": {
@@ -136,7 +136,7 @@
     "tooltip-format-disconnected": "Disconnected",
     "interval": 3,
     "nospacing": 1,
-    "on-click": "hyprctl dispatch exec '[float]' '$TERMINAL --adjust-cell-height=0% -e impala'",
+    "on-click": "hyprctl dispatch exec '[float on; center on; size 1100 800]' '$TERMINAL --adjust-cell-height=0% -e impala'",
   },
   "bluetooth": {
     "format": "",
@@ -147,7 +147,7 @@
   },
   "pulseaudio": {
     "format": "{icon}",
-    "on-click": "hyprctl dispatch exec '[float]' '$TERMINAL --adjust-cell-height=0% -e wiremix'",
+    "on-click": "hyprctl dispatch exec '[float on; center on; size 1100 800]' '$TERMINAL --adjust-cell-height=0% -e wiremix'",
     "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
     "tooltip-format": "Playing at {volume}%",
     "scroll-step": 5,

@@ -27,7 +27,6 @@ cursor-style = "block"
 adjust-cursor-thickness = 140%
 adjust-cursor-height = 25%
 cursor-style-blink = true
-cursor-invert-fg-bg = true
 
 # keybindings
 keybind = clear

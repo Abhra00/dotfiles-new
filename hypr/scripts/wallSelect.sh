@@ -31,6 +31,7 @@
 wall_dir="$HOME/walls"
 cacheDir="$HOME/.cache/wallcache"
 scriptsDir="$HOME/.config/hypr/scripts"
+fit_mode="cover"
 
 # Create cache dir if not exists
 [ -d "$cacheDir" ] || mkdir -p "$cacheDir"
@@ -126,22 +127,19 @@ wallpaper_path="${wall_dir}/${wall_selection}"
 
 # Ensure hyprpaper is running
 if ! pgrep -x "hyprpaper" >/dev/null; then
-    echo "🚀 Starting hyprpaper..."
-    hyprpaper &
+    notify-send -e -h string:x-canonical-private-synchronous:hyprpaper_notif "🚀 Starting hyprpaper..."
+    setsid -f hyprpaper
     sleep 0.5 # Wait a bit to ensure the socket is ready
 else
-    echo "✅ hyprpaper is already running"
+    notify-send -e -h string:x-canonical-private-synchronous:hyprpaper_notif "✅ hyprpaper is already running"
 fi
 
-# Unload all previous wallpaper
-hyprctl hyprpaper unload all
-
-# Preload the wallpaper
-hyprctl hyprpaper preload "${wallpaper_path}"
-sleep 0.1 # Optional small delay
-
 # Set the wallpaper
-hyprctl hyprpaper wallpaper "$focused_monitor,${wallpaper_path}"
+hyprctl hyprpaper wallpaper "${focused_monitor},${wallpaper_path},${fit_mode}"
+
+# Symlink the wallpaper in global-wallpaper file
+sleep 0.5
+ln -sf "$wallpaper_path" "$HOME/.local/share/bg"
 
 # Run theme script
-"$scriptsDir/magic.sh" "✨ WallMagick ✨"
+"$scriptsDir/magick.sh" "✨ WallMagick ✨"

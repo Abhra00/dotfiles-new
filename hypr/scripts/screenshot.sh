@@ -27,7 +27,7 @@ active_window_path="${dir}/${active_window_file}"
 
 satty_file="Screenshot_${time}_satty.png"
 
-notify_cmd_base="notify-send -t 10000 -A action1=Open -A action2=Delete -h string:x-canonical-private-synchronous:shot-notify"
+notify_cmd_base="notify-send -t 10000 -A action1=Open -A action2=Delete -e -h string:x-canonical-private-synchronous:shot-notify"
 notify_cmd_shot="${notify_cmd_base} -i ${iDIR}/ss.png"
 notify_cmd_shot_win="${notify_cmd_base} -i ${iDIR}/ss.png"
 notify_cmd_NOT="notify-send -u low -i ${iDIR}/bell.png"

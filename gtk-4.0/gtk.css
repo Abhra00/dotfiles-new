@@ -5,46 +5,46 @@
  *    SOLARIZED OSAKA PALETTE
  */
 
-@define-color window_bg_color #001419;
-@define-color window_fg_color #FDF5E2;
-@define-color view_bg_color #002C38;
+@define-color window_bg_color #002C38;
+@define-color window_fg_color #ADB7B7;
+@define-color view_bg_color #001419;
 @define-color view_fg_color #FDF5E2;
-@define-color accent_bg_color #268BD3;
-@define-color accent_fg_color #001419;
+@define-color accent_bg_color #29A298;
+@define-color accent_fg_color #FFFFFF;
 @define-color headerbar_bg_color #063540;
 @define-color headerbar_fg_color #FDF5E2;
 @define-color headerbar_backdrop_color @window_bg_color;
-@define-color popover_bg_color #576D74;
+@define-color popover_bg_color #063540;
 @define-color popover_fg_color @view_fg_color;
-@define-color dialog_bg_color #576D74;
+@define-color dialog_bg_color #063540;
 @define-color dialog_fg_color @view_fg_color;
-@define-color card_bg_color #576D74;
+@define-color card_bg_color #063540;
 @define-color card_fg_color @view_fg_color;
 @define-color sidebar_bg_color #063540;
-@define-color sidebar_fg_color #FDF5E2;
+@define-color sidebar_fg_color #9EABAC;
 @define-color sidebar_backdrop_color @window_bg_color;
 @define-color sidebar_shade_color rgba(0,0,0,0.25);
 @define-color sidebar_border_color rgba(0, 0, 0, 0.36);
-@define-color secondary_sidebar_bg_color #637981;
+@define-color secondary_sidebar_bg_color #002C38;
 @define-color secondary_sidebar_fg_color @view_fg_color;
 @define-color secondary_sidebar_backdrop_color @view_bg_color;
 @define-color secondary_sidebar_shade_color rgba(0, 0, 0, 0.25);
 @define-color secondary_sidebar_border_color rgba(0, 0, 0, 0.36);
-@define-color destructive_bg_color #D23681;
-@define-color success_bg_color #B28500;
-@define-color warning_bg_color #29A298;
-@define-color error_bg_color #C94C16;
+@define-color destructive_bg_color #DB302D;
+@define-color success_bg_color #849900;
+@define-color warning_bg_color #B28500;
+@define-color error_bg_color #DB302D;
 
 :root {
-  --accent-blue: #268BD2;
-  --accent-teal: #2AA198;
-  --accent-green: #859900;
-  --accent-yellow: #B58900;
-  --accent-orange: #CB4B16;
-  --accent-red: #DC322F;
-  --accent-pink: #D33682;
-  --accent-purple: #6C71C4;
-  --accent-slate: #93A1A1;
+  --accent-blue: #268BD3;
+  --accent-teal: #29A298;
+  --accent-green: #849900;
+  --accent-yellow: #B28500;
+  --accent-orange: #C94C16;
+  --accent-red: #DB302D;
+  --accent-pink: #D23681;
+  --accent-purple: #6D71C4;
+  --accent-slate: #9EABAC;
   --accent-bg-color: @accent_bg_color;
   --accent-fg-color: @accent_fg_color;
   --window-bg-color: @window_bg_color;
@@ -81,6 +81,17 @@
   border-radius: 0;
 }
 
+/* No outline for selected items */
+.view:selected,
+.view:selected:focus,
+.view:selected:hover,
+row:selected,
+row:selected:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Decorations */
 decoration {
   border-radius: 0;
   box-shadow: 0 3px 12px 1px rgba(0, 0, 0, 0.7), 0 0 0 1px mix(white,@window_bg_color,0.9);

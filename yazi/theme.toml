@@ -2,19 +2,29 @@
 #     ┃ ┣┫┣ ┃┃┃┣ 
 #     ┻ ┛┗┗┛┛ ┗┗┛
 #     Solarized-osaka theme yazi
+
+# Schema
+"$schema" = "https://yazi-rs.github.io/schemas/theme.json"
+
+# Flavour
+[flavor]
+dark  = ""
+light = ""
+
+# App
+[app]
+overall = {}
+
+# Manager
 [mgr]
-# NOTE: can be combined with tmTheme (sublime colorshceme file) for preview code highlight
-# syntect_theme = "path/to/tmTheme"
-
-cwd = { fg = "#c94c16", italic = true }
-
-# Hovered
-hovered         = { bg = "#002c38" }
-preview_hovered = { bg = "#002c38" }
+cwd = { fg = "#b28500", italic = true, bold = true }
 
 # Find
 find_keyword  = { fg = "#f254a0", bg = "#c94c16", bold = true }
 find_position = { fg = "#29a298", bg = "#002c38", bold = true }
+
+# Symlink
+symlink_target = { italic = true }
 
 # Marker
 marker_copied   = { fg = "#849900", bg = "#849900" }
@@ -31,21 +41,30 @@ count_selected = { fg = "#f254a0", bg = "#46acf5" }
 border_symbol = "│"
 border_style  = { fg = "#2aeddd" }
 
-# Tab
+# Tabs
 [tabs]
-active   = { fg = "#f254a0", bg = "#46acf5" }
+active   = { fg = "#f254a0", bg = "#46acf5", bold = true }
 inactive = { fg = "#46acf5", bg = "#576d74" }
+sep_inner = { open = "", close = "" }
+sep_outer = { open = "", close = "" }
 
+# Mode
 [mode]
 normal_main = { fg = "#fdf5e2", bg = "#46acf5", bold = true }
 normal_alt  = { fg = "#46acf5", bg = "#576d74" }
-
 select_main = { fg = "#fdf5e2", bg = "#d23681", bold = true }
 select_alt  = { fg = "#fdf5e2", bg = "#576d74" }
-
 unset_main  = { fg = "#f254a0", bg = "#6d71c4", bold = true }
 unset_alt   = { fg = "#6d71c4", bg = "#576d74" }
 
+# Indicator
+[indicator]
+parent  = { fg = "#839395", bg = "#002c38" }
+current = { fg = "#fdf5e2", bg = "#063540", bold = true }
+preview = { underline = true }
+padding = { open = "", close = "" }
+
+# Status bar 
 [status]
 overall   = { fg = "#839395", bg = "#001419" }
 sep_left  = { open = "", close = "" }
@@ -63,9 +82,49 @@ perm_write = { fg = "#f55350" }
 perm_exec  = { fg = "#849900" }
 perm_sep   = { fg = "#637981" }
 
+
+# Which
+[which]
+cols            = 3
+mask            = { bg = "#002c38" }
+cand            = { fg = "#46acf5" }
+rest            = { fg = "#46acf5" }
+desc            = { fg = "#46acf5" }
+separator       = " 󰶻  "
+separator_style = { fg = "#f254a0" }
+
+# Confirm
+[confirm]
+border  = { fg = "#29a298" }
+title   = { fg = "#2aeddd" }
+content = {}
+list    = {}
+btn_yes = { bg = "#063540" }
+btn_no  = {}
+btn_labels = [ "  [Y]es  ", "  (N)o  " ]
+
+# Spot
+[spot]
+border  = { fg = "#2aeddd" }
+title   = { fg = "#2aeddd" }
+
+tbl_col  = { fg = "#46acf5" }
+tbl_cell = { fg = "#b28500", bg = "#002c38" }
+
+# Notify
+[notify]
+title_info  = { fg = "#29a298" }
+title_warn  = { fg = "#b28500" }
+title_error = { fg = "#db302d" }
+
+icon_info  = ""
+icon_warn  = ""
+icon_error = ""
+
+# Picker
 [pick]
 border   = { fg = "#2aeddd" }
-active   = { fg = "#839395",  bg = "#063540" }
+active   = { fg = "#839395", bg = "#063540" }
 inactive = { fg = "#839395" }
 
 # Input
@@ -91,41 +150,6 @@ border  = { fg = "#2aeddd" }
 title   = { fg = "#2aeddd" }
 hovered = { fg = "#839395", bg = "#063540" }
 
-# Which
-[which]
-cols            = 3
-mask            = { bg = "#001419" }
-cand            = { fg = "#46acf5" }
-rest            = { fg = "#46acf5" }
-desc            = { fg = "#d23681" }
-separator       = " ➜ "
-separator_style = { fg = "#9eabac" }
-
-# Confirm
-[confirm]
-border  = { fg = "#29a298" }
-title   = { fg = "#2aeddd" }
-content = {}
-list    = {}
-btn_yes = { bg = "#063540" }
-btn_no  = {}
-btn_labels = [ "  [Y]es  ", "  (N)o  " ]
-
-# Spot
-[spot]
-border  = { fg = "#2aeddd" }
-title   = { fg = "#2aeddd" }
-
-# Notify
-[notify]
-title_info  = { fg = "#29a298" }
-title_warn  = { fg = "#b28500" }
-title_error = { fg = "#db302d" }
-
-icon_error = ""
-icon_warn = ""
-icon_info = ""
-
 # Help
 [help]
 on      = { fg = "#849900" }
@@ -134,8 +158,10 @@ desc    = { fg = "#46acf5" }
 hovered = { bg = "#002c38" }
 footer  = { fg = "#839395", bg = "#001419" }
 
-[filetype]
 
+
+# Filetype rules
+[filetype]
 rules = [
 	# Images
 	{ mime = "image/*", fg = "#b28500" },
@@ -154,16 +180,34 @@ rules = [
 	{ mime = "inode/x-empty", fg = "#f55350" },
 
 	# Special files
-	{ name = "*", is = "orphan", bg = "#f55350" },
-	{ name = "*", is = "exec"  , fg = "#849900" },
+	{ url = "*", is = "orphan", bg = "#f55350" },
+	{ url = "*", is = "exec", fg = "#849900" },
 
 	# Fallback
-	{ name = "*/", fg = "#46acf5" },
-	{ name = "*", fg = "#839395" }
+	{ url = "*/", fg = "#46acf5" },
+	{ url = "*", fg = "#839395" }
 ]
 
 
+
 [icon]
+globs = []
+dirs  = [
+	{ name = ".config", text = "" },
+	{ name = ".git", text = "" },
+	{ name = ".github", text = "" },
+	{ name = ".npm", text = "" },
+	{ name = "Desktop", text = "" },
+	{ name = "Development", text = "" },
+	{ name = "Documents", text = "" },
+	{ name = "Downloads", text = "" },
+	{ name = "Library", text = "" },
+	{ name = "Movies", text = "" },
+	{ name = "Music", text = "" },
+	{ name = "Pictures", text = "" },
+	{ name = "Public", text = "" },
+	{ name = "Videos", text = "" },
+]
 files = [
   { name = "kritadisplayrc", text = "", fg = "#d23681" },
   { name = ".gtkrc-2.0", text = "", fg = "#839395" },

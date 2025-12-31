@@ -1,0 +1,30 @@
+# ┏┓┏┓┓ ┏┓┳┓┳┏┓┏┓┳┓  ┏┓┏┓┏┓┓┏┓┏┓
+# ┗┓┃┃┃ ┣┫┣┫┃┏┛┣ ┃┃━━┃┃┗┓┣┫┃┫ ┣┫
+# ┗┛┗┛┗┛┛┗┛┗┻┗┛┗┛┻┛  ┗┛┗┛┛┗┛┗┛┛┗
+# Author: Takuya Matsuyama(craftzdog)                  
+
+# Basic 16 palettes
+palette = 0=#002C38
+palette = 1=#DB302D
+palette = 2=#849900
+palette = 3=#B28500
+palette = 4=#268BD3
+palette = 5=#D23681
+palette = 6=#29A298
+palette = 7=#FDF5E2
+palette = 8=#063540
+palette = 9=#F55350
+palette = 10=#B7F900
+palette = 11=#FFBF00
+palette = 12=#46ACF5
+palette = 13=#F254A0
+palette = 14=#2AEDDD
+palette = 15=#FFFFFF
+
+# Background,Foreground,Selection-Background,Selection-Foreground,Cusrsor Colors
+background = #001419
+foreground = #839395
+cursor-color = cell-foreground
+cursor-text = cell-background
+selection-background = #1A6397
+selection-foreground = #839395

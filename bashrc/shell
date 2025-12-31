@@ -22,3 +22,6 @@ fi
 
 # Disable command hashing so Bash always searches PATH for executables
 set +h
+
+# Set the prompt
+PS1="\[\e[95m\]\u \[\e[94;1m\]\w \[\e[0;91m\]\$ \[\e[0m\]"

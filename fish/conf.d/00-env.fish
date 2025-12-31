@@ -36,6 +36,7 @@ set -gx ANSIBLE_CONFIG $XDG_CONFIG_HOME/ansible/ansible.cfg
 set -gx UNISON $XDG_DATA_HOME/unison
 set -gx HISTFILE $XDG_DATA_HOME/history
 set -gx MBSYNCRC $XDG_CONFIG_HOME/mbsync/config
+set -gx NPM_CONFIG_USERCONFIG $HOME/.config/npm/npmrc
 set -gx ELECTRUMDIR $XDG_DATA_HOME/electrum
 set -gx PYTHONSTARTUP $XDG_CONFIG_HOME/python/pythonrc
 set -gx SQLITE_HISTORY $XDG_DATA_HOME/sqlite_history
@@ -65,22 +66,22 @@ set -gx FZF_DEFAULT_OPTS " \
   --ellipsis='… ' \
   --prompt='  ' \
   --pointer=' λ' \
-  --color=bg+:#283457 \
-  --color=bg:#16161e \
-  --color=border:#27a1b9 \
-  --color=fg:#c0caf5 \
-  --color=gutter:#16161e \
-  --color=header:#ff9e64 \
-  --color=hl+:#2ac3de \
-  --color=hl:#2ac3de \
-  --color=info:#545c7e \
-  --color=marker:#ff007c \
-  --color=pointer:#ff007c \
-  --color=prompt:#2ac3de \
-  --color=query:#c0caf5:regular \
-  --color=scrollbar:#27a1b9 \
-  --color=separator:#ff9e64 \
-  --color=spinner:#ff007c \
+  --color=bg+:#002c38 \
+  --color=bg:#001419 \
+  --color=border:#063540 \
+  --color=fg:#9eabac \
+  --color=gutter:#001419 \
+  --color=header:#c94c16 \
+  --color=hl+:#c94c16 \
+  --color=hl:#c94c16 \
+  --color=info:#637981 \
+  --color=marker:#c94c16 \
+  --color=pointer:#c94c16 \
+  --color=prompt:#46acf5 \
+  --color=query:#9eabac:regular \
+  --color=scrollbar:#839395 \
+  --color=separator:#063540 \
+  --color=spinner:#c94c16 \
 "
 
 # Misc

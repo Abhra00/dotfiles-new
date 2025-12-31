@@ -4,7 +4,7 @@ require("full-border"):setup{
 	type = ui.Border.PLAIN,
 }
 
--- Setup git plugin
+-- Setup git
 require("git"):setup()
 
 -- Setup smart-enter

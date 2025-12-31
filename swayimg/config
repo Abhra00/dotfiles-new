@@ -3,6 +3,10 @@
 #    ┗┛┗┻┛┛┗┗┛┻┛ ┗┗┛
 #
 
+#    ┏┓┓ ┏┏┓┓┏┳┳┳┓┏┓
+#    ┗┓┃┃┃┣┫┗┫┃┃┃┃┃┓
+#    ┗┛┗┻┛┛┗┗┛┻┛ ┗┗┛
+#
 [general]
 mode = viewer
 size = 1280,720
@@ -19,8 +23,8 @@ connector = auto
 mode = auto
 
 [viewer]
-window = #1a1b26ff
-transparency = #1a1b26ff
+window = #001419FF
+transparency = #001419FF
 scale = optimal
 position = center
 antialiasing = mks13
@@ -30,8 +34,8 @@ preload = 1
 
 [slideshow]
 time = 3
-window = #1a1b26ff
-transparency = #1a1b26ff
+window = #001419FF
+transparency = #001419FF
 scale = fit
 position = center
 antialiasing = mks13
@@ -43,10 +47,10 @@ preload = no
 pstore = no
 fill = yes
 antialiasing = mks13
-window = #1a1b26ff
-background = #16161eff
-select = #24283bff
-border = #7aa2f7ff
+window = #001419FF
+background = #002C38FF
+select = #063540FF
+border = #29A298FF
 shadow = #00000099
 
 [list]
@@ -59,8 +63,8 @@ fsmon = yes
 [font]
 name = GeistMono Nerd Font Propo
 size = 14
-color = #c0caf5ff
-shadow = #000000d0
+color = #FDF5E2FF
+shadow = #001419D0
 background = #00000000
 
 [info]

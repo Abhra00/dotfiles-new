@@ -1,32 +1,34 @@
-/****************************************************
- *              TOKYONIGHT GTK THEME
- *                (Night Palette)
- ****************************************************/
+/**
+ *    ┏┓┏┳┓┓┏┓┏┓  ┏┓┏┓┏┓
+ *    ┃┓ ┃ ┃┫  ┫  ┃ ┗┓┗┓
+ *    ┗┛ ┻ ┛┗┛┗┛  ┗┛┗┛┗┛
+ *    SOLARIZED OSAKA PALETTE
+ */
 
-@define-color window_bg_color #1a1b26;
-@define-color window_fg_color #c0caf5;
-@define-color view_bg_color #16161e;
-@define-color view_fg_color #c0caf5;
-@define-color accent_bg_color #7aa2f7;
-@define-color accent_fg_color #1a1b26;
-@define-color headerbar_bg_color #1f2335;
-@define-color headerbar_fg_color #c0caf5;
+@define-color window_bg_color #001419;
+@define-color window_fg_color #FDF5E2;
+@define-color view_bg_color #002C38;
+@define-color view_fg_color #FDF5E2;
+@define-color accent_bg_color #268BD3;
+@define-color accent_fg_color #001419;
+@define-color headerbar_bg_color #063540;
+@define-color headerbar_fg_color #FDF5E2;
 @define-color headerbar_backdrop_color @window_bg_color;
-@define-color popover_bg_color #24283b;
+@define-color popover_bg_color #576D74;
 @define-color popover_fg_color @view_fg_color;
-@define-color dialog_bg_color #24283b;
+@define-color dialog_bg_color #576D74;
 @define-color dialog_fg_color @view_fg_color;
-@define-color card_bg_color #24283b;
+@define-color card_bg_color #576D74;
 @define-color card_fg_color @view_fg_color;
-@define-color sidebar_bg_color #1f2335;
-@define-color sidebar_fg_color #c0caf5;
+@define-color sidebar_bg_color #063540;
+@define-color sidebar_fg_color #FDF5E2;
 @define-color sidebar_backdrop_color @window_bg_color;
 @define-color sidebar_shade_color rgba(0,0,0,0.25);
 @define-color sidebar_border_color rgba(0, 0, 0, 0.36);
-@define-color destructive_bg_color #f7768e;
-@define-color success_bg_color #9ece6a;
-@define-color warning_bg_color #e0af68;
-@define-color error_bg_color #f7768e;
+@define-color destructive_bg_color #D23681;
+@define-color success_bg_color #B28500;
+@define-color warning_bg_color #29A298;
+@define-color error_bg_color #C94C16;
 
 /* Remove all rounded corners */
 * {

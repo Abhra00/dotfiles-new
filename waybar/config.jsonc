@@ -16,7 +16,7 @@
     "clock",
     "custom/pacman",
     "custom/weather",
-    "custom/colorpicker",
+    "custom/colorpicker"
   ],
   "modules-center": ["hyprland/workspaces"],
   "modules-right": [
@@ -28,7 +28,7 @@
     "network",
     "bluetooth",
     "battery",
-    "custom/swaync",
+    "custom/swaync"
   ],
   // Modules configuration
 
@@ -46,15 +46,15 @@
       "7": "7",
       "8": "8",
       "9": "9",
-      "active": "󱓻",
+      "active": "󱓻"
     },
     "persistent-workspaces": {
       "1": [],
       "2": [],
       "3": [],
       "4": [],
-      "5": [],
-    },
+      "5": []
+    }
   },
   "custom/pacman": {
     "interval": 3600,
@@ -62,7 +62,7 @@
     "exec": "~/.config/waybar/scripts/pacman-updates.sh",
     "exec-if": "exit 0",
     "on-click": "$TERMINAL -e yay; pkill -SIGRTMIN+8 waybar",
-    "signal": 8,
+    "signal": 8
   },
   "clock": {
     "tooltip": true,
@@ -74,7 +74,7 @@
       "on-click-forward": "tz_up",
       "on-click-backward": "tz_down",
       "on-scroll-up": "shift_up",
-      "on-scroll-down": "shift_down",
+      "on-scroll-down": "shift_down"
     },
     "calendar": {
       "mode": "month",
@@ -82,29 +82,29 @@
       "weeks-pos": "left",
       "on-scroll": 1,
       "format": {
-        "months": "<span font='GeistMono Nerd Font Propo 12' color='#FF9E64'><b>{}</b></span>",
-        "days": "<span font='GeistMono Nerd Font Propo 12' color='#C0CAF5'><b>{}</b></span>",
-        "weeks": "<span font='GeistMono Nerd Font Propo 12' color='#1ABC9C'><b>W{}</b></span>",
-        "weekdays": "<span font='GeistMono Nerd Font Propo 12' color='#FF9E64'><b>{}</b></span>",
-        "today": "<span font='GeistMono Nerd Font Propo 12' color='#9D7CD8'><b>{}</b></span>",
-      },
-    },
+        "months": "<span font='GeistMono Nerd Font Propo 12' color='#29A298'><b>{}</b></span>",
+        "days": "<span font='GeistMono Nerd Font Propo 12' color='#FDF5E2'><b>{}</b></span>",
+        "weeks": "<span font='GeistMono Nerd Font Propo 12' color='#268BD3'><b>W{}</b></span>",
+        "weekdays": "<span font='GeistMono Nerd Font Propo 12' color='#B28500'><b>{}</b></span>",
+        "today": "<span font='GeistMono Nerd Font Propo 12' color='#D23681'><b>{}</b></span>"
+      }
+    }
   },
   "cpu": {
     "interval": 5,
     "format": "",
-    "on-click": "hyprctl dispatch exec '[float on; center on; size 1100 800]' '$TERMINAL --adjust-cell-height=0% -e btop'",
+    "on-click": "hyprctl dispatch exec '[float on; center on; size 1100 800]' '$TERMINAL --adjust-cell-height=0% -e btop'"
   },
   "memory": {
     "format": "",
     "on-click": "hyprctl dispatch exec '[float on; center on; size 1100 800]' '$TERMINAL --adjust-cell-height=0% -e btop'",
-    "tooltip": true,
+    "tooltip": true
   },
   "backlight": {
     "format": "{icon}",
     "format-icons": ["", "󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥"],
     "tooltip": true,
-    "tooltip-format": "{icon} {percent}%",
+    "tooltip-format": "{icon} {percent}%"
   },
   "battery": {
     "format": "{capacity}% {icon}",
@@ -113,7 +113,7 @@
     "format-plugged": "",
     "format-icons": {
       "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
-      "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+      "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     },
     "format-full": "󰂅",
     "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
@@ -122,8 +122,8 @@
     "interval": 5,
     "states": {
       "warning": 20,
-      "critical": 10,
-    },
+      "critical": 10
+    }
   },
   "network": {
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
@@ -136,14 +136,14 @@
     "tooltip-format-disconnected": "Disconnected",
     "interval": 3,
     "nospacing": 1,
-    "on-click": "hyprctl dispatch exec '[float on; center on; size 1100 800]' '$TERMINAL --adjust-cell-height=0% -e impala'",
+    "on-click": "hyprctl dispatch exec '[float on; center on; size 1100 800]' '$TERMINAL --adjust-cell-height=0% -e impala'"
   },
   "bluetooth": {
     "format": "",
     "format-disabled": "󰂲",
     "format-connected": "",
     "tooltip-format": "Devices connected: {num_connections}",
-    "on-click": "blueman-manager",
+    "on-click": "blueman-manager"
   },
   "pulseaudio": {
     "format": "{icon}",
@@ -153,8 +153,8 @@
     "scroll-step": 5,
     "format-muted": "󰝟",
     "format-icons": {
-      "default": ["", "", ""],
-    },
+      "default": ["", "", ""]
+    }
   },
   "custom/colorpicker": {
     "format": "{}",
@@ -162,7 +162,7 @@
     "interval": "once",
     "exec": "~/.config/waybar/scripts/colorpicker.sh -j",
     "on-click": "~/.config/waybar/scripts/colorpicker.sh",
-    "signal": 1,
+    "signal": 1
   },
   "custom/swaync": {
     "tooltip": true,
@@ -176,14 +176,14 @@
       "inhibited-notification": "󰂚<span foreground='$COLOR9'><sup></sup></span>",
       "inhibited-none": "󰂚",
       "dnd-inhibited-notification": "󰂛<span foreground='$COLOR9'><sup></sup></span>",
-      "dnd-inhibited-none": "󰂛",
+      "dnd-inhibited-none": "󰂛"
     },
     "return-type": "json",
     "exec-if": "which swaync-client",
     "exec": "swaync-client -swb",
     "on-click": "sleep 0.1 && swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
-    "escape": true,
+    "escape": true
   },
   "custom/weather": {
     "format": "{}",
@@ -192,24 +192,24 @@
     "interval": 3600,
     "return-type": "json",
     "exec": "$HOME/.config/waybar/scripts/weather.py",
-    "tooltip": true,
+    "tooltip": true
   },
   "group/tray-expander": {
     "orientation": "inherit",
     "drawer": {
       "transition-duration": 600,
       "children-class": "tray-group-item",
-      "click-to-reveal": true,
+      "click-to-reveal": true
     },
-    "modules": ["custom/expand-icon", "tray"],
+    "modules": ["custom/expand-icon", "tray"]
   },
   "custom/expand-icon": {
     "format": "",
     "tooltip": true,
-    "tooltip-format": "Click to show systray",
+    "tooltip-format": "Click to show systray"
   },
   "tray": {
     "icon-size": 14,
-    "spacing": 10,
-  },
+    "spacing": 10
+  }
 }

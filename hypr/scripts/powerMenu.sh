@@ -46,10 +46,20 @@ run_cmd() {
 
   if [[ "$selected" == "$yes" ]]; then
     case "$1" in
-      --shutdown) systemctl poweroff ;;
-      --reboot)   systemctl reboot ;;
-      --suspend)  systemctl suspend ;;
-      --logout)   hyprctl dispatch exit ;;
+    --lock) loginctl lock-session ;;
+    --shutdown)
+      hyprctl clients -j | jq -r '.[].pid' | xargs kill
+      systemctl poweroff
+      ;;
+    --reboot)
+      hyprctl clients -j | jq -r '.[].pid' | xargs kill
+      systemctl reboot
+      ;;
+    --suspend) systemctl suspend ;;
+    --logout)
+      hyprctl clients -j | jq -r '.[].pid' | xargs kill
+      pkill Hyprland
+      ;;
     esac
   else
     exit 0
@@ -59,9 +69,9 @@ run_cmd() {
 # Actions
 chosen="$(run_rofi)"
 case "$chosen" in
-  $shutdown) run_cmd --shutdown ;;
-  $reboot)   run_cmd --reboot ;;
-  $lock)     loginctl lock-session ;;
-  $suspend)  run_cmd --suspend ;;
-  $logout)   run_cmd --logout ;;
+$shutdown) run_cmd --shutdown ;;
+$reboot) run_cmd --reboot ;;
+$lock) run_cmd --lock ;;
+$suspend) run_cmd --suspend ;;
+$logout) run_cmd --logout ;;
 esac

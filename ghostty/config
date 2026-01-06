@@ -57,6 +57,7 @@ keybind = alt+right=adjust_selection:right
 keybind = alt+up=adjust_selection:up
 keybind = alt+x=jump_to_prompt:1
 keybind = alt+z=jump_to_prompt:-1
+keybind = alt+enter=toggle_quick_terminal
 
 # Window
 gtk-single-instance = true

@@ -30,6 +30,10 @@ cursor-style-blink = true
 
 # keybindings
 keybind = clear
+keybind = ctrl+j=adjust_selection:down
+keybind = ctrl+k=adjust_selection:up
+keybind = ctrl+h=adjust_selection:left
+keybind = ctrl+l=adjust_selection:right
 keybind = ctrl+shift+h=goto_split:left
 keybind = ctrl+shift+j=goto_split:bottom
 keybind = ctrl+shift+k=goto_split:top
@@ -51,13 +55,10 @@ keybind = alt+shift+page_up=increase_font_size:1
 keybind = alt+shift+page_down=decrease_font_size:1
 keybind = page_down=scroll_page_down
 keybind = page_up=scroll_page_up
-keybind = alt+down=adjust_selection:down
-keybind = alt+left=adjust_selection:left
-keybind = alt+right=adjust_selection:right
-keybind = alt+up=adjust_selection:up
 keybind = alt+x=jump_to_prompt:1
 keybind = alt+z=jump_to_prompt:-1
 keybind = alt+enter=toggle_quick_terminal
+keybind = alt+backquote=toggle_command_palette
 
 # Window
 gtk-single-instance = true

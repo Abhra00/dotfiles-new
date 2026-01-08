@@ -18,7 +18,7 @@ mouse-hide-while-typing = true
 mouse-scroll-multiplier = 1
 
 # Theme
-theme = solarized-osaka
+theme = tokyonight
 background-opacity = 1.0
 window-theme = ghostty
 
@@ -30,14 +30,14 @@ cursor-style-blink = true
 
 # keybindings
 keybind = clear
-keybind = ctrl+j=adjust_selection:down
-keybind = ctrl+k=adjust_selection:up
-keybind = ctrl+h=adjust_selection:left
-keybind = ctrl+l=adjust_selection:right
-keybind = ctrl+shift+h=goto_split:left
+keybind = alt+shift+h=goto_split:left
 keybind = ctrl+shift+j=goto_split:bottom
 keybind = ctrl+shift+k=goto_split:top
 keybind = ctrl+shift+l=goto_split:right
+keybind = alt+j=adjust_selection:down
+keybind = alt+k=adjust_selection:up
+keybind = alt+h=adjust_selection:left
+keybind = alt+l=adjust_selection:right
 keybind = alt+shift+t=new_tab
 keybind = alt+shift+h=previous_tab
 keybind = alt+shift+l=next_tab

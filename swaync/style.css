@@ -5,20 +5,22 @@
  */
 :root {
   /* Colors */
-  --bg-1: #001419;
-  --bg-2: #002C38;
-  --bg-btn: #576D74;
-  --bg-btn-hover: #B28500;
-  --text: #FDF5E2;
-  --text-disabled: #EDE7D3;
-  --border: #002C38;
-  --pri-low: #839395;
-  --pri-normal: #29A298;
-  --pri-critical: #DB302D;
+  --bg-1: #1a1b26;
+  --bg-2: #292e42;
+  --bg-btn: #414868;
+  --bg-btn-hover: #ff9e64;
+  --text: #c0caf5;
+  --text-disabled: #3b4261;
+  --border: #292e42;
+  --pri-low: #c0caf5;
+  --pri-normal: #ff9e64;
+  --pri-critical: #f7768e;
+
   /* Sizes */
   --radius: 0px;
   --border-width: 1px;
   --btn-size: 20px;
+
   /* Effects */
   --transition: 0.15s ease-in-out;
   --shadow: 0 4px 16px rgba(0, 0, 0, 0.5);

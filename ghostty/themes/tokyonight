@@ -3,7 +3,6 @@
 #  ┻ ┗┛┛┗┛┗┛┗┛┛┗┻┗┛┛┗ ┻
 #  Author: Folke Lemaitre
 
-
 # Basic 16 palettes
 palette = 0=#15161e
 palette = 1=#f7768e
@@ -29,3 +28,4 @@ cursor-color = cell-foreground
 cursor-text = cell-background
 selection-background = #283457
 selection-foreground = #c0caf5
+split-divider-color = #c7a9ff

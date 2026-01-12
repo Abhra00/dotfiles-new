@@ -31,6 +31,15 @@
 @define-color warning_bg_color #E0AF68;
 @define-color error_bg_color #DB4B4B;
 
+/* Remove border-radius from any type of diaglogs as it was causing problem */
+dialog,
+window.dialog,
+.message-dialog,
+.dialog,
+messagedialog {
+  border-radius: 0;
+}
+
 
 /* Decorations */
 decoration {

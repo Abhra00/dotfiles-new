@@ -2,7 +2,7 @@
  *    ┏┓┏┳┓┓┏┓┏┓  ┏┓┏┓┏┓
  *    ┃┓ ┃ ┃┫ ┃┃  ┃ ┗┓┗┓
  *    ┗┛ ┻ ┛┗┛┗╋  ┗┛┗┛┗┛
- *    SOLARIZED OSAKA PALETTE
+ *    Tokyonight palette
  */
 
 @define-color window_bg_color #1A1B26;
@@ -34,6 +34,7 @@
 @define-color success_bg_color #9ECE6A;
 @define-color warning_bg_color #E0AF68;
 @define-color error_bg_color #F7768E;
+
 
 :root {
   --accent-blue: #7AA2F7;

@@ -1,8 +1,209 @@
 #    ┏┳┓┓┏┏┓┳┳┓┏┓
 #     ┃ ┣┫┣ ┃┃┃┣
 #     ┻ ┛┗┗┛┛ ┗┗┛
-#     Tokyonight theme yazi
+#
+
+# Schema
+"$schema" = "https://yazi-rs.github.io/schemas/theme.json"
 
 # Flavour
 [flavor]
-dark = "tokyo-night"
+dark  = ""
+light = ""
+
+# App
+[app]
+overall = {}
+
+# Manager
+[mgr]
+cwd = { fg = "#e5c76b", italic = true, bold = true }
+
+# Find
+find_keyword  = { fg = "#c47fd5", bg = "#e57474", bold = true }
+find_position = { fg = "#6cbfbf", bg = "#232a2d", bold = true }
+
+# Symlink
+symlink_target = { italic = true }
+
+# Marker
+marker_copied   = { fg = "#8ccf7e", bg = "#8ccf7e" }
+marker_cut      = { fg = "#ef7e7e", bg = "#ef7e7e" }
+marker_marked   = { fg = "#c47fd5", bg = "#c47fd5" }
+marker_selected = { fg = "#e5c76b", bg = "#e5c76b" }
+
+# Count
+count_copied   = { fg = "#c47fd5", bg = "#8ccf7e" }
+count_cut      = { fg = "#c47fd5", bg = "#ef7e7e" }
+count_selected = { fg = "#c47fd5", bg = "#71baf2" }
+
+# Border
+border_symbol = "│"
+border_style  = { fg = "#67cbe7" }
+
+# Tabs
+[tabs]
+active   = { fg = "#c47fd5", bg = "#71baf2", bold = true }
+inactive = { fg = "#71baf2", bg = "#404749" }
+sep_inner = { open = "", close = "" }
+sep_outer = { open = "", close = "" }
+
+# Mode
+[mode]
+normal_main = { fg = "#dadada", bg = "#71baf2", bold = true }
+normal_alt  = { fg = "#71baf2", bg = "#404749" }
+select_main = { fg = "#dadada", bg = "#c47fd5", bold = true }
+select_alt  = { fg = "#dadada", bg = "#404749" }
+unset_main  = { fg = "#c47fd5", bg = "#71baf2", bold = true }
+unset_alt   = { fg = "#71baf2", bg = "#404749" }
+
+# Indicator
+[indicator]
+parent  = { reversed = true }
+current = { reversed = true }
+preview = { underline = true }
+padding = { open = "█", close = "█" }
+
+# Status bar
+[status]
+overall   = { fg = "#dadada", bg = "#232a2d" }
+sep_left  = { open = "", close = "" }
+sep_right = { open = "", close = "" }
+
+# Progress
+progress_label  = { fg = "#dadada", bold = true }
+progress_normal = { fg = "#67b0e8", bg = "#232a2d" }
+progress_error  = { fg = "#e57474", bg = "#232a2d" }
+
+# Permissions
+perm_type  = { fg = "#71baf2" }
+perm_read  = { fg = "#e5c76b" }
+perm_write = { fg = "#ef7e7e" }
+perm_exec  = { fg = "#8ccf7e" }
+perm_sep   = { fg = "#404749" }
+
+
+# Which
+[which]
+cols            = 3
+mask            = { bg = "#232a2d" }
+cand            = { fg = "#71baf2" }
+rest            = { fg = "#71baf2" }
+desc            = { fg = "#71baf2" }
+separator       = " 󰶻  "
+separator_style = { fg = "#c47fd5" }
+
+# Confirm
+[confirm]
+border  = { fg = "#67b0e8" }
+title   = { fg = "#67b0e8" }
+content = {}
+list    = {}
+btn_yes = { bg = "#8ccf7e", fg = "#141b1e" }
+btn_no  = { bg = "#e57474", fg = "#141b1e" }
+btn_labels = [ "  [Y]es  ", "  (N)o  " ]
+
+# Spot
+[spot]
+border  = { fg = "#67b0e8" }
+title   = { fg = "#67b0e8" }
+
+tbl_col  = { fg = "#71baf2" }
+tbl_cell = { fg = "#e5c76b", bg = "#232a2d" }
+
+# Notify
+[notify]
+title_info  = { fg = "#6cbfbf" }
+title_warn  = { fg = "#e5c76b" }
+title_error = { fg = "#e57474" }
+
+icon_info  = ""
+icon_warn  = ""
+icon_error = ""
+
+# Picker
+[pick]
+border   = { fg = "#67b0e8" }
+active   = { fg = "#dadada", bg = "#2c3333" }
+inactive = { fg = "#dadada" }
+
+# Input
+[input]
+border   = { fg = "#8ccf7e" }
+title    = { fg = "#8ccf7e" }
+value    = { fg = "#71baf2" }
+selected = { bg = "#2c3333" }
+
+# Completion
+[cmp]
+border   = { fg = "#8ccf7e" }
+active   = { fg = "#dadada", bg = "#404749" }
+inactive = { fg = "#dadada" }
+
+icon_file    = ""
+icon_folder  = ""
+icon_command = ""
+
+# Tasks
+[tasks]
+border  = { fg = "#67cbe7" }
+title   = { fg = "#67cbe7" }
+hovered = { fg = "#dadada", bg = "#2c3333" }
+
+# Help
+[help]
+on      = { fg = "#8ccf7e" }
+run     = { fg = "#c47fd5" }
+desc    = { fg = "#71baf2" }
+hovered = { bg = "#232a2d" }
+footer  = { fg = "#dadada", bg = "#232a2d" }
+
+
+
+# Filetype rules
+[filetype]
+rules = [
+	# Images
+	{ mime = "image/*", fg = "#e5c76b" },
+
+	# Media
+	{ mime = "{audio,video}/*", fg = "#c47fd5" },
+
+	# Archives
+	{ mime = "application/*zip", fg = "#ef7e7e" },
+	{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#ef7e7e" },
+
+	# Documents
+	{ mime = "application/{pdf,doc,rtf,vnd.*}", fg = "#71baf2" },
+
+	# Empty files
+	{ mime = "inode/x-empty", fg = "#ef7e7e" },
+
+	# Special files
+	{ url = "*", is = "orphan", bg = "#ef7e7e" },
+	{ url = "*", is = "exec", fg = "#8ccf7e" },
+
+	# Fallback
+	{ url = "*/", fg = "#71baf2" },
+	{ url = "*", fg = "#dadada" }
+]
+
+[icon]
+globs = []
+dirs  = [
+	{ name = ".config", text = "" },
+	{ name = ".git", text = "" },
+	{ name = ".github", text = "" },
+	{ name = ".npm", text = "" },
+	{ name = "Desktop", text = "󱂵" },
+	{ name = "Developments", text = "" },
+	{ name = "Documents", text = "󱧶" },
+	{ name = "Downloads", text = "󰉍" },
+	{ name = "Library", text = "" },
+	{ name = "Movies", text = "󱧺" },
+	{ name = "Music", text = "󱍙" },
+	{ name = "Pictures", text = "󰉏" },
+	{ name = "Public", text = "󰉌" },
+	{ name = "Templates", text = "󱞞" },
+	{ name = "Videos", text = "󱞊" },
+]

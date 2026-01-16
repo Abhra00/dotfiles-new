@@ -4,146 +4,430 @@
  *    ┗┻┛┛┗┗┛┻┛┛┗┛┗  ┗┛ ┻ ┗┛┗┛┗┛
  */
 
-/*------------Defining Colors---------------*/
-@define-color background #1A1B26;
-@define-color background-alt #292E42;
-@define-color foreground #C0CAF5;
-@define-color foreground-alt #1A1B26;
-@define-color red #F7768E;
-@define-color green #9ECE6A;
-@define-color yellow #E0AF68;
-@define-color blue #7AA2F7;
-@define-color magenta #BB9AF7;
-@define-color cyan #7DCFFF;
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  COLOR TOKENS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+@define-color bg            #141b1e;
+@define-color bg-alt        #2d3437;
+@define-color fg            #dadada;
+@define-color fg-inverse    #141b1e;
 
+@define-color red           #e57474;
+@define-color green         #8ccf7e;
+@define-color yellow        #e5c76b;
+@define-color blue          #67b0e8;
+@define-color magenta       #c47fd5;
+@define-color cyan          #6cbfbf;
+
+
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  GLOBAL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 * {
   font-family: "GeistMono Nerd Font Propo";
-  font-weight: 600;
-  font-size: 14px;
+  font-size: 10pt;
+  font-weight: 500;
 }
 
 window#waybar {
-  background-color: @background;
-  color: @foreground;
-  transition-property: background-color;
-  transition-duration: 0.5s;
+  background: @bg;
+  color: @fg;
 }
 
-window#waybar.hidden {
-  opacity: 0.2;
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Image
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+#image {
+  border-radius: 0px;
+  padding: 0.5rem;
+  margin: 0.5rem 0.25rem;
+  min-width: 1.5rem;
+  transition: 300ms linear;
 }
 
-button {
-  box-shadow: inset 0 -3px transparent;
-  border: none;
-  border-radius: 0;
-}
-
-#workspaces button:hover {
-  color: @magenta;
-  box-shadow: inherit;
-  text-shadow: inherit;
-  background: none;
-  border: none;
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  WORKSPACES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+#workspaces {
+  background: @bg-alt;
+  margin: 0.5rem 0.25rem;
+  transition: 300ms linear;
 }
 
 #workspaces button {
-  padding: 0 5px;
-  color: @foreground;
-  margin: 4px 0 4px 6px;
-  transition: color 200ms ease-in-out;
+  padding: 0.5rem;
+  border-radius: 0px;
+  transition: 300ms linear;
 }
 
-#workspaces button.empty {
-  color: @background-alt;
-}
-
-#workspaces button.visible {
-  color: @foreground;
-}
-
-#workspaces button.active {
-  color: @foreground;
+#workspaces button label {
+  color: @fg;
 }
 
 #workspaces button.urgent {
+  background: @red;
+}
+
+#workspaces button.active {
+  background: @blue;
+}
+
+#workspaces button.urgent label,
+#workspaces button.active label {
+  color: @fg-inverse;
+}
+
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Idle inhibit
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+#idle_inhibitor {
+  background: @bg-alt;
   color: @red;
+  border-radius: 0px;
+  padding: 0.5rem;
+  margin: 0.5rem 0.25rem;
+  min-width: 1.5rem;
+  transition: 300ms linear;
 }
 
-#clock,
-#battery,
-#cpu,
-#memory,
-#backlight,
-#network,
-#bluetooth,
-#pulseaudio,
-#custom-pacman,
-#custom-colorpicker,
-#custom-swaync,
-#custom-weather,
-#custom-expand-icon,
-#tray,
-#mode,
-#mpd {
-  padding: 0 9px;
-  color: @foreground;
-  border-radius: 15px;
-  margin: 5px 0;
+#idle_inhibitor.activated {
+  background: @red;
+  color: @bg;
 }
 
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ Pacupdates
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 #custom-pacman {
-  color: @yellow;
+  background: @bg-alt;
+  color: @green;
+  border-radius: 0px;
+  padding: 0.5rem;
+  margin: 0.5rem 0.25rem;
+  min-width: 1.5rem;
+  transition: 300ms linear;
 }
 
-#window,
-#workspaces {
-  margin: 0 4px;
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ Weather
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+#custom-weather {
+  background: @bg-alt;
+  color: @blue;
+  border-radius: 0px;
+  padding: 0.5rem;
+  margin: 0.5rem 0.25rem;
+  min-width: 1.5rem;
+  transition: 300ms linear;
 }
 
-#clock {
-  color: @magenta;
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ Color-picker
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+#custom-colorpicker {
+  background: @bg-alt;
+  border-radius: 0px;
+  padding: 0.5rem;
+  margin: 0.5rem 0.25rem;
+  min-width: 1.5rem;
+  transition: 300ms linear;
 }
 
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ Network
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+#network.icon {
+  font-size: 12pt;
+  background: @blue;
+  color: @fg-inverse;
+  border-radius: 0px;
+  padding: 0.5rem;
+  margin: 0.5rem 0rem 0.5rem 0.25rem;
+  min-width: 1.5rem;
+  transition: 300ms linear;
+}
+#network.address {
+  background: @bg-alt;
+  color: @fg;
+  border-radius: 0px;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  margin: 0.5rem 0.25rem 0.5rem 0rem;
+  transition: 300ms linear;
+}
+
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ Wireplumber
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+#wireplumber.icon {
+  font-size: 12pt;
+  background: @blue;
+  color: @fg-inverse;
+  border-radius: 0px;
+  padding: 0.5rem;
+  margin: 0.5rem 0rem 0.5rem 0.25rem;
+  min-width: 1.5rem;
+  transition: 300ms linear;
+}
+#wireplumber.volume {
+  background: @bg-alt;
+  color: @fg;
+  border-radius: 0px;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  margin: 0.5rem 0.25rem 0.5rem 0rem;
+  transition: 300ms linear;
+}
+
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ Backlight
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+#backlight.icon {
+  font-size: 12pt;
+  background: @blue;
+  color: @fg-inverse;
+  border-radius: 0px;
+  padding: 0.5rem;
+  margin: 0.5rem 0rem 0.5rem 0.25rem;
+  min-width: 1.5rem;
+  transition: 300ms linear;
+}
+#backlight.percent {
+  background: @bg-alt;
+  color: @fg;
+  border-radius: 0px;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  margin: 0.5rem 0.25rem 0.5rem 0rem;
+  transition: 300ms linear;
+}
+
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ Battery
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+#battery.icon {
+  font-size: 12pt;
+  background: @blue;
+  color: @fg-inverse;
+  border-radius: 0px;
+  padding: 0.5rem;
+  margin: 0.5rem 0rem 0.5rem 0.25rem;
+  min-width: 1.5rem;
+  transition: 300ms linear;
+}
+#battery.capacity {
+  background: @bg-alt;
+  color: @fg;
+  border-radius: 0px;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  margin: 0.5rem 0.25rem 0.5rem 0rem;
+  transition: 300ms linear;
+}
+#battery.icon.warning:not(.charging) {
+  font-size: 12pt;
+  background: @yellow;
+  color: @fg-inverse;
+  border-radius: 0px;
+  padding: 0.5rem;
+  margin: 0.5rem 0rem 0.5rem 0.25rem;
+  min-width: 1.5rem;
+  transition: 300ms linear;
+}
+#battery.icon.critical:not(.charging) {
+  font-size: 12pt;
+  background: @red;
+  color: @fg-inverse;
+  border-radius: 0px;
+  padding: 0.5rem;
+  margin: 0.5rem 0rem 0.5rem 0.25rem;
+  min-width: 1.5rem;
+  transition: 300ms linear;
+}
+
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ Clock
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+#clock.icon {
+  font-size: 12pt;
+  background: @blue;
+  color: @fg-inverse;
+  border-radius: 0px;
+  padding: 0.5rem;
+  margin: 0.5rem 0rem 0.5rem 0.25rem;
+  min-width: 1.5rem;
+  transition: 300ms linear;
+}
+#clock.time {
+  background: @bg-alt;
+  color: @fg;
+  border-radius: 0px;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  margin: 0.5rem 0.25rem 0.5rem 0rem;
+  transition: 300ms linear;
+}
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ Swaync
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 #custom-swaync {
-  color: @magenta;
+  font-size: 12pt;
+  background: @magenta;
+  color: @fg-inverse;
+  border-radius: 0px;
+  padding: 0.5rem;
+  margin: 0.5rem 0rem 0.5rem 0.25rem;
+  min-width: 1.5rem;
+  transition: 300ms linear;
 }
 
-#pulseaudio.muted {
-  color: @red;
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ Systray
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+#tray {
+  font-size: 12pt;
+  background: @bg-alt;
+  border-radius: 0px;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  margin: 0.5rem 0.25rem;
+  min-width: 1.5rem;
+  transition: 300ms linear;
+}
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background: @red;
 }
 
-#network.disconnected {
-  color: @red;
-}
-
-#battery {
-  color: @green;
-}
-
-#battery.warning:not(.charging) {
-  color: @red;
-}
-
-#battery.critical:not(.charging) {
-  color: @red;
-}
-
-#custom-expand-icon:hover {
-  color: @green;
-}
-
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ Tooltip
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 tooltip {
-  background-color: @background;
-  border: 2px solid @blue;
+  background-color: @bg;
+  border: 1px solid @blue;
   border-radius: 0px;
 }
 
 tooltip label {
-  color: @foreground;
+  color: @fg;
+  padding: 4px;
 }
 
-/* If workspaces is the leftmost module, reduce left margin */
-.modules-left > widget:first-child > #workspaces {
-  margin-left: 2px;
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  HOVER EFFECTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
+
+/* Image hover */
+#image:hover {
+  background: @bg-alt;
+}
+
+/* Workspaces hover */
+#workspaces button:hover {
+  background: @magenta;
+  color: @fg-inverse;
+}
+
+#workspaces button:hover label {
+  color: @fg-inverse;
+}
+
+/* Idle inhibitor hover */
+#idle_inhibitor:hover {
+  background: @red;
+  color: @fg-inverse;
+}
+#idle_inhibitor.activated:hover {
+  background: shade(@red, 0.85);
+  color: @fg-inverse;
+}
+
+/* Pacman hover */
+#custom-pacman:hover {
+  background: @green;
+  color: @fg-inverse;
+}
+
+/* Weather hover */
+#custom-weather:hover {
+  background: @blue;
+  color: @fg-inverse;
+}
+
+/* Color-picker hover */
+#custom-colorpicker:hover {
+  background: @magenta;
+  color: @fg-inverse;
+}
+
+/* Network hover */
+#network.icon:hover {
+  background: shade(@blue, 0.85);
+}
+
+#network.address:hover {
+  background: shade(@blue, 0.85);
+  color: @fg-inverse;
+}
+
+/* Wireplumber hover */
+#wireplumber.icon:hover {
+  background: shade(@blue, 0.85);
+}
+
+#wireplumber.volume:hover {
+  background: shade(@blue, 0.85);
+  color: @fg-inverse;
+}
+
+/* Backlight hover */
+#backlight.icon:hover {
+  background: shade(@blue, 0.85);
+}
+
+#backlight.percent:hover {
+  background: shade(@blue, 0.85);
+  color: @fg-inverse;
+}
+
+/* Battery hover */
+#battery.icon:hover {
+  background: shade(@blue, 0.85);
+}
+
+#battery.capacity:hover {
+  background: shade(@blue, 0.85);
+  color: @fg-inverse;
+}
+
+#battery.icon.warning:not(.charging):hover {
+  background: shade(@yellow, 0.85);
+}
+
+#battery.icon.critical:not(.charging):hover {
+  background: shade(@red, 0.85);
+}
+
+/* Clock hover */
+#clock.icon:hover {
+  background: shade(@blue, 0.85);
+}
+
+#clock.time:hover {
+  background: shade(@blue, 0.85);
+  color: @fg-inverse;
+}
+
+/* Swaync hover */
+#custom-swaync:hover {
+  background: shade(@magenta, 0.85);
+}
+
+/* Systray hover */
+#tray:hover {
+  background: shade(@blue, 0.85);
+  color: @fg-inverse;
 }

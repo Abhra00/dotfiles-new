@@ -6,10 +6,10 @@
  */
 
 /* Define colors */
-@define-color background        #1A1B26;
-@define-color foreground        #C0CAF5;
-@define-color border-color      #7AA2F7;
-@define-color progressbar-color #FF9E64;
+@define-color background        #141b1e;
+@define-color foreground        #dadada;
+@define-color border-color      #67b0e8;
+@define-color progressbar-color #67b0e8;
 
 /* Main css config */
 window {

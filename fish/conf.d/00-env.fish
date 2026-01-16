@@ -66,22 +66,21 @@ set -gx FZF_DEFAULT_OPTS " \
   --ellipsis='… ' \
   --prompt='  ' \
   --pointer=' λ' \
-  --color=bg+:#283457 \
-  --color=bg:#16161e \
-  --color=border:#27a1b9 \
-  --color=fg:#c0caf5 \
-  --color=gutter:#16161e \
-  --color=header:#ff9e64 \
-  --color=hl+:#2ac3de \
-  --color=hl:#2ac3de \
-  --color=info:#545c7e \
-  --color=marker:#ff007c \
-  --color=pointer:#ff007c \
-  --color=prompt:#2ac3de \
-  --color=query:#c0caf5:regular \
-  --color=scrollbar:#27a1b9 \
-  --color=separator:#ff9e64 \
-  --color=spinner:#ff007c \
+  --color=bg+:#232a2d \
+  --color=bg:-1 \
+  --color=border:#67b0e8 \
+  --color=fg:#dadada \
+  --color=header:#e5c76b \
+  --color=hl+:#c47fd5 \
+  --color=hl:#c47fd5 \
+  --color=info:#e5c76b \
+  --color=marker:#e57474 \
+  --color=pointer:#e57474 \
+  --color=prompt:#67b0e8 \
+  --color=query:#dadada:regular \
+  --color=scrollbar:#232a2d \
+  --color=separator:#232a2d \
+  --color=spinner:#e57474 \
 "
 
 # Misc

@@ -3,33 +3,32 @@
 # ┗┛┗┛┗┛┗┛┛┗┗┛
 #
 
-# TokyoNight Color Palette
-set -l foreground C0CAF5
-set -l selection 292E42
-set -l comment 565F89
-set -l red DB4B4B
-set -l orange FF9E64
-set -l yellow E0AF68
-set -l green 9FE044
-set -l magenta FF007C
-set -l cyan 7DCFFF
-set -l teal 1ABC9C
+# Everblush palette
+set -l foreground dadada
+set -l selection 2d3437
+set -l comment 404749
+set -l red e57474
+set -l green 8ccf7e
+set -l yellow e5c76b
+set -l blue 67b0e8
+set -l magenta c47fd5
+set -l cyan 6cbfbf
 
-# Syntax Highlighting Colors
+# Syntax highlighting colors
 set -g fish_color_normal $foreground
-set -g fish_color_command $cyan
-set -g fish_color_keyword $teal
+set -g fish_color_command $green
+set -g fish_color_keyword $blue
 set -g fish_color_quote $yellow
 set -g fish_color_redirection $foreground
-set -g fish_color_end $orange
-set -g fish_color_option $teal
+set -g fish_color_end $blue
+set -g fish_color_option $blue
 set -g fish_color_error $red
 set -g fish_color_param $magenta
 set -g fish_color_comment $comment
 set -g fish_color_selection --background=$selection
 set -g fish_color_search_match --background=$selection
 set -g fish_color_operator $green
-set -g fish_color_escape $teal
+set -g fish_color_escape $blue
 set -g fish_color_autosuggestion $comment
 
 # Completion Pager Colors

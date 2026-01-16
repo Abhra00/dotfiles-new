@@ -2,34 +2,40 @@
  *    ┏┓┓ ┏┏┓┓┏┳┓┏┓  ┏┓┏┓┏┓
  *    ┗┓┃┃┃┣┫┗┫┃┃┃ ━━┃ ┗┓┗┓
  *    ┗┛┗┻┛┛┗┗┛┛┗┗┛  ┗┛┗┛┗┛
+ *
  */
+
 :root {
-  /* Colors */
-  --bg-1: #1a1b26;
-  --bg-2: #292e42;
-  --bg-btn: #414868;
-  --bg-btn-hover: #ff9e64;
-  --text: #c0caf5;
-  --text-disabled: #3b4261;
-  --border: #292e42;
-  --pri-low: #c0caf5;
-  --pri-normal: #ff9e64;
-  --pri-critical: #f7768e;
-
-  /* Sizes */
-  --radius: 0px;
-  --border-width: 1px;
-  --btn-size: 20px;
-
-  /* Effects */
-  --transition: 0.15s ease-in-out;
-  --shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+    /* Everblush Extended Palette */
+    --color0: #232a2d;
+    --color1: #e57474;
+    --color2: #8ccf7e;
+    --color3: #e5c76b;
+    --color4: #67b0e8;
+    --color5: #c47fd5;
+    --color6: #6cbfbf;
+    --color7: #b3b9b8;
+    --color8: #2d3437;
+    --color9: #ef7e7e;
+    --color10: #96d988;
+    --color11: #f4d67a;
+    --color12: #71baf2;
+    --color13: #ce89df;
+    --color14: #67cbe7;
+    --color15: #bdc3c2;
+    /* Background Variants */
+    --bg: #141b1e;
+    --bg-light: #2c3333;
+    --bg-highlight: #404749;
+    /* Foreground */
+    --fg: #dadada;
+    --fg-inverse: #141b1e;
 }
 
 /* Base styles */
 * {
   font-family: "GeistMono Nerd Font Propo", monospace;
-  outline: none;
+  border-radius: 0px;
 }
 
 *:focus {
@@ -46,31 +52,22 @@ scrollbar slider {
   background: transparent;
 }
 
-/* Buttons */
-.close-button,
-.widget-title > button,
-.widget-dnd switch,
-.widget-menubar > .menu-button-bar > .widget-menubar-container button,
-.widget-menubar > revealer button,
-.widget-inhibitors > button {
-  border-radius: var(--radius);
-  border: none;
-  box-shadow: none;
-  transition: background var(--transition);
-}
-
+/* close button */
 .close-button {
-  background: var(--bg-btn);
-  color: var(--text);
-  padding: 0;
-  border-radius: 50%;
-  margin: 8px;
-  min-width: var(--btn-size);
-  min-height: var(--btn-size);
+    background: var(--color1);
+    color: var(--fg-inverse);
+    text-shadow: none;
+    padding: 0;
+    margin-top: 8px;
+    margin-right: 14px;
+    box-shadow: none;
+    border: none;
+    min-width: 24px;
+    min-height: 24px;
 }
 
 .close-button:hover {
-  background: var(--bg-btn-hover);
+    background: var(--color9);
 }
 
 /* Notifications */
@@ -80,47 +77,42 @@ scrollbar slider {
 
 .notification-row:focus,
 .notification-group:focus {
-  background: var(--bg-1);
+  background: var(--bg);
 }
 
-.notification-row .notification-background {
-  margin: 0 -6px 0 0;
-}
 
 .notification-row .notification-background .notification {
-  border-radius: var(--radius);
-  border: var(--border-width) solid var(--border);
-  transition: background var(--transition);
-  background: var(--bg-1);
-  padding: 2px;
+    padding: 0;
+    margin: 6px 12px;
+    border: 1px solid var(--color4);
+    background: var(--bg);
 }
 
 .notification-row .notification-background .notification.low {
-  border-left: 3px solid var(--pri-low);
+  border: 1px solid var(--color7);
 }
 
 .notification-row .notification-background .notification.normal {
-  border-left: 3px solid var(--pri-normal);
+  border: 1px solid var(--color4);
 }
 
 .notification-row .notification-background .notification.critical {
-  border-left: 3px solid var(--pri-critical);
+  border: 3px solid var(--color1);
 }
 
 .notification-default-action {
-  padding: 4px;
-  margin: 0;
-  box-shadow: none;
-  background: transparent;
-  border: none;
-  color: var(--text);
-  transition: background var(--transition);
-  border-radius: var(--radius);
+    padding: 4px;
+    margin: 0;
+    box-shadow: none;
+    background: var(--bg-light);
+    border: none;
+    color: var(--fg);
+    transition: all .15s ease-in-out;
+    font-size: 10.5pt;
 }
 
 .notification-default-action:hover {
-  -gtk-icon-filter: none;
-  background: var(--bg-1);
+  background: var(--bg-highlight);
 }
 
 .notification-default-action:not(:only-child) {
@@ -131,59 +123,37 @@ scrollbar slider {
 /* Notification Content */
 .notification-content {
   background: transparent;
-  border-radius: var(--radius);
-  padding: 0;
-}
-
-.notification-content .image {
-  -gtk-icon-filter: none;
-  -gtk-icon-size: 30px;
-  border-radius: 50px;
-  margin: 0 7px 0 0;
-}
-
-.notification-content .app-icon {
-  -gtk-icon-filter: none;
-  -gtk-icon-size: calc(25px / 3);
-  -gtk-icon-shadow: 0 1px 4px black;
-  margin: 6px;
+  padding: 14px;
 }
 
 .notification-content .text-box label {
   filter: none;
 }
 
-.notification-content .text-box .summary,
-.notification-content .text-box .time,
-.notification-content .text-box .body {
-  font-size: 10px;
-  background: transparent;
-  color: var(--text);
-  text-shadow: none;
+.notification-content .text-box .summary {
+    font-size: 10.5pt;
+    font-weight: bold;
+    background: transparent;
+    color: var(--color4);
+    margin-left: 10px;
 }
-
-.notification-content .text-box .summary,
 .notification-content .text-box .time {
-  font-weight: bold;
+    font-size: 10.5pt;
+    font-weight: bold;
+    background: transparent;
+    color: var(--color10);
+    text-shadow: none;
+    margin-right: 10px;
 }
-
-.notification-content .text-box .time {
-  margin-right: 30px;
-}
-
 .notification-content .text-box .body {
-  font-weight: normal;
+    font-size: 10.5pt;
+    font-weight: bold;
+    background: transparent;
+    color: var(--fg);
+    text-shadow: none;
+    margin-left: 10px;
 }
 
-.notification-content progressbar {
-  margin-top: 4px;
-}
-
-.notification-content .body-image {
-  margin-top: 4px;
-  background-color: white;
-  -gtk-icon-filter: none;
-}
 
 /* Inline Reply */
 .notification-content .inline-reply {
@@ -238,51 +208,42 @@ scrollbar slider {
 }
 
 /* Notification Groups */
-.notification-group {
-  transition: opacity 200ms ease-in-out;
+
+.notification-group-headers {
+    font-weight: bold;
+    font-size: 10.5pt;
+    color: var(--color15);
 }
 
-.notification-group .notification-group-close-button .close-button {
-  margin: 12px 20px;
+.notification-group-icon {
+    color: var(--color4);
+    margin-right: 8px;
 }
 
-.notification-group .notification-group-buttons,
-.notification-group .notification-group-headers {
-  margin: 0 16px;
-  color: var(--text);
+.notification-group-collapse-button {
+    background: var(--bg);
+    border: none;
+    min-width: 24px;
+    min-height: 24px;
 }
 
-.notification-group .notification-group-headers {
-  font-size: 10px;
-  min-width: 10px;
-  min-height: 10px;
+.notification-group-collapse-button:hover {
+    background: var(--bg-light);
+    color: var(--color4);
 }
 
-.notification-group .notification-group-headers .notification-group-icon {
-  color: var(--text);
-  -gtk-icon-size: 20px;
-  font-size: 12px;
-  font-weight: 700;
-  margin: 5px 5px 5px 0;
+.notification-group-close-all-button {
+    background: var(--color1);
+    color: var(--fg-inverse);
+    border: none;
+    min-width: 24px;
+    min-height: 24px;
 }
 
-.notification-group .notification-group-headers .notification-group-header {
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--text);
+.notification-group-close-all-button:hover {
+    background: var(--color9);
 }
 
-.notification-group .notification-group-buttons {
-  margin: 5px;
-}
-
-.notification-group.collapsed.not-expanded {
-  opacity: 1;
-}
-
-.notification-group.collapsed .notification-row .notification {
-  background-color: var(--bg-1);
-}
 
 .notification-group.collapsed
   .notification-row:not(:last-child)
@@ -296,16 +257,15 @@ scrollbar slider {
 .notification-group.collapsed:hover
   .notification-row:not(:only-child)
   .notification {
-  background-color: var(--bg-1);
+  background-color: var(--bg-highlight);
 }
 
-/* Control Center */
+/* Cntrol Center */
 .control-center {
-  background: var(--bg-1);
-  color: var(--text);
-  border-radius: var(--radius);
-  border: var(--border-width) solid var(--border);
-  box-shadow: var(--shadow);
+    background: var(--bg);
+    border-left: 4px solid var(--color4);
+    margin-left: 10px;
+    box-shadow: 0 0 5px 0 var(--color0);
 }
 
 .control-center .control-center-list-placeholder {
@@ -328,212 +288,175 @@ scrollbar slider {
   .notification
   .notification-default-action:hover,
 .control-center .control-center-list .notification .notification-action:hover {
-  background-color: var(--bg-1);
+  background-color: var(--bg-highlight);
 }
 
-/* Floating Notifications */
 .blank-window,
 .floating-notifications {
   background: transparent;
 }
 
-.floating-notifications .notification {
-  box-shadow: none;
+/* Widget Title */
+.widget-title {
+    color: var(--color4);
+    margin: 10px;
+    font-size: 10.5pt;
+    font-weight: bold;
 }
 
-/* Widgets */
-
-/* Title Widget */
-.widget-title > label {
-  margin: 8px;
-  font-weight: 700;
-  font-size: 12px;
+.widget-title>button {
+    font-size: initial;
+    font-weight: bold;
+    color: var(--color1);
+    text-shadow: none;
+    background: var(--color0);
+    border: 1px solid var(--color0);
+    box-shadow: none;
 }
 
-.widget-title > button {
-  margin: 8px;
-  font-size: 10px;
-  background: var(--bg-1);
-  border: var(--border-width) solid var(--text-disabled);
-  padding: 3px 10px;
-  color: var(--text);
-  font-weight: 700;
+.widget-title>button:hover {
+    background: var(--color1);
+    color: var(--fg-inverse);
 }
 
-/* Common Widget Styles */
-.widget-dnd,
-.widget-label,
-.widget-volume,
-.widget-slider,
-.widget-backlight {
-  margin: 8px;
+/* Widget Dnd */
+.widget-dnd>label {
+    color: var(--color1);
+    margin: 8px;
+    font-size: 12.5pt;
+    font-weight: bold;
 }
 
-.widget-dnd label,
-.widget-label > label {
-  color: var(--text);
-  font-size: 10px;
+.widget-dnd>switch {
+    font-size: initial;
+    background: var(--color0);
+    box-shadow: none;
+    margin-right: 4px;
+    transition: all .1s ease-in-out;
 }
 
-/* Do Not Disturb Widget */
-.widget-dnd label {
-  margin: 8px;
+.widget-dnd>switch:checked {
+    background: var(--color1);
 }
 
-.widget-dnd switch {
-  margin: 8px;
-  background: var(--bg-btn);
-  border-radius: var(--radius);
-  min-width: 35px;
-  min-height: 15px;
+.widget-dnd>switch slider {
+    background: var(--bg-light);
 }
 
-.widget-dnd switch:checked {
-  background: var(--pri-normal);
-}
-
-.widget-dnd switch slider {
-  min-width: 13px;
-  min-height: 13px;
-  margin: 2px;
-  border-radius: var(--radius);
-  background: var(--text);
-  border: var(--border-width) solid var(--border);
-}
-
+/* Widget Label */
 .widget-label {
-  margin: 8px;
+    margin: 10px;
 }
 
-/* Mpris Widget */
+.widget-label>label {
+    font-size: 1.5rem;
+    color: var(--fg);
+}
+
+/* Widget Mpris */
 .widget-mpris {
-  margin: 5px;
-}
-
-.widget-mpris .widget-mpris-player {
-  margin: 10px 10px;
-  border-radius: var(--radius);
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75);
-  border: var(--border-width) solid var(--border);
-}
-
-.widget-mpris .widget-mpris-player .mpris-background {
-  filter: blur(2px);
-}
-
-.widget-mpris .widget-mpris-player .mpris-overlay {
-  padding: 16px;
-  background-color: rgba(0, 0, 0, 0.55);
-}
-
-.widget-mpris .widget-mpris-player .mpris-overlay button:hover {
-  background: var(--bg-1);
-}
-
-.widget-mpris .widget-mpris-player .mpris-overlay .widget-mpris-album-art {
-  border-radius: var(--radius);
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75);
-  -gtk-icon-size: 50px;
-}
-
-.widget-mpris .widget-mpris-player .mpris-overlay .widget-mpris-title {
-  font-weight: bold;
-  font-size: 10px;
-}
-
-.widget-mpris .widget-mpris-player .mpris-overlay .widget-mpris-subtitle {
-  font-size: 10px;
-}
-
-.widget-mpris .widget-mpris-player .mpris-overlay > box > button {
-  margin: 2px;
-  color: var(--text);
-}
-
-.widget-mpris .widget-mpris-player .mpris-overlay > box > button:hover {
-  background-color: rgba(0, 0, 0, 0.5);
+    color: var(--fg);
+    background: var(--color0);
+    padding: 10px;
+    margin: 10px;
 }
 
 .widget-mpris > box > button {
-  color: var(--text);
+  margin: 0px;
 }
 
-.widget-mpris > box > button:disabled {
-  color: var(--text-disabled);
+.widget-mpris-player {
+    padding: 0px;
+    margin: 0px;
 }
 
-/* Buttons Grid Widget */
+.widget-mpris-title {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.widget-mpris-subtitle {
+    font-size: 1.1rem;
+}
+
+/* Widget Buttons Grid */
 .widget-buttons-grid {
-  padding: 8px;
-  margin: 8px;
-  border-radius: var(--radius);
+    font-size: x-large;
+    padding: 8px;
+    margin: 20px 10px 10px;
+    background: var(--color0);
 }
 
-.widget-buttons-grid flowboxchild > button {
-  border-radius: var(--radius);
+.widget-buttons-grid>flowbox>flowboxchild>button {
+    margin: 3px;
+    background: transparent;
+    color: var(--fg);
 }
 
-/* Menubar Widget */
-.widget-menubar > .menu-button-bar > .start {
-  margin-left: 8px;
+.widget-buttons-grid>flowbox>flowboxchild>button:hover {
+    color: var(--color10);
 }
 
-.widget-menubar > .menu-button-bar > .end {
-  margin-right: 8px;
+.widget-menubar>box>.menu-button-bar>button {
+    border: none;
+    background: transparent;
 }
 
-.widget-menubar > .menu-button-bar > .widget-menubar-container button {
-  margin: 0 4px;
+.topbar-buttons>button {
+    border: none;
+    background: transparent;
 }
 
-.widget-menubar > revealer {
-  margin-top: 8px;
-}
-
-.widget-menubar > revealer button {
-  margin: 8px;
-  margin-top: 0;
-}
-
-/* Volume Widget */
+/* Widget Volume */
 .widget-volume {
-  padding: 8px;
-  border-radius: var(--radius);
+    background: var(--color0);
+    padding: 8px;
+    padding-left: 16px;
+    margin: 10px;
+    font-size: x-large;
+    color: var(--color10);
 }
 
-.widget-volume row image {
-  -gtk-icon-size: 24px;
+.widget-volume>box>button {
+    background: var(--color4);
 }
 
 .per-app-volume {
-  background-color: var(--bg-2);
-  padding: 4px 8px 8px 8px;
-  margin: 0 8px 8px 8px;
-  border-radius: var(--radius);
+    background-color: var(--color0);
+    padding: 4px 8px 8px;
+    margin: 0 8px 8px;
 }
 
-/* Slider Widget */
-.widget-slider {
-  padding: 8px;
-  border-radius: var(--radius);
-}
 
-.widget-slider label {
-  font-size: inherit;
-}
-
-/* Backlight Widget */
+/* Widget Backlight */
 .widget-backlight {
-  padding: 8px;
-  border-radius: var(--radius);
+    background: var(--color0);
+    padding: 8px;
+    padding-left: 16px;
+    margin: 10px;
+    font-size: x-large;
+    color: var(--color10);
 }
 
-/* Inhibitors Widget */
-.widget-inhibitors > label {
-  margin: 8px;
-  font-size: 10px;
+/* Widget Inhibitors */
+.widget-inhibitors {
+    color: var(--color4);
+    margin: 10px;
+    font-size: 10.5pt;
+    font-weight: bold;
 }
 
-.widget-inhibitors > button {
-  margin: 8px;
+.widget-inhibitors>button {
+    font-size: initial;
+    font-weight: bold;
+    color: var(--color1);
+    text-shadow: none;
+    background: var(--color0);
+    border: 1px solid var(--color0);
+    box-shadow: none;
+}
+
+.widget-inihibitors>button:hover {
+    background: var(--color1);
+    color: var(--fg-inverse);
 }

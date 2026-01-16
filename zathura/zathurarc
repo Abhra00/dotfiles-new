@@ -1,16 +1,22 @@
 #  ┏┓┏┓┏┳┓┓┏┳┳┳┓┏┓┳┓┏┓
 #  ┏┛┣┫ ┃ ┣┫┃┃┣┫┣┫┣┫┃
 #  ┗┛┛┗ ┻ ┛┗┗┛┛┗┛┗┛┗┗┛
-# --------------------------------------
+#
+
 # Options
-set recolor                      "true"
-set recolor-keephue              "true"
-set window-title-home-tilde      true
-set statusbar-basename           true
-set selection-clipboard          clipboard
-set render-loading 		 true
-set database                     null
-# Keymaps (unchanged)
+set recolor                       true
+set recolor-keephue               true
+set window-title-home-tilde       true
+set statusbar-basename            true
+set selection-clipboard           clipboard
+set render-loading                true
+set database                      null
+set adjust-open                   width
+set smooth-scroll                 true
+set show-v-scrollbar              true
+set window-title-basename         true
+
+# Keymaps
 map u                             scroll half-up
 map d                             scroll half-down
 map D                             toggle_page_mode
@@ -31,30 +37,37 @@ map [fullscreen] J                zoom out
 map [fullscreen] i                recolor
 map [fullscreen] p                print
 map [fullscreen] g                goto top
-# --------------------------------------
-#           Colors
-# --------------------------------------
-set notification-error-bg 	 "#f7768e"
-set notification-error-fg 	 "#c0caf5"
-set notification-warning-bg 	 "#e0af68"
-set notification-warning-fg 	 "#414868"
-set notification-bg 		 "#1a1b26"
-set notification-fg 		 "#c0caf5"
-set completion-bg 		 "#1a1b26"
-set completion-fg 		 "#a9b1d6"
-set completion-group-bg 	 "#1a1b26"
-set completion-group-fg 	 "#a9b1d6"
-set completion-highlight-bg 	 "#414868"
-set completion-highlight-fg 	 "#c0caf5"
-set inputbar-bg 		 "#1a1b26"
-set inputbar-fg 		 "#c0caf5"
-set statusbar-bg 		 "#1a1b26"
-set statusbar-fg 		 "#c0caf5"
-set highlight-color 		 "#e0af68"
-set highlight-active-color 	 "#9ece6a"
-set default-bg 			 "#1a1b26"
-set default-fg 			 "#c0caf5"
-set render-loading-fg 		 "#1a1b26"
-set render-loading-bg 		 "#c0caf5"
-set recolor-lightcolor 		 "#1a1b26"
-set recolor-darkcolor 		 "#c0caf5"
+map <C-i>                         recolor
+
+# Colors
+set notification-error-bg         "#ff5555" # Red
+set notification-error-fg         "#dadada" # Foreground
+set notification-warning-bg       "#ffb86c" # Orange
+set notification-warning-fg       "#22292b" # Selection
+set notification-bg               "#181f21" # Background
+set notification-fg               "#dadada" # Foreground
+set completion-bg                 "#1f2628" # Background
+set completion-fg                 "#6d7476" # Comment
+set completion-group-bg           "#181f21" # Background
+set completion-group-fg           "#dadada" # Comment
+set completion-highlight-bg       "#6da4cd" # Selection
+set completion-highlight-fg       "#22292b" # Foreground
+set index-bg                      "#181f21" # Background
+set index-fg                      "#dadada" # Foreground
+set index-active-bg               "#22292b" # Current Line
+set index-active-fg               "#dadada" # Foreground
+set inputbar-bg                   "#181f21" # Background
+set inputbar-fg                   "#dadada" # Foreground
+set statusbar-bg                  "#181f21" # Background
+set statusbar-fg                  "#dadada" # Foreground
+set highlight-color               "#ffb86c" # Orange
+set highlight-active-color        "#ff79c6" # Pink
+set default-bg                    "#181f21" # Background
+set default-fg                    "#dadada" # Foreground
+set render-loading                true
+set render-loading-fg             "#181f21" # Background
+set render-loading-bg             "#dadada" # Foreground
+
+# Recolor mode settings
+set recolor-lightcolor            "#181f21" # Background
+set recolor-darkcolor             "#dadada" # Foreground

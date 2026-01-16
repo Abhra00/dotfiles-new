@@ -3,18 +3,17 @@
 # ┗┛┛┗┗┛┛┗
 #
 
+# General settings
 [general]
-# Frame rate
 framerate = 65
 
+# Everblush colors
 [color]
-# Tokyonight theme for cava
-background = 'default'
-foreground = '#c0caf5'
 gradient = 1
-gradient_color_1 = '#7aa2f7'
-gradient_color_2 = '#7dcfff'
-gradient_color_3 = '#9ece6a'
-gradient_color_4 = '#e0af68'
-gradient_color_5 = '#bb9af7'
-gradient_color_6 = '#f7768e'
+gradient_count = 6
+gradient_color_1 = '#67b0e8'
+gradient_color_2 = '#c47fd5'
+gradient_color_3 = '#e57474'
+gradient_color_4 = '#e5c76b'
+gradient_color_5 = '#8ccf7e'
+gradient_color_6 = '#67cbe7'

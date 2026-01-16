@@ -2,19 +2,19 @@
  *    ┏┓┏┓┓ ┏┓┳┓┏┓
  *    ┃ ┃┃┃ ┃┃┣┫┗┓
  *    ┗┛┗┛┗┛┗┛┛┗┗┛
- *    Tokyonight colors
+ *    Everblush colors
  */
 /*--------Color definitions------------*/
 * {
-       background:                 #1A1B26;
-       background-alpha:           #1A1B26D3;
-       background-alt:             #292E42;
-       background-alt-alpha:       #292E42D3;
-       foreground:                 #C0CAF5;
-       border-color:               #FF9E64;
-       selected:                   #C7A9FF;
-       selected-alpha:             #C7A9FFD3;
-       selected-text:              #1A1B26;
-       active:                     #31748F;
-       urgent:                     #FF899D;
+       background:                 #141b1e;
+       background-alpha:           #141b1ed3;
+       background-alt:             #232a2d;
+       background-alt-alpha:       #232a2dd3;
+       foreground:                 #dadada;
+       border-color:               #67b0e8;
+       selected:                   #67b0e8;
+       selected-alpha:             #67b0e8d3;
+       selected-text:              #141b1e;
+       active:                     #8ccf7e;
+       urgent:                     #e57474;
 }

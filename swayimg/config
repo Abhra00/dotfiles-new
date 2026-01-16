@@ -12,30 +12,26 @@ decoration = no
 sigusr1 = reload
 sigusr2 = next_file
 app_id = swayimg
-
 [drm]
 path = auto
 connector = auto
 mode = auto
-
 [viewer]
-window = #1a1b26ff
-transparency = #1a1b26ff
+window = #141b1eff
+transparency = #141b1eff
 scale = optimal
 position = center
 antialiasing = mks13
 loop = yes
 history = 1
 preload = 1
-
 [slideshow]
 time = 3
-window = #1a1b26ff
-transparency = #1a1b26ff
+window = #141b1eff
+transparency = #141b1eff
 scale = fit
 position = center
 antialiasing = mks13
-
 [gallery]
 size = 200
 cache = 100
@@ -43,12 +39,11 @@ preload = no
 pstore = no
 fill = yes
 antialiasing = mks13
-window = #1a1b26ff
-background = #16161eff
-select = #24283bff
-border = #7aa2f7ff
-shadow = #00000099
-
+window = #141b1eff
+background = #2d3437ff
+select = #232a2dff
+border = #67b0e8ff
+shadow = #000000ff
 [list]
 order = alpha
 reverse = no
@@ -59,12 +54,12 @@ fsmon = yes
 [font]
 name = GeistMono Nerd Font Propo
 size = 14
-color = #c0caf5ff
+color = #dadadaff
 shadow = #000000d0
 background = #00000000
 
 [info]
-show = yes
+show = no
 padding = 10
 info_timeout = 5
 status_timeout = 3

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ┳┳┓┏┓┏┓┳┏┓┓┏┓
-# ┃┃┃┣┫┃┓┃┃ ┃┫ 
+# ┃┃┃┣┫┃┓┃┃ ┃┫
 # ┛ ┗┛┗┗┛┻┗┛┛┗┛
 #
 
@@ -12,6 +12,15 @@ wallpaper_path="$HOME/.local/share/bg"
 [ -d "$HOME/.config/rofi/images" ] || mkdir -p "$HOME/.config/rofi/images"
 
 #-------Imagemagick magick 👀--------------#
+
+# make a darker variant of the current wallpaper for hyprlock use
+magick "$wallpaper_path" \
+  -colorspace RGB \
+  -evaluate multiply 0.50 \
+  -colorspace sRGB \
+  "$HOME/.local/share/hyprlock_bg"
+
+
 # convert and resize the current wallpaper & make it image for rofi with blur
 magick "$wallpaper_path" -strip -resize 1000 -gravity center -extent 1000 -blur "30x30" -quality 90 "$HOME/.config/rofi/images/currentWalBlur.thumb"
 

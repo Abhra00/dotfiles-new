@@ -11,7 +11,7 @@
 
 add_newline = true
 command_timeout = 200
-format = "[$directory$git_branch$git_status]($style)$character"
+format = "[------ ](bold blue)[$directory$git_branch$git_status]($style)$character"
 
 # Modules
 [character]
@@ -25,7 +25,8 @@ vimcmd_replace_one_symbol = "[❮](bright-purple)[❮](bright-yellow)[❮](brigh
 [directory]
 truncation_length = 2
 truncation_symbol = "…/"
-style = "default"
+read_only = " 󰌾"
+style = "bright-white"
 repo_root_style = "bright-cyan"
 repo_root_format = "[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) "
 

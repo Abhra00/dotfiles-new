@@ -299,7 +299,7 @@ scrollbar slider {
 /* Widget Title */
 .widget-title {
     color: var(--color4);
-    margin: 10px;
+    margin: 10px 2px 10px 10px;
     font-size: 10.5pt;
     font-weight: bold;
 }
@@ -320,9 +320,12 @@ scrollbar slider {
 }
 
 /* Widget Dnd */
+.widget-dnd {
+    margin: 10px 2px 10px 10px;
+}
+
 .widget-dnd>label {
     color: var(--color1);
-    margin: 8px;
     font-size: 12.5pt;
     font-weight: bold;
 }
@@ -331,7 +334,6 @@ scrollbar slider {
     font-size: initial;
     background: var(--color0);
     box-shadow: none;
-    margin-right: 4px;
     transition: all .1s ease-in-out;
 }
 

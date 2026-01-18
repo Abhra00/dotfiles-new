@@ -77,6 +77,7 @@ set -gx FZF_DEFAULT_OPTS " \
   --color=marker:#e57474 \
   --color=pointer:#e57474 \
   --color=prompt:#67b0e8 \
+  --color=gutter:#141b1e \
   --color=query:#dadada:regular \
   --color=scrollbar:#232a2d \
   --color=separator:#232a2d \

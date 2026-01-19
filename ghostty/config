@@ -4,10 +4,10 @@
 #
 
 # Fonts
-font-family = "Lilex"
-font-family-bold = "Lilex"
-font-family-italic = "Lilex"
-font-family-bold-italic = "Lilex"
+font-family = "IosevkaNagi"
+font-family-bold = "IosevkaNagi"
+font-family-italic = "IosevkaNagi"
+font-family-bold-italic = "IosevkaNagi"
 font-family = "Symbols Nerd Font Mono"
 adjust-cell-height = 25%
 font-size = 10

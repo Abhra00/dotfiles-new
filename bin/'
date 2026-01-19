@@ -1,0 +1,43 @@
+#!/usr/bin/env python3
+
+import os
+
+# This script needs to run inside a terminal that supports images
+gif_path="~/.local/share/asset.gif"
+
+# ANSI escape codes for text styling
+RED = '\033[91m'
+GREEN = '\033[92m'
+YELLOW = '\033[93m'
+BLUE = '\033[94m'
+MAGENTA = '\033[95m'
+CYAN = '\033[96m'
+BOLD = '\033[1m'
+ITALIC = '\033[3m'
+RESET = '\033[0m'
+
+def print_centered(text, color='', bold=False, italic=False):
+    terminal_width = os.get_terminal_size().columns
+
+    style = ""
+    if bold:
+        style += BOLD
+    if italic:
+        style += ITALIC
+
+    print(f"{style}{color}"+('{:^'+str(terminal_width)+'}').format(text)+RESET)
+
+os.system('tput clear')
+
+os.system(f'chafa -f kitty --fg-only --size=x10 --align top,mid -d 2 {gif_path}')
+print_centered('NAGI', bold=True, color=BLUE)
+# Remember every kanji character 2 character widths
+print_centered('凪 ', color=CYAN)
+print_centered('嵐の後には凪が来る ("The calm after storm")', color=YELLOW)
+print()
+print_centered('In Japanese, Nagi (凪) primarily means, calmness, a lull, or serenity, especially referring to a still sea or wind')
+print_centered('but it\'s also used as a popular given name meaning nurturing or affectionate')
+print()
+print_centered('Be the calm', color=MAGENTA, italic=True)
+print_centered('After storm', color=MAGENTA, italic=True)
+print()

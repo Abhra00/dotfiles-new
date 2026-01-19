@@ -18,7 +18,7 @@ done
 
 # Formatting codes
 reset=$'\e[0m'
-white_bg=$'\e[47m'
+white_bg=$'\x1b[7m'
 
 # Print 2 rows of combined dark & bright blocks with tab spacing
 for row in {1..2}; do

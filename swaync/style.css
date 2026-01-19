@@ -6,30 +6,30 @@
  */
 
 :root {
-    /* Everblush Extended Palette */
-    --color0: #232a2d;
-    --color1: #e57474;
-    --color2: #8ccf7e;
-    --color3: #e5c76b;
-    --color4: #67b0e8;
-    --color5: #c47fd5;
-    --color6: #6cbfbf;
-    --color7: #b3b9b8;
-    --color8: #2d3437;
-    --color9: #ef7e7e;
-    --color10: #96d988;
-    --color11: #f4d67a;
-    --color12: #71baf2;
-    --color13: #ce89df;
-    --color14: #67cbe7;
-    --color15: #bdc3c2;
+    /* Nagi Palette */
+    --color0:   #1c2021;
+    --color1:   #d95762;
+    --color2:   #a6d98d;
+    --color3:   #f38c61;
+    --color4:   #95b7e6;
+    --color5:   #d282d9;
+    --color6:   #92e2f2;
+    --color7:   #d5d7d8;
+    --color8:   #2c3334;
+    --color9:   #e65c68;
+    --color10:  #b0e695;
+    --color11:  #ff9366;
+    --color12:  #9ec1f3;
+    --color13:  #de89e5;
+    --color14:  #98eeff;
+    --color15:  #eef1f2;
     /* Background Variants */
-    --bg: #141b1e;
-    --bg-light: #2c3333;
-    --bg-highlight: #404749;
+    --bg: #101314;
+    --bg-light: #1c2021;
+    --bg-highlight: #2c3334;
     /* Foreground */
-    --fg: #dadada;
-    --fg-inverse: #141b1e;
+    --fg: #e2e5e6;
+    --fg-inverse: #101314;
 }
 
 /* Base styles */
@@ -222,14 +222,15 @@ scrollbar slider {
 
 .notification-group-collapse-button {
     background: var(--bg);
+    color: var(--color3);
     border: none;
     min-width: 24px;
     min-height: 24px;
 }
 
 .notification-group-collapse-button:hover {
-    background: var(--bg-light);
-    color: var(--color4);
+    background: var(--color3);
+    color: var(--fg-inverse);
 }
 
 .notification-group-close-all-button {
@@ -342,7 +343,7 @@ scrollbar slider {
 }
 
 .widget-dnd>switch slider {
-    background: var(--bg-light);
+    background: var(--bg-highlight);
 }
 
 /* Widget Label */

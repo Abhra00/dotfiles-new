@@ -18,7 +18,7 @@ mouse-hide-while-typing = true
 mouse-scroll-multiplier = 1
 
 # Theme
-theme = EverBlush
+theme = Nagi
 background-opacity = 1.0
 window-theme = ghostty
 

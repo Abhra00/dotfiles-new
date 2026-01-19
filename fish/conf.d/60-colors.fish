@@ -3,16 +3,16 @@
 # ┗┛┗┛┗┛┗┛┛┗┗┛
 #
 
-# Everblush palette
-set -l foreground dadada
-set -l selection 2d3437
-set -l comment 404749
-set -l red e57474
-set -l green 8ccf7e
-set -l yellow e5c76b
-set -l blue 67b0e8
-set -l magenta c47fd5
-set -l cyan 6cbfbf
+# Nagi palette
+set -l foreground e2e5e6
+set -l selection 2c3334
+set -l comment 414c4d
+set -l red d95762
+set -l green a6d98d
+set -l yellow f38c61
+set -l blue 95b7e6
+set -l magenta d282d9
+set -l cyan 92e2f2
 
 # Syntax highlighting colors
 set -g fish_color_normal $foreground

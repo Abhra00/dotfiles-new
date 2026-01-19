@@ -2,19 +2,19 @@
  *    ┏┓┏┓┓ ┏┓┳┓┏┓
  *    ┃ ┃┃┃ ┃┃┣┫┗┓
  *    ┗┛┗┛┗┛┗┛┛┗┗┛
- *    Everblush colors
+ *    NAGI PALETTE
  */
 /*--------Color definitions------------*/
 * {
-       background:                 #141b1e;
-       background-alpha:           #141b1ed3;
-       background-alt:             #232a2d;
-       background-alt-alpha:       #232a2dd3;
-       foreground:                 #dadada;
-       border-color:               #67b0e8;
-       selected:                   #67b0e8;
-       selected-alpha:             #67b0e8d3;
-       selected-text:              #141b1e;
-       active:                     #8ccf7e;
-       urgent:                     #e57474;
+       background:                 #101314;
+       background-alpha:           #101314d3;
+       background-alt:             #1c2021;
+       background-alt-alpha:       #1c2021d3;
+       foreground:                 #e2e5e6;
+       border-color:               #95b7e6;
+       selected:                   #95b7e6;
+       selected-alpha:             #95b7e6d3;
+       selected-text:              #101314;
+       active:                     #f38c61;
+       urgent:                     #d95762;
 }

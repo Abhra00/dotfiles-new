@@ -7,13 +7,13 @@
 [general]
 framerate = 65
 
-# Everblush colors
+# Nagi colors
 [color]
 gradient = 1
 gradient_count = 6
-gradient_color_1 = '#67b0e8'
-gradient_color_2 = '#c47fd5'
-gradient_color_3 = '#e57474'
-gradient_color_4 = '#e5c76b'
-gradient_color_5 = '#8ccf7e'
-gradient_color_6 = '#67cbe7'
+gradient_color_1 = '#95b7e6'
+gradient_color_2 = '#f38c61'
+gradient_color_3 = '#d95762'
+gradient_color_4 = '#a6d98d'
+gradient_color_5 = '#d282d9'
+gradient_color_6 = '#92e2f2'

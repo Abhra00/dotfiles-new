@@ -7,17 +7,17 @@
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   COLOR TOKENS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
-@define-color bg            #141b1e;
-@define-color bg-alt        #2d3437;
-@define-color fg            #dadada;
-@define-color fg-inverse    #141b1e;
+@define-color bg            #101314;
+@define-color bg-alt        #2c3334;
+@define-color fg            #e2e5e6;
+@define-color fg-inverse    #101314;
 
-@define-color red           #e57474;
-@define-color green         #8ccf7e;
-@define-color yellow        #e5c76b;
-@define-color blue          #67b0e8;
-@define-color magenta       #c47fd5;
-@define-color cyan          #6cbfbf;
+@define-color red           #d95762;
+@define-color green         #a6d98d;
+@define-color yellow        #f38c61;
+@define-color blue          #95b7e6;
+@define-color magenta       #d282d9;
+@define-color cyan          #92e2f2;
 
 
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

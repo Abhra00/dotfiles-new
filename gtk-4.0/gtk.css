@@ -2,48 +2,48 @@
  *    ┏┓┏┳┓┓┏┓┏┓  ┏┓┏┓┏┓
  *    ┃┓ ┃ ┃┫ ┃┃  ┃ ┗┓┗┓
  *    ┗┛ ┻ ┛┗┛┗╋  ┗┛┗┛┗┛
- *    NAGI PALETTE
+ *    LUNARIS COLORS
  */
 
-@define-color window_bg_color #1c2021;
-@define-color window_fg_color #e2e5e6;
-@define-color view_bg_color #101314;
-@define-color view_fg_color #e2e5e6;
-@define-color accent_bg_color #95b7e6;
-@define-color accent_fg_color #e2e5e6;
-@define-color headerbar_bg_color #1c2021;
-@define-color headerbar_fg_color #e2e5e6;
+@define-color window_bg_color #151f26;
+@define-color window_fg_color #f6f6f5;
+@define-color view_bg_color #0e151a;
+@define-color view_fg_color #f6f6f5;
+@define-color accent_bg_color #baa0e8;
+@define-color accent_fg_color #f6f6f5;
+@define-color headerbar_bg_color #151f26;
+@define-color headerbar_fg_color #f6f6f5;
 @define-color headerbar_backdrop_color @window_bg_color;
-@define-color popover_bg_color #1c2021;
+@define-color popover_bg_color #151f26;
 @define-color popover_fg_color @view_fg_color;
-@define-color dialog_bg_color #1c2021;
+@define-color dialog_bg_color #151f26;
 @define-color dialog_fg_color @view_fg_color;
-@define-color card_bg_color #1c2021;
+@define-color card_bg_color #151f26;
 @define-color card_fg_color @view_fg_color;
-@define-color sidebar_bg_color #1c2021;
-@define-color sidebar_fg_color #e2e5e6;
+@define-color sidebar_bg_color #151f26;
+@define-color sidebar_fg_color #f6f6f5;
 @define-color sidebar_backdrop_color @window_bg_color;
 @define-color sidebar_shade_color rgba(0, 0, 0, 0.25);
 @define-color sidebar_border_color rgba(0, 0, 0, 0.36);
-@define-color secondary_sidebar_bg_color #1c2021;
+@define-color secondary_sidebar_bg_color #151f26;
 @define-color secondary_sidebar_fg_color @view_fg_color;
 @define-color secondary_sidebar_backdrop_color @view_bg_color;
 @define-color secondary_sidebar_shade_color rgba(0, 0, 0, 0.25);
 @define-color secondary_sidebar_border_color rgba(0, 0, 0, 0.36);
-@define-color destructive_bg_color #d95762;
-@define-color success_bg_color #a6d98d;
-@define-color warning_bg_color #f38c61;
-@define-color error_bg_color #d95762;
+@define-color destructive_bg_color #dd6e6b;
+@define-color success_bg_color #87e58e;
+@define-color warning_bg_color #e8eda2;
+@define-color error_bg_color #dd6e6b;
 
 :root {
-  --accent-blue: #95b7e6;
-  --accent-teal: #92e2f2;
-  --accent-green: #a6d98d;
-  --accent-yellow: #f38c61;
-  --accent-orange: #f38c61;
-  --accent-red: #d95762;
-  --accent-pink: #d282d9;
-  --accent-purple: #d282d9;
+  --accent-blue: #baa0e8;
+  --accent-teal: #a7dfef;
+  --accent-green: #87e58e;
+  --accent-yellow: #e8eda2;
+  --accent-orange: #e8eda2;
+  --accent-red: #dd6e6b;
+  --accent-pink: #e48cc1;
+  --accent-purple: #e48cc1;
   --accent-slate: #b3bbc0;
   --accent-bg-color: @accent_bg_color;
   --accent-fg-color: @accent_fg_color;

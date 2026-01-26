@@ -4,10 +4,10 @@
 #
 
 # Fonts
-font-family = "Fira Code"
-font-family-bold = "Fira Code"
-font-family-italic = "MapleMono CN"
-font-family-bold-italic = "MapleMono CN"
+font-family = "IosevkaNagi"
+font-family-bold = "IosevkaNagi"
+font-family-italic = "IosevkaNagi"
+font-family-bold-italic = "IosevkaNagi"
 font-family = "Symbols Nerd Font Mono"
 adjust-cell-height = 25%
 font-size = 10
@@ -18,7 +18,7 @@ mouse-hide-while-typing = true
 mouse-scroll-multiplier = 1
 
 # Theme
-theme = Nagi
+theme = Lunaris
 background-opacity = 1.0
 window-theme = ghostty
 
@@ -34,10 +34,10 @@ keybind = alt+shift+h=goto_split:left
 keybind = ctrl+shift+j=goto_split:bottom
 keybind = ctrl+shift+k=goto_split:top
 keybind = ctrl+shift+l=goto_split:right
-keybind = alt+j=adjust_selection:down
-keybind = alt+k=adjust_selection:up
-keybind = alt+h=adjust_selection:left
-keybind = alt+l=adjust_selection:right
+keybind = ctrl+up=adjust_selection:up
+keybind = ctrl+down=adjust_selection:down
+keybind = ctrl+left=adjust_selection:left
+keybind = ctrl+right=adjust_selection:right
 keybind = alt+shift+t=new_tab
 keybind = alt+shift+h=previous_tab
 keybind = alt+shift+l=next_tab

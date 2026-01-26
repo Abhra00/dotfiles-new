@@ -6,30 +6,33 @@
  */
 
 :root {
-    /* Nagi Palette */
-    --color0:   #1c2021;
-    --color1:   #d95762;
-    --color2:   #a6d98d;
-    --color3:   #f38c61;
-    --color4:   #95b7e6;
-    --color5:   #d282d9;
-    --color6:   #92e2f2;
-    --color7:   #d5d7d8;
-    --color8:   #2c3334;
-    --color9:   #e65c68;
-    --color10:  #b0e695;
-    --color11:  #ff9366;
-    --color12:  #9ec1f3;
-    --color13:  #de89e5;
-    --color14:  #98eeff;
-    --color15:  #eef1f2;
-    /* Background Variants */
-    --bg: #101314;
-    --bg-light: #1c2021;
-    --bg-highlight: #2c3334;
-    /* Foreground */
-    --fg: #e2e5e6;
-    --fg-inverse: #101314;
+  /* Lunaris colors */
+  --color0:   #151f26;
+  --color1:   #dd6e6b;
+  --color2:   #87e58e;
+  --color3:   #e8eda2;
+  --color4:   #baa0e8;
+  --color5:   #e48cc1;
+  --color6:   #a7dfef;
+  --color7:   #e6e6e5;
+  --color8:   #233440;
+  --color9:   #e1837f;
+  --color10:  #97eda2;
+  --color11:  #f6f6b6;
+  --color12:  #d0b5f3;
+  --color13:  #e7a1d7;
+  --color14:  #bcf4f5;
+  --color15:  #ffffff;
+
+  /* Background Variants */
+  --bg: #0e151a;
+  --bg-light: #151f26;
+  --bg-highlight: #233440;
+
+  /* Foreground */
+  --fg: #f6f6f5;
+  --fg-inverse: #0e151a;
+
 }
 
 /* Base styles */

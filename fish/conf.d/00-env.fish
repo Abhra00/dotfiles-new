@@ -66,23 +66,24 @@ set -gx FZF_DEFAULT_OPTS " \
   --ellipsis='… ' \
   --prompt='  ' \
   --pointer=' λ' \
-  --color=bg+:#1c2021 \
+  --color=bg+:#151f26 \
   --color=bg:-1 \
-  --color=border:#95b7e6 \
-  --color=fg:#e2e5e6 \
-  --color=header:#92e2f2 \
-  --color=hl+:#f38c61 \
-  --color=hl:#f38c61 \
-  --color=info:#f38c61 \
-  --color=marker:#d95762 \
-  --color=pointer:#95b7e6 \
-  --color=prompt:#95b7e6 \
-  --color=gutter:#101314 \
-  --color=query:#e2e5e6:regular \
-  --color=scrollbar:#1c2021 \
-  --color=separator:#1c2021 \
-  --color=spinner:#f38c61 \
+  --color=border:#baa0e8 \
+  --color=fg:#f6f6f5 \
+  --color=header:#a7dfef \
+  --color=hl+:#e8eda2 \
+  --color=hl:#e8eda2 \
+  --color=info:#e8eda2 \
+  --color=marker:#dd6e6b \
+  --color=pointer:#baa0e8 \
+  --color=prompt:#baa0e8 \
+  --color=gutter:#0e151a \
+  --color=query:#f6f6f5:regular \
+  --color=scrollbar:#233440 \
+  --color=separator:#233440 \
+  --color=spinner:#e8eda2 \
 "
+
 
 # Misc
 set -gx SUDO_ASKPASS $HOME/.local/bin/rofipass

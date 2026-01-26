@@ -5,11 +5,11 @@
  *
  */
 
-/* Define colors */
-@define-color background        #101314;
-@define-color foreground        #e2e5e6;
-@define-color border-color      #95b7e6;
-@define-color progressbar-color #f38c61;
+/* Lunaris colors */
+@define-color background        #0e151a;
+@define-color foreground        #f6f6f5;
+@define-color border-color      #baa0e8;
+@define-color progressbar-color #e8eda2;
 
 /* Main css config */
 window {

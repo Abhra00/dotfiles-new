@@ -5,19 +5,19 @@
  */
 
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  COLOR TOKENS
+  LUNARIS COLORS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
-@define-color bg            #101314;
-@define-color bg-alt        #2c3334;
-@define-color fg            #e2e5e6;
-@define-color fg-inverse    #101314;
+@define-color bg            #0e151a;
+@define-color bg-alt        #233440;
+@define-color fg            #f6f6f5;
+@define-color fg-inverse    #0e151a;
+@define-color red           #dd6e6b;
+@define-color green         #87e58e;
+@define-color yellow        #e8eda2;
+@define-color blue          #baa0e8;
+@define-color magenta       #e48cc1;
+@define-color cyan          #a7dfef;
 
-@define-color red           #d95762;
-@define-color green         #a6d98d;
-@define-color yellow        #f38c61;
-@define-color blue          #95b7e6;
-@define-color magenta       #d282d9;
-@define-color cyan          #92e2f2;
 
 
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

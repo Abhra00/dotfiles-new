@@ -11,7 +11,7 @@ set -gx TERMINAL ghostty
 set -gx BROWSER chromium
 set -gx EDITOR nvim
 set -gx SUDO_EDITOR $EDITOR
-set -gx BAT_THEME base16
+set -gx BAT_THEME Lunaris
 
 # XDG Base Directories
 set -gx XDG_CONFIG_HOME $HOME/.config

@@ -1,0 +1,52 @@
+#!/bin/bash
+# Tiny animated fetch (Hyprland + Nerd Fonts)
+# Requires: Nerd Font, hyprctl, jq
+# Arch Linux (pacman) package count
+
+### Colors ###
+f=3 b=4
+for j in f b; do
+  for i in {0..7}; do
+    printf -v $j$i %b "\e[${!j}${i}m"
+  done
+done
+d=$'\e[1m'
+t=$'\e[0m'
+
+### Animation delay ###
+delay=0.08
+printl() { echo -e "$1"; sleep "$delay"; }
+
+### Nerd Font icons ###
+icon_wm=
+icon_kernel=
+icon_shell=
+icon_res=󰍹
+icon_pkg=󰮯
+
+### Info ###
+wmname="Hyprland"
+
+kernel="$(uname -r | cut -d '-' -f1)"
+
+shell="$(basename "$SHELL")"
+
+resolution="$(
+  hyprctl monitors -j 2>/dev/null \
+  | jq -r '.[0] | "\(.width)x\(.height)"' \
+  2>/dev/null || echo "unknown"
+)"
+
+pkgcount="$(pacman -Qq 2>/dev/null | wc -l)"
+
+### Clear ###
+tput clear
+
+### Output ###
+printl ""
+printl "             $d$f1$icon_wm  $t$wmname"
+printl "   (\\ /)     $f3$icon_kernel  $t$kernel"
+printl "   ( $d. .$t)    $f2$icon_shell  $t$shell"
+printl "   c($f1\"$t)($f1\"$t)   $f5$icon_res  $t$resolution"
+printl "             $f4$icon_pkg  $t$pkgcount pkgs"
+printl ""

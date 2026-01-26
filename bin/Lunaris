@@ -36,10 +36,8 @@ def print_centered(text, color='', bold=False, italic=False):
         style += BOLD
     if italic:
         style += ITALIC
-    
     text_width = display_width(text)
     padding = (terminal_width - text_width) // 2
-    
     print(f"{style}{color}{' ' * padding}{text}{RESET}")
 
 def print_blocks_centered(script_path):
@@ -48,20 +46,16 @@ def print_blocks_centered(script_path):
         result = subprocess.run(['bash', os.path.expanduser(script_path)], 
                               capture_output=True, text=True, check=True)
         terminal_width = os.get_terminal_size().columns
-        
         for line in result.stdout.splitlines():
             # Strip ANSI codes to measure actual text width
             plain_text = re.sub(r'\033\[[0-9;]*m|\x1b\[[0-9;]*m', '', line)
             # Remove existing tabs from blocks.sh
             plain_text = plain_text.replace('\t', '')
-            
             text_width = display_width(plain_text)
             padding = (terminal_width - text_width) // 2
-            
             # Remove tabs from the actual line too
             centered_line = line.replace('\t', '')
             print(' ' * padding + centered_line)
-            
     except subprocess.CalledProcessError as e:
         print(f"Error running blocks.sh: {e}")
     except FileNotFoundError:
@@ -69,10 +63,14 @@ def print_blocks_centered(script_path):
 
 os.system('tput clear')
 os.system(f'chafa -f kitty --fg-only --size=x10 --align top,mid -d 2 {gif_path}')
-print_centered('NAGI', bold=True, color=BLUE)
-print_centered('凪', color=CYAN)
-print_centered('嵐のあとに、凪が来る。', color=YELLOW, italic=True)
-print_centered('Arashi no ato ni, nagi ga kuru.')
-print_centered('After the storm, the calm (Nagi) arrives.')
+print_centered('aphelion', bold=True)
+print_centered('遠日点', color=CYAN)
+print_centered('από ("away") + ήλιος ("sun")', color=YELLOW)
+print()
+print_centered('The point in a celestial body\'s orbit')
+print_centered('farthest from the Sun.')
+print()
+print_centered('farthest from light', color=MAGENTA, italic=True)
+print_centered('closest to void', color=MAGENTA, italic=True)
 print()
 print_blocks_centered('~/.local/bin/blocks.sh')

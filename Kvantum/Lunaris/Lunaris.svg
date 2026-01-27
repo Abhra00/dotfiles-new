@@ -72,7 +72,7 @@
       <stop style="stop-color:#ffffff" offset=".258"/>
       <stop style="stop-color:#a7dfef" offset=".706"/>
       <stop style="stop-color:#e6e6e5" offset=".733"/>
-      <stop style="stop-color:#b3bbc0" offset="1"/>
+      <stop style="stop-color:#3e4452" offset="1"/>
      </linearGradient>
      <linearGradient id="linearGradient1337" x1=".475" x2=".804" y1=".218" y2=".52" xlink:href="#linearGradient2317"/>
      <linearGradient id="linearGradient1338">
@@ -141,7 +141,7 @@
      <stop style="stop-color:#ffffff" offset=".258"/>
      <stop style="stop-color:#a7dfef" offset=".706"/>
      <stop style="stop-color:#e6e6e5" offset=".733"/>
-     <stop style="stop-color:#b3bbc0" offset="1"/>
+     <stop style="stop-color:#3e4452" offset="1"/>
     </linearGradient>
     <linearGradient id="linearGradient2316" x1=".475" x2=".804" y1=".218" y2=".52" xlink:href="#linearGradient2317"/>
     <linearGradient id="linearGradient1513">
@@ -255,13 +255,13 @@
  <rect id="slider-topglow-normal" style="opacity:0.6;fill:#ffffff;fill-opacity:0" width="10" height="30" x="311.17" y="491.77"/>
  <use id="slider-bottomglow-normal" width="450" height="1380" x="0" y="0" transform="translate(39.999997)" xlink:href="#slider-topglow-normal"/>
  <g id="splitter-grip-normal" style="opacity:0" transform="translate(518.58485,-394.77228)">
-  <path style="fill:#b3bbc0" d="m 227.5,690 c 0,1.3807 -1.11929,2.5 -2.5,2.5 -1.38071,0 -2.5,-1.1193 -2.5,-2.5 0,-1.3807 1.11929,-2.5 2.5,-2.5 1.38071,0 2.5,1.1193 2.5,2.5 z"/>
+  <path style="fill:#3e4452" d="m 227.5,690 c 0,1.3807 -1.11929,2.5 -2.5,2.5 -1.38071,0 -2.5,-1.1193 -2.5,-2.5 0,-1.3807 1.11929,-2.5 2.5,-2.5 1.38071,0 2.5,1.1193 2.5,2.5 z"/>
   <g style="fill:#baa0e8">
-   <path style="fill:#b3bbc0" d="m 226.9643,683.9643 c 0,1.0848 -0.87944,1.9643 -1.96429,1.9643 -1.08484,0 -1.96428,-0.8795 -1.96428,-1.9643 0,-1.0849 0.87944,-1.9643 1.96428,-1.9643 1.08485,0 1.96429,0.8794 1.96429,1.9643 z"/>
-   <path style="fill:#b3bbc0" d="m 226.9643,696.0357 c 0,1.0848 -0.87944,1.9643 -1.96429,1.9643 -1.08484,0 -1.96428,-0.8795 -1.96428,-1.9643 0,-1.0849 0.87944,-1.9643 1.96428,-1.9643 1.08485,0 1.96429,0.8794 1.96429,1.9643 z"/>
+   <path style="fill:#3e4452" d="m 226.9643,683.9643 c 0,1.0848 -0.87944,1.9643 -1.96429,1.9643 -1.08484,0 -1.96428,-0.8795 -1.96428,-1.9643 0,-1.0849 0.87944,-1.9643 1.96428,-1.9643 1.08485,0 1.96429,0.8794 1.96429,1.9643 z"/>
+   <path style="fill:#3e4452" d="m 226.9643,696.0357 c 0,1.0848 -0.87944,1.9643 -1.96429,1.9643 -1.08484,0 -1.96428,-0.8795 -1.96428,-1.9643 0,-1.0849 0.87944,-1.9643 1.96428,-1.9643 1.08485,0 1.96429,0.8794 1.96429,1.9643 z"/>
   </g>
  </g>
- <path id="resize-grip-normal" style="opacity:0.00100002;fill:#b3bbc0" d="m 371.00039,90.896008 v 20.000002 h -20 z"/>
+ <path id="resize-grip-normal" style="opacity:0.00100002;fill:#3e4452" d="m 371.00039,90.896008 v 20.000002 h -20 z"/>
  <use id="resize-grip-focused" width="450" height="1380" x="0" y="0" transform="translate(50)" xlink:href="#resize-grip-normal"/>
  <g id="spin-normal-topright" transform="matrix(0.44036669,0,0,1.2307681,1024.3509,-687.15795)">
   <path style="opacity:0" d="m -664.80709,777.58403 c 1.10457,0 2,0.89543 2,2 h -1 c 0,-0.55228 -0.44772,-1 -1,-1 z"/>
@@ -1498,7 +1498,7 @@
  </g>
  <g id="menubar-normal-bottomright" transform="translate(490,-394.99999)">
   <path style="fill:#0e151a" d="m 325,617 h 5 v 2.99999 h -5 z"/>
-  <g id="menubar-normal-bottomright2" style="fill:#b3bbc0" transform="matrix(0.25,0,0,1,248.75,0)">
+  <g id="menubar-normal-bottomright2" style="fill:#3e4452" transform="matrix(0.25,0,0,1,248.75,0)">
    <path style="fill:#0e151a" d="m 305,621 h 20 v -1.00001 h -20 z"/>
   </g>
  </g>

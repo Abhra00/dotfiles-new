@@ -196,7 +196,7 @@ dirs  = [
 	{ name = ".github", text = "" },
 	{ name = ".npm", text = "" },
 	{ name = "Desktop", text = "󱂵" },
-	{ name = "Developments", text = "" },
+	{ name = "Developments", text = "" },
 	{ name = "Documents", text = "󱧶" },
 	{ name = "Downloads", text = "󰉍" },
 	{ name = "Library", text = "" },
@@ -205,5 +205,22 @@ dirs  = [
 	{ name = "Pictures", text = "󰉏" },
 	{ name = "Public", text = "󰉌" },
 	{ name = "Templates", text = "󱞞" },
-	{ name = "Videos", text = "󱞊" },
+	{ name = "Videos", text = "󱧺" },
+	{ name = "walls", text = "󰉏" },
+]
+conds = [
+	# Special files
+	{ if = "orphan", text = "", fg = "#f6f6f5" },
+	{ if = "link", text = "", fg = "#baa0e8" },
+	{ if = "block", text = "", fg = "#e8eda2" },
+	{ if = "char", text = "", fg = "#e8eda2" },
+	{ if = "fifo", text = "", fg = "#e8eda2" },
+	{ if = "sock", text = "", fg = "#e8eda2" },
+	{ if = "sticky", text = "", fg = "#e8eda2" },
+	{ if = "dummy", text = "", fg = "#dd6e6b" },
+
+	# Fallback
+	{ if = "dir", text = "", fg = "#d0b5f3" },
+	{ if = "exec", text = "", fg = "#87e58e" },
+	{ if = "!dir", text = "", fg = "#f6f6f5" },
 ]

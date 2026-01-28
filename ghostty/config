@@ -3,15 +3,24 @@
 #  ┗┛┛┗┗┛┗┛ ┻  ┻ ┗┛
 #
 
-# Fonts
-font-family = "Source Code Pro"
-font-family-bold = "Source Code Pro"
-font-family-italic = "Source Code Pro"
-font-family-bold-italic = "Source Code Pro"
+# Font families
+font-family = "Cascadia Code"
+font-family-bold = "Cascadia Code"
+font-family-italic = "Cascadia Code"
+font-family-bold-italic = "Cascadia Code"
 font-family = "Symbols Nerd Font Mono"
+
+# Font features
+font-feature = "ss01"
+
+# Cell height
 adjust-cell-height = 25%
+
+# Font size
 font-size = 10
-adjust-underline-position = 5
+
+# Underline position
+adjust-underline-position = 6
 
 # Mouse
 mouse-hide-while-typing = true

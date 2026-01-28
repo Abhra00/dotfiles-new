@@ -65,7 +65,7 @@ set -gx FZF_DEFAULT_OPTS " \
   --marker=' ' \
   --ellipsis='… ' \
   --prompt='  ' \
-  --pointer=' λ' \
+  --pointer='' \
   --color=bg+:#151f26 \
   --color=bg:-1 \
   --color=border:#baa0e8 \

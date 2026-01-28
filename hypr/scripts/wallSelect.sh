@@ -27,7 +27,7 @@
 #   → Media: hyprpaper, imagemagick
 #   → GNU: findutils, coreutils, bc
 
-# Set dir variables
+# Set variables
 wall_dir="$HOME/walls"
 cacheDir="$HOME/.cache/wallcache"
 scriptsDir="$HOME/.config/hypr/scripts"

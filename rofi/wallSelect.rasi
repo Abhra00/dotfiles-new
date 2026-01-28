@@ -1,8 +1,8 @@
 /***
  *    ┓ ┏┏┓┓ ┓ ┏┓┏┓┓ ┏┓┏┓┏┳┓
- *    ┃┃┃┣┫┃ ┃ ┗┓┣ ┃ ┣ ┃  ┃ 
- *    ┗┻┛┛┗┗┛┗┛┗┛┗┛┗┛┗┛┗┛ ┻ 
- *                          
+ *    ┃┃┃┣┫┃ ┃ ┗┓┣ ┃ ┣ ┃  ┃
+ *    ┗┻┛┛┗┗┛┗┛┗┛┗┛┗┛┗┛┗┛ ┻
+ *
  */
 
 /* ---- Configuration ---- */
@@ -13,12 +13,11 @@ configuration {
     hover-select:           	  true;
     me-select-entry:        	  "MouseSecondary";
     me-accept-entry:        	  "MousePrimary";
-    
 }
 
-/* ---- Global properties ---- */ 
-@import 		    	  "~/.config/rofi/shared/colors.rasi"
-@import 	            	  "~/.config/rofi/shared/fonts.rasi"
+/* ---- Global properties ---- */
+@import                          "~/.config/rofi/shared/colors.rasi"
+@import                          "~/.config/rofi/shared/fonts.rasi"
 
 /* ---- Window ---- */
 window {
@@ -87,7 +86,7 @@ element selected.normal {
 
 element-icon {
     size:                        30%;
-    border-radius:		 0px;
+    border-radius:               0px;
     cursor:                      inherit;
     background-color:            transparent;
     text-color:                  inherit;

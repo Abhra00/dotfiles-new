@@ -27,11 +27,12 @@
 #   → Media: hyprpaper, imagemagick
 #   → GNU: findutils, coreutils, bc
 
-# Set dir varialable
+# Set dir variables
 wall_dir="$HOME/walls"
 cacheDir="$HOME/.cache/wallcache"
 scriptsDir="$HOME/.config/hypr/scripts"
 fit_mode="cover"
+rofi_theme="$HOME/.config/rofi/wallSelect.rasi"
 
 # Create cache dir if not exists
 [ -d "$cacheDir" ] || mkdir -p "$cacheDir"
@@ -39,14 +40,8 @@ fit_mode="cover"
 # Get focused monitor
 focused_monitor=$(hyprctl monitors -j | jq -r '.[] | select(.focused) | .name')
 
-# Get monitor width and DPI
-monitor_width=$(hyprctl monitors -j | jq -r --arg mon "$focused_monitor" '.[] | select(.name == $mon) | .width')
-scale_factor=$(hyprctl monitors -j | jq -r --arg mon "$focused_monitor" '.[] | select(.name == $mon) | .scale')
-
-# Calculate icon size
-icon_size=$(echo "scale=2; ($monitor_width * 14) / ($scale_factor * 96)" | bc)
-rofi_override="element-icon{size:${icon_size}px;}"
-rofi_command="rofi -i -show -dmenu -theme $HOME/.config/rofi/wallSelect.rasi -theme-str $rofi_override"
+# Rofi command
+rofi_command="rofi -i -show -dmenu -theme ${rofi_theme}"
 
 # Detect number of cores and set a sensible number of jobs
 get_optimal_jobs() {
@@ -60,16 +55,16 @@ process_image() {
     local imagen="$1"
     local nombre_archivo=$(basename "$imagen")
     local cache_file="${cacheDir}/${nombre_archivo}"
-    local md5_file="${cacheDir}/.${nombre_archivo}.md5"
+    local xxh64_file="${cacheDir}/.${nombre_archivo}.xxh64"
     local lock_file="${cacheDir}/.lock_${nombre_archivo}"
 
-    local current_md5=$(xxh64sum "$imagen" | cut -d' ' -f1)
+    local current_xxh64=$(xxh64sum "$imagen" | cut -d' ' -f1)
 
     (
-        flock -x 200
-        if [ ! -f "$cache_file" ] || [ ! -f "$md5_file" ] || [ "$current_md5" != "$(cat "$md5_file" 2>/dev/null)" ]; then
+        flock -x -w 10 200 || exit 1
+        if [ ! -f "$cache_file" ] || [ ! -f "$xxh64_file" ] || [ "$current_xxh64" != "$(cat "$xxh64_file" 2>/dev/null)" ]; then
             magick "$imagen" -resize 500x500^ -gravity center -extent 500x500 "$cache_file"
-            echo "$current_md5" >"$md5_file"
+            echo "$current_xxh64" >"$xxh64_file"
         fi
         # Clean the lock file after processing
         rm -f "$lock_file"
@@ -80,27 +75,36 @@ process_image() {
 export -f process_image
 export wall_dir cacheDir
 
-# Clean old locks before starting
-rm -f "${cacheDir}"/.lock_* 2>/dev/null || true
+# Clean old stale locks (older than 1 minute) before starting
+find "${cacheDir}" -name ".lock_*" -type f -mmin +1 -delete 2>/dev/null || true
 
 # Process files in parallel
 find "$wall_dir" -type f \( -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" -o -name "*.gif" \) -print0 |
     xargs -0 -P "$PARALLEL_JOBS" -I {} bash -c 'process_image "{}"'
 
-# Clean orphaned cache files and their locks
+# Clean orphaned cache files and their checksums
 for cached in "$cacheDir"/*; do
     [ -f "$cached" ] || continue
+    # Skip checksum and lock files
+    [[ "$(basename "$cached")" =~ ^\. ]] && continue
+    
     original="${wall_dir}/$(basename "$cached")"
     if [ ! -f "$original" ]; then
         nombre_archivo=$(basename "$cached")
         rm -f "$cached" \
-            "${cacheDir}/.${nombre_archivo}.md5" \
+            "${cacheDir}/.${nombre_archivo}.xxh64" \
             "${cacheDir}/.lock_${nombre_archivo}"
     fi
 done
 
-# Clean any remaining lock files
-rm -f "${cacheDir}"/.lock_* 2>/dev/null || true
+# Clean orphaned checksum files
+for xxh64_file in "$cacheDir"/.*.xxh64; do
+    [ -f "$xxh64_file" ] || continue
+    nombre_archivo=$(basename "$xxh64_file" | sed 's/^\.//; s/\.xxh64$//')
+    if [ ! -f "${cacheDir}/${nombre_archivo}" ]; then
+        rm -f "$xxh64_file"
+    fi
+done
 
 # Check if rofi is already running
 if pidof rofi >/dev/null; then
@@ -122,8 +126,11 @@ wall_selection=$(find "${wall_dir}" -type f \( -iname "*.jpg" -o -iname "*.jpeg"
 # Exit immediately if there is no selection
 [[ -z "${wall_selection}" ]] && exit 0
 
-# full wallpaper path
+# Full wallpaper path
 wallpaper_path="${wall_dir}/${wall_selection}"
+
+# Validate wallpaper exists
+[[ -f "$wallpaper_path" ]] || exit 1
 
 # Ensure hyprpaper is running
 if ! pgrep -x "hyprpaper" >/dev/null; then

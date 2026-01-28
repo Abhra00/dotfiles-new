@@ -14,9 +14,9 @@ get_source_info() {
 	elif [[ "$trackid" == *"spotify"* ]]; then
 		echo -e " Spotify"
 	elif [[ "$trackid" == *"chromium"* ]]; then
-		echo -e " Chromium"
+		echo -e " Chromium"
 	else
-		echo "VOID 󰎄"
+		echo -e "\n\n 󰎄 VOID"
 	fi
 }
 
@@ -25,7 +25,7 @@ case "$1" in
 --title)
 	title=$(get_metadata "xesam:title")
 	if [ -z "$title" ]; then
-		echo "Nothing Playing"
+		echo ""
 	else
 		ten="          "
 		thirty="$ten$ten$ten"
@@ -72,7 +72,7 @@ case "$1" in
 			end="..."
 		fi
 		artist="${artist:0:10}${thirty:0:$((10 - len))}"
-		echo "󰠃 ${artist}${end}"
+		echo " ${artist}${end}"
 	fi
 	;;
 --length)
@@ -91,7 +91,7 @@ case "$1" in
 	elif [[ $status == "Paused" ]]; then
 		echo "󱖐"
 	else
-		echo "󰅙"
+		echo ""
 	fi
 	;;
 --album)

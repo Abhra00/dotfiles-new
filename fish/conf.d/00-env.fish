@@ -71,8 +71,8 @@ set -gx FZF_DEFAULT_OPTS " \
   --color=border:#baa0e8 \
   --color=fg:#f6f6f5 \
   --color=header:#a7dfef \
-  --color=hl+:#e8eda2 \
-  --color=hl:#e8eda2 \
+  --color=hl+:#ffbda6 \
+  --color=hl:#ffbda6 \
   --color=info:#e8eda2 \
   --color=marker:#dd6e6b \
   --color=pointer:#baa0e8 \

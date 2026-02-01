@@ -4,14 +4,17 @@
 #
 
 # Font families
-font-family = "Liga Lunaris"
-font-family-bold = "Liga Lunaris"
-font-family-italic = "Cartograph CF"
-font-family-bold-italic = "Cartograph CF"
+font-family = "0xProto"
+font-family-bold = "0xProto"
+font-family-italic = "0xProto"
+font-family-bold-italic = "0xProto"
 font-family = "Symbols Nerd Font Mono"
 
+# Font features
+font-feature = "ss01"
+
 # Cell height
-adjust-cell-height = 25%
+adjust-cell-height = 15%
 
 # Font size
 font-size = 10
@@ -31,7 +34,7 @@ window-theme = ghostty
 # Cursor
 cursor-style = "block"
 adjust-cursor-thickness = 140%
-adjust-cursor-height = 25%
+adjust-cursor-height = 15%
 cursor-style-blink = true
 
 # keybindings

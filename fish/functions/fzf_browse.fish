@@ -21,9 +21,9 @@ function _fzf_file_or_directory
         printf "\033_Ga=d\033\\\\"
         bat --style=numbers --color=always {} 2>/dev/null; or cat {}
       end' \
-    --preview-window=right:60%:wrap \
+    --preview-window=right:60%:wrap:border-sharp \
     --height=80% \
-    --border=rounded \
+    --border=sharp \
     --prompt="  Files & Dirs " \
     --header="Enter: insert path | Ctrl-E: nvim | Ctrl-D: delete | ESC: exit" \
     --bind='ctrl-e:execute(nvim {})+abort' \

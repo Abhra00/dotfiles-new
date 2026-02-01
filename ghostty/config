@@ -4,14 +4,11 @@
 #
 
 # Font families
-font-family = "Cascadia Code"
-font-family-bold = "Cascadia Code"
-font-family-italic = "Cascadia Code"
-font-family-bold-italic = "Cascadia Code"
+font-family = "Liga Lunaris"
+font-family-bold = "Liga Lunaris"
+font-family-italic = "Cartograph CF"
+font-family-bold-italic = "Cartograph CF"
 font-family = "Symbols Nerd Font Mono"
-
-# Font features
-font-feature = "ss01"
 
 # Cell height
 adjust-cell-height = 25%

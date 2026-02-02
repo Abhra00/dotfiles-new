@@ -4,17 +4,14 @@
 #
 
 # Font families
-font-family = "0xProto"
-font-family-bold = "0xProto"
-font-family-italic = "0xProto"
-font-family-bold-italic = "0xProto"
+font-family = "Source Code Pro"
+font-family-bold = "Source Code Pro"
+font-family-italic = "Source Code Pro"
+font-family-bold-italic = "Source Code Pro"
 font-family = "Symbols Nerd Font Mono"
 
-# Font features
-font-feature = "ss01"
-
 # Cell height
-adjust-cell-height = 15%
+adjust-cell-height = 30%
 
 # Font size
 font-size = 10
@@ -34,7 +31,7 @@ window-theme = ghostty
 # Cursor
 cursor-style = "block"
 adjust-cursor-thickness = 140%
-adjust-cursor-height = 15%
+adjust-cursor-height = 30%
 cursor-style-blink = true
 
 # keybindings

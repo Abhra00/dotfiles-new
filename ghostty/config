@@ -4,10 +4,10 @@
 #
 
 # Font families
-font-family = "Source Code Pro"
-font-family-bold = "Source Code Pro"
-font-family-italic = "Source Code Pro"
-font-family-bold-italic = "Source Code Pro"
+font-family = "Lilex"
+font-family-bold = "Lilex"
+font-family-italic = "Lilex"
+font-family-bold-italic = "Lilex"
 font-family = "Symbols Nerd Font Mono"
 
 # Cell height
@@ -17,7 +17,7 @@ adjust-cell-height = 30%
 font-size = 10
 
 # Underline position
-adjust-underline-position = 6
+adjust-underline-position = 5
 
 # Mouse
 mouse-hide-while-typing = true

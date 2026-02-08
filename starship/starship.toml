@@ -36,12 +36,12 @@ format = "[ $output ]($style)"
 
 # Character
 [character]
-error_symbol = "[░▒▓](fg:red)[ ✘ ](bold bg:red fg:foreground_inverse)"
-success_symbol = "[░▒▓](fg:green)[ 🗸 ](bold bg:green fg:foreground_inverse)"
-vimcmd_symbol = "[░▒▓](fg:magenta)[ λ ](bold bg:magenta fg:foreground_inverse)"
-vimcmd_visual_symbol = "[░▒▓](fg:blue)[ λ ](bold bg:blue fg:foreground_inverse)"
-vimcmd_replace_symbol = "[░▒▓](fg:yellow)[ λ ](bold bg:yellow fg:foreground_inverse)"
-vimcmd_replace_one_symbol = "[░▒▓](fg:yellow)[ λ ](bold bg:yellow fg:foreground_inverse)"
+error_symbol = "[░▒▓](fg:red)[ 𜺰 ](bg:red fg:foreground_inverse)"
+success_symbol = "[░▒▓](fg:green)[ ⌘ ](bg:green fg:foreground_inverse)"
+vimcmd_symbol = "[░▒▓](fg:magenta)[ ▼ ](bg:magenta fg:foreground_inverse)"
+vimcmd_visual_symbol = "[░▒▓](fg:blue)[ ▼ ](bg:blue fg:foreground_inverse)"
+vimcmd_replace_symbol = "[░▒▓](fg:yellow)[ ▼ ](bg:yellow fg:foreground_inverse)"
+vimcmd_replace_one_symbol = "[░▒▓](fg:yellow)[ ▼ ](bg:yellow fg:foreground_inverse)"
 format = "$symbol"
 
 # Directory

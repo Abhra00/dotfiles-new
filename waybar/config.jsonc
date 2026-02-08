@@ -120,11 +120,15 @@
             "warning": 30,
             "critical": 15
         },
-        "tooltip-format": "{timeTo}, {capacity}%"
+        "tooltip-format-discharging": "{power:>1.0f}W↓ 󰡎 󱟞 {capacity}%",
+        "tooltip-format-charging": "{power:>1.0f}W↑ 󰡎 󱟠 {capacity}%",
+        "tooltip-format-plugged": "{timeTo} 󰡎 󱟢 {capacity}%"
     },
     "battery#capacity": {
         "format": "{capacity}%",
-        "tooltip-format": "{timeTo}, {capacity}%"
+        "tooltip-format-discharging": "{power:>1.0f}W↓ 󰡎 󱟞 {capacity}%",
+        "tooltip-format-charging": "{power:>1.0f}W↑ 󰡎 󱟠 {capacity}%",
+        "tooltip-format-plugged": "{timeTo} 󰡎 󱟢 {capacity}%"
     },
 
     "tray": {

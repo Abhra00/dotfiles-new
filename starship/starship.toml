@@ -12,79 +12,79 @@
 add_newline = true
 command_timeout = 200
 
-# Prompt format
+# Palette
+palette = "lunaris"
+
+# Prompt left format
 format = """
-$username\
-$hostname\
-$sudo\
-$directory\
+${custom.prompt_prefix}\
+$directory"""
+
+# Prompt right format
+right_format = """
+$character\
 $git_branch\
-$git_state\
-$git_status\
-$git_metrics\
-$cmd_duration\
-$jobs
-$character"""
+$git_status
+"""
+
+# Custom prompt_prefix icon
+[custom.prompt_prefix]
+command = "echo 'λ'"
+when = true
+style = "bold bg:bright_blue fg:foreground_inverse"
+format = "[ $output ]($style)"
 
 # Character
 [character]
-error_symbol = "[→](bold bright-red)"
-success_symbol = "[→](bold bright-green)"
-vimcmd_symbol = "[←](bold bright-green)"
-vimcmd_visual_symbol = "[←](bold bright-cyan)"
-vimcmd_replace_symbol = "[←](bold bright-yellow)"
-vimcmd_replace_one_symbol = "[←](bold bright-yellow)"
-
-# Cmd duration
-[cmd_duration]
-format = "[󱦟 $duration]($style) "
-style = "yellow"
+error_symbol = "[░▒▓](fg:red)[ ✘ ](bold bg:red fg:foreground_inverse)"
+success_symbol = "[░▒▓](fg:green)[ 🗸 ](bold bg:green fg:foreground_inverse)"
+vimcmd_symbol = "[░▒▓](fg:magenta)[ λ ](bold bg:magenta fg:foreground_inverse)"
+vimcmd_visual_symbol = "[░▒▓](fg:blue)[ λ ](bold bg:blue fg:foreground_inverse)"
+vimcmd_replace_symbol = "[░▒▓](fg:yellow)[ λ ](bold bg:yellow fg:foreground_inverse)"
+vimcmd_replace_one_symbol = "[░▒▓](fg:yellow)[ λ ](bold bg:yellow fg:foreground_inverse)"
+format = "$symbol"
 
 # Directory
 [directory]
-style = 'blue'
-read_only_style = 'red'
-home_symbol = 'home'
-read_only = ' '
+style = "bg:bright_black fg:blue"
+read_only_style = "bg:bright_black fg:red"
+home_symbol = "home"
+read_only = " "
 truncation_length = 2
-truncation_symbol = '…/'
-truncate_to_repo = true
-format = '[$path]($style)[$read_only]($read_only_style) '
-repo_root_format = '[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) '
+truncation_symbol = "…/"
+truncate_to_repo = false
+format = "[ $path ]($style)[$read_only]($read_only_style)[▓▒░](fg:bright_black) "
 
 # Git branch
 [git_branch]
+style = "bg:bright_black fg:yellow"
 symbol = " "
-format = "[$symbol$branch]($style) "
-style = "cyan"
-
-# Git metrics
-[git_metrics]
-disabled = false
-added_style = 'green'
-deleted_style = 'red'
-format = '([+$added]($added_style) )([-$deleted]($deleted_style) ) '
-
-# Git state
-[git_state]
-format = '\([$state( $progress_current/$progress_total)]($style)\) '
-style = "bright-black"
+format = "[ $symbol$branch ]($style)"
 
 # Git status
 [git_status]
 stashed = "≡"
-format = '([\[$all_status$ahead_behind\]]($style) )'
-style = "bold red"
+format = '[$all_status$ahead_behind ]($style)'
+style = "bg:bright_black fg:red"
 
-# Background jobs
-[jobs]
-symbol = ' '
-style = 'purple'
-format = '[$symbol$number]($style) '
-
-# Sudo
-[sudo]
-disabled = false
-style = "bold red"
-symbol = " "
-format = '[$symbol]($style)'
+  # Luanris colors
+[palettes.lunaris]
+black = '#151f26'
+red = '#dd6e6b'
+green = '#87e58e'
+yellow = '#e8eda2'
+blue = '#baa0e8'
+magenta = '#e48cc1'
+cyan = '#a7dfef'
+white = '#e6e6e5'
+bright_black = '#233440'
+bright_red = '#e1837f'
+bright_green = '#97eda2'
+bright_yellow = '#f6f6b6'
+bright_blue = '#d0b5f3'
+bright_magenta = '#e7a1d7'
+bright_cyan = '#bcf4f5'
+bright_white = '#ffffff'
+foreground = '#f6f6f5'
+background = '#0e151a'
+foreground_inverse = '#0e151a'

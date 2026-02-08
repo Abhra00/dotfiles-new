@@ -19,10 +19,9 @@
     "margin-left": 0,
     "margin-right": 0,
     "modules-left": [
-        "image",
+        "custom/power_menu",
         "hyprland/workspaces",
         "idle_inhibitor",
-        "mpd",
         "custom/pacman",
         "custom/weather",
         "custom/colorpicker"
@@ -43,11 +42,17 @@
         "clock#time",
         "custom/swaync",
     ],
-    "image": {
-        "path": "/home/bugs/.config/waybar/assets/icon.svg",
-        "size": 18,
-        "on-click": "hyprctl dispatch exec '[float; size 1100 750]' '$TERMINAL --adjust-cell-height=0% -e btop'",
+    "custom/power_menu": {
+        "format" : "",
         "tooltip": false,
+        "menu": "on-click",
+        "menu-file": "~/.config/waybar/power_menu.xml",
+        "menu-actions": {
+            "shutdown": "hyprctl clients -j | jq -r '.[].pid' | xargs kill && systemctl poweroff",
+            "reboot": "hyprctl clients -j | jq -r '.[].pid' | xargs kill && systemctl reboot",
+            "suspend": "systemctl suspend",
+            "lock": "loginctl lock-session",
+        },
     },
     "hyprland/workspaces": {
         "format": "{id}"

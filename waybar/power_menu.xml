@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object class="GtkMenu" id="menu">
+        <style>
+            <class name="power_menu"/>
+        </style>
+        <child>
+            <object class="GtkMenuItem" id="suspend">
+                <property name="label">󰤄 SUSPEND</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkMenuItem" id="lock">
+                <property name="label">󰌾 LOCK</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkMenuItem" id="shutdown">
+                <property name="label">󰐥 SHUTDOWN</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkMenuItem" id="reboot">
+                <property name="label">󰜉 REBOOT</property>
+            </object>
+        </child>
+    </object>
+</interface>

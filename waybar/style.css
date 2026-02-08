@@ -35,14 +35,22 @@ window#waybar {
 }
 
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  Image
+  Power-menu
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
-#image {
+#custom-power_menu {
+  background-color: @green;
+  color: @fg-inverse;
+  font-size: 12pt;
   border-radius: 0px;
   padding: 0.5rem;
   margin: 0.5rem 0.25rem;
   min-width: 1.5rem;
   transition: 300ms linear;
+}
+
+.power_menu menuitem:hover {
+  border-radius: 0px;
+  color: @red;
 }
 
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

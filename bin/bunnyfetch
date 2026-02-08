@@ -15,7 +15,10 @@ t=$'\e[0m'
 
 ### Animation delay ###
 delay=0.08
-printl() { echo -e "$1"; sleep "$delay"; }
+printl() {
+  echo -e "$1"
+  sleep "$delay"
+}
 
 ### Nerd Font icons ###
 icon_wm=
@@ -32,9 +35,9 @@ kernel="$(uname -r | cut -d '-' -f1)"
 shell="$(basename "$SHELL")"
 
 resolution="$(
-  hyprctl monitors -j 2>/dev/null \
-  | jq -r '.[0] | "\(.width)x\(.height)"' \
-  2>/dev/null || echo "unknown"
+  hyprctl monitors -j 2>/dev/null |
+    jq -r '.[0] | "\(.width)x\(.height)"' \
+      2>/dev/null || echo "unknown"
 )"
 
 pkgcount="$(pacman -Qq 2>/dev/null | wc -l)"

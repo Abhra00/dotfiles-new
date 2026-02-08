@@ -9,4 +9,3 @@ for img in *.$OLD; do
     magick "$img" "$BASE_NAME.$NEW"
     echo "Processing: $img -> $BASE_NAME.$NEW"
 done
-

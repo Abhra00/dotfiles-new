@@ -39,6 +39,9 @@ check_dependencies() {
     USE_GUM=false
   else
     USE_GUM=true
+    # Display the banner
+    gum style --border double --padding "1 2" --border-foreground 212 "Lilex Font Installer"
+    echo
   fi
 }
 
@@ -106,6 +109,7 @@ check_version() {
 
 # Main installation process
 main() {
+
   # Check dependencies first
   check_dependencies
 
@@ -191,6 +195,10 @@ main() {
   # Success message
   style_success "✓ Fonts installed successfully to $FONT_DIR"
   style_success "✓ Installed version: $CURRENT_VERSION"
+
+  # Enjoy banner
+  gum style --border double --padding "1 2" --border-foreground 212 "😎 ENJOY!!! 😎"
+  echo
 
 }
 

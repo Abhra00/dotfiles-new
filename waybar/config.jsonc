@@ -48,8 +48,8 @@
         "menu": "on-click",
         "menu-file": "~/.config/waybar/power_menu.xml",
         "menu-actions": {
-            "shutdown": "hyprctl clients -j | jq -r '.[].pid' | xargs kill && systemctl poweroff",
-            "reboot": "hyprctl clients -j | jq -r '.[].pid' | xargs kill && systemctl reboot",
+            "shutdown": "hyprctl clients -j | jq -r '.[].pid' | xargs kill ; systemctl poweroff",
+            "reboot": "hyprctl clients -j | jq -r '.[].pid' | xargs kill ; systemctl reboot",
             "suspend": "systemctl suspend",
             "lock": "loginctl lock-session",
         },

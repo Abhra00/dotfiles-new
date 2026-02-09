@@ -124,7 +124,7 @@ fsmon = yes
 ################################################################################
 [font]
 # Font name
-name = GeistMono Nerd Font
+name = Iosevka Nerd Font
 # Font size (pt)
 size = 14
 # Font color (RGBA)

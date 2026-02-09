@@ -19,7 +19,7 @@ window {
 }
 
 label {
-  font-family: "GeistMono Nerd Font Propo";
+  font-family: "Iosevka Nerd Font Propo";
   font-size: 11pt;
   color: @foreground;
 }

@@ -6,22 +6,22 @@
         </style>
         <child>
             <object class="GtkMenuItem" id="suspend">
-                <property name="label">󰤄 SUSPEND</property>
+                <property name="label">&#xf34f; SUSPEND</property>
             </object>
         </child>
         <child>
             <object class="GtkMenuItem" id="lock">
-                <property name="label">󰌾 LOCK</property>
+                <property name="label">&#xf8f3; LOCK</property>
             </object>
         </child>
         <child>
             <object class="GtkMenuItem" id="shutdown">
-                <property name="label">󰐥 SHUTDOWN</property>
+                <property name="label">&#xf418; SHUTDOWN</property>
             </object>
         </child>
         <child>
             <object class="GtkMenuItem" id="reboot">
-                <property name="label">󰜉 REBOOT</property>
+                <property name="label">&#xe8ba; RESTART</property>
             </object>
         </child>
     </object>

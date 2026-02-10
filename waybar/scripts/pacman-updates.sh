@@ -9,18 +9,18 @@ pacman_updates=$(checkupdates 2>/dev/null | wc -l)
 
 # Get AUR updates using yay or paru
 if command -v yay &>/dev/null; then
-    aur_updates=$(yay -Qum 2>/dev/null | wc -l)
+  aur_updates=$(yay -Qum 2>/dev/null | wc -l)
 elif command -v paru &>/dev/null; then
-    aur_updates=$(paru -Qum 2>/dev/null | wc -l)
+  aur_updates=$(paru -Qum 2>/dev/null | wc -l)
 else
-    aur_updates=0
+  aur_updates=0
 fi
 
 # Total
 total_updates=$((pacman_updates + aur_updates))
 
 # Values
-TEXT="󰏔 $total_updates"
+TEXT="$total_updates"
 TOOLTIP="Pacman: $pacman_updates\nAUR: $aur_updates\nTotal: $total_updates"
 
 # Escape newlines for JSON

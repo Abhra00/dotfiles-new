@@ -7,18 +7,22 @@
 # Current Theme
 theme='powermenu.rasi'
 
+# Message
+uptime="$(uptime -p | sed -e 's/up //g')"
+host=$(hostname)
+
 # Options
-shutdown='󰐥'
-reboot='󰜉'
-lock='󰌾'
-suspend='󰤄'
-logout='󰈆'
-yes=''
-no=''
+shutdown=$(printf '\uf418')
+reboot=$(printf '\ue8ba')
+lock=$(printf '\uf8f3')
+suspend=$(printf '\uf34f')
+logout=$(printf '\uf1ff')
+yes=$(printf '\uef76')
+no=$(printf '\ueffb')
 
 # Rofi CMD
 rofi_cmd() {
-  rofi -dmenu -theme "$theme"
+  rofi -dmenu -p "Uptime: $uptime" -mesg "Uptime: $uptime" -theme "$theme"
 }
 
 # Confirmation CMD

@@ -9,7 +9,7 @@
 configuration {
 	modi:                       "drun";
   show-icons:                 true;
-  display-drun:               "";
+  display-drun:               "travel_explore";
 	drun-display-format:        "{name}";
   icon-theme:                 "Fluent-dark";
 }
@@ -64,6 +64,7 @@ inputbar {
 }
 
 prompt {
+    font:                        "Material Symbols Rounded 22";
     enabled:                     true;
     padding:                     15px;
     background-color:            @selected;
@@ -73,6 +74,7 @@ prompt {
 entry {
     enabled:                     true;
     padding:                     15px;
+    vertical-align:              0.5;
     background-color:            inherit;
     text-color:                  inherit;
     cursor:                      text;

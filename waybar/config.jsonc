@@ -22,8 +22,10 @@
         "custom/power_menu",
         "hyprland/workspaces",
         "idle_inhibitor",
-        "custom/pacman",
-        "custom/weather",
+        "custom/pacman_icon",
+        "custom/pacman_updates_count",
+        "custom/weather_icon",
+        "custom/weather_temp",
         "custom/colorpicker"
     ],
     "modules-center": [
@@ -43,7 +45,7 @@
         "custom/swaync",
     ],
     "custom/power_menu": {
-        "format" : "",
+        "format" : "\ue60e",
         "tooltip": false,
         "menu": "on-click",
         "menu-file": "~/.config/waybar/power_menu.xml",
@@ -61,18 +63,20 @@
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
-            "activated": "󰅶",
-            "deactivated": "󰾪"
-        }
+            "activated": "\ue9f6",
+            "deactivated": "\ue9f5"
+        },
+        "tooltip-format-activated": "Idle inhibit activated",
+        "tooltip-format-deactivated": "Idle inhibit deactivated",
     },
     "group/network-modules": {
         "modules": ["network#icon", "network#address"],
         "orientation": "inherit"
     },
     "network#icon": {
-        "format-disconnected": "󰤮",
-        "format-ethernet": "󰈀",
-        "format-wifi": "󰤨",
+        "format-disconnected": "\uf239",
+        "format-ethernet": "\uefe6",
+        "format-wifi": "\uef16",
         "tooltip-format-wifi": "WiFi: {essid} ({signalStrength}%)\n󰅃 {bandwidthUpBytes} 󰅀 {bandwidthDownBytes}",
         "tooltip-format-ethernet": "Ethernet: {ifname}\n󰅃 {bandwidthUpBytes} 󰅀 {bandwidthDownBytes}",
         "tooltip-format-disconnected": "Disconnected",
@@ -89,8 +93,8 @@
     },
     "wireplumber#icon": {
         "format": "{icon}",
-        "format-muted": "󰖁",
-        "format-icons": ["󰕿", "󰖀", "󰕾"],
+        "format-muted": "\ue04f",
+        "format-icons": ["\ue04e", "\ue04d", "\ue050"],
         "on-click": "hyprctl dispatch exec '[float]' '$TERMINAL --adjust-cell-height=0% -e wiremix'",
         "on-scroll-up": "wpctl set-volume -l '1.0' @DEFAULT_AUDIO_SINK@ 1%+ &> /dev/null",
         "on-scroll-down": "wpctl set-volume -l '1.0' @DEFAULT_AUDIO_SINK@ 1%- &> /dev/null",
@@ -106,7 +110,7 @@
     },
     "backlight#icon": {
         "format": "{icon}",
-        "format-icons": ["", "󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥"],
+        "format-icons": [ "\uf7e8", "\uf726", "\uf725", "\uf724", "\uf723", "\uf722", "\uf721", "\ue3ac" ],
         "on-scroll-up": "brightnessctl set 1%+ &> /dev/null",
         "on-scroll-down": "brightnessctl set 1%- &> /dev/null",
         "tooltip-format": "Backlight: {percent}%"
@@ -118,24 +122,23 @@
 
     "battery#icon": {
         "format": "{icon}",
-        "format-charging": "󱐋",
-        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-        "format-plugged": "󰚥",
+        "format-charging": "\uf250",
+        "format-plugged": "\uf250",
+        "format-icons": [ "\uf306", "\uf30b", "\uf30a", "\uf309", "\uf308", "\uf307", "\uf304" ],
         "states": {
             "warning": 30,
             "critical": 15
         },
-        "tooltip-format-discharging": "{power:>1.0f}W↓ 󰡎 󱟞 {capacity}%",
-        "tooltip-format-charging": "{power:>1.0f}W↑ 󰡎 󱟠 {capacity}%",
-        "tooltip-format-plugged": "{timeTo} 󰡎 󱟢 {capacity}%"
+        "tooltip-format-charging": "<span font_family='Material Symbols Rounded' size='14pt' rise='-4500'>battery_android_frame_bolt</span> {capacity}% , {power:>1.0f}W",
+        "tooltip-format-discharging": "<span font_family='Material Symbols Rounded' size='14pt' rise='-4500'>battery_android_frame_5</span> {capacity}% , {power:>1.0f}W",
+        "tooltip-format-plugged": "<span font_family='Material Symbols Rounded' size='14pt' rise='-4500'>charger</span> {capacity}% , {timeTo}"
     },
     "battery#capacity": {
         "format": "{capacity}%",
-        "tooltip-format-discharging": "{power:>1.0f}W↓ 󰡎 󱟞 {capacity}%",
-        "tooltip-format-charging": "{power:>1.0f}W↑ 󰡎 󱟠 {capacity}%",
-        "tooltip-format-plugged": "{timeTo} 󰡎 󱟢 {capacity}%"
+        "tooltip-format-charging": "<span font_family='Material Symbols Rounded' size='14pt' rise='-4500'>battery_android_frame_bolt</span> {capacity}% , {power:>1.0f}W",
+        "tooltip-format-discharging": "<span font_family='Material Symbols Rounded' size='14pt' rise='-4500'>battery_android_frame_5</span> {capacity}% , {power:>1.0f}W",
+        "tooltip-format-plugged": "<span font_family='Material Symbols Rounded' size='14pt' rise='-4500'>charger</span> {capacity}% , {timeTo}"
     },
-
     "tray": {
         "icon-size": 14,
         "spacing": 10,
@@ -151,14 +154,14 @@
             "mode-mon-col": 3,
             "weeks-pos": "left",
             "format": {
-                "months": "<span font='Iosevka Nerd Font Propo 12' color='#e8eda2'><b>{}</b></span>",
-                "days": "<span font='Iosevka Nerd Font Propo 12' color='#f6f6f5'><b>{}</b></span>",
-                "weeks": "<span font='Iosevka Nerd Font Propo 12' color='#baa0e8'><b>W{}</b></span>",
-                "weekdays": "<span font='Iosevka Nerd Font Propo 12' color='#a7dfef'><b>{}</b></span>",
-                "today": "<span font='Iosevka Nerd Font Propo 12' color='#e8eda2'><b>{}</b></span>",
+                "months": "<span font='Iosevka Lunaris 12' color='#e8eda2'><b>{}</b></span>",
+                "days": "<span font='Iosevka Lunaris 12' color='#f6f6f5'><b>{}</b></span>",
+                "weeks": "<span font='Iosevka Lunaris 12' color='#baa0e8'><b>W{}</b></span>",
+                "weekdays": "<span font='Iosevka Lunaris 12' color='#a7dfef'><b>{}</b></span>",
+                "today": "<span font='Iosevka Lunaris 12' color='#e8eda2'><b>{}</b></span>",
             },
         },
-        "format": "󰥔",
+        "format": "\uf6b8",
         "tooltip-format": "{calendar}"
     },
     "clock#time": {
@@ -171,17 +174,22 @@
             "mode-mon-col": 3,
             "weeks-pos": "left",
             "format": {
-                "months": "<span font='Iosevka Nerd Font Propo 12' color='#e8eda2'><b>{}</b></span>",
-                "days": "<span font='Iosevka Nerd Font Propo 12' color='#f6f6f5'><b>{}</b></span>",
-                "weeks": "<span font='Iosevka Nerd Font Propo 12' color='#baa0e8'><b>W{}</b></span>",
-                "weekdays": "<span font='Iosevka Nerd Font Propo 12' color='#a7dfef'><b>{}</b></span>",
-                "today": "<span font='Iosevka Nerd Font Propo 12' color='#e8eda2'><b>{}</b></span>",
+                "months": "<span font='Iosevka Lunaris 12' color='#e8eda2'><b>{}</b></span>",
+                "days": "<span font='Iosevka Lunaris 12' color='#f6f6f5'><b>{}</b></span>",
+                "weeks": "<span font='Iosevka Lunaris 12' color='#baa0e8'><b>W{}</b></span>",
+                "weekdays": "<span font='Iosevka Lunaris 12' color='#a7dfef'><b>{}</b></span>",
+                "today": "<span font='Iosevka Lunaris 12' color='#e8eda2'><b>{}</b></span>",
             },
         },
         "format": "{:%I:%M %p}",
         "tooltip-format": "{calendar}"
     },
-    "custom/pacman": {
+    "custom/pacman_icon": {
+        "format": "\uf5f4",
+        "on-click": "$TERMINAL -e yay; pkill -SIGRTMIN+8 waybar",
+        "tooltip-format": "Click to perform update",
+    },
+    "custom/pacman_updates_count": {
         "interval": 3600,
         "return-type": "json",
         "exec": "~/.config/waybar/scripts/pacman-updates.sh",
@@ -202,14 +210,14 @@
         "tooltip-format": "Left Click: Launch Notification Center\nRight Click: Do not Disturb",
         "format": "{icon}",
         "format-icons": {
-            "notification": "󰂚<span foreground='$COLOR9'><sup></sup></span>",
-            "none": "󰂚",
-            "dnd-notification": "󰂛<span foreground='$COLOR9'><sup></sup></span>",
-            "dnd-none": "󰂛",
-            "inhibited-notification": "󰂚<span foreground='$COLOR9'><sup></sup></span>",
-            "inhibited-none": "󰂚",
-            "dnd-inhibited-notification": "󰂛<span foreground='$COLOR9'><sup></sup></span>",
-            "dnd-inhibited-none": "󰂛"
+            "notification": "\uf4fe",
+            "none": "\ue7f4",
+            "dnd-notification": "\ue7f6",
+            "dnd-none": "\ue7f6",
+            "inhibited-notification": "\uf4fe",
+            "inhibited-none": "\ue7f4",
+            "dnd-inhibited-notification": "\ue7f6",
+            "dnd-inhibited-none": "\ue7f6"
         },
         "return-type": "json",
         "exec-if": "which swaync-client",
@@ -218,13 +226,22 @@
         "on-click-right": "swaync-client -d -sw",
         "escape": true
     },
-    "custom/weather": {
+    "custom/weather_icon": {
         "format": "{}",
         "format-alt": "{alt}: {}",
         "format-alt-click": "click",
         "interval": 3600,
         "return-type": "json",
-        "exec": "$HOME/.config/waybar/scripts/weather.py",
+        "exec": "$HOME/.config/waybar/scripts/weather.py icon",
         "tooltip": true
     },
+    "custom/weather_temp": {
+        "format": "{}",
+        "format-alt": "{alt}: {}",
+        "format-alt-click": "click",
+        "interval": 3600,
+        "return-type": "json",
+        "exec": "$HOME/.config/waybar/scripts/weather.py temp",
+        "tooltip": true
+    }
 }

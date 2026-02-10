@@ -37,8 +37,10 @@
 
 /* Base styles */
 * {
-  font-family: "Iosevka Nerd Font Propo", monospace;
+  font-family: "ComicNeue", "Material Symbols Rounded", sans-serif;
+  font-variation-settings:  "FILL" 1;
   border-radius: 0px;
+  font-weight: 600;
 }
 
 *:focus {
@@ -309,7 +311,7 @@ scrollbar slider {
 }
 
 .widget-title>button {
-    font-size: initial;
+    font-size: 18pt;
     font-weight: bold;
     color: var(--color1);
     text-shadow: none;

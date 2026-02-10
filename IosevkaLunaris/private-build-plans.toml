@@ -1,0 +1,204 @@
+[buildPlans.IosevkaLunaris]
+family = "Iosevka Lunaris"
+spacing = "term"
+serifs = "sans"
+noCvSs = false
+exportGlyphNames = true
+
+  [buildPlans.IosevkaLunaris.variants]
+  inherits = "ss07"
+
+    [buildPlans.IosevkaLunaris.variants.design]
+    three = "flat-top-serifless"
+    five = "upright-flat-serifless"
+    six = "open-contour"
+    seven = "straight-serifless-crossbar"
+    eight = "two-circles"
+    nine = "closed-contour"
+    zero = "tall-reverse-slashed"
+    capital-a = "curly-serifless"
+    capital-b = "standard-interrupted-serifless"
+    capital-c = "serifless"
+    capital-d = "standard-serifless"
+    capital-k = "curly-serifless"
+    capital-v = "curly-serifless"
+    capital-w = "curly-serifless"
+    capital-x = "curly-serifless"
+    capital-y = "curly-serifless"
+    capital-z = "straight-serifless"
+    a = "single-storey-serifless"
+    b = "bottom-cut-serifless"
+    c = "serifless"
+    d = "toothed-serifless"
+    e = "flat-crossbar"
+    f = "serifless-crossbar-at-x-height"
+    g = "double-storey"
+    i = "serifed-flat-tailed"
+    k = "cursive-serifless"
+    l = "hooky"
+    q = "straight-serifless"
+    r = "serifless"
+    s = "serifless"
+    t = "bent-hook"
+    u = "tailed-serifless"
+    v = "curly-serifless"
+    w = "curly-serifless"
+    x = "curly-serifless"
+    y = "curly-serifless"
+    z = "straight-serifless"
+    number-sign = "upright-open"
+    percent = "dots"
+    question = "corner"
+    lig-neq = "vertical-dotted"
+    lig-equal-chain = "without-notch"
+    lig-hyphen-chain = "without-notch"
+    lig-double-arrow-bar = "without-notch"
+    lig-single-arrow-bar = "without-notch"
+
+    [buildPlans.IosevkaLunaris.variants.italic]
+    three = "flat-top-serifless"
+    five = "upright-flat-serifless"
+    six = "open-contour"
+    seven = "straight-serifless-crossbar"
+    eight = "two-circles"
+    nine = "closed-contour"
+    zero = "tall-reverse-slashed"
+    capital-a = "curly-serifless"
+    capital-b = "standard-interrupted-serifless"
+    capital-c = "serifless"
+    capital-d = "standard-serifless"
+    capital-k = "curly-serifless"
+    capital-v = "curly-serifless"
+    capital-w = "curly-serifless"
+    capital-x = "curly-serifless"
+    capital-y = "curly-serifless"
+    capital-z = "straight-serifless"
+    a = "single-storey-serifless"
+    b = "bottom-cut-serifless"
+    c = "serifless"
+    d = "toothed-serifless"
+    e = "flat-crossbar"
+    f = "diagonal-tailed"
+    g = "double-storey"
+    i = "serifed-diagonal-tailed"
+    j = "diagonal-tailed-serifed"
+    k = "diagonal-tailed-cursive-serifless"
+    l = "serifed-diagonal-tailed"
+    q = "straight-serifless"
+    r = "serifless"
+    s = "serifless"
+    t = "bent-hook"
+    u = "tailed-serifless"
+    v = "curly-serifless"
+    w = "curly-serifless"
+    x = "curly-serifless"
+    y = "curly-serifless"
+    z = "cursive"
+    number-sign = "upright-open"
+    percent = "dots"
+    question = "corner"
+    lig-neq = "vertical-dotted"
+    lig-equal-chain = "without-notch"
+    lig-hyphen-chain = "without-notch"
+    lig-double-arrow-bar = "without-notch"
+    lig-single-arrow-bar = "without-notch"
+
+    [buildPlans.IosevkaLunaris.variants.oblique]
+    three = "flat-top-serifless"
+    five = "upright-flat-serifless"
+    six = "open-contour"
+    seven = "straight-serifless-crossbar"
+    eight = "two-circles"
+    nine = "closed-contour"
+    zero = "tall-reverse-slashed"
+    capital-a = "curly-serifless"
+    capital-b = "standard-interrupted-serifless"
+    capital-c = "serifless"
+    capital-d = "standard-serifless"
+    capital-k = "curly-serifless"
+    capital-v = "curly-serifless"
+    capital-w = "curly-serifless"
+    capital-x = "curly-serifless"
+    capital-y = "curly-serifless"
+    capital-z = "straight-serifless"
+    a = "single-storey-serifless"
+    b = "bottom-cut-serifless"
+    c = "serifless"
+    d = "toothed-serifless"
+    e = "flat-crossbar"
+    f = "serifless-crossbar-at-x-height"
+    g = "double-storey"
+    i = "serifed-flat-tailed"
+    k = "cursive-serifless"
+    l = "hooky"
+    q = "straight-serifless"
+    r = "serifless"
+    s = "serifless"
+    t = "bent-hook"
+    u = "tailed-serifless"
+    v = "curly-serifless"
+    w = "curly-serifless"
+    x = "curly-serifless"
+    y = "curly-serifless"
+    z = "straight-serifless"
+    number-sign = "upright-open"
+    percent = "dots"
+    question = "corner"
+    lig-neq = "vertical-dotted"
+    lig-equal-chain = "without-notch"
+    lig-hyphen-chain = "without-notch"
+    lig-double-arrow-bar = "without-notch"
+    lig-single-arrow-bar = "without-notch"
+
+  [buildPlans.IosevkaLunaris.ligations]
+  inherits = "dlig"
+
+[buildPlans.IosevkaLunaris.weights.Regular]
+shape = 400
+menu = 400
+css = 400
+
+[buildPlans.IosevkaLunaris.weights.Bold]
+shape = 700
+menu = 700
+css = 700
+
+[buildPlans.IosevkaLunaris.weights.ExtraLight]
+shape = 200
+menu = 200
+css = 200
+
+[buildPlans.IosevkaLunaris.weights.Light]
+shape = 300
+menu = 300
+css = 300
+
+[buildPlans.IosevkaLunaris.weights.Medium]
+shape = 500
+menu = 500
+css = 500
+
+[buildPlans.IosevkaLunaris.weights.SemiBold]
+shape = 600
+menu = 600
+css = 600
+
+[buildPlans.IosevkaLunaris.weights.ExtraBold]
+shape = 800
+menu = 800
+css = 800
+
+[buildPlans.IosevkaLunaris.weights.Heavy]
+shape = 900
+menu = 900
+css = 900
+
+[buildPlans.IosevkaLunaris.widths.Normal]
+shape = 600
+menu = 5
+css = "normal"
+
+[buildPlans.IosevkaLunaris.widths.Extended]
+shape = 720
+menu = 7
+css = "expanded"

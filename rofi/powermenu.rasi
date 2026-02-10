@@ -13,19 +13,19 @@ configuration {
 }
 
 /*****----- Global Properties -----*****/
-@import                          "shared/colors.rasi"
-@import                          "shared/fonts.rasi"
+@import                          "~/.config/rofi/shared/colors.rasi"
+@import                          "~/.config/rofi/shared/fonts.rasi"
 
 
 /*****----- Main Window -----*****/
 window {
     /* properties for window widget */
     transparency:                "real";
-    location:                    east;
-    anchor:                      east;
+    location:                    center;
+    anchor:                      center;
     fullscreen:                  false;
-    width:                       115px;
-    x-offset:                    -15px;
+    width:                       800px;
+    x-offset:                    0px;
     y-offset:                    0px;
 
     /* properties for all widgets */
@@ -44,18 +44,18 @@ mainbox {
     enabled:                     true;
     spacing:                     15px;
     margin:                      0px;
-    padding:                     15px;
+    padding:                     30px;
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @selected;
     background-color:            transparent;
-    children:                    [ "listview" ];
+    children:                    [ "inputbar", "listview" ];
 }
 
 /*****----- Inputbar -----*****/
 inputbar {
     enabled:                     true;
-    spacing:                     0px;
+    spacing:                     15px;
     margin:                      0px;
     padding:                     0px;
     border:                      0px;
@@ -71,9 +71,10 @@ dummy {
 }
 
 textbox-prompt-colon {
+    font:                        "Material Symbols Rounded 20";
     enabled:                     true;
     expand:                      false;
-    str:                         "";
+    str:                         "android";
     padding:                     12px 16px;
     border-radius:               0px;
     background-color:            @urgent;
@@ -83,6 +84,7 @@ prompt {
     enabled:                     true;
     padding:                     12px;
     border-radius:               0px;
+    vertical-align:              0.5;
     background-color:            @active;
     text-color:                  @background;
 }
@@ -119,8 +121,8 @@ error-message {
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     1;
-    lines:                       5;
+    columns:                     5;
+    lines:                       1;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
@@ -145,16 +147,16 @@ element {
     enabled:                     true;
     spacing:                     0px;
     margin:                      0px;
-    padding:                     20px 0px;
-    border:                      0px solid;
+    padding:                     40px 10px;
+    border:                      2px solid;
     border-radius:               0px;
-    border-color:                @selected;
+    border-color:                @border-color;
     background-color:            @background-alt;
     text-color:                  @foreground;
     cursor:                      pointer;
 }
 element-text {
-    font:                        "Iosevka Nerd Font Propo bold 24";
+    font:                        "Material Symbols Rounded 32";
     background-color:            transparent;
     text-color:                  inherit;
     cursor:                      inherit;

@@ -24,9 +24,9 @@
   GLOBAL
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 * {
-  font-family: "Iosevka Nerd Font Propo";
+  font-family: "ComicNeue", "Material Symbols Rounded", sans-serif;
   font-size: 10pt;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 window#waybar {
@@ -40,7 +40,7 @@ window#waybar {
 #custom-power_menu {
   background-color: @green;
   color: @fg-inverse;
-  font-size: 12pt;
+  font-size: 18pt;
   border-radius: 0px;
   padding: 0.5rem;
   margin: 0.5rem 0.25rem;
@@ -89,6 +89,7 @@ window#waybar {
   Idle inhibit
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 #idle_inhibitor {
+  font-size: 18pt;
   background: @bg-alt;
   color: @red;
   border-radius: 0px;
@@ -106,26 +107,48 @@ window#waybar {
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
  Pacupdates
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
-#custom-pacman {
-  background: @bg-alt;
-  color: @green;
+#custom-pacman_icon {
+  font-size: 18pt;
+  background: @yellow;
+  color: @fg-inverse;
   border-radius: 0px;
   padding: 0.5rem;
-  margin: 0.5rem 0.25rem;
+  margin: 0.5rem 0rem 0.5rem 0.25rem;
   min-width: 1.5rem;
+  transition: 300ms linear;
+}
+
+#custom-pacman_updates_count {
+  background: @bg-alt;
+  color: @fg;
+  border-radius: 0px;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  margin: 0.5rem 0.25rem 0.5rem 0rem;
   transition: 300ms linear;
 }
 
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
  Weather
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
-#custom-weather {
-  background: @bg-alt;
-  color: @blue;
+#custom-weather_icon {
+  font-size: 18pt;
+  background: @cyan;
+  color: @fg-inverse;
   border-radius: 0px;
   padding: 0.5rem;
-  margin: 0.5rem 0.25rem;
+  margin: 0.5rem 0rem 0.5rem 0.25rem;
   min-width: 1.5rem;
+  transition: 300ms linear;
+}
+
+#custom-weather_temp {
+  background: @bg-alt;
+  color: @fg;
+  border-radius: 0px;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  margin: 0.5rem 0.25rem 0.5rem 0rem;
   transition: 300ms linear;
 }
 
@@ -133,6 +156,7 @@ window#waybar {
  Color-picker
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 #custom-colorpicker {
+  font-size: 18pt;
   background: @bg-alt;
   border-radius: 0px;
   padding: 0.5rem;
@@ -145,7 +169,7 @@ window#waybar {
  Network
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 #network.icon {
-  font-size: 12pt;
+  font-size: 18pt;
   background: @blue;
   color: @fg-inverse;
   border-radius: 0px;
@@ -168,7 +192,7 @@ window#waybar {
  Wireplumber
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 #wireplumber.icon {
-  font-size: 12pt;
+  font-size: 18pt;
   background: @blue;
   color: @fg-inverse;
   border-radius: 0px;
@@ -191,7 +215,7 @@ window#waybar {
  Backlight
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 #backlight.icon {
-  font-size: 12pt;
+  font-size: 18pt;
   background: @blue;
   color: @fg-inverse;
   border-radius: 0px;
@@ -214,7 +238,7 @@ window#waybar {
  Battery
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 #battery.icon {
-  font-size: 12pt;
+  font-size: 18pt;
   background: @blue;
   color: @fg-inverse;
   border-radius: 0px;
@@ -232,8 +256,18 @@ window#waybar {
   margin: 0.5rem 0.25rem 0.5rem 0rem;
   transition: 300ms linear;
 }
+#battery.icon.charging {
+  font-size: 18pt;
+  background: @green;
+  color: @fg-inverse;
+  border-radius: 0px;
+  padding: 0.5rem;
+  margin: 0.5rem 0rem 0.5rem 0.25rem;
+  min-width: 1.5rem;
+  transition: 300ms linear;
+}
 #battery.icon.warning:not(.charging) {
-  font-size: 12pt;
+  font-size: 18pt;
   background: @yellow;
   color: @fg-inverse;
   border-radius: 0px;
@@ -243,7 +277,7 @@ window#waybar {
   transition: 300ms linear;
 }
 #battery.icon.critical:not(.charging) {
-  font-size: 12pt;
+  font-size: 18pt;
   background: @red;
   color: @fg-inverse;
   border-radius: 0px;
@@ -257,7 +291,7 @@ window#waybar {
  Clock
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 #clock.icon {
-  font-size: 12pt;
+  font-size: 18pt;
   background: @blue;
   color: @fg-inverse;
   border-radius: 0px;
@@ -279,7 +313,7 @@ window#waybar {
  Swaync
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 #custom-swaync {
-  font-size: 12pt;
+  font-size: 18pt;
   background: @magenta;
   color: @fg-inverse;
   border-radius: 0px;
@@ -367,7 +401,7 @@ tooltip label {
 
 /* Color-picker hover */
 #custom-colorpicker:hover {
-  background: @magenta;
+  background: @cyan;
   color: @fg-inverse;
 }
 

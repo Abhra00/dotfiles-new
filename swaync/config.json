@@ -45,17 +45,17 @@
       "vexpand": true
     },
     "inhibitors": {
-      "text": "INHIBITORS",
-      "button-text": "󱕖",
+      "text": "Inhibitors",
+      "button-text": "\uea4c",
       "clear-all-button": true
     },
     "title": {
-      "text": " NOTIFS",
+      "text": "\uf4fe NOTIFS",
       "clear-all-button": true,
-      "button-text": "󱕖"
+      "button-text": "\uea4c"
     },
     "dnd": {
-      "text": " DND"
+      "text": "\ueffb DND"
     },
     "mpris": {
       "blacklist": [],

@@ -19,8 +19,9 @@ window {
 }
 
 label {
-  font-family: "Iosevka Nerd Font Propo";
+  font-family: "ComicNeue", "Material Symbols Rounded", sans-serif;
   font-size: 11pt;
+  font-weight: 600;
   color: @foreground;
 }
 

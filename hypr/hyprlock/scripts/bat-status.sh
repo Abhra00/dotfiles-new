@@ -35,9 +35,9 @@ if [[ $enable_battery == true ]]; then
   fi
   # Add charging indicator if charging
   if [[ $battery_charging == true ]]; then
-    icon="<span font_family='Material Symbols Rounded' size='16pt' rise='-3500'>battery_android_frame_bolt</span>"
+    icon="<span font_family='Material Symbols Rounded' size='16pt' rise='-4500'>battery_android_frame_bolt</span>"
   else
-    icon="<span font_family='Material Symbols Rounded' size='16pt' rise='-3500'>$icon_name</span>"
+    icon="<span font_family='Material Symbols Rounded' size='16pt' rise='-4500'>$icon_name</span>"
   fi
   # Add color for low battery
   if [[ $capacity -le 20 && $battery_charging == false ]]; then

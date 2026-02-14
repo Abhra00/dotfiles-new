@@ -11,7 +11,7 @@ font-family-bold-italic = "Iosevka Lunaris"
 font-family = "Symbols Nerd Font Mono"
 
 # Cell height
-adjust-cell-height = 35%
+adjust-cell-height = 45%
 
 # Font size
 font-size = 10
@@ -31,7 +31,7 @@ window-theme = ghostty
 # Cursor
 cursor-style = "block"
 adjust-cursor-thickness = 140%
-adjust-cursor-height = 35%
+adjust-cursor-height = 45%
 cursor-style-blink = true
 
 # keybindings

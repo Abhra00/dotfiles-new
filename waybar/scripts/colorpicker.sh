@@ -6,7 +6,7 @@
 # Dependencies: hyprpicker, wl-copy, notify-send, Waybar (with signal support)
 
 # Font for hex codes
-hex_font="Iosevka Lunaris"
+hex_font="Intel One Mono"
 icon_font="Material Symbols Rounded"
 
 # Set up config/cache location

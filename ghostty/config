@@ -4,14 +4,14 @@
 #
 
 # Font families
-font-family = "Iosevka Lunaris"
-font-family-bold = "Iosevka Lunaris"
-font-family-italic = "Iosevka Lunaris"
-font-family-bold-italic = "Iosevka Lunaris"
+font-family = "Intel One Mono"
+font-family-bold = "Intel One Mono"
+font-family-italic = "Intel One Mono"
+font-family-bold-italic = "Intel One Mono"
 font-family = "Symbols Nerd Font Mono"
 
 # Cell height
-adjust-cell-height = 45%
+adjust-cell-height = 35%
 
 # Font size
 font-size = 10
@@ -31,7 +31,7 @@ window-theme = ghostty
 # Cursor
 cursor-style = "block"
 adjust-cursor-thickness = 140%
-adjust-cursor-height = 45%
+adjust-cursor-height = 35%
 cursor-style-blink = true
 
 # keybindings

@@ -3,16 +3,16 @@
 # ┗┛┗┛┗┛┗┛┛┗┗┛
 #
 
-# Lunaris colors
-set -l foreground f6f6f5
-set -l selection 233440
-set -l comment b186bf
-set -l red dd6e6b
-set -l green 87e58e
-set -l yellow e8eda2
-set -l blue baa0e8
-set -l magenta e48cc1
-set -l cyan a7dfef
+# Kintsukuroi colors
+set -l foreground e5c9a0
+set -l selection 4d463e
+set -l comment 5a5147
+set -l red c06c5c
+set -l green 78997a
+set -l yellow c09d59
+set -l blue 7f91b2
+set -l magenta b380b0
+set -l cyan 7b9695
 
 # Syntax highlighting colors
 set -g fish_color_normal $foreground

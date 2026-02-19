@@ -3,23 +3,23 @@
 #  ┻  ┻ ┗┛  ┗┛┗┛┗┛┗┛┛┗┗┛
 #
 
-# Lunaris tty colors
+# Kintsukuroi colors
 if test "$TERM" = "linux"
-    echo -en "\e]P0151f26" # COLOR_0
-    echo -en "\e]P1dd6e6b" # COLOR_1
-    echo -en "\e]P287e58e" # COLOR_2
-    echo -en "\e]P3e8eda2" # COLOR_3
-    echo -en "\e]P4baa0e8" # COLOR_4
-    echo -en "\e]P5e48cc1" # COLOR_5
-    echo -en "\e]P6a7dfef" # COLOR_6
-    echo -en "\e]P7e6e6e5" # COLOR_7
-    echo -en "\e]P8233440" # COLOR_8
-    echo -en "\e]P9e1837f" # COLOR_9
-    echo -en "\e]PA97eda2" # COLOR_10
-    echo -en "\e]PBf6f6b6" # COLOR_11
-    echo -en "\e]PCd0b5f3" # COLOR_12
-    echo -en "\e]PDe7a1d7" # COLOR_13
-    echo -en "\e]PEbcf4f5" # COLOR_14
-    echo -en "\e]PFffffff" # COLOR_15
+    echo -en "\e]P0322d28" # COLOR_0
+    echo -en "\e]P1c06c5c" # COLOR_1
+    echo -en "\e]P278997a" # COLOR_2
+    echo -en "\e]P3c09d59" # COLOR_3
+    echo -en "\e]P47f91b2" # COLOR_4
+    echo -en "\e]P5b380b0" # COLOR_5
+    echo -en "\e]P67b9695" # COLOR_6
+    echo -en "\e]P7d8be97" # COLOR_7
+    echo -en "\e]P84d463e" # COLOR_8
+    echo -en "\e]P9d97a68" # COLOR_9
+    echo -en "\e]PA85b695" # COLOR_10
+    echo -en "\e]PBd8b164" # COLOR_11
+    echo -en "\e]PCa3a9ce" # COLOR_12
+    echo -en "\e]PDcf9bc2" # COLOR_13
+    echo -en "\e]PE89b3b6" # COLOR_14
+    echo -en "\e]PFf2d5a9" # COLOR_15
     clear
 end

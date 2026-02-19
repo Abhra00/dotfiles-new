@@ -7,13 +7,13 @@
 [general]
 framerate = 65
 
-# Lunaris colors
+# Kintsukuroi colors
 [color]
 gradient = 1
 gradient_count = 6
-gradient_color_1 = '#baa0e8'
-gradient_color_2 = '#87e58e'
-gradient_color_3 = '#e8eda2'
-gradient_color_4 = '#dd6e6b'
-gradient_color_5 = '#e48cc1'
-gradient_color_6 = '#a7dfef'
+gradient_color_1 = '#7f91b2'
+gradient_color_2 = '#78997a'
+gradient_color_3 = '#c09d59'
+gradient_color_4 = '#c06c5c'
+gradient_color_5 = '#b380b0'
+gradient_color_6 = '#7b9695'

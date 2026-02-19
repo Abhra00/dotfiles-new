@@ -13,40 +13,26 @@ add_newline = true
 command_timeout = 200
 
 # Palette
-palette = "lunaris"
+palette = "Kintsukuroi"
 
 # Prompt left format
 format = """
-${custom.prompt_prefix}\
-$directory"""
-
-# Prompt right format
-right_format = """
-$character\
-$git_branch\
-$git_status
+$character$git_branch$git_status$directory
 """
-
-# Custom prompt_prefix icon
-[custom.prompt_prefix]
-command = "echo 'λ'"
-when = true
-style = "bold bg:bright_blue fg:foreground_inverse"
-format = "[ $output ]($style)"
 
 # Character
 [character]
-error_symbol = "[░▒▓](fg:red)[ 𜺰 ](bg:red fg:foreground_inverse)"
-success_symbol = "[░▒▓](fg:green)[ ⌘ ](bg:green fg:foreground_inverse)"
-vimcmd_symbol = "[░▒▓](fg:magenta)[ ▼ ](bg:magenta fg:foreground_inverse)"
-vimcmd_visual_symbol = "[░▒▓](fg:blue)[ ▼ ](bg:blue fg:foreground_inverse)"
-vimcmd_replace_symbol = "[░▒▓](fg:yellow)[ ▼ ](bg:yellow fg:foreground_inverse)"
-vimcmd_replace_one_symbol = "[░▒▓](fg:yellow)[ ▼ ](bg:yellow fg:foreground_inverse)"
+error_symbol = "[ 𜺰 ](bg:red fg:foreground_inverse)"
+success_symbol = "[ λ ](bg:green fg:foreground_inverse)"
+vimcmd_symbol = "[ ▼ ](bg:magenta fg:foreground_inverse)"
+vimcmd_visual_symbol = "[ ▼ ](bg:blue fg:foreground_inverse)"
+vimcmd_replace_symbol = "[ ▼ ](bg:yellow fg:foreground_inverse)"
+vimcmd_replace_one_symbol = "[ ▼ ](bg:yellow fg:foreground_inverse)"
 format = "$symbol"
 
 # Directory
 [directory]
-style = "bg:bright_black fg:blue"
+style = "bg:bright_black fg:bright_white"
 read_only_style = "bg:bright_black fg:red"
 home_symbol = "home"
 read_only = " "
@@ -64,27 +50,28 @@ format = "[ $symbol$branch ]($style)"
 # Git status
 [git_status]
 stashed = "≡"
-format = '[$all_status$ahead_behind ]($style)'
+up_to_date = "✦"
+format = '[$all_status$ahead_behind]($style)'
 style = "bg:bright_black fg:red"
 
-  # Luanris colors
-[palettes.lunaris]
-black = '#151f26'
-red = '#dd6e6b'
-green = '#87e58e'
-yellow = '#e8eda2'
-blue = '#baa0e8'
-magenta = '#e48cc1'
-cyan = '#a7dfef'
-white = '#e6e6e5'
-bright_black = '#233440'
-bright_red = '#e1837f'
-bright_green = '#97eda2'
-bright_yellow = '#f6f6b6'
-bright_blue = '#d0b5f3'
-bright_magenta = '#e7a1d7'
-bright_cyan = '#bcf4f5'
-bright_white = '#ffffff'
-foreground = '#f6f6f5'
-background = '#0e151a'
-foreground_inverse = '#0e151a'
+# Kintsukuroi
+[palettes.Kintsukuroi]
+black = '#322d28'
+red = '#c06c5c'
+green = '#78997a'
+yellow = '#c09d59'
+blue = '#7f91b2'
+magenta = '#b380b0'
+cyan = '#7b9695'
+white = '#d8be97'
+bright_black = '#4d463e'
+bright_red = '#d97a68'
+bright_green = '#85b695'
+bright_yellow = '#d8b164'
+bright_blue = '#a3a9ce'
+bright_magenta = '#cf9bc2'
+bright_cyan = '#89b3b6'
+bright_white = '#f2d5a9'
+foreground = '#e5c9a0'
+background = '#141210'
+foreground_inverse = '#141210'

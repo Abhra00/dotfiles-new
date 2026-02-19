@@ -10,6 +10,9 @@ font-family-italic = "Intel One Mono"
 font-family-bold-italic = "Intel One Mono"
 font-family = "Symbols Nerd Font Mono"
 
+# Font features
+font-feature = "ss01, ss02, ss03, ss11"
+
 # Cell height
 adjust-cell-height = 35%
 
@@ -24,7 +27,7 @@ mouse-hide-while-typing = true
 mouse-scroll-multiplier = 1
 
 # Theme
-theme = Lunaris
+theme = Kintsukuroi
 background-opacity = 1.0
 window-theme = ghostty
 

@@ -5,18 +5,18 @@
  */
 
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  LUNARIS COLORS
+  KINTSUKUROI COLORS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
-@define-color bg            #0e151a;
-@define-color bg-alt        #233440;
-@define-color fg            #f6f6f5;
-@define-color fg-inverse    #0e151a;
-@define-color red           #dd6e6b;
-@define-color green         #87e58e;
-@define-color yellow        #e8eda2;
-@define-color blue          #baa0e8;
-@define-color magenta       #e48cc1;
-@define-color cyan          #a7dfef;
+@define-color bg            #141210;
+@define-color bg-alt        #322d28;
+@define-color fg            #e5c9a0;
+@define-color fg-inverse    #141210;
+@define-color red           #c06c5c;
+@define-color green         #78997a;
+@define-color yellow        #c09d59;
+@define-color blue          #7f91b2;
+@define-color magenta       #b380b0;
+@define-color cyan          #7b9695;
 
 
 
@@ -77,7 +77,7 @@ window#waybar {
 }
 
 #workspaces button.active {
-  background: @blue;
+  background: @fg;
 }
 
 #workspaces button.urgent label,
@@ -170,7 +170,7 @@ window#waybar {
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 #network.icon {
   font-size: 18pt;
-  background: @blue;
+  background: @fg;
   color: @fg-inverse;
   border-radius: 0px;
   padding: 0.5rem;
@@ -193,7 +193,7 @@ window#waybar {
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 #wireplumber.icon {
   font-size: 18pt;
-  background: @blue;
+  background: @fg;
   color: @fg-inverse;
   border-radius: 0px;
   padding: 0.5rem;
@@ -216,7 +216,7 @@ window#waybar {
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 #backlight.icon {
   font-size: 18pt;
-  background: @blue;
+  background: @fg;
   color: @fg-inverse;
   border-radius: 0px;
   padding: 0.5rem;
@@ -239,7 +239,7 @@ window#waybar {
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 #battery.icon {
   font-size: 18pt;
-  background: @blue;
+  background: @fg;
   color: @fg-inverse;
   border-radius: 0px;
   padding: 0.5rem;
@@ -292,7 +292,7 @@ window#waybar {
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 #clock.icon {
   font-size: 18pt;
-  background: @blue;
+  background: @fg;
   color: @fg-inverse;
   border-radius: 0px;
   padding: 0.5rem;
@@ -407,41 +407,41 @@ tooltip label {
 
 /* Network hover */
 #network.icon:hover {
-  background: shade(@blue, 0.85);
+  background: shade(@fg, 0.85);
 }
 
 #network.address:hover {
-  background: shade(@blue, 0.85);
+  background: shade(@fg, 0.85);
   color: @fg-inverse;
 }
 
 /* Wireplumber hover */
 #wireplumber.icon:hover {
-  background: shade(@blue, 0.85);
+  background: shade(@fg, 0.85);
 }
 
 #wireplumber.volume:hover {
-  background: shade(@blue, 0.85);
+  background: shade(@fg, 0.85);
   color: @fg-inverse;
 }
 
 /* Backlight hover */
 #backlight.icon:hover {
-  background: shade(@blue, 0.85);
+  background: shade(@fg, 0.85);
 }
 
 #backlight.percent:hover {
-  background: shade(@blue, 0.85);
+  background: shade(@fg, 0.85);
   color: @fg-inverse;
 }
 
 /* Battery hover */
 #battery.icon:hover {
-  background: shade(@blue, 0.85);
+  background: shade(@fg, 0.85);
 }
 
 #battery.capacity:hover {
-  background: shade(@blue, 0.85);
+  background: shade(@fg, 0.85);
   color: @fg-inverse;
 }
 
@@ -455,11 +455,11 @@ tooltip label {
 
 /* Clock hover */
 #clock.icon:hover {
-  background: shade(@blue, 0.85);
+  background: shade(@fg, 0.85);
 }
 
 #clock.time:hover {
-  background: shade(@blue, 0.85);
+  background: shade(@fg, 0.85);
   color: @fg-inverse;
 }
 

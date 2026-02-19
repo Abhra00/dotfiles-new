@@ -11,15 +11,16 @@
         "source": "~/.config/fastfetch/pics/yuji.png",
         "height": 10,
         "padding": {
-            "top": 0,
-            "right": 2,
-            "bottom": 2
+            "top": 2,
+            "right": 2
         }
     },
     "display": {
         "separator": " "
     },
     "modules": [
+        "break",
+        "break",
         "break",
         "break",
         {
@@ -57,11 +58,6 @@
             "type": "uptime",
             "key": " ",
             "keyColor": "31"
-        },
-        {
-            "type": "media",
-            "key": "󰝚 ",
-            "keyColor": "32"
         },
         {
             "type": "command",

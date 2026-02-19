@@ -5,7 +5,6 @@
  *
  */
 
-
 // -*- mode: jsonc -*-
 {
     "layer": "top",
@@ -28,9 +27,7 @@
         "custom/weather_temp",
         "custom/colorpicker"
     ],
-    "modules-center": [
-        "tray"
-    ],
+    "modules-center": ["tray"],
     "modules-right": [
         "network#icon",
         "network#address",
@@ -42,10 +39,10 @@
         "battery#capacity",
         "clock#icon",
         "clock#time",
-        "custom/swaync",
+        "custom/swaync"
     ],
     "custom/power_menu": {
-        "format" : "\ue60e",
+        "format": "\ue60e",
         "tooltip": false,
         "menu": "on-click",
         "menu-file": "~/.config/waybar/power_menu.xml",
@@ -53,8 +50,8 @@
             "shutdown": "hyprctl clients -j | jq -r '.[].pid' | xargs kill ; systemctl poweroff",
             "reboot": "hyprctl clients -j | jq -r '.[].pid' | xargs kill ; systemctl reboot",
             "suspend": "systemctl suspend",
-            "lock": "loginctl lock-session",
-        },
+            "lock": "loginctl lock-session"
+        }
     },
     "hyprland/workspaces": {
         "format": "{id}"
@@ -67,7 +64,7 @@
             "deactivated": "\ue9f5"
         },
         "tooltip-format-activated": "Idle inhibit activated",
-        "tooltip-format-deactivated": "Idle inhibit deactivated",
+        "tooltip-format-deactivated": "Idle inhibit deactivated"
     },
     "group/network-modules": {
         "modules": ["network#icon", "network#address"],
@@ -99,18 +96,27 @@
         "on-scroll-up": "wpctl set-volume -l '1.0' @DEFAULT_AUDIO_SINK@ 1%+ &> /dev/null",
         "on-scroll-down": "wpctl set-volume -l '1.0' @DEFAULT_AUDIO_SINK@ 1%- &> /dev/null",
         "tooltip-format": "Volume: {volume}%",
-        "on-click": "hyprctl dispatch exec '[float on; center on; size 1100 800]' '$TERMINAL --adjust-cell-height=0% -e wiremix'",
+        "on-click": "hyprctl dispatch exec '[float on; center on; size 1100 800]' '$TERMINAL --adjust-cell-height=0% -e wiremix'"
     },
     "wireplumber#volume": {
         "format": "{volume}%",
         "tooltip-format": "Volume: {volume}%",
         "on-click": "hyprctl dispatch exec '[float on; center on; size 1100 800]' '$TERMINAL --adjust-cell-height=0% -e wiremix'",
         "on-scroll-up": "wpctl set-volume -l '1.0' @DEFAULT_AUDIO_SINK@ 1%+ &> /dev/null",
-        "on-scroll-down": "wpctl set-volume -l '1.0' @DEFAULT_AUDIO_SINK@ 1%- &> /dev/null",
+        "on-scroll-down": "wpctl set-volume -l '1.0' @DEFAULT_AUDIO_SINK@ 1%- &> /dev/null"
     },
     "backlight#icon": {
         "format": "{icon}",
-        "format-icons": [ "\uf7e8", "\uf726", "\uf725", "\uf724", "\uf723", "\uf722", "\uf721", "\ue3ac" ],
+        "format-icons": [
+            "\uf7e8",
+            "\uf726",
+            "\uf725",
+            "\uf724",
+            "\uf723",
+            "\uf722",
+            "\uf721",
+            "\ue3ac"
+        ],
         "on-scroll-up": "brightnessctl set 1%+ &> /dev/null",
         "on-scroll-down": "brightnessctl set 1%- &> /dev/null",
         "tooltip-format": "Backlight: {percent}%"
@@ -124,7 +130,15 @@
         "format": "{icon}",
         "format-charging": "\uf250",
         "format-plugged": "\uf250",
-        "format-icons": [ "\uf306", "\uf30b", "\uf30a", "\uf309", "\uf308", "\uf307", "\uf304" ],
+        "format-icons": [
+            "\uf306",
+            "\uf30b",
+            "\uf30a",
+            "\uf309",
+            "\uf308",
+            "\uf307",
+            "\uf304"
+        ],
         "states": {
             "warning": 30,
             "critical": 15
@@ -154,12 +168,12 @@
             "mode-mon-col": 3,
             "weeks-pos": "left",
             "format": {
-                "months": "<span font='Intel One Mono 12' color='#e8eda2'><b>{}</b></span>",
-                "days": "<span font='Intel One Mono 12' color='#f6f6f5'><b>{}</b></span>",
-                "weeks": "<span font='Intel One Mono 12' color='#baa0e8'><b>W{}</b></span>",
-                "weekdays": "<span font='Intel One Mono 12' color='#a7dfef'><b>{}</b></span>",
-                "today": "<span font='Intel One Mono 12' color='#e8eda2'><b>{}</b></span>",
-            },
+                "months": "<span font='Intel One Mono 12' color='#c09d59'><b>{}</b></span>",
+                "days": "<span font='Intel One Mono 12' color='#e5c9a0'><b>{}</b></span>",
+                "weeks": "<span font='Intel One Mono 12' color='#7f91b2'><b>W{}</b></span>",
+                "weekdays": "<span font='Intel One Mono 12' color='#7b9695'><b>{}</b></span>",
+                "today": "<span font='Intel One Mono 12' color='#c09d59'><b>{}</b></span>"
+            }
         },
         "format": "\uf6b8",
         "tooltip-format": "{calendar}"
@@ -174,12 +188,12 @@
             "mode-mon-col": 3,
             "weeks-pos": "left",
             "format": {
-                "months": "<span font='Intel One Mono 12' color='#e8eda2'><b>{}</b></span>",
-                "days": "<span font='Intel One Mono 12' color='#f6f6f5'><b>{}</b></span>",
-                "weeks": "<span font='Intel One Mono 12' color='#baa0e8'><b>W{}</b></span>",
-                "weekdays": "<span font='Intel One Mono 12' color='#a7dfef'><b>{}</b></span>",
-                "today": "<span font='Intel One Mono 12' color='#e8eda2'><b>{}</b></span>",
-            },
+                "months": "<span font='Intel One Mono 12' color='#c09d59'><b>{}</b></span>",
+                "days": "<span font='Intel One Mono 12' color='#e5c9a0'><b>{}</b></span>",
+                "weeks": "<span font='Intel One Mono 12' color='#7f91b2'><b>W{}</b></span>",
+                "weekdays": "<span font='Intel One Mono 12' color='#7b9695'><b>{}</b></span>",
+                "today": "<span font='Intel One Mono 12' color='#c09d59'><b>{}</b></span>"
+            }
         },
         "format": "{:%I:%M %p}",
         "tooltip-format": "{calendar}"
@@ -187,7 +201,7 @@
     "custom/pacman_icon": {
         "format": "\uf5f4",
         "on-click": "$TERMINAL -e yay; pkill -SIGRTMIN+8 waybar",
-        "tooltip-format": "Click to perform update",
+        "tooltip-format": "Click to perform update"
     },
     "custom/pacman_updates_count": {
         "interval": 3600,

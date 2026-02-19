@@ -6,33 +6,30 @@
  */
 
 :root {
-  /* Lunaris colors */
-  --color0:   #151f26;
-  --color1:   #dd6e6b;
-  --color2:   #87e58e;
-  --color3:   #e8eda2;
-  --color4:   #baa0e8;
-  --color5:   #e48cc1;
-  --color6:   #a7dfef;
-  --color7:   #e6e6e5;
-  --color8:   #233440;
-  --color9:   #e1837f;
-  --color10:  #97eda2;
-  --color11:  #f6f6b6;
-  --color12:  #d0b5f3;
-  --color13:  #e7a1d7;
-  --color14:  #bcf4f5;
-  --color15:  #ffffff;
-
+/* Kintsukuroi colors */
+  --color0:   #322d28;
+  --color1:   #c06c5c;
+  --color2:   #78997a;
+  --color3:   #c09d59;
+  --color4:   #7f91b2;
+  --color5:   #b380b0;
+  --color6:   #7b9695;
+  --color7:   #d8be97;
+  --color8:   #4d463e;
+  --color9:   #d97a68;
+  --color10:  #85b695;
+  --color11:  #d8b164;
+  --color12:  #a3a9ce;
+  --color13:  #cf9bc2;
+  --color14:  #89b3b6;
+  --color15:  #f2d5a9;
   /* Background Variants */
-  --bg: #0e151a;
-  --bg-light: #151f26;
-  --bg-highlight: #233440;
-
+  --bg: #141210;
+  --bg-light: #322d28;
+  --bg-highlight: #4d463e;
   /* Foreground */
-  --fg: #f6f6f5;
-  --fg-inverse: #0e151a;
-
+  --fg: #e5c9a0;
+  --fg-inverse: #141210;
 }
 
 /* Base styles */
@@ -89,16 +86,16 @@ scrollbar slider {
 .notification-row .notification-background .notification {
     padding: 0;
     margin: 6px 12px;
-    border: 1px solid var(--color4);
+    border: 1px solid var(--fg);
     background: var(--bg);
 }
 
 .notification-row .notification-background .notification.low {
-  border: 1px solid var(--color7);
+  border: 1px solid var(--fg);
 }
 
 .notification-row .notification-background .notification.normal {
-  border: 1px solid var(--color4);
+  border: 1px solid var(--fg);
 }
 
 .notification-row .notification-background .notification.critical {
@@ -269,7 +266,7 @@ scrollbar slider {
 /* Cntrol Center */
 .control-center {
     background: var(--bg);
-    border-left: 4px solid var(--color4);
+    border-left: 4px solid var(--fg);
     margin-left: 10px;
     box-shadow: 0 0 5px 0 var(--color0);
 }

@@ -11,7 +11,7 @@ set -gx TERMINAL ghostty
 set -gx BROWSER chromium
 set -gx EDITOR nvim
 set -gx SUDO_EDITOR $EDITOR
-set -gx BAT_THEME Lunaris
+set -gx BAT_THEME Kintsukuroi
 
 # XDG Base Directories
 set -gx XDG_CONFIG_HOME $HOME/.config
@@ -66,22 +66,23 @@ set -gx FZF_DEFAULT_OPTS " \
   --ellipsis='… ' \
   --prompt='  ' \
   --pointer='' \
-  --color=bg+:#151f26 \
+  --color=bg+:#322d28 \
+  --color=fg+:#e5c9a0 \
   --color=bg:-1 \
-  --color=border:#baa0e8 \
-  --color=fg:#f6f6f5 \
-  --color=header:#a7dfef \
-  --color=hl+:#ffbda6 \
-  --color=hl:#ffbda6 \
-  --color=info:#e8eda2 \
-  --color=marker:#dd6e6b \
-  --color=pointer:#baa0e8 \
-  --color=prompt:#baa0e8 \
-  --color=gutter:#0e151a \
-  --color=query:#f6f6f5:regular \
-  --color=scrollbar:#233440 \
-  --color=separator:#233440 \
-  --color=spinner:#e8eda2 \
+  --color=border:#7f91b2 \
+  --color=fg:#e5c9a0 \
+  --color=header:#7b9695 \
+  --color=hl+:#d88095 \
+  --color=hl:#d88095 \
+  --color=info:#c09d59 \
+  --color=marker:#c06c5c \
+  --color=pointer:#7f91b2 \
+  --color=prompt:#7f91b2 \
+  --color=gutter:#141210 \
+  --color=query:#e5c9a0:regular \
+  --color=scrollbar:#4d463e \
+  --color=separator:#4d463e \
+  --color=spinner:#c09d59 \
 "
 
 

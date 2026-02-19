@@ -7,144 +7,92 @@
 # General configuration
 ################################################################################
 [general]
-# Mode at startup (viewer/slideshow/gallery)
 mode = viewer
-# Window size (fullscreen/image, or absolute size)
 size = 1280,720
-# Sway/Hyprland only: Window position (auto or absolute coordinates, e.g. 10,20)
 position = auto
-# Sway/Hyprland only: create floating window above the currently focused one
 overlay = no
-# Use window decoration (yes/no)
 decoration = no
-# Action performed by SIGUSR1 signal (same format as for key bindings)
 sigusr1 = reload
-# Action performed by SIGUSR2 signal (same format as for key bindings)
 sigusr2 = next_file
-# Application ID and window class name
 app_id = swayimg
 
 ################################################################################
 # DRM mode settings
 ################################################################################
 [drm]
-# Path to DRM device, e.g. /dev/dri/card1
 path = auto
-# Connector name, e.g. DP-1
 connector = auto
-# Display resolution and frequency, e.g. 1920x1080@60
 mode = auto
 
 ################################################################################
 # Viewer mode configuration
 ################################################################################
 [viewer]
-# Window background color (auto/extend/mirror/RGBA)
-window = #101314ff
-# Background for transparent images (grid/RGBA)
+window = #141210ff
 transparency = grid
-# Default image scale (optimal/width/height/fit/fill/real/keep)
 scale = optimal
-# Initial image position on the window (center/top/bottom/free/...)
 position = center
-# Anti-aliasing mode (none/box/bilinear/bicubic/mks13)
 antialiasing = mks13
-# Loop image list: jump to first image when end of list is reached (yes/no)
 loop = yes
-# Number of previously viewed images to store in cache
 history = 1
-# Number of preloaded images (read ahead)
 preload = 1
 
 ################################################################################
 # Slideshow mode configuration
 ################################################################################
 [slideshow]
-# Slideshow image display time (seconds)
 time = 3
-# Window background color (auto/extend/mirror/RGBA)
 window = auto
-# Background for transparent images (grid/RGBA)
-transparency = #101314ff
-# Default image scale (optimal/width/height/fit/fill/real)
+transparency = #141210ff
 scale = fit
-# Initial image position on the window (center/top/bottom/free/...)
 position = center
-# Anti-aliasing mode (none/box/bilinear/bicubic/mks13)
 antialiasing = mks13
 
 ################################################################################
 # Gallery mode configuration
 ################################################################################
 [gallery]
-# Height and width of each thumbnail (pixels)
 size = 200
-# Scale of the selected tile (float)
 selected_scale = 1.15
-# Thumbnail aspect ratio (fit/fill/keep)
 aspect = fill
-# Padding between thumbnails (pixels)
 padding = 5
-# Background color of the selected tile (RGBA)
-select = #101314ff
-# Background color of non-selected tiles (RGBA)
-background = #1c2021ff
-# Border color of the selected tile (RGBA)
-border_color = #95b7e6ff
-# Border width of the selected tile (pixels)
+select = #322d28ff
+background = #1a1612ff
+border_color = #7f91b2ff
 border_width = 2
-# Background color of the window (RGBA)
-window = #101314ff
-# Max number of invisible thumbnails stored in memory cache
+window = #141210ff
 cache = 100
-# Load not only visible but also adjacent thumbnails
 preload = no
-# Enable/disable storing thumbnails in persistent storage (yes/no)
 pstore = no
-# Anti-aliasing mode for thumbnails (none/box/bilinear/bicubic/mks13)
 antialiasing = mks13
 
 ################################################################################
 # Image list configuration
 ################################################################################
 [list]
-# Default order (none/alpha/numeric/mtime/size/random)
 order = alpha
-# Reverse order (yes/no)
 reverse = no
-# Read directories recursively (yes/no)
 recursive = no
-# Add files from the same directory as the first file (yes/no)
 all = no
-# Enable file system monitoring for adding new images to the list (yes/no)
 fsmon = yes
 
 ################################################################################
 # Font configuration
 ################################################################################
 [font]
-# Font name
 name = ComicNeue Bold
-# Font size (pt)
 size = 14
-# Font color (RGBA)
-color = #e2e5e6ff
-# Shadow color (RGBA)
+color = #e5c9a0ff
 shadow = #000000ff
-# Background color (RGBA)
 background = #00000000
 
 ################################################################################
 # Image meta info scheme (format, size, EXIF, etc.)
 ################################################################################
 [info]
-# Show on startup (yes/no)
 show = yes
-# Text padding from window edges
 padding = 10
-# Timeout to hide info (seconds, 0 to always show)
 info_timeout = 5
-# Timeout to hide status message (seconds)
 status_timeout = 3
 
 # Display scheme for viewer mode (position = content)
@@ -214,7 +162,6 @@ i = info
 Shift+Delete = exec rm -f '%' && echo "File removed: %"; skip_file
 Escape = exit
 q = exit
-# Mouse related
 ScrollLeft = step_right 5
 ScrollRight = step_left 5
 ScrollUp = step_up 5
@@ -274,7 +221,6 @@ Minus = thumb -20
 Shift+Delete = exec rm -f '%' && echo "File removed: %"; skip_file
 Escape = exit
 q = exit
-# Mouse related
 ScrollLeft = step_right
 ScrollRight = step_left
 ScrollUp = step_up

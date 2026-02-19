@@ -5,11 +5,11 @@
  *
  */
 
-/* Lunaris colors */
-@define-color background        #0e151a;
-@define-color foreground        #f6f6f5;
-@define-color border-color      #baa0e8;
-@define-color progressbar-color #e8eda2;
+/* Kintsukuroi colors */
+@define-color background        #141210;
+@define-color foreground        #e5c9a0;
+@define-color border-color      #e5c9a0;
+@define-color progressbar-color #c09d59;
 
 /* Main css config */
 window {

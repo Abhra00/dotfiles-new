@@ -1,0 +1,35 @@
+# ┓┏┓┳┳┓┏┳┓┏┓┳┳┓┏┓┳┳┳┓┏┓┳
+# ┃┫ ┃┃┃ ┃ ┗┓┃┃┃┫ ┃┃┣┫┃┃┃
+# ┛┗┛┻┛┗ ┻ ┗┛┗┛┛┗┛┗┛┛┗┗┛┻
+#
+# Kintsukuroi (金繕い) — “Golden Repair”
+# A warm neutral colorschene by Bugs
+
+# 8 normal colors
+palette = 0=#322d28
+palette = 1=#c06c5c
+palette = 2=#78997a
+palette = 3=#c09d59
+palette = 4=#7f91b2
+palette = 5=#b380b0
+palette = 6=#7b9695
+palette = 7=#d8be97
+
+# 8 bright colors
+palette = 8=#4d463e
+palette = 9=#d97a68
+palette = 10=#85b695
+palette = 11=#d8b164
+palette = 12=#a3a9ce
+palette = 13=#cf9bc2
+palette = 14=#89b3b6
+palette = 15=#f2d5a9
+
+# Background, foreground, cursor, selection colors
+foreground = #e5c9a0
+background = #141210
+cursor-color = #e5c9a0
+cursor-text = #141210
+selection-background = #4d463e
+selection-foreground = #e5c9a0
+split-divider-color = #7f91b2

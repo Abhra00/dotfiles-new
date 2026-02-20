@@ -17,17 +17,17 @@ palette = "Kintsukuroi"
 
 # Prompt left format
 format = """
-$character$git_branch$git_status$directory
+$character$git_branch$git_status$directory[▓▒░ ](fg:bright_black)
 """
 
 # Character
 [character]
-error_symbol = "[ 𜺰 ](bg:red fg:foreground_inverse)"
-success_symbol = "[ λ ](bg:green fg:foreground_inverse)"
-vimcmd_symbol = "[ ▼ ](bg:magenta fg:foreground_inverse)"
-vimcmd_visual_symbol = "[ ▼ ](bg:blue fg:foreground_inverse)"
-vimcmd_replace_symbol = "[ ▼ ](bg:yellow fg:foreground_inverse)"
-vimcmd_replace_one_symbol = "[ ▼ ](bg:yellow fg:foreground_inverse)"
+error_symbol = "[ 𜺰 ](bold bg:red fg:foreground_inverse)"
+success_symbol = "[ λ ](bold bg:orange fg:foreground_inverse)"
+vimcmd_symbol = "[ ▼ ](bold bg:green fg:foreground_inverse)"
+vimcmd_visual_symbol = "[ ▼ ](bold bg:blue fg:foreground_inverse)"
+vimcmd_replace_symbol = "[ ▼ ](bold bg:yellow fg:foreground_inverse)"
+vimcmd_replace_one_symbol = "[ ▼ ](bold bg:magenta fg:foreground_inverse)"
 format = "$symbol"
 
 # Directory
@@ -39,7 +39,7 @@ read_only = " "
 truncation_length = 2
 truncation_symbol = "…/"
 truncate_to_repo = false
-format = "[ $path ]($style)[$read_only]($read_only_style)[▓▒░](fg:bright_black) "
+format = "[ $path ]($style)[$read_only]($read_only_style)"
 
 # Git branch
 [git_branch]
@@ -74,4 +74,5 @@ bright_cyan = '#89b3b6'
 bright_white = '#f2d5a9'
 foreground = '#e5c9a0'
 background = '#141210'
+orange = '#d8834c'
 foreground_inverse = '#141210'

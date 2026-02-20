@@ -63,19 +63,19 @@
             "activated": "\ue9f6",
             "deactivated": "\ue9f5"
         },
-        "tooltip-format-activated": "Idle inhibit activated",
-        "tooltip-format-deactivated": "Idle inhibit deactivated"
+        "tooltip-format-activated": "<span font_family='Material Symbols Rounded' size='14pt' rise='-4500'>visibility</span> Idle inhibit activated",
+        "tooltip-format-deactivated": "<span font_family='Material Symbols Rounded' size='14pt' rise='-4500'>visibility_off</span> Idle inhibit deactivated"
     },
     "group/network-modules": {
         "modules": ["network#icon", "network#address"],
         "orientation": "inherit"
     },
     "network#icon": {
-        "format-disconnected": "\uf239",
+        "format-disconnected": "\uf0ef",
         "format-ethernet": "\uefe6",
-        "format-wifi": "\uef16",
-        "tooltip-format-wifi": "WiFi: {essid} ({signalStrength}%)\n󰅃 {bandwidthUpBytes} 󰅀 {bandwidthDownBytes}",
-        "tooltip-format-ethernet": "Ethernet: {ifname}\n󰅃 {bandwidthUpBytes} 󰅀 {bandwidthDownBytes}",
+        "format-wifi": "\uf532",
+        "tooltip-format-wifi": "WiFi: {essid} ({signalStrength}%)\n<span font_family='Material Symbols Rounded' size='14pt' rise='-4500'>arrow_upload_progress</span> {bandwidthUpBytes} <span font_family='Material Symbols Rounded' size='14pt' rise='-4500'>downloading</span> {bandwidthDownBytes}",
+        "tooltip-format-ethernet": "Ethernet: {ifname}\n<span font_family='Material Symbols Rounded' size='14pt' rise='-4500'>arrow_upload_progress</span> {bandwidthUpBytes} <span font_family='Material Symbols Rounded' size='14pt' rise='-4500'>downloading</span> {bandwidthDownBytes}",
         "tooltip-format-disconnected": "Disconnected",
         "on-click": "hyprctl dispatch exec '[float on; center on; size 1100 800]' '$TERMINAL --adjust-cell-height=0% -e impala'"
     },
@@ -83,8 +83,8 @@
         "format-disconnected": "Disconnected",
         "format-ethernet": "{ipaddr}/{cidr}",
         "format-wifi": "{essid}",
-        "tooltip-format-wifi": "WiFi: {essid} ({signalStrength}%)\n󰅃 {bandwidthUpBytes} 󰅀 {bandwidthDownBytes}",
-        "tooltip-format-ethernet": "Ethernet: {ifname}\n󰅃 {bandwidthUpBytes} 󰅀 {bandwidthDownBytes}",
+        "tooltip-format-wifi": "WiFi: {essid} ({signalStrength}%)\n<span font_family='Material Symbols Rounded' size='14pt' rise='-4500'>arrow_upload_progress</span> {bandwidthUpBytes} <span font_family='Material Symbols Rounded' size='14pt' rise='-4500'>downloading</span> {bandwidthDownBytes}",
+        "tooltip-format-ethernet": "Ethernet: {ifname}\n<span font_family='Material Symbols Rounded' size='14pt' rise='-4500'>arrow_upload_progress</span> {bandwidthUpBytes} <span font_family='Material Symbols Rounded' size='14pt' rise='-4500'>downloading</span> {bandwidthDownBytes}",
         "tooltip-format-disconnected": "Disconnected",
         "on-click": "hyprctl dispatch exec '[float on; center on; size 1100 800]' '$TERMINAL --adjust-cell-height=0% -e impala'"
     },

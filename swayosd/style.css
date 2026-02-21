@@ -19,7 +19,7 @@ window {
 }
 
 label {
-  font-family: "ComicNeue", "Material Symbols Rounded", sans-serif;
+  font-family: "Maple Mono CN", "Material Symbols Rounded", sans-serif;
   font-size: 11pt;
   font-weight: 600;
   color: @foreground;

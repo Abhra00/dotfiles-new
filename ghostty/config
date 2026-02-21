@@ -4,17 +4,14 @@
 #
 
 # Font families
-font-family = "Intel One Mono"
-font-family-bold = "Intel One Mono"
-font-family-italic = "Intel One Mono"
-font-family-bold-italic = "Intel One Mono"
+font-family = "Fira Code"
+font-family-bold = "Fira Code"
+font-family-italic = "Maple Mono CN"
+font-family-bold-italic = "Maple Mono CN"
 font-family = "Symbols Nerd Font Mono"
 
-# Font features
-font-feature = "ss01, ss02, ss03, ss11"
-
 # Cell height
-adjust-cell-height = 35%
+adjust-cell-height = 45%
 
 # Font size
 font-size = 10
@@ -33,8 +30,8 @@ window-theme = ghostty
 
 # Cursor
 cursor-style = "block"
-adjust-cursor-thickness = 140%
-adjust-cursor-height = 35%
+adjust-cursor-thickness = 145%
+adjust-cursor-height = 45%
 cursor-style-blink = true
 
 # keybindings

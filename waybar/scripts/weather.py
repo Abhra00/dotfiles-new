@@ -73,7 +73,7 @@ temp_max = (
     .eq(0)
     .text()
 )
-temp_min_max = f"\uf37a {temp_min}          \uf379 {temp_max}"
+temp_min_max = f"\uf37a {temp_min}\t\t\uf379 {temp_max}"
 
 # Wind speed
 wind_speed = html_data("span[data-testid='Wind']").text()

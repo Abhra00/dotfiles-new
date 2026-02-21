@@ -6,7 +6,7 @@
 # Dependencies: hyprpicker, wl-copy, notify-send, Waybar (with signal support)
 
 # Font for hex codes
-hex_font="Intel One Mono"
+hex_font="Fira Code"
 icon_font="Material Symbols Rounded"
 
 # Set up config/cache location
@@ -42,7 +42,7 @@ check() {
     tooltip+="<span font_family='$hex_font'><b>⮚ $text</b></span>  <span font_family='$icon_font' size='12pt' rise='-4000' color='$text'>\ue3ac</span>\\n"
 
     for i in "${allcolors[@]}"; do
-      tooltip+="    <span font_family='$hex_font'><b>$i</b></span>  <span font_family='$icon_font' size='12pt' rise='-4000' color='$i'>\ue3ac</span>\\n"
+      tooltip+="  <span font_family='$hex_font'><b>$i</b></span>  <span font_family='$icon_font' size='12pt' rise='-4000' color='$i'>\ue3ac</span>\\n"
     done
 
     tooltip="${tooltip%\\n}" # Remove trailing newline

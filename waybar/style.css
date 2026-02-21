@@ -24,7 +24,7 @@
   GLOBAL
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 * {
-  font-family: "ComicNeue", "Material Symbols Rounded", sans-serif;
+  font-family: "Maple Mono CN", "Material Symbols Rounded", sans-serif;
   font-size: 10pt;
   font-weight: 600;
 }
@@ -388,14 +388,22 @@ tooltip label {
 }
 
 /* Pacman hover */
-#custom-pacman:hover {
-  background: @green;
+#custom-pacman_icon:hover {
+  background: shade(@yellow, 0.85);
+  color: @fg-inverse;
+}
+#custom-pacman_updates_count:hover {
+  background: shade(@fg, 0.85);
   color: @fg-inverse;
 }
 
 /* Weather hover */
-#custom-weather:hover {
-  background: @blue;
+#custom-weather_icon:hover {
+  background: shade(@blue, 0.85);
+  color: @fg-inverse;
+}
+#custom-weather_temp:hover {
+  background: shade(@fg, 0.85);
   color: @fg-inverse;
 }
 

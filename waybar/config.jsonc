@@ -143,15 +143,15 @@
             "warning": 30,
             "critical": 15
         },
-        "tooltip-format-charging": "<span font_family='Material Symbols Rounded' size='14pt' rise='-4500'>battery_android_frame_bolt</span> {capacity}% , {power:>1.0f}W",
-        "tooltip-format-discharging": "<span font_family='Material Symbols Rounded' size='14pt' rise='-4500'>battery_android_frame_5</span> {capacity}% , {power:>1.0f}W",
-        "tooltip-format-plugged": "<span font_family='Material Symbols Rounded' size='14pt' rise='-4500'>charger</span> {capacity}% , {timeTo}"
+        "tooltip-format-charging": "<span font_family='Material Symbols Rounded' size='14pt' rise='-4500'>battery_android_frame_bolt</span> {capacity}%, {power:>1.0f}W",
+        "tooltip-format-discharging": "<span font_family='Material Symbols Rounded' size='14pt' rise='-4500'>battery_android_frame_5</span> {capacity}%, {power:>1.0f}W",
+        "tooltip-format-plugged": "<span font_family='Material Symbols Rounded' size='14pt' rise='-4500'>charger</span> {capacity}%, {timeTo}"
     },
     "battery#capacity": {
         "format": "{capacity}%",
-        "tooltip-format-charging": "<span font_family='Material Symbols Rounded' size='14pt' rise='-4500'>battery_android_frame_bolt</span> {capacity}% , {power:>1.0f}W",
-        "tooltip-format-discharging": "<span font_family='Material Symbols Rounded' size='14pt' rise='-4500'>battery_android_frame_5</span> {capacity}% , {power:>1.0f}W",
-        "tooltip-format-plugged": "<span font_family='Material Symbols Rounded' size='14pt' rise='-4500'>charger</span> {capacity}% , {timeTo}"
+        "tooltip-format-charging": "<span font_family='Material Symbols Rounded' size='14pt' rise='-4500'>battery_android_frame_bolt</span> {capacity}%, {power:>1.0f}W",
+        "tooltip-format-discharging": "<span font_family='Material Symbols Rounded' size='14pt' rise='-4500'>battery_android_frame_5</span> {capacity}%, {power:>1.0f}W",
+        "tooltip-format-plugged": "<span font_family='Material Symbols Rounded' size='14pt' rise='-4500'>charger</span> {capacity}%, {timeTo}"
     },
     "tray": {
         "icon-size": 14,
@@ -168,11 +168,11 @@
             "mode-mon-col": 3,
             "weeks-pos": "left",
             "format": {
-                "months": "<span font='Intel One Mono 12' color='#c09d59'><b>{}</b></span>",
-                "days": "<span font='Intel One Mono 12' color='#e5c9a0'><b>{}</b></span>",
-                "weeks": "<span font='Intel One Mono 12' color='#7f91b2'><b>W{}</b></span>",
-                "weekdays": "<span font='Intel One Mono 12' color='#7b9695'><b>{}</b></span>",
-                "today": "<span font='Intel One Mono 12' color='#c09d59'><b>{}</b></span>"
+                "months": "<span font='Maple Mono CN 12' color='#c09d59'><b>{}</b></span>",
+                "days": "<span font='Maple Mono CN 12' color='#e5c9a0'><b>{}</b></span>",
+                "weeks": "<span font='Maple Mono CN 12' color='#7f91b2'><b>W{}</b></span>",
+                "weekdays": "<span font='Maple Mono CN 12' color='#7b9695'><b>{}</b></span>",
+                "today": "<span font='Maple Mono CN 12' color='#c09d59'><b>{}</b></span>"
             }
         },
         "format": "\uf6b8",
@@ -188,11 +188,11 @@
             "mode-mon-col": 3,
             "weeks-pos": "left",
             "format": {
-                "months": "<span font='Intel One Mono 12' color='#c09d59'><b>{}</b></span>",
-                "days": "<span font='Intel One Mono 12' color='#e5c9a0'><b>{}</b></span>",
-                "weeks": "<span font='Intel One Mono 12' color='#7f91b2'><b>W{}</b></span>",
-                "weekdays": "<span font='Intel One Mono 12' color='#7b9695'><b>{}</b></span>",
-                "today": "<span font='Intel One Mono 12' color='#c09d59'><b>{}</b></span>"
+                "months": "<span font='Maple Mono CN 12' color='#c09d59'><b>{}</b></span>",
+                "days": "<span font='Maple Mono CN 12' color='#e5c9a0'><b>{}</b></span>",
+                "weeks": "<span font='Maple Mono CN 12' color='#7f91b2'><b>W{}</b></span>",
+                "weekdays": "<span font='Maple Mono CN 12' color='#7b9695'><b>{}</b></span>",
+                "today": "<span font='Maple Mono CN 12' color='#c09d59'><b>{}</b></span>"
             }
         },
         "format": "{:%I:%M %p}",

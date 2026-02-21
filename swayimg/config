@@ -80,7 +80,7 @@ fsmon = yes
 # Font configuration
 ################################################################################
 [font]
-name = ComicNeue Bold
+name = Maple Mono CN
 size = 14
 color = #e5c9a0ff
 shadow = #000000ff

@@ -61,15 +61,13 @@
       "blacklist": [],
       "autohide": true,
       "show-album-art": "always",
-      "loop-carousel": true,
-      "image-size": 96,
-      "image-radius": 10
+      "loop-carousel": true
     },
     "volume": {
-      "label": "🔊"
+      "label": "\ue050"
     },
     "backlight": {
-      "label": "💡",
+      "label": "\ue3ac",
       "device": "amdgpu_bl1"
     },
     "buttons-grid": {

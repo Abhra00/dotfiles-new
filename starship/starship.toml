@@ -15,7 +15,7 @@ command_timeout = 200
 # Black Pine — Starship theme
 # • → [dir:branch status]
 
-format = """$character [↬](3 bold) [\\[](1 bold)$directory$git_branch$git_status[\\]](1 bold) """
+format = """$character [⌘](3 bold) [\\[](1 bold)$directory$git_branch$git_status[\\]](1 bold) """
 
 [character]
 format = "$symbol "
@@ -44,7 +44,7 @@ format = "[$symbol$branch]($style)"
 [git_status]
 style = "3"
 staged = "[+](2)"
-modified = "[◎](3)"
+modified = "[●](3)"
 untracked = "[?](8)"
 deleted = "[✘](1)"
 renamed = "[»](6)"

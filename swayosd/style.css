@@ -6,33 +6,65 @@
  */
 
 /* Kintsukuroi colors */
-@define-color background        #141210;
-@define-color foreground        #e5c9a0;
-@define-color border-color      #e5c9a0;
-@define-color progressbar-color #c09d59;
-
-/* Main css config */
-window {
-  border-radius: 0;
-  border: 2px solid @border-color;
-  background-color: @background;
+* {
+  --bg:      #141210;
+  --fg:      #e5c9a0;
+  --trough:  #322d28;
+  --accent:  #d8834c;
+  --border-color: #e5c9a0;
+  --radius:  0px;
+  --opacity: 1.0;
 }
 
-label {
-  font-family: "Maple Mono CN", "Material Symbols Rounded", sans-serif;
-  font-size: 11pt;
-  font-weight: 600;
-  color: @foreground;
+window#osd {
+  font-family: "Maple Mono CN";
+  border-radius: var(--radius);
+  border: 2px solid var(--border-color);
+  background: rgba(0, 0, 0, var(--opacity));
 }
 
-image {
-  color: @color10;
+window#osd #container {
+  margin: 16px;
 }
 
-progressbar {
-  border-radius: 0;
+window#osd image,
+window#osd label {
+  color: var(--accent);
 }
 
-progress {
-  background-color: @progressbar-color;
+window#osd progressbar:disabled,
+window#osd image:disabled {
+  opacity: 0.5;
+}
+
+window#osd progressbar,
+window#osd segmentedprogress {
+  min-height: 6px;
+  border-radius: var(--radius);
+  background: transparent;
+  border: none;
+}
+
+window#osd trough,
+window#osd segment {
+  min-height: inherit;
+  border-radius: inherit;
+  border: none;
+  background: var(--trough);
+}
+
+window#osd progress,
+window#osd segment.active {
+  min-height: inherit;
+  border-radius: inherit;
+  border: none;
+  background: var(--accent);
+}
+
+window#osd segment {
+  margin-left: 8px;
+}
+
+window#osd segment:first-child {
+  margin-left: 0;
 }

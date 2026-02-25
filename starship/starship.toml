@@ -12,67 +12,54 @@
 add_newline = true
 command_timeout = 200
 
-# Palette
-palette = "Kintsukuroi"
+# Black Pine — Starship theme
+# • → [dir:branch status]
 
-# Prompt left format
-format = """
-$character$git_branch$git_status$directory[▓▒░ ](fg:bright_black)
-"""
+format = """$character [↬](3 bold) [\\[](1 bold)$directory$git_branch$git_status[\\]](1 bold) """
 
-# Character
 [character]
-error_symbol = "[ 𜺰 ](bold bg:red fg:foreground_inverse)"
-success_symbol = "[ ● ](bold bg:orange fg:foreground_inverse)"
-vimcmd_symbol = "[ ▼ ](bold bg:green fg:foreground_inverse)"
-vimcmd_visual_symbol = "[ ▼ ](bold bg:blue fg:foreground_inverse)"
-vimcmd_replace_symbol = "[ ▼ ](bold bg:yellow fg:foreground_inverse)"
-vimcmd_replace_one_symbol = "[ ▼ ](bold bg:magenta fg:foreground_inverse)"
-format = "$symbol"
+format = "$symbol "
+success_symbol = "[](2)"
+error_symbol = "[](1)"
+vimcmd_symbol = "[󰥱](2)"
+vimcmd_visual_symbol = "[󰥱](5)"
+vimcmd_replace_symbol = "[󰥱](3)"
+vimcmd_replace_one_symbol = "[󰥱](4)"
 
-# Directory
 [directory]
-style = "bg:bright_black fg:bright_white"
-read_only_style = "bg:bright_black fg:red"
-home_symbol = "home"
+style = "15"
+read_only_style = "9"
+home_symbol = "HOME"
 read_only = " "
 truncation_length = 2
 truncation_symbol = "…/"
-truncate_to_repo = false
+truncate_to_repo = true
 format = "[ $path ]($style)[$read_only]($read_only_style)"
 
-# Git branch
 [git_branch]
-style = "bg:bright_black fg:yellow"
-symbol = " "
-format = "[ $symbol$branch ]($style)"
+symbol = " "
+style = "4"
+format = "[$symbol$branch]($style)"
 
-# Git status
 [git_status]
-stashed = "≡"
-up_to_date = "✦"
-format = '[$all_status$ahead_behind]($style)'
-style = "bg:bright_black fg:red"
+style = "3"
+staged = "[+](2)"
+modified = "[◎](3)"
+untracked = "[?](8)"
+deleted = "[✘](1)"
+renamed = "[»](6)"
+ahead = "[⇡](4)"
+behind = "[⇣](1)"
+diverged = "[⇕](3)"
+conflicted = "[═](1)"
+up_to_date = "[✦](2)"
+format = " [$all_status$ahead_behind]($style) "
 
-# Kintsukuroi
-[palettes.Kintsukuroi]
-black = '#322d28'
-red = '#c06c5c'
-green = '#78997a'
-yellow = '#c09d59'
-blue = '#7f91b2'
-magenta = '#b380b0'
-cyan = '#7b9695'
-white = '#d8be97'
-bright_black = '#4d463e'
-bright_red = '#d97a68'
-bright_green = '#85b695'
-bright_yellow = '#d8b164'
-bright_blue = '#a3a9ce'
-bright_magenta = '#cf9bc2'
-bright_cyan = '#89b3b6'
-bright_white = '#f2d5a9'
-foreground = '#e5c9a0'
-background = '#141210'
-orange = '#d8834c'
-foreground_inverse = '#141210'
+[golang]
+disabled = true
+[nodejs]
+disabled = true
+[python]
+disabled = true
+[rust]
+disabled = true

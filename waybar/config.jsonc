@@ -42,7 +42,7 @@
         "custom/swaync"
     ],
     "custom/power_menu": {
-        "format": "\ue60e",
+        "format": "\uf2f3",
         "tooltip": false,
         "menu": "on-click",
         "menu-file": "~/.config/waybar/power_menu.xml",

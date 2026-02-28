@@ -7,91 +7,129 @@
 
 /*****----- Configuration -----*****/
 configuration {
-    modi:                        "window";
-    icon-theme: 		 "Fluent-dark";
-    application-fallback-icon: 	 "Adwaita";
-    show-icons:                  true;
-    window-format:               "{w} {n}";
+    modi:                       "window";
+    show-icons:                 true;
+    icon-theme:                 "Fluent-dark";
 }
 
 /*****----- Global Properties -----*****/
-@import "~/.config/rofi/shared/colors.rasi"
-@import "~/.config/rofi/shared/fonts.rasi"
+@import                          "~/.config/rofi/shared/colors.rasi"
+@import                          "~/.config/rofi/shared/fonts.rasi"
 
 /*****----- Main Window -----*****/
 window {
-    enabled:                     true;
-    location:                    center;
-    x-offset:                    0;
-    y-offset:                    0;
-    fullscreen:                  false;
     transparency:                "real";
-    cursor:                      "default";
-    spacing:                     0px;
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       800px;
+    x-offset:                    0px;
+    y-offset:                    0px;
+    enabled:                     true;
+    margin:                      0px;
     padding:                     0px;
-    border:                      2px;
+    border:                      0px solid;
     border-radius:               0px;
-    border-color:                @border-color;
-    background-color:            transparent;
+    border-color:                @selected;
+    background-color:            @background;
+    cursor:                      "default";
 }
 
 /*****----- Main Box -----*****/
 mainbox {
     enabled:                     true;
+    spacing:                     20px;
+    margin:                      0px;
+    padding:                     20px;
+    border:                      0px solid;
+    border-radius:               0px 0px 0px 0px;
+    border-color:                @selected;
+    background-color:            transparent;
     children:                    [ "listview" ];
-    background-color:            @background-alt;
 }
 
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     6;
+    columns:                     4;
     lines:                       1;
-    spacing:                     5px;
-    padding:                     10px 10px;
     cycle:                       true;
-    dynamic:                     false;
+    dynamic:                     true;
     scrollbar:                   false;
     layout:                      vertical;
     reverse:                     false;
-    fixed-height:                false;
+    fixed-height:                true;
     fixed-columns:               true;
-    cursor:                      "default";
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @selected;
     background-color:            transparent;
     text-color:                  @foreground;
+    cursor:                      "default";
 }
 
 /*****----- Elements -----*****/
 element {
     enabled:                     true;
-    spacing:                     0px;
-    padding:                     8px;
-    orientation:		 vertical;
+    spacing:                     15px;
+    margin:                      0px;
+    padding:                     20px 10px;
+    border:                      0px solid;
     border-radius:               0px;
+    border-color:                @selected;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    orientation:                 vertical;
     cursor:                      pointer;
+}
+element normal.normal {
     background-color:            transparent;
     text-color:                  @foreground;
 }
-
 element selected.normal {
-    background-color:            @selected;
-    text-color:                  @background;
+    background-color:            @background-alt;
+    text-color:                  @foreground;
 }
-
 element selected.active {
     background-color:            @active;
-    text-color:                  @background;
+    text-color:                  @selected-text;
 }
-
+element selected.urgent {
+    background-color:            @urgent;
+    text-color:                  @selected-text;
+}
 element-icon {
-    size:			 84px;
-    cursor:                      inherit;
     background-color:            transparent;
     text-color:                  inherit;
-    horizontal-align:		 0.5;
-    vertical-align:		 0.5;
+    size:                        128px;
+    cursor:                      inherit;
+}
+element-text {
+    enabled:                     false;
+    background-color:            transparent;
+    text-color:                  inherit;
+    highlight:                   inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
 }
 
-element-text {
-    enabled:			 false;
+/*****----- Message -----*****/
+error-message {
+    padding:                     20px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @selected;
+    background-color:            black / 10%;
+    text-color:                  @foreground;
+}
+textbox {
+    background-color:            transparent;
+    text-color:                  @foreground;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+    highlight:                   none;
 }

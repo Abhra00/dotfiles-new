@@ -6,7 +6,7 @@
 # Dependencies: hyprpicker, wl-copy, notify-send, Waybar (with signal support)
 
 # Font for hex codes
-hex_font="Fira Code"
+hex_font="Iosevkeley Mono"
 icon_font="Material Symbols Rounded"
 
 # Set up config/cache location
@@ -19,45 +19,45 @@ limit=10
 
 # Helper to check if command exists
 check() {
-  command -v "$1" >/dev/null
+    command -v "$1" >/dev/null
 }
 
 # List saved colors
 [[ "$1" == "-l" ]] && {
-  cat "$loc/colors"
-  exit
+    cat "$loc/colors"
+    exit
 }
 
 # Output for Waybar JSON module
 [[ "$1" == "-j" ]] && {
-  text="$(head -n 1 "$loc/colors")"
-  mapfile -t allcolors < <(tail -n +2 "$loc/colors" | sed '/^$/d')
+    text="$(head -n 1 "$loc/colors")"
+    mapfile -t allcolors < <(tail -n +2 "$loc/colors" | sed '/^$/d')
 
-  if [[ -z "$text" ]]; then
-    # No colors picked yet
-    text="#888888"
-    tooltip="No color chosen"
-  else
-    tooltip="<b>   COLORS</b>\\n\\n"
-    tooltip+="<span font_family='$hex_font'><b>⮚ $text</b></span>  <span font_family='$icon_font' size='12pt' rise='-4000' color='$text'>\ue3ac</span>\\n"
+    if [[ -z "$text" ]]; then
+        # No colors picked yet
+        text="#888888"
+        tooltip="No color chosen"
+    else
+        tooltip="<b>   COLORS</b>\\n\\n"
+        tooltip+="<span font_family='$hex_font'><b>⮚ $text</b></span>  <span font_family='$icon_font' size='12pt' rise='-4000' color='$text'>\ue3ac</span>\\n"
 
-    for i in "${allcolors[@]}"; do
-      tooltip+="  <span font_family='$hex_font'><b>$i</b></span>  <span font_family='$icon_font' size='12pt' rise='-4000' color='$i'>\ue3ac</span>\\n"
-    done
+        for i in "${allcolors[@]}"; do
+            tooltip+="  <span font_family='$hex_font'><b>$i</b></span>  <span font_family='$icon_font' size='12pt' rise='-4000' color='$i'>\ue3ac</span>\\n"
+        done
 
-    tooltip="${tooltip%\\n}" # Remove trailing newline
-  fi
+        tooltip="${tooltip%\\n}" # Remove trailing newline
+    fi
 
-  cat <<EOF
+    cat <<EOF
 { "text":"<span color='$text'>\ue23a</span>", "tooltip":"$tooltip" }
 EOF
-  exit
+    exit
 }
 
 # Pick color with hyprpicker
 check hyprpicker || {
-  notify-send "Color Picker" "❌ hyprpicker is not installed" -u critical
-  exit 1
+    notify-send "Color Picker" "❌ hyprpicker is not installed" -u critical
+    exit 1
 }
 
 killall -q hyprpicker 2>/dev/null
@@ -67,8 +67,8 @@ color="$(hyprpicker -a | tr -d '\n')"
 
 # Validate color format
 [[ "$color" =~ ^#?[0-9a-fA-F]{6}$ ]] || {
-  notify-send "Color Picker" "❌ Invalid color format: $color" -u critical
-  exit 1
+    notify-send "Color Picker" "❌ Invalid color format: $color" -u critical
+    exit 1
 }
 
 # Ensure leading #
@@ -80,8 +80,8 @@ check wl-copy && echo -n "$color" | wl-copy
 # Save to history (deduplicated, limited)
 prevColors="$(grep -vFx "$color" "$loc/colors" | head -n $((limit - 1)))"
 {
-  echo "$color"
-  echo "$prevColors"
+    echo "$color"
+    echo "$prevColors"
 } >"$loc/colors"
 
 # Notification

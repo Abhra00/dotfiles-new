@@ -80,7 +80,7 @@ fsmon = yes
 # Font configuration
 ################################################################################
 [font]
-name = Maple Mono CN
+name = Iosevkeley Mono
 size = 14
 color = #e5c9a0ff
 shadow = #000000ff

@@ -168,11 +168,11 @@
             "mode-mon-col": 3,
             "weeks-pos": "left",
             "format": {
-                "months": "<span font='Maple Mono CN 12' color='#c09d59'><b>{}</b></span>",
-                "days": "<span font='Maple Mono CN 12' color='#e5c9a0'><b>{}</b></span>",
-                "weeks": "<span font='Maple Mono CN 12' color='#7f91b2'><b>W{}</b></span>",
-                "weekdays": "<span font='Maple Mono CN 12' color='#7b9695'><b>{}</b></span>",
-                "today": "<span font='Maple Mono CN 12' color='#c09d59'><b>{}</b></span>"
+                "months": "<span font='Iosevkeley Mono 12' color='#c09d59'><b>{}</b></span>",
+                "days": "<span font='Iosevkeley Mono 12' color='#e5c9a0'><b>{}</b></span>",
+                "weeks": "<span font='Iosevkeley Mono 12' color='#7f91b2'><b>W{}</b></span>",
+                "weekdays": "<span font='Iosevkeley Mono 12' color='#7b9695'><b>{}</b></span>",
+                "today": "<span font='Iosevkeley Mono 12' color='#c09d59'><b>{}</b></span>"
             }
         },
         "format": "\uf6b8",
@@ -188,11 +188,11 @@
             "mode-mon-col": 3,
             "weeks-pos": "left",
             "format": {
-                "months": "<span font='Maple Mono CN 12' color='#c09d59'><b>{}</b></span>",
-                "days": "<span font='Maple Mono CN 12' color='#e5c9a0'><b>{}</b></span>",
-                "weeks": "<span font='Maple Mono CN 12' color='#7f91b2'><b>W{}</b></span>",
-                "weekdays": "<span font='Maple Mono CN 12' color='#7b9695'><b>{}</b></span>",
-                "today": "<span font='Maple Mono CN 12' color='#c09d59'><b>{}</b></span>"
+                "months": "<span font='Iosevkeley Mono 12' color='#c09d59'><b>{}</b></span>",
+                "days": "<span font='Iosevkeley Mono 12' color='#e5c9a0'><b>{}</b></span>",
+                "weeks": "<span font='Iosevkeley Mono 12' color='#7f91b2'><b>W{}</b></span>",
+                "weekdays": "<span font='Iosevkeley Mono 12' color='#7b9695'><b>{}</b></span>",
+                "today": "<span font='Iosevkeley Mono 12' color='#c09d59'><b>{}</b></span>"
             }
         },
         "format": "{:%I:%M %p}",

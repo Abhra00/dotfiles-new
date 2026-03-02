@@ -4,10 +4,10 @@
 #
 
 # Font families
-font-family = "Fira Code"
-font-family-bold = "Fira Code"
-font-family-italic = "Maple Mono CN"
-font-family-bold-italic = "Maple Mono CN"
+font-family = "Iosevkeley Mono"
+font-family-bold = "Iosevkeley Mono"
+font-family-italic = "Iosevkeley Mono"
+font-family-bold-italic = "Iosevkeley Mono"
 font-family = "Symbols Nerd Font Mono"
 
 # Cell height

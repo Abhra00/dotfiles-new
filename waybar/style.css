@@ -18,344 +18,342 @@
 @define-color magenta       #b380b0;
 @define-color cyan          #7b9695;
 
-
-
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   GLOBAL
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 * {
-  font-family: "Maple Mono CN", "Material Symbols Rounded", sans-serif;
-  font-size: 10pt;
-  font-weight: 600;
+    font-family: "Iosevkeley Mono", "Material Symbols Rounded", sans-serif;
+    font-size: 10pt;
+    font-weight: 600;
 }
 
 window#waybar {
-  background: @bg;
-  color: @fg;
+    background: @bg;
+    color: @fg;
 }
 
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   Power-menu
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 #custom-power_menu {
-  background-color: @green;
-  color: @fg-inverse;
-  font-size: 18pt;
-  border-radius: 0px;
-  padding: 0.5rem;
-  margin: 0.5rem 0.25rem;
-  min-width: 1.5rem;
-  transition: 300ms linear;
+    background-color: @green;
+    color: @fg-inverse;
+    font-size: 18pt;
+    border-radius: 0px;
+    padding: 0.5rem;
+    margin: 0.5rem 0.25rem;
+    min-width: 1.5rem;
+    transition: 300ms linear;
 }
 
 .power_menu menuitem:hover {
-  border-radius: 0px;
-  color: @red;
+    border-radius: 0px;
+    color: @red;
 }
 
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   WORKSPACES
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 #workspaces {
-  background: @bg-alt;
-  margin: 0.5rem 0.25rem;
-  transition: 300ms linear;
+    background: @bg-alt;
+    margin: 0.5rem 0.25rem;
+    transition: 300ms linear;
 }
 
 #workspaces button {
-  padding: 0.5rem;
-  border-radius: 0px;
-  transition: 300ms linear;
+    padding: 0.5rem;
+    border-radius: 0px;
+    transition: 300ms linear;
 }
 
 #workspaces button label {
-  color: @fg;
+    color: @fg;
 }
 
 #workspaces button.urgent {
-  background: @red;
+    background: @red;
 }
 
 #workspaces button.active {
-  background: @fg;
+    background: @fg;
 }
 
 #workspaces button.urgent label,
 #workspaces button.active label {
-  color: @fg-inverse;
+    color: @fg-inverse;
 }
 
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   Idle inhibit
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 #idle_inhibitor {
-  font-size: 18pt;
-  background: @bg-alt;
-  color: @red;
-  border-radius: 0px;
-  padding: 0.5rem;
-  margin: 0.5rem 0.25rem;
-  min-width: 1.5rem;
-  transition: 300ms linear;
+    font-size: 18pt;
+    background: @bg-alt;
+    color: @red;
+    border-radius: 0px;
+    padding: 0.5rem;
+    margin: 0.5rem 0.25rem;
+    min-width: 1.5rem;
+    transition: 300ms linear;
 }
 
 #idle_inhibitor.activated {
-  background: @red;
-  color: @bg;
+    background: @red;
+    color: @bg;
 }
 
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
  Pacupdates
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 #custom-pacman_icon {
-  font-size: 18pt;
-  background: @yellow;
-  color: @fg-inverse;
-  border-radius: 0px;
-  padding: 0.5rem;
-  margin: 0.5rem 0rem 0.5rem 0.25rem;
-  min-width: 1.5rem;
-  transition: 300ms linear;
+    font-size: 18pt;
+    background: @yellow;
+    color: @fg-inverse;
+    border-radius: 0px;
+    padding: 0.5rem;
+    margin: 0.5rem 0rem 0.5rem 0.25rem;
+    min-width: 1.5rem;
+    transition: 300ms linear;
 }
 
 #custom-pacman_updates_count {
-  background: @bg-alt;
-  color: @fg;
-  border-radius: 0px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  margin: 0.5rem 0.25rem 0.5rem 0rem;
-  transition: 300ms linear;
+    background: @bg-alt;
+    color: @fg;
+    border-radius: 0px;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    margin: 0.5rem 0.25rem 0.5rem 0rem;
+    transition: 300ms linear;
 }
 
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
  Weather
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 #custom-weather_icon {
-  font-size: 18pt;
-  background: @cyan;
-  color: @fg-inverse;
-  border-radius: 0px;
-  padding: 0.5rem;
-  margin: 0.5rem 0rem 0.5rem 0.25rem;
-  min-width: 1.5rem;
-  transition: 300ms linear;
+    font-size: 18pt;
+    background: @cyan;
+    color: @fg-inverse;
+    border-radius: 0px;
+    padding: 0.5rem;
+    margin: 0.5rem 0rem 0.5rem 0.25rem;
+    min-width: 1.5rem;
+    transition: 300ms linear;
 }
 
 #custom-weather_temp {
-  background: @bg-alt;
-  color: @fg;
-  border-radius: 0px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  margin: 0.5rem 0.25rem 0.5rem 0rem;
-  transition: 300ms linear;
+    background: @bg-alt;
+    color: @fg;
+    border-radius: 0px;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    margin: 0.5rem 0.25rem 0.5rem 0rem;
+    transition: 300ms linear;
 }
 
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
  Color-picker
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 #custom-colorpicker {
-  font-size: 18pt;
-  background: @bg-alt;
-  border-radius: 0px;
-  padding: 0.5rem;
-  margin: 0.5rem 0.25rem;
-  min-width: 1.5rem;
-  transition: 300ms linear;
+    font-size: 18pt;
+    background: @bg-alt;
+    border-radius: 0px;
+    padding: 0.5rem;
+    margin: 0.5rem 0.25rem;
+    min-width: 1.5rem;
+    transition: 300ms linear;
 }
 
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
  Network
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 #network.icon {
-  font-size: 18pt;
-  background: @fg;
-  color: @fg-inverse;
-  border-radius: 0px;
-  padding: 0.5rem;
-  margin: 0.5rem 0rem 0.5rem 0.25rem;
-  min-width: 1.5rem;
-  transition: 300ms linear;
+    font-size: 18pt;
+    background: @fg;
+    color: @fg-inverse;
+    border-radius: 0px;
+    padding: 0.5rem;
+    margin: 0.5rem 0rem 0.5rem 0.25rem;
+    min-width: 1.5rem;
+    transition: 300ms linear;
 }
 #network.address {
-  background: @bg-alt;
-  color: @fg;
-  border-radius: 0px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  margin: 0.5rem 0.25rem 0.5rem 0rem;
-  transition: 300ms linear;
+    background: @bg-alt;
+    color: @fg;
+    border-radius: 0px;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    margin: 0.5rem 0.25rem 0.5rem 0rem;
+    transition: 300ms linear;
 }
 
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
  Wireplumber
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 #wireplumber.icon {
-  font-size: 18pt;
-  background: @fg;
-  color: @fg-inverse;
-  border-radius: 0px;
-  padding: 0.5rem;
-  margin: 0.5rem 0rem 0.5rem 0.25rem;
-  min-width: 1.5rem;
-  transition: 300ms linear;
+    font-size: 18pt;
+    background: @fg;
+    color: @fg-inverse;
+    border-radius: 0px;
+    padding: 0.5rem;
+    margin: 0.5rem 0rem 0.5rem 0.25rem;
+    min-width: 1.5rem;
+    transition: 300ms linear;
 }
 #wireplumber.volume {
-  background: @bg-alt;
-  color: @fg;
-  border-radius: 0px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  margin: 0.5rem 0.25rem 0.5rem 0rem;
-  transition: 300ms linear;
+    background: @bg-alt;
+    color: @fg;
+    border-radius: 0px;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    margin: 0.5rem 0.25rem 0.5rem 0rem;
+    transition: 300ms linear;
 }
 
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
  Backlight
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 #backlight.icon {
-  font-size: 18pt;
-  background: @fg;
-  color: @fg-inverse;
-  border-radius: 0px;
-  padding: 0.5rem;
-  margin: 0.5rem 0rem 0.5rem 0.25rem;
-  min-width: 1.5rem;
-  transition: 300ms linear;
+    font-size: 18pt;
+    background: @fg;
+    color: @fg-inverse;
+    border-radius: 0px;
+    padding: 0.5rem;
+    margin: 0.5rem 0rem 0.5rem 0.25rem;
+    min-width: 1.5rem;
+    transition: 300ms linear;
 }
 #backlight.percent {
-  background: @bg-alt;
-  color: @fg;
-  border-radius: 0px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  margin: 0.5rem 0.25rem 0.5rem 0rem;
-  transition: 300ms linear;
+    background: @bg-alt;
+    color: @fg;
+    border-radius: 0px;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    margin: 0.5rem 0.25rem 0.5rem 0rem;
+    transition: 300ms linear;
 }
 
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
  Battery
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 #battery.icon {
-  font-size: 18pt;
-  background: @fg;
-  color: @fg-inverse;
-  border-radius: 0px;
-  padding: 0.5rem;
-  margin: 0.5rem 0rem 0.5rem 0.25rem;
-  min-width: 1.5rem;
-  transition: 300ms linear;
+    font-size: 18pt;
+    background: @fg;
+    color: @fg-inverse;
+    border-radius: 0px;
+    padding: 0.5rem;
+    margin: 0.5rem 0rem 0.5rem 0.25rem;
+    min-width: 1.5rem;
+    transition: 300ms linear;
 }
 #battery.capacity {
-  background: @bg-alt;
-  color: @fg;
-  border-radius: 0px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  margin: 0.5rem 0.25rem 0.5rem 0rem;
-  transition: 300ms linear;
+    background: @bg-alt;
+    color: @fg;
+    border-radius: 0px;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    margin: 0.5rem 0.25rem 0.5rem 0rem;
+    transition: 300ms linear;
 }
 #battery.icon.charging {
-  font-size: 18pt;
-  background: @green;
-  color: @fg-inverse;
-  border-radius: 0px;
-  padding: 0.5rem;
-  margin: 0.5rem 0rem 0.5rem 0.25rem;
-  min-width: 1.5rem;
-  transition: 300ms linear;
+    font-size: 18pt;
+    background: @green;
+    color: @fg-inverse;
+    border-radius: 0px;
+    padding: 0.5rem;
+    margin: 0.5rem 0rem 0.5rem 0.25rem;
+    min-width: 1.5rem;
+    transition: 300ms linear;
 }
 #battery.icon.warning:not(.charging) {
-  font-size: 18pt;
-  background: @yellow;
-  color: @fg-inverse;
-  border-radius: 0px;
-  padding: 0.5rem;
-  margin: 0.5rem 0rem 0.5rem 0.25rem;
-  min-width: 1.5rem;
-  transition: 300ms linear;
+    font-size: 18pt;
+    background: @yellow;
+    color: @fg-inverse;
+    border-radius: 0px;
+    padding: 0.5rem;
+    margin: 0.5rem 0rem 0.5rem 0.25rem;
+    min-width: 1.5rem;
+    transition: 300ms linear;
 }
 #battery.icon.critical:not(.charging) {
-  font-size: 18pt;
-  background: @red;
-  color: @fg-inverse;
-  border-radius: 0px;
-  padding: 0.5rem;
-  margin: 0.5rem 0rem 0.5rem 0.25rem;
-  min-width: 1.5rem;
-  transition: 300ms linear;
+    font-size: 18pt;
+    background: @red;
+    color: @fg-inverse;
+    border-radius: 0px;
+    padding: 0.5rem;
+    margin: 0.5rem 0rem 0.5rem 0.25rem;
+    min-width: 1.5rem;
+    transition: 300ms linear;
 }
 
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
  Clock
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 #clock.icon {
-  font-size: 18pt;
-  background: @fg;
-  color: @fg-inverse;
-  border-radius: 0px;
-  padding: 0.5rem;
-  margin: 0.5rem 0rem 0.5rem 0.25rem;
-  min-width: 1.5rem;
-  transition: 300ms linear;
+    font-size: 18pt;
+    background: @fg;
+    color: @fg-inverse;
+    border-radius: 0px;
+    padding: 0.5rem;
+    margin: 0.5rem 0rem 0.5rem 0.25rem;
+    min-width: 1.5rem;
+    transition: 300ms linear;
 }
 #clock.time {
-  background: @bg-alt;
-  color: @fg;
-  border-radius: 0px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  margin: 0.5rem 0.25rem 0.5rem 0rem;
-  transition: 300ms linear;
+    background: @bg-alt;
+    color: @fg;
+    border-radius: 0px;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    margin: 0.5rem 0.25rem 0.5rem 0rem;
+    transition: 300ms linear;
 }
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
  Swaync
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 #custom-swaync {
-  font-size: 18pt;
-  background: @magenta;
-  color: @fg-inverse;
-  border-radius: 0px;
-  padding: 0.5rem;
-  margin: 0.5rem 0rem 0.5rem 0.25rem;
-  min-width: 1.5rem;
-  transition: 300ms linear;
+    font-size: 18pt;
+    background: @magenta;
+    color: @fg-inverse;
+    border-radius: 0px;
+    padding: 0.5rem;
+    margin: 0.5rem 0rem 0.5rem 0.25rem;
+    min-width: 1.5rem;
+    transition: 300ms linear;
 }
 
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
  Systray
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 #tray {
-  font-size: 12pt;
-  background: @bg-alt;
-  border-radius: 0px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  margin: 0.5rem 0.25rem;
-  min-width: 1.5rem;
-  transition: 300ms linear;
+    font-size: 12pt;
+    background: @bg-alt;
+    border-radius: 0px;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    margin: 0.5rem 0.25rem;
+    min-width: 1.5rem;
+    transition: 300ms linear;
 }
 #tray > .passive {
-  -gtk-icon-effect: dim;
+    -gtk-icon-effect: dim;
 }
 #tray > .needs-attention {
-  -gtk-icon-effect: highlight;
-  background: @red;
+    -gtk-icon-effect: highlight;
+    background: @red;
 }
 
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
  Tooltip
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 tooltip {
-  background-color: @bg;
-  border: 1px solid @blue;
-  border-radius: 0px;
+    background-color: @bg;
+    border: 1px solid @blue;
+    border-radius: 0px;
 }
 
 tooltip label {
-  color: @fg;
-  padding: 4px;
+    color: @fg;
+    padding: 4px;
 }
 
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -364,120 +362,120 @@ tooltip label {
 
 /* Image hover */
 #image:hover {
-  background: @bg-alt;
+    background: @bg-alt;
 }
 
 /* Workspaces hover */
 #workspaces button:hover {
-  background: @magenta;
-  color: @fg-inverse;
+    background: @magenta;
+    color: @fg-inverse;
 }
 
 #workspaces button:hover label {
-  color: @fg-inverse;
+    color: @fg-inverse;
 }
 
 /* Idle inhibitor hover */
 #idle_inhibitor:hover {
-  background: @red;
-  color: @fg-inverse;
+    background: @red;
+    color: @fg-inverse;
 }
 #idle_inhibitor.activated:hover {
-  background: shade(@red, 0.85);
-  color: @fg-inverse;
+    background: shade(@red, 0.85);
+    color: @fg-inverse;
 }
 
 /* Pacman hover */
 #custom-pacman_icon:hover {
-  background: shade(@yellow, 0.85);
-  color: @fg-inverse;
+    background: shade(@yellow, 0.85);
+    color: @fg-inverse;
 }
 #custom-pacman_updates_count:hover {
-  background: shade(@fg, 0.85);
-  color: @fg-inverse;
+    background: shade(@fg, 0.85);
+    color: @fg-inverse;
 }
 
 /* Weather hover */
 #custom-weather_icon:hover {
-  background: shade(@blue, 0.85);
-  color: @fg-inverse;
+    background: shade(@blue, 0.85);
+    color: @fg-inverse;
 }
 #custom-weather_temp:hover {
-  background: shade(@fg, 0.85);
-  color: @fg-inverse;
+    background: shade(@fg, 0.85);
+    color: @fg-inverse;
 }
 
 /* Color-picker hover */
 #custom-colorpicker:hover {
-  background: @cyan;
-  color: @fg-inverse;
+    background: @cyan;
+    color: @fg-inverse;
 }
 
 /* Network hover */
 #network.icon:hover {
-  background: shade(@fg, 0.85);
+    background: shade(@fg, 0.85);
 }
 
 #network.address:hover {
-  background: shade(@fg, 0.85);
-  color: @fg-inverse;
+    background: shade(@fg, 0.85);
+    color: @fg-inverse;
 }
 
 /* Wireplumber hover */
 #wireplumber.icon:hover {
-  background: shade(@fg, 0.85);
+    background: shade(@fg, 0.85);
 }
 
 #wireplumber.volume:hover {
-  background: shade(@fg, 0.85);
-  color: @fg-inverse;
+    background: shade(@fg, 0.85);
+    color: @fg-inverse;
 }
 
 /* Backlight hover */
 #backlight.icon:hover {
-  background: shade(@fg, 0.85);
+    background: shade(@fg, 0.85);
 }
 
 #backlight.percent:hover {
-  background: shade(@fg, 0.85);
-  color: @fg-inverse;
+    background: shade(@fg, 0.85);
+    color: @fg-inverse;
 }
 
 /* Battery hover */
 #battery.icon:hover {
-  background: shade(@fg, 0.85);
+    background: shade(@fg, 0.85);
 }
 
 #battery.capacity:hover {
-  background: shade(@fg, 0.85);
-  color: @fg-inverse;
+    background: shade(@fg, 0.85);
+    color: @fg-inverse;
 }
 
 #battery.icon.warning:not(.charging):hover {
-  background: shade(@yellow, 0.85);
+    background: shade(@yellow, 0.85);
 }
 
 #battery.icon.critical:not(.charging):hover {
-  background: shade(@red, 0.85);
+    background: shade(@red, 0.85);
 }
 
 /* Clock hover */
 #clock.icon:hover {
-  background: shade(@fg, 0.85);
+    background: shade(@fg, 0.85);
 }
 
 #clock.time:hover {
-  background: shade(@fg, 0.85);
-  color: @fg-inverse;
+    background: shade(@fg, 0.85);
+    color: @fg-inverse;
 }
 
 /* Swaync hover */
 #custom-swaync:hover {
-  background: shade(@magenta, 0.85);
+    background: shade(@magenta, 0.85);
 }
 
 /* Systray hover */
 #tray:hover {
-  background: shade(@blue, 0.85);
-  color: @fg-inverse;
+    background: shade(@blue, 0.85);
+    color: @fg-inverse;
 }

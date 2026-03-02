@@ -23,7 +23,7 @@ $character$git_branch$git_status$directory[▓▒░ ](fg:bright_black)
 # Character
 [character]
 error_symbol = "[ 𜺰 ](bold bg:red fg:foreground_inverse)"
-success_symbol = "[ ● ](bold bg:orange fg:foreground_inverse)"
+success_symbol = "[ λ ](bold bg:orange fg:foreground_inverse)"
 vimcmd_symbol = "[ ▼ ](bold bg:green fg:foreground_inverse)"
 vimcmd_visual_symbol = "[ ▼ ](bold bg:blue fg:foreground_inverse)"
 vimcmd_replace_symbol = "[ ▼ ](bold bg:yellow fg:foreground_inverse)"

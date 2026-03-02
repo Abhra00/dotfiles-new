@@ -6,10 +6,11 @@
 # Weather for Waybar
 # Original: JaKooLit / Surendrajat
 # Modified: No #regionHeader dependency, uses status text → Nerd Font icon mapping
-import requests
 import json
 import os
 import sys
+
+import requests
 from pyquery import PyQuery  # install: pip install pyquery
 
 # Weather status → Nerd Font icon mapping
@@ -73,7 +74,7 @@ temp_max = (
     .eq(0)
     .text()
 )
-temp_min_max = f"\uf37a {temp_min}\t\t\uf379 {temp_max}"
+temp_min_max = f"\uf37a {temp_min}\t        \uf379 {temp_max}"
 
 # Wind speed
 wind_speed = html_data("span[data-testid='Wind']").text()

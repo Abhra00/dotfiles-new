@@ -66,6 +66,10 @@ keybind = alt+z=jump_to_prompt:-1
 keybind = alt+enter=toggle_quick_terminal
 keybind = alt+backquote=toggle_command_palette
 
+# Shaders
+custom-shader = ./shaders/cursor-trail.glsl
+custom-shader-animation = always
+
 # Window
 gtk-single-instance = true
 gtk-tabs-location = bottom

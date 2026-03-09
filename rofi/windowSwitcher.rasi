@@ -22,7 +22,6 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       800px;
     x-offset:                    0px;
     y-offset:                    0px;
     enabled:                     true;
@@ -51,7 +50,6 @@ mainbox {
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     4;
     lines:                       1;
     cycle:                       true;
     dynamic:                     true;
@@ -59,7 +57,7 @@ listview {
     layout:                      vertical;
     reverse:                     false;
     fixed-height:                true;
-    fixed-columns:               true;
+    fixed-columns:               false;
     spacing:                     10px;
     margin:                      0px;
     padding:                     0px;
@@ -104,7 +102,7 @@ element selected.urgent {
 element-icon {
     background-color:            transparent;
     text-color:                  inherit;
-    size:                        128px;
+    size:                        64px;
     cursor:                      inherit;
 }
 element-text {

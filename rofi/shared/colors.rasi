@@ -9,11 +9,11 @@
        background:                 #141210;
        background-alpha:           #141210d3;
        background-alt:             #322d28;
-       background-alt-alpha:       #322d28d3;
+       background-alt-alpha:       #322d28b3;
        foreground:                 #e5c9a0;
        border-color:               #e5c9a0;
        selected:                   #e5c9a0;
-       selected-alpha:             #e5c9a0d3;
+       selected-alpha:             #e5c9a030;
        selected-text:              #141210;
        active:                     #d8834c;
        urgent:                     #c06c5c;

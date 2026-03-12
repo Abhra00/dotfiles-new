@@ -18,7 +18,7 @@
     "margin-left": 0,
     "margin-right": 0,
     "modules-left": [
-        "custom/power_menu",
+        "custom/app_menu",
         "hyprland/workspaces",
         "idle_inhibitor",
         "custom/pacman_icon",
@@ -41,22 +41,14 @@
         "clock#time",
         "custom/swaync"
     ],
-    "custom/power_menu": {
-        "format": "\uf2f3",
-        "tooltip": false,
-        "menu": "on-click",
-        "menu-file": "~/.config/waybar/power_menu.xml",
-        "menu-actions": {
-            "shutdown": "hyprctl clients -j | jq -r '.[].pid' | xargs kill ; systemctl poweroff",
-            "reboot": "hyprctl clients -j | jq -r '.[].pid' | xargs kill ; systemctl reboot",
-            "suspend": "systemctl suspend",
-            "lock": "loginctl lock-session"
-        }
+    "custom/app_menu": {
+        "format": "\uf799",
+        "on-click": "rofi -show drun -theme $HOME/.config/rofi/launcher-4.rasi",
+        "tooltip-format": "Click to launch app menu"
     },
     "hyprland/workspaces": {
         "format": "{id}"
     },
-
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
@@ -67,22 +59,26 @@
         "tooltip-format-deactivated": "<span font_family='Material Symbols Rounded' size='14pt' rise='-4500'>visibility_off</span> Idle inhibit deactivated"
     },
     "network#icon": {
+        "interval": 3,
         "format-disconnected": "\uf0ef",
         "format-ethernet": "\uefe6",
-        "format-wifi": "\uf532",
-        "tooltip-format-wifi": "WiFi: {essid} ({signalStrength}%)\n<span font_family='Material Symbols Rounded' size='14pt' rise='-4500'>arrow_upload_progress</span> {bandwidthUpBits} <span font_family='Material Symbols Rounded' size='14pt' rise='-4500'>downloading</span> {bandwidthDownBits}",
-        "tooltip-format-ethernet": "Ethernet: {ifname}\n<span font_family='Material Symbols Rounded' size='14pt' rise='-4500'>arrow_upload_progress</span> {bandwidthUpBits} <span font_family='Material Symbols Rounded' size='14pt' rise='-4500'>downloading</span> {bandwidthDownBits}",
+        "format-wifi": "{icon}",
+        "format-icons": ["\uf58f", "\uf58e", "\uf58d", "\uf532"],
+        "tooltip-format-wifi": "WiFi: {essid} [{signalStrength}% | {frequency} GHz]",
+        "tooltip-format-ethernet": "Ethernet: {ifname}",
         "tooltip-format-disconnected": "Disconnected",
-        "on-click": "hyprctl dispatch exec '[float on; center on; size 1100 800]' '$TERMINAL --adjust-cell-height=0% -e impala'"
+        "on-click-middle": "hyprctl dispatch exec '[float on; center on; size 1100 800]' '$TERMINAL --adjust-cell-height=0% -e impala'"
     },
     "network#address": {
+        "interval": 3,
         "format-disconnected": "Disconnected",
-        "format-ethernet": "{ipaddr}/{cidr}",
-        "format-wifi": "{essid}",
-        "tooltip-format-wifi": "WiFi: {essid} ({signalStrength}%)\n<span font_family='Material Symbols Rounded' size='14pt' rise='-4500'>arrow_upload_progress</span> {bandwidthUpBits} <span font_family='Material Symbols Rounded' size='14pt' rise='-4500'>downloading</span> {bandwidthDownBits}",
-        "tooltip-format-ethernet": "Ethernet: {ifname}\n<span font_family='Material Symbols Rounded' size='14pt' rise='-4500'>arrow_upload_progress</span> {bandwidthUpBits} <span font_family='Material Symbols Rounded' size='14pt' rise='-4500'>downloading</span> {bandwidthDownBits}",
+        "format-ethernet": "Connected",
+        "format-wifi": "Connected",
+        "format-alt": "<span font_family='Material Symbols Rounded' size='14pt' rise='-4500'>arrow_upload_progress</span> {bandwidthUpBytes} <span font_family='Material Symbols Rounded' size='14pt' rise='-4500'>downloading</span> {bandwidthDownBytes}",
+        "tooltip-format-wifi": "WiFi: {essid} [{signalStrength}% | {frequency} GHz]",
+        "tooltip-format-ethernet": "Ethernet: {ifname}",
         "tooltip-format-disconnected": "Disconnected",
-        "on-click": "hyprctl dispatch exec '[float on; center on; size 1100 800]' '$TERMINAL --adjust-cell-height=0% -e impala'"
+        "on-click-middle": "hyprctl dispatch exec '[float on; center on; size 1100 800]' '$TERMINAL --adjust-cell-height=0% -e impala'"
     },
     "wireplumber#icon": {
         "format": "{icon}",

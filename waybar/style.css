@@ -33,9 +33,9 @@ window#waybar {
 }
 
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  Power-menu
+  App-menu
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
-#custom-power_menu {
+#custom-app_menu {
     background-color: @green;
     color: @fg-inverse;
     font-size: 18pt;
@@ -44,11 +44,6 @@ window#waybar {
     margin: 0.5rem 0.25rem;
     min-width: 1.5rem;
     transition: 300ms linear;
-}
-
-.power_menu menuitem:hover {
-    border-radius: 0px;
-    color: @red;
 }
 
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -360,9 +355,9 @@ tooltip label {
   HOVER EFFECTS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 
-/* Image hover */
-#image:hover {
-    background: @bg-alt;
+/* App menu hover */
+#custom-app_menu:hover {
+    background: shade(@green, 0.85);
 }
 
 /* Workspaces hover */

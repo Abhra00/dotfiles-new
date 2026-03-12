@@ -102,7 +102,7 @@ element-text {
 }
 
 element-text.selected {
-    background-color:            @selected-alpha;
+    background-color:            @active;
     text-color:                  @selected-text;
 }
 

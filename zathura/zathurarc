@@ -39,31 +39,29 @@ map [fullscreen] p                print
 map [fullscreen] g                goto top
 map <C-i>                         recolor
 
-# Colors
-set notification-error-bg         "#dd6e6b" # Red
-set notification-error-fg         "#f6f6f5" # Foreground
-set notification-warning-bg       "#e8eda2" # Yellow
-set notification-warning-fg       "#233440" # Selection
-set notification-bg               "#0e151a" # Background
-set notification-fg               "#f6f6f5" # Foreground
-set completion-bg                 "#151f26" # Background
-set completion-fg                 "#87e58e" # Comment/Green
-set completion-group-bg           "#0e151a" # Background
-set completion-group-fg           "#f6f6f5" # Comment/Foreground
-set completion-highlight-bg       "#baa0e8" # Selection/Blue
-set completion-highlight-fg       "#233440" # Foreground
-set inputbar-bg                   "#0e151a" # Background
-set inputbar-fg                   "#f6f6f5" # Foreground
-set statusbar-bg                  "#0e151a" # Background
-set statusbar-fg                  "#f6f6f5" # Foreground
-set highlight-color               "#e8eda2" # Yellow
-set highlight-active-color        "#e48cc1" # Pink
-set default-bg                    "#0e151a" # Background
-set default-fg                    "#f6f6f5" # Foreground
+# Kintsukoroi Colors
+set notification-error-bg         "#c06c5c" # red
+set notification-error-fg         "#141210" # bg
+set notification-warning-bg       "#c09d59" # yellow
+set notification-warning-fg       "#141210" # bg
+set notification-bg               "#141210" # bg
+set notification-fg               "#e5c9a0" # fg
+set completion-bg                 "#1a1714" # slightly lighter bg
+set completion-fg                 "#85b695" # bright_green
+set completion-group-bg           "#141210" # bg
+set completion-group-fg           "#e5c9a0" # fg
+set completion-highlight-bg       "#a3a9ce" # bright_blue
+set completion-highlight-fg       "#141210" # bg
+set inputbar-bg                   "#141210" # bg
+set inputbar-fg                   "#e5c9a0" # fg
+set statusbar-bg                  "#141210" # bg
+set statusbar-fg                  "#e5c9a0" # fg
+set highlight-color               "#c09d59" # yellow
+set highlight-active-color        "#d88095" # pink
+set default-bg                    "#141210" # bg
+set default-fg                    "#e5c9a0" # fg
 set render-loading                true
-set render-loading-fg             "#0e151a" # Background
-set render-loading-bg             "#f6f6f5" # Foreground
-
-# Recolor mode settings
-set recolor-lightcolor            "#0e151a" # Background
-set recolor-darkcolor             "#f6f6f5" # Foreground
+set render-loading-fg             "#141210" # bg
+set render-loading-bg             "#e5c9a0" # fg
+set recolor-lightcolor            "#141210" # bg
+set recolor-darkcolor             "#e5c9a0" # fg

@@ -16,7 +16,7 @@ swayimg.imagelist.enable_recursive(false)
 swayimg.imagelist.enable_adjacent(false)
 
 -- Text overlay configuration
-swayimg.text.set_font("Cartograph CF")
+swayimg.text.set_font("Iosevkeley Mono")
 swayimg.text.set_size(24)
 swayimg.text.set_padding(10)
 swayimg.text.set_foreground(0xffe5c9a0) -- fg

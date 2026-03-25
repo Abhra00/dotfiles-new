@@ -67,7 +67,7 @@
         "tooltip-format-wifi": "WiFi: {essid} [{signalStrength}% | {frequency} GHz]",
         "tooltip-format-ethernet": "Ethernet: {ifname}",
         "tooltip-format-disconnected": "Disconnected",
-        "on-click-middle": "hyprctl dispatch exec '[float on; center on; size 1100 800]' '$TERMINAL --adjust-cell-height=0% -e impala'"
+        "on-click-middle": "hyprctl dispatch exec '[float on; center on; size 1100 800]' '$TERMINAL --adjust-cell-height=0% -e nmtui'"
     },
     "network#address": {
         "interval": 3,
@@ -78,7 +78,7 @@
         "tooltip-format-wifi": "WiFi: {essid} [{signalStrength}% | {frequency} GHz]",
         "tooltip-format-ethernet": "Ethernet: {ifname}",
         "tooltip-format-disconnected": "Disconnected",
-        "on-click-middle": "hyprctl dispatch exec '[float on; center on; size 1100 800]' '$TERMINAL --adjust-cell-height=0% -e impala'"
+        "on-click-middle": "hyprctl dispatch exec '[float on; center on; size 1100 800]' '$TERMINAL --adjust-cell-height=0% -e nmtui'"
     },
     "wireplumber#icon": {
         "format": "{icon}",

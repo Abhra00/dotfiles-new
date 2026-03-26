@@ -4,7 +4,7 @@
 # ┗┛┗┛┗┛┗┛┗┛  ┗┻┛┛┗┗┛┗┛
 
 # Set variables
-wall_dir="$HOME/walls"
+wall_dir="$HOME/Pictures/wallpapers"
 scriptsDir="$HOME/.config/hypr/scripts"
 focused_monitor=$(hyprctl monitors -j | jq -r '.[] | select(.focused) | .name')
 fit_mode="cover"

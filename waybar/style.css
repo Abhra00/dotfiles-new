@@ -22,7 +22,7 @@
   GLOBAL
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 * {
-    font-family: "Iosevkeley Mono", "Material Symbols Rounded", sans-serif;
+    font-family: "JetBrains Mono", "Material Symbols Rounded", sans-serif;
     font-size: 10pt;
     font-weight: 600;
 }
@@ -35,8 +35,8 @@ window#waybar {
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   App-menu
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
-#custom-app_menu {
-    background-color: @green;
+#power-profiles-daemon {
+    background-color: @red;
     color: @fg-inverse;
     font-size: 18pt;
     border-radius: 0px;
@@ -45,6 +45,22 @@ window#waybar {
     min-width: 1.5rem;
     transition: 300ms linear;
 }
+
+#power-profiles-daemon.performance {
+    background-color: @blue;
+    color: @fg-inverse;
+}
+
+#power-profiles-daemon.balanced {
+    background-color: @green;
+    color: @fg-inverse;
+}
+
+#power-profiles-daemon.power-saver {
+    background-color: @magenta;
+    color: @fg-inverse;
+}
+
 
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   WORKSPACES
@@ -355,9 +371,21 @@ tooltip label {
   HOVER EFFECTS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 
-/* App menu hover */
-#custom-app_menu:hover {
+/* Power profiles daemon hover */
+#power-profiles-daemon:hover {
+    background: shade(@red, 0.85);
+}
+
+#power-profiles-daemon.performance:hover {
+    background: shade(@blue, 0.85);
+}
+
+#power-profiles-daemon.balanced:hover {
     background: shade(@green, 0.85);
+}
+
+#power-profiles-daemon.power-saver:hover {
+    background: shade(@magenta, 0.85);
 }
 
 /* Workspaces hover */

@@ -18,7 +18,7 @@
     "margin-left": 0,
     "margin-right": 0,
     "modules-left": [
-        "custom/app_menu",
+        "power-profiles-daemon",
         "hyprland/workspaces",
         "idle_inhibitor",
         "custom/pacman_icon",
@@ -41,10 +41,16 @@
         "clock#time",
         "custom/swaync"
     ],
-    "custom/app_menu": {
-        "format": "\uf799",
-        "on-click": "rofi -show drun -theme $HOME/.config/rofi/launcher-4.rasi",
-        "tooltip-format": "Click to launch app menu"
+    "power-profiles-daemon": {
+	"format": "{icon}",
+	"tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+	"tooltip": true,
+	"format-icons": {
+	    "default": "\ue2ae",
+	    "performance": "\ue2ae",
+	    "balanced": "\ueaf6",
+	    "power-saver": "\uec1a"
+	}
     },
     "hyprland/workspaces": {
         "format": "{id}"
@@ -67,7 +73,7 @@
         "tooltip-format-wifi": "WiFi: {essid} [{signalStrength}% | {frequency} GHz]",
         "tooltip-format-ethernet": "Ethernet: {ifname}",
         "tooltip-format-disconnected": "Disconnected",
-        "on-click-middle": "hyprctl dispatch exec '[float on; center on; size 1100 800]' '$TERMINAL --adjust-cell-height=0% -e nmtui'"
+        "on-click-middle": "hyprctl dispatch exec '[float on; center on; size 1100 800]' '$TERMINAL --adjust-cell-height=0% -e impala'"
     },
     "network#address": {
         "interval": 3,
@@ -78,7 +84,7 @@
         "tooltip-format-wifi": "WiFi: {essid} [{signalStrength}% | {frequency} GHz]",
         "tooltip-format-ethernet": "Ethernet: {ifname}",
         "tooltip-format-disconnected": "Disconnected",
-        "on-click-middle": "hyprctl dispatch exec '[float on; center on; size 1100 800]' '$TERMINAL --adjust-cell-height=0% -e nmtui'"
+        "on-click-middle": "hyprctl dispatch exec '[float on; center on; size 1100 800]' '$TERMINAL --adjust-cell-height=0% -e impala'"
     },
     "wireplumber#icon": {
         "format": "{icon}",
@@ -160,11 +166,11 @@
             "mode-mon-col": 3,
             "weeks-pos": "left",
             "format": {
-                "months": "<span font='Iosevkeley Mono 12' color='#c09d59'><b>{}</b></span>",
-                "days": "<span font='Iosevkeley Mono 12' color='#e5c9a0'><b>{}</b></span>",
-                "weeks": "<span font='Iosevkeley Mono 12' color='#7f91b2'><b>W{}</b></span>",
-                "weekdays": "<span font='Iosevkeley Mono 12' color='#7b9695'><b>{}</b></span>",
-                "today": "<span font='Iosevkeley Mono 12' color='#c09d59'><b>{}</b></span>"
+                "months": "<span font='JetBrains Mono 12' color='#c09d59'><b>{}</b></span>",
+                "days": "<span font='JetBrains Mono 12' color='#e5c9a0'><b>{}</b></span>",
+                "weeks": "<span font='JetBrains Mono 12' color='#7f91b2'><b>W{}</b></span>",
+                "weekdays": "<span font='JetBrains Mono 12' color='#7b9695'><b>{}</b></span>",
+                "today": "<span font='JetBrains Mono 12' color='#c09d59'><b>{}</b></span>"
             }
         },
         "format": "\uf6b8",
@@ -180,11 +186,11 @@
             "mode-mon-col": 3,
             "weeks-pos": "left",
             "format": {
-                "months": "<span font='Iosevkeley Mono 12' color='#c09d59'><b>{}</b></span>",
-                "days": "<span font='Iosevkeley Mono 12' color='#e5c9a0'><b>{}</b></span>",
-                "weeks": "<span font='Iosevkeley Mono 12' color='#7f91b2'><b>W{}</b></span>",
-                "weekdays": "<span font='Iosevkeley Mono 12' color='#7b9695'><b>{}</b></span>",
-                "today": "<span font='Iosevkeley Mono 12' color='#c09d59'><b>{}</b></span>"
+                "months": "<span font='JetBrains Mono 12' color='#c09d59'><b>{}</b></span>",
+                "days": "<span font='JetBrains Mono 12' color='#e5c9a0'><b>{}</b></span>",
+                "weeks": "<span font='JetBrains Mono 12' color='#7f91b2'><b>W{}</b></span>",
+                "weekdays": "<span font='JetBrains Mono 12' color='#7b9695'><b>{}</b></span>",
+                "today": "<span font='JetBrains Mono 12' color='#c09d59'><b>{}</b></span>"
             }
         },
         "format": "{:%I:%M %p}",

@@ -13,7 +13,7 @@ configuration {
   display-run:                "Run";
   display-window:             "Window";
   drun-display-format:        "{name}";
-  icon-theme:                 "Fluent-dark";
+  icon-theme:                 "Gruvbox-Plus-Dark";
 }
 
 /*****----- Global Properties -----*****/

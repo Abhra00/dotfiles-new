@@ -7,11 +7,11 @@
 
 /*****----- Configuration -----*****/
 configuration {
-	modi:                       "drun";
+  modi:                       "drun";
   show-icons:                 true;
   display-drun:               "travel_explore";
-	drun-display-format:        "{name}";
-  icon-theme:                 "Fluent-dark";
+  drun-display-format:        "{name}";
+  icon-theme:                 "Gruvbox-Plus-Dark";
 }
 
 /*****----- Global Properties -----*****/

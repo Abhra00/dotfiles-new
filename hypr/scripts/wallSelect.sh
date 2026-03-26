@@ -28,7 +28,7 @@
 #   → GNU: findutils, coreutils, bc
 
 # Set variables
-wall_dir="$HOME/walls"
+wall_dir="$HOME/Pictures/wallpapers"
 cacheDir="$HOME/.cache/wallcache"
 scriptsDir="$HOME/.config/hypr/scripts"
 fit_mode="cover"

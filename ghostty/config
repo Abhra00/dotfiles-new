@@ -4,10 +4,10 @@
 #
 
 # Font families
-font-family = "Iosevkeley Mono"
-font-family-bold = "Iosevkeley Mono"
-font-family-italic = "Iosevkeley Mono"
-font-family-bold-italic = "Iosevkeley Mono"
+font-family = "JetBrains Mono"
+font-family-bold = "JetBrains Mono"
+font-family-italic = "JetBrains Mono"
+font-family-bold-italic = "JetBrains Mono"
 font-family = "Symbols Nerd Font Mono"
 
 # Cell height
@@ -34,29 +34,7 @@ adjust-cursor-thickness = 145%
 adjust-cursor-height = 45%
 cursor-style-blink = true
 
-# keybindings
-keybind = clear
-keybind = alt+shift+h=goto_split:left
-keybind = ctrl+shift+j=goto_split:bottom
-keybind = ctrl+shift+k=goto_split:top
-keybind = ctrl+shift+l=goto_split:right
-keybind = ctrl+up=adjust_selection:up
-keybind = ctrl+down=adjust_selection:down
-keybind = ctrl+left=adjust_selection:left
-keybind = ctrl+right=adjust_selection:right
-keybind = alt+shift+t=new_tab
-keybind = alt+shift+h=previous_tab
-keybind = alt+shift+l=next_tab
-keybind = alt+shift+comma=move_tab:-1
-keybind = alt+shift+period=move_tab:1
-keybind = alt+shift+c=copy_to_clipboard
-keybind = alt+shift+v=paste_from_clipboard
-keybind = alt+shift+enter=new_split:auto
-keybind = alt+shift+i=inspector:toggle
-keybind = alt+shift+m=toggle_split_zoom
-keybind = alt+shift+r=reload_config
-keybind = alt+shift+s=write_screen_file:open
-keybind = alt+shift+w=close_surface
+# Keybindings
 keybind = alt+shift+page_up=increase_font_size:1
 keybind = alt+shift+page_down=decrease_font_size:1
 keybind = page_down=scroll_page_down
@@ -65,6 +43,7 @@ keybind = alt+x=jump_to_prompt:1
 keybind = alt+z=jump_to_prompt:-1
 keybind = alt+enter=toggle_quick_terminal
 keybind = alt+backquote=toggle_command_palette
+keybind = alt+f=start_search
 
 # Shaders
 custom-shader = ./shaders/cursor-trail.glsl

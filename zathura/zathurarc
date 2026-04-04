@@ -15,6 +15,7 @@ set adjust-open                   width
 set smooth-scroll                 true
 set show-v-scrollbar              true
 set window-title-basename         true
+set font 			  "JetBrains Mono 12"
 
 # Keymaps
 map u                             scroll half-up

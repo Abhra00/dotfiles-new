@@ -41,7 +41,7 @@ if [[ $enable_battery == true ]]; then
   fi
   # Add color for low battery
   if [[ $capacity -le 20 && $battery_charging == false ]]; then
-    echo "<span foreground='#ff5555'>$icon $capacity%</span>"
+    echo "<span foreground='#c06c5c'>$icon $capacity%</span>"
   else
     echo "$icon $capacity%"
   fi

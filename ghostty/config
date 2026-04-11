@@ -14,7 +14,7 @@ font-family = "Symbols Nerd Font Mono"
 font-feature="dlig"
 
 # Cell height
-adjust-cell-height = 25%
+adjust-cell-height = 30%
 
 # Font size
 font-size = 10
@@ -33,8 +33,8 @@ window-theme = ghostty
 
 # Cursor
 cursor-style = "block"
-adjust-cursor-thickness = 125%
-adjust-cursor-height = 25%
+adjust-cursor-thickness = 130%
+adjust-cursor-height = 30%
 cursor-style-blink = true
 
 # Keybindings

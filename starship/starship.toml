@@ -40,7 +40,7 @@ format = "[ $path ]($style)[$read_only]($read_only_style)"
 # Git branch
 [git_branch]
 style = "bg:bright_black fg:yellow"
-symbol = " "
+symbol = " "
 format = "[ $symbol$branch ]($style)"
 
 # Git status

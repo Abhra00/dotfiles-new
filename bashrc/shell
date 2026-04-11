@@ -3,9 +3,6 @@
 # ┗┛┛┗┗┛┗┛┗┛
 #
 
-# Vi mode
-set -o vi
-
 # History control
 shopt -s histappend
 HISTCONTROL=ignoreboth

@@ -1,0 +1,96 @@
+# ┏┓┳┓┓┏
+# ┣ ┃┃┃┃
+# ┗┛┛┗┗┛
+#
+
+# Programs & Editors
+export TERMINAL="ghostty"
+export BROWSER="chromium"
+export EDITOR="emacsclient -t -a ''"
+export VISUAL="emacsclient -c -a emacs"
+export SUDO_EDITOR="$EDITOR"
+export BAT_THEME="Kintsukuroi"
+
+# XDG Base Directories
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+
+# ~/ Clean-up
+export NOTMUCH_CONFIG="$XDG_CONFIG_HOME/notmuch-config"
+export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
+export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+export WINEPREFIX="$XDG_DATA_HOME/wineprefixes/default"
+export KODI_DATA="$XDG_DATA_HOME/kodi"
+export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
+export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
+export ANDROID_SDK_HOME="$XDG_CONFIG_HOME/android"
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
+export GOPATH="$XDG_DATA_HOME/go"
+export GOMODCACHE="$XDG_CACHE_HOME/go/mod"
+export ANSIBLE_CONFIG="$XDG_CONFIG_HOME/ansible/ansible.cfg"
+export UNISON="$XDG_DATA_HOME/unison"
+export HISTFILE="$XDG_DATA_HOME/history"
+export MBSYNCRC="$XDG_CONFIG_HOME/mbsync/config"
+export NPM_CONFIG_USERCONFIG="$HOME/.config/npm/npmrc"
+export ELECTRUMDIR="$XDG_DATA_HOME/electrum"
+export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
+export SQLITE_HISTORY="$XDG_DATA_HOME/sqlite_history"
+export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
+
+# Set pyenv root path
+export PYENV_ROOT="$XDG_DATA_HOME/.pyenv"
+
+# PATH modifications
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.config/hypr/scripts:$PATH"
+export PATH="$CARGO_HOME/bin:$PATH"
+export PATH="$HOME/.local/share/npm/bin:$PATH"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
+# FZF opts
+export FZF_DEFAULT_COMMAND="fd . --max-depth=1 --hidden"
+export FZF_DEFAULT_OPTS=" \
+  $FZF_DEFAULT_OPTS \
+  --highlight-line \
+  --info=inline-right \
+  --ansi \
+  --layout=reverse \
+  --border=none \
+  --scrollbar='▓' \
+  --marker=' ' \
+  --ellipsis='… ' \
+  --prompt='  ' \
+  --pointer=' ' \
+  --color=bg+:#322d28 \
+  --color=fg+:#e5c9a0 \
+  --color=bg:-1 \
+  --color=border:#7f91b2 \
+  --color=fg:#e5c9a0 \
+  --color=header:#7b9695 \
+  --color=hl+:#d88095 \
+  --color=hl:#d88095 \
+  --color=info:#c09d59 \
+  --color=marker:#c06c5c \
+  --color=pointer:#7f91b2 \
+  --color=prompt:#7f91b2 \
+  --color=gutter:#141210 \
+  --color=query:#e5c9a0:regular \
+  --color=scrollbar:#4d463e \
+  --color=separator:#4d463e \
+  --color=spinner:#c09d59 \
+"
+
+# Misc
+export SUDO_ASKPASS="$HOME/.local/bin/rofipass"
+export LESS="R"
+export LESS_TERMCAP_mb=$(printf '\e[01;31m')
+export LESS_TERMCAP_md=$(printf '\e[01;31m')
+export LESS_TERMCAP_me=$(printf '\e[0m')
+export LESS_TERMCAP_se=$(printf '\e[0m')
+export LESS_TERMCAP_so=$(printf '\e[01;30;44m')
+export LESS_TERMCAP_ue=$(printf '\e[0m')
+export LESS_TERMCAP_us=$(printf '\e[01;32m')
+export LESSOPEN='| bat --style=plain --paging=never --color=always -- %s 2>/dev/null'

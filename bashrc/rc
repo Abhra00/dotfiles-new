@@ -2,6 +2,8 @@
 #    ┣┫┃
 #    ┛┗┗┛
 # Source the modularized files
+source ~/.config/bashrc/env
+source ~/.config/bashrc/hyprchad
 source ~/.config/bashrc/shell
 source ~/.config/bashrc/aliases
 source ~/.config/bashrc/functions

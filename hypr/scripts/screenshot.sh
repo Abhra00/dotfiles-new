@@ -18,7 +18,7 @@ time=$(date "+%d-%b_%H-%M-%S")
 dir="$(xdg-user-dir PICTURES)/Screenshots"
 file="Screenshot_${time}_${RANDOM}.png"
 
-iDIR="$HOME/.config/swaync/assets/"
+iDIR="$HOME/.config/mako/assets/"
 sDIR="$HOME/.config/hypr/scripts"
 
 active_window_class=$(hyprctl -j activewindow | jq -r '(.class)')
@@ -27,10 +27,10 @@ active_window_path="${dir}/${active_window_file}"
 
 satty_file="Screenshot_${time}_satty.png"
 
-notify_cmd_base="notify-send -t 10000 -A action1=Open -A action2=Delete -e -h string:x-canonical-private-synchronous:shot-notify"
-notify_cmd_shot="${notify_cmd_base} -i ${iDIR}/ss.png"
-notify_cmd_shot_win="${notify_cmd_base} -i ${iDIR}/ss.png"
-notify_cmd_NOT="notify-send -u low -i ${iDIR}/bell.png"
+notify_cmd_base="notify-send -u normal -A action1=Open -A action2=Delete -e -h string:x-canonical-private-synchronous:shot-notify"
+notify_cmd_shot="${notify_cmd_base} -i ${iDIR}/ss.svg"
+notify_cmd_shot_win="${notify_cmd_base} -i ${iDIR}/ss.svg"
+notify_cmd_NOT="notify-send -u low -i ${iDIR}/bell.svg"
 
 # Rofi theme elements
 list_col='1'
@@ -106,7 +106,7 @@ notify_view() {
 countdown() {
     for sec in $(seq $1 -1 1); do
         "${sDIR}/sounds.sh" --countdown &
-        notify-send -h string:x-canonical-private-synchronous:shot-notify -t 1000 -i "$iDIR"/timer.png " Taking shot" " in: $sec secs"
+        notify-send -h string:x-canonical-private-synchronous:shot-notify -t 1000 -i "$iDIR"/timer.svg " Taking shot" " in: $sec secs"
         sleep 1
     done
 }

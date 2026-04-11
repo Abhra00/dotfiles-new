@@ -24,10 +24,6 @@ $character$git_branch$git_status$directory[▓▒░ ](fg:bright_black)
 [character]
 error_symbol = "[ 𜺰 ](bold bg:red fg:foreground_inverse)"
 success_symbol = "[ λ ](bold bg:orange fg:foreground_inverse)"
-vimcmd_symbol = "[ ▼ ](bold bg:green fg:foreground_inverse)"
-vimcmd_visual_symbol = "[ ▼ ](bold bg:blue fg:foreground_inverse)"
-vimcmd_replace_symbol = "[ ▼ ](bold bg:yellow fg:foreground_inverse)"
-vimcmd_replace_one_symbol = "[ ▼ ](bold bg:magenta fg:foreground_inverse)"
 format = "$symbol"
 
 # Directory
@@ -75,4 +71,4 @@ bright_white = '#f2d5a9'
 foreground = '#e5c9a0'
 background = '#141210'
 orange = '#d8834c'
-foreground_inverse = '#141210'
+foreground_inverse = '#0b0a09'

@@ -9,7 +9,7 @@
 configuration {
     modi:                       "window";
     show-icons:                 true;
-    icon-theme:                 "Gruvbox-Plus-Dark";
+    icon-theme:                 "Papirus-Dark";
 }
 
 /*****----- Global Properties -----*****/

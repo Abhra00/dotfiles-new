@@ -1,0 +1,13 @@
+# Change directory using yazi
+yazicd() {
+  local tmp cwd
+  tmp="$(mktemp -t "yazi-cwd.XXXXXX")" || return
+  yazi "$@" --cwd-file="$tmp"
+  if [[ -f $tmp ]]; then
+    cwd=$(<"$tmp")
+    if [[ -n $cwd && $cwd != $PWD ]]; then
+      builtin cd -- "$cwd"
+    fi
+    rm -f -- "$tmp"
+  fi
+}

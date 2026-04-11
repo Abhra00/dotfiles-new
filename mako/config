@@ -1,0 +1,173 @@
+# ┳┳┓┏┓┓┏┓┏┓
+# ┃┃┃┣┫┃┫ ┃┃
+# ┛ ┗┛┗┛┗┛┗┛
+#
+
+
+# ─────────────────────────────────────────────
+#  Layout & Position
+# ─────────────────────────────────────────────
+anchor=top-right
+layer=overlay
+sort=-time
+max-visible=5
+output=
+
+# ─────────────────────────────────────────────
+#  Dimensions
+# ─────────────────────────────────────────────
+height=350
+width=350
+outer-margin=20
+margin=8
+padding=20,24
+
+# ─────────────────────────────────────────────
+#  Fonts & Alignment
+# ─────────────────────────────────────────────
+font=Space Mono 10
+markup=1
+text-alignment=left
+format=<b>%s</b>\n%b
+
+# ─────────────────────────────────────────────
+#  Base Colors
+# ─────────────────────────────────────────────
+background-color=#141210
+text-color=#e5c9a0
+border-color=#4d463e
+border-size=2
+border-radius=0
+
+# ─────────────────────────────────────────────
+#  Icons
+# ─────────────────────────────────────────────
+icons=1
+icon-path=/usr/share/icons/Papirus
+max-icon-size=64
+icon-border-radius=0
+
+# ─────────────────────────────────────────────
+#  Behavior
+# ─────────────────────────────────────────────
+actions=1
+history=1
+max-history=20
+default-timeout=6000
+ignore-timeout=0
+
+# ─────────────────────────────────────────────
+#  Progress bar
+# ─────────────────────────────────────────────
+progress-color=over #322d28
+
+
+# ─────────────────────────────────────────────
+#  Urgency
+# ─────────────────────────────────────────────
+[urgency=low]
+background-color=#141210
+text-color=#5a5147
+border-color=#3f3933
+border-size=2
+default-timeout=3000
+
+[urgency=normal]
+background-color=#141210
+text-color=#e5c9a0
+border-color=#4d463e
+border-size=2
+default-timeout=6000
+
+[urgency=critical]
+background-color=#4b2a24
+text-color=#d97a68
+border-color=#c06c5c
+border-size=2
+default-timeout=0
+
+# ─────────────────────────────────────────────
+#  Modes
+# ─────────────────────────────────────────────
+[mode=do-not-disturb]
+invisible=1
+
+# ─────────────────────────────────────────────
+#  Grouped / Hidden
+# ─────────────────────────────────────────────
+[grouped]
+format=(%g) <b>%s</b>\n%b
+
+[hidden]
+format=(%h more)
+text-color=#5a4e45
+
+
+# ─────────────────────────────────────────────
+#  App-Specific Rules
+# ─────────────────────────────────────────────
+
+# ── Cliphist ──────────────────────────────────
+[app-name=Cliphist]
+anchor=top-right
+background-color=#141210
+text-color=#e5c9a0
+border-color=#7b9695
+border-size=2
+width=400
+padding=20,24
+max-icon-size=220
+default-timeout=3000
+format=<b>%s</b>\n%b
+
+# ── VolumeOSD ─────────────────────────────────
+[app-name=VolumeOSD]
+anchor=bottom-center
+background-color=#141210
+text-color=#e5c9a0
+border-color=#7f91b2
+border-size=2
+width=320
+padding=16,24
+max-icon-size=48
+default-timeout=2000
+format=<b>%s</b>  %b
+
+# ── BrightnessOSD ─────────────────────────────────
+[app-name=BrightnessOSD]
+anchor=bottom-center
+background-color=#141210
+text-color=#e5c9a0
+border-color=#7f91b2
+border-size=2
+width=320
+padding=16,24
+max-icon-size=48
+default-timeout=2000
+format=<b>%s</b>  %b
+
+# ── MediaOSD ──────────────────────────────────
+[app-name=MediaOSD]
+anchor=bottom-center
+background-color=#141210
+text-color=#d8be97
+border-color=#d8834c
+border-size=2
+width=440
+padding=20,24
+max-icon-size=96
+default-timeout=3000
+format=<b>%s</b>
+
+# ── LayoutOSD ─────────────────────────────────
+[app-name=LayoutOSD]
+anchor=top-center
+background-color=#141210
+text-color=#e5c9a0
+border-color=#d8834c
+border-size=2
+width=310
+padding=16,24
+max-icon-size=48
+default-timeout=2000
+format=<b>%s</b>  %b

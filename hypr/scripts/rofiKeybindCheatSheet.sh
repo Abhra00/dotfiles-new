@@ -83,15 +83,6 @@ dynamic_bindings() {
     hyprctl -j binds |
         jq -r '
             .[] |
-            select(
-                .arg |
-                tostring |
-                (
-                    contains("swayosd-client") and
-                    (contains("--caps-lock") or contains("--num-lock"))
-                ) |
-                not
-            ) |
             {modmask, key, keycode, description, dispatcher, arg} |
             "\(.modmask),\(.key)@\(.keycode),\(.description),\(.dispatcher),\(.arg)"
         ' |
@@ -188,4 +179,4 @@ dynamic_bindings |
     parse_keycodes |
     parse_bindings |
     prioritize_entries |
-    rofi -dmenu -p 'Keybindings' -theme ~/.config/rofi/hyprCheatSheet.rasi
+    rofi -dmenu -i -p 'Keybindings' -theme ~/.config/rofi/hyprCheatSheet.rasi

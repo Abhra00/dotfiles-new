@@ -12,7 +12,7 @@ configuration {
     show-icons:                  true;
     drun-display-format:         "{name}";
     window-format:               "{w}{t}";
-    icon-theme:                  "Gruvbox-Plus-Dark";
+    icon-theme:                  "Papirus-Dark";
 }
 
 /*****----- Global Properties -----*****/

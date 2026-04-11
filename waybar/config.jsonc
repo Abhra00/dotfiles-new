@@ -25,9 +25,10 @@
         "custom/pacman_updates_count",
         "custom/weather_icon",
         "custom/weather_temp",
-        "custom/colorpicker"
+        "custom/colorpicker",
+	"privacy"
     ],
-    "modules-center": ["tray"],
+    "modules-center":[ "custom/music" ],
     "modules-right": [
         "network#icon",
         "network#address",
@@ -39,7 +40,7 @@
         "battery#capacity",
         "clock#icon",
         "clock#time",
-        "custom/swaync"
+        "group/tray-group"
     ],
     "power-profiles-daemon": {
 	"format": "{icon}",
@@ -77,10 +78,10 @@
     },
     "network#address": {
         "interval": 3,
-        "format-disconnected": "Disconnected",
-        "format-ethernet": "Connected",
-        "format-wifi": "Connected",
-        "format-alt": "<span font_family='Material Symbols Rounded' size='14pt' rise='-4500'>arrow_upload_progress</span> {bandwidthUpBytes} <span font_family='Material Symbols Rounded' size='14pt' rise='-4500'>downloading</span> {bandwidthDownBytes}",
+        "format-disconnected": "DISCONNECTED",
+        "format-ethernet": "CONNECTED",
+        "format-wifi": "CONNECTED",
+        "format-alt": "<span font_family='Material Symbols Rounded' size='12pt' rise='-3500'>arrow_upload_progress</span> {bandwidthUpBytes} <span font_family='Material Symbols Rounded' size='12pt' rise='-3500'>downloading</span> {bandwidthDownBytes}",
         "tooltip-format-wifi": "WiFi: {essid} [{signalStrength}% | {frequency} GHz]",
         "tooltip-format-ethernet": "Ethernet: {ifname}",
         "tooltip-format-disconnected": "Disconnected",
@@ -166,11 +167,11 @@
             "mode-mon-col": 3,
             "weeks-pos": "left",
             "format": {
-                "months": "<span font='JetBrains Mono 12' color='#c09d59'><b>{}</b></span>",
-                "days": "<span font='JetBrains Mono 12' color='#e5c9a0'><b>{}</b></span>",
-                "weeks": "<span font='JetBrains Mono 12' color='#7f91b2'><b>W{}</b></span>",
-                "weekdays": "<span font='JetBrains Mono 12' color='#7b9695'><b>{}</b></span>",
-                "today": "<span font='JetBrains Mono 12' color='#c09d59'><b>{}</b></span>"
+                "months": "<span font='Space Mono 12' color='#c09d59'><b>{}</b></span>",
+                "days": "<span font='Space Mono 12' color='#e5c9a0'><b>{}</b></span>",
+                "weeks": "<span font='Space Mono 12' color='#7f91b2'><b>W{}</b></span>",
+                "weekdays": "<span font='Space Mono 12' color='#7b9695'><b>{}</b></span>",
+                "today": "<span font='Space Mono 12' color='#c09d59'><b>{}</b></span>"
             }
         },
         "format": "\uf6b8",
@@ -186,11 +187,11 @@
             "mode-mon-col": 3,
             "weeks-pos": "left",
             "format": {
-                "months": "<span font='JetBrains Mono 12' color='#c09d59'><b>{}</b></span>",
-                "days": "<span font='JetBrains Mono 12' color='#e5c9a0'><b>{}</b></span>",
-                "weeks": "<span font='JetBrains Mono 12' color='#7f91b2'><b>W{}</b></span>",
-                "weekdays": "<span font='JetBrains Mono 12' color='#7b9695'><b>{}</b></span>",
-                "today": "<span font='JetBrains Mono 12' color='#c09d59'><b>{}</b></span>"
+                "months": "<span font='Space Mono 12' color='#c09d59'><b>{}</b></span>",
+                "days": "<span font='Space Mono 12' color='#e5c9a0'><b>{}</b></span>",
+                "weeks": "<span font='Space Mono 12' color='#7f91b2'><b>W{}</b></span>",
+                "weekdays": "<span font='Space Mono 12' color='#7b9695'><b>{}</b></span>",
+                "today": "<span font='Space Mono 12' color='#c09d59'><b>{}</b></span>"
             }
         },
         "format": "{:%I:%M %p}",
@@ -198,7 +199,7 @@
     },
     "custom/pacman_icon": {
         "format": "\uf5f4",
-        "on-click": "$TERMINAL -e yay; pkill -SIGRTMIN+8 waybar",
+        "on-click": "$TERMINAL -e yay && pkill -SIGRTMIN+8 waybar && notify-send 'Updates' 'Update Completed' -i ~/.config/mako/assets/updates.svg",
         "tooltip-format": "Click to perform update"
     },
     "custom/pacman_updates_count": {
@@ -206,7 +207,7 @@
         "return-type": "json",
         "exec": "~/.config/waybar/scripts/pacman-updates.sh",
         "exec-if": "exit 0",
-        "on-click": "$TERMINAL -e yay; pkill -SIGRTMIN+8 waybar",
+        "on-click": "$TERMINAL -e yay && pkill -SIGRTMIN+8 waybar && notify-send 'Updates' 'Update Completed' -i ~/.config/mako/assets/updates.svg",
         "signal": 8
     },
     "custom/colorpicker": {
@@ -217,26 +218,46 @@
         "on-click": "~/.config/waybar/scripts/colorpicker.sh",
         "signal": 1
     },
-    "custom/swaync": {
-        "tooltip": true,
-        "tooltip-format": "Left Click: Launch Notification Center\nRight Click: Do not Disturb",
-        "format": "{icon}",
-        "format-icons": {
-            "notification": "\uf4fe",
-            "none": "\ue7f4",
-            "dnd-notification": "\ue7f6",
-            "dnd-none": "\ue7f6",
-            "inhibited-notification": "\uf4fe",
-            "inhibited-none": "\ue7f4",
-            "dnd-inhibited-notification": "\ue7f6",
-            "dnd-inhibited-none": "\ue7f6"
+    "privacy": {
+        "icon-spacing": 4,
+        "icon-size": 18,
+        "transition-duration": 250,
+        "modules": [
+            {
+                "type": "screenshare",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            },
+            {
+                "type": "audio-in",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            }
+        ],
+        "ignore-monitor": true,
+        "ignore": [
+            {
+                "type": "audio-in",
+                "name": "cava"
+            }
+        ]
+    },
+    "group/tray-group": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "tray-child",
+            "transition-left-to-right": true,
+	    "click-to-reveal": true
         },
-        "return-type": "json",
-        "exec-if": "which swaync-client",
-        "exec": "swaync-client -swb",
-        "on-click": "sleep 0.1 && swaync-client -t -sw",
-        "on-click-right": "swaync-client -d -sw",
-        "escape": true
+        "modules": [
+            "custom/tray-expand-icon",
+            "tray"
+        ]
+    },
+    "custom/tray-expand-icon": {
+        "format": "\ue15f",
+        "tooltip-format":  "Click to expand tray icons"
     },
     "custom/weather_icon": {
         "format": "{}",
@@ -249,11 +270,20 @@
     },
     "custom/weather_temp": {
         "format": "{}",
-        "format-alt": "{alt}: {}",
-        "format-alt-click": "click",
+        "format-alt": "{alt}",
         "interval": 3600,
         "return-type": "json",
         "exec": "$HOME/.config/waybar/scripts/weather.py temp",
         "tooltip": true
+    },
+    "custom/music": {
+        "exec": "~/.config/waybar/scripts/music.sh",
+        "restart-interval": 1,
+        "return-type": "json",
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous",
+        "max-length": 40,
+	"tooltip": true
     }
 }

@@ -49,7 +49,7 @@ while true; do
         notify-send -h int:transient:1 -a "Cliphist" "Clipboard" "Image Copied" -i "$tmp"
     else
         cliphist decode <<< "$result" | wl-copy
-        notify-send -h int:transient:1 -a "Cliphist" "Clipboard" "Text Copied" -i "$HOME/.config/swaync/assets/bell.png"
+        notify-send -h int:transient:1 -a "Cliphist" "Clipboard" "Text Copied" -i "$HOME/.config/mako/assets/bell.svg"
     fi
 
     exit

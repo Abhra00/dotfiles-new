@@ -53,14 +53,13 @@ FRAMES=(
 )
 FRAME_COUNT=${#FRAMES[@]}
 
-# ── Helper: build visualizer string from a frame ──────────────────────────────
+# ── Helper: build visualizer string from a frame (sets global VIZ) ────────────
 build_viz() {
-    local viz=""
+    VIZ=""
     read -ra heights <<< "$1"
     for h in "${heights[@]}"; do
-        viz+="${BAR_CHARS[$h]}"
+        VIZ+="${BAR_CHARS[$h]}"
     done
-    echo "$viz"
 }
 
 FROZEN_VIZ="▂▂▂▂▂"
@@ -75,8 +74,12 @@ while true; do
     STATUS=$(playerctl status 2>/dev/null)
 
     # No player
-    if [ -z "$STATUS" ] || [ "$STATUS" = "No players found" ]; then
-        printf '{"text": "▂▂▂▂▂  󰓛  no music playing", "class": "stopped", "tooltip": "No media player active"}\n'
+    if [ -z "$STATUS" ] || [ "$STATUS" = "Stopped" ]; then
+        jq -nc \
+            --arg text "▂▂▂▂▂  ■  no music playing" \
+            --arg class "stopped" \
+            --arg tooltip "No media player active" \
+            '{text: $text, class: $class, tooltip: $tooltip}'
         sleep "$SLEEP_INTERVAL"
         continue
     fi
@@ -85,7 +88,11 @@ while true; do
     TITLE=$(playerctl metadata title  2>/dev/null)
 
     if [ -z "$TITLE" ]; then
-        printf '{"text": "▂▂▂▂▂  󰓛  no music playing", "class": "stopped", "tooltip": "No track loaded"}\n'
+        jq -nc \
+            --arg text "▂▂▂▂▂  ■  no music playing" \
+            --arg class "stopped" \
+            --arg tooltip "No track loaded" \
+            '{text: $text, class: $class, tooltip: $tooltip}'
         sleep "$SLEEP_INTERVAL"
         continue
     fi
@@ -106,21 +113,21 @@ while true; do
     case "$STATUS" in
         "Playing")
             ICON="󰎆"
-            VIZ=$(build_viz "${FRAMES[$FRAME]}")
+            build_viz "${FRAMES[$FRAME]}"
             FRAME=$(( (FRAME + 1) % FRAME_COUNT ))
             ;;
         "Paused")
-            ICON="󰏤"
+            ICON="󱖐"
             VIZ="$FROZEN_VIZ"
             ;;
         "Stopped")
-            ICON="󰓛"
+            ICON="■"
             VIZ="$FROZEN_VIZ"
             FRAME=0
             ;;
         *)
             ICON="󰎆"
-            VIZ=$(build_viz "${FRAMES[$FRAME]}")
+            build_viz "${FRAMES[$FRAME]}"
             FRAME=$(( (FRAME + 1) % FRAME_COUNT ))
             ;;
     esac
@@ -148,9 +155,13 @@ while true; do
         DISPLAY_TEXT="${PREFIX}${VISIBLE}"
     fi
 
-    TOOLTIP="${FULL_TEXT}\nStatus: ${STATUS}"
-    printf '{"text": "%s", "class": "%s", "tooltip": "%s"}\n' \
-        "$DISPLAY_TEXT" "$CLASS" "$TOOLTIP"
+    TOOLTIP="$(printf '%s\nStatus: %s' "$FULL_TEXT" "$STATUS")"
+
+    jq -nc \
+        --arg text "$DISPLAY_TEXT" \
+        --arg class "$CLASS" \
+        --arg tooltip "$TOOLTIP" \
+        '{text: $text, class: $class, tooltip: $tooltip}'
 
     sleep "$SLEEP_INTERVAL"
 done

@@ -12,8 +12,6 @@ set selection-clipboard           clipboard
 set render-loading                true
 set database                      null
 set adjust-open                   width
-set smooth-scroll                 true
-set show-v-scrollbar              true
 set window-title-basename         true
 set font                          "Space Mono 12"
 

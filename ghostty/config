@@ -4,23 +4,20 @@
 #
 
 # Font families
-font-family = "Iosevka Term"
-font-family-bold = "Iosevka Term"
-font-family-italic = "Iosevka Term"
-font-family-bold-italic = "Iosevka Term"
+font-family = "Source Code Pro"
+font-family-bold = "Source Code Pro"
+font-family-italic = "Source Code Pro"
+font-family-bold-italic = "Source Code Pro"
 font-family = "Symbols Nerd Font Mono"
 
-# Font features
-font-feature="dlig"
-
 # Cell height
-adjust-cell-height = 30%
+adjust-cell-height = 45%
 
 # Font size
 font-size = 10
 
 # Underline position
-adjust-underline-position = 6
+adjust-underline-position = 5
 
 # Mouse
 mouse-hide-while-typing = true
@@ -33,8 +30,8 @@ window-theme = ghostty
 
 # Cursor
 cursor-style = "block"
-adjust-cursor-thickness = 130%
-adjust-cursor-height = 30%
+adjust-cursor-height = 45%
+adjust-cursor-thickness = 145%
 cursor-style-blink = true
 
 # Keybindings
@@ -66,4 +63,4 @@ window-decoration = false
 window-inherit-working-directory = false
 copy-on-select = clipboard
 shell-integration-features = no-cursor,sudo,no-title,ssh-env
-app-notifications = no-clipboard-copy
+app-notifications = clipboard-copy

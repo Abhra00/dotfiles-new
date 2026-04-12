@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # ═══════════════════════════════════════════════════════════
-#  Font Installer — Space Mono & Recursive
-#  Requires: gum, git, curl, unzip, sudo, fc-cache
+#  Font Installer — Space Mono & Maple Mono
+#  Requires: gum, git, curl, unzip, sha256sum, jq, sudo, fc-cache
 # ═══════════════════════════════════════════════════════════
 
 set -euo pipefail
@@ -11,11 +11,20 @@ set -euo pipefail
 SPACEMONO_REPO="https://github.com/googlefonts/spacemono.git"
 SPACEMONO_DEST="/usr/share/fonts/SpaceMono"
 
-RECURSIVE_API="https://api.github.com/repos/arrowtype/recursive/releases/latest"
-RECURSIVE_DEST="/usr/share/fonts/Recursive"
+MAPLEMONO_REPO="subframe7536/maple-font"
+MAPLEMONO_DEST="/usr/share/fonts/MapleMono"
+MAPLEMONO_VERSION_FILE="$MAPLEMONO_DEST/.version"
 
 TMP_DIR="$(mktemp -d)"
-trap 'rm -rf "$TMP_DIR"' EXIT
+SUDO_KEEPER_PID=""
+
+trap 'cleanup' EXIT INT TERM
+
+# ── Cleanup ───────────────────────────────────────────────
+cleanup() {
+  rm -rf "$TMP_DIR"
+  [[ -n "$SUDO_KEEPER_PID" ]] && kill "$SUDO_KEEPER_PID" 2>/dev/null || true
+}
 
 # ── Helpers ──────────────────────────────────────────────
 info()    { gum style --foreground 82  "✓ $*"; }
@@ -39,8 +48,18 @@ refresh_cache() {
   info "Font cache updated"
 }
 
+keep_sudo_alive() {
+  sudo -v
+  while true; do
+    sudo -n true
+    sleep 50
+    kill -0 "$$" || exit
+  done 2>/dev/null &
+  SUDO_KEEPER_PID=$!
+}
+
 # ── Dependency check ─────────────────────────────────────
-for cmd in gum git curl unzip sudo fc-cache; do
+for cmd in gum git curl unzip sha256sum jq sudo fc-cache; do
   if ! command -v "$cmd" &>/dev/null; then
     echo "Error: '$cmd' is not installed. Please install it and try again." >&2
     exit 1
@@ -55,20 +74,20 @@ gum style \
   --margin "1 2" \
   --bold \
   "  Font Installer" \
-  "  Space Mono  ·  Recursive  "
+  "  Space Mono  ·  Maple Mono  "
 
 # ── Font selection ───────────────────────────────────────
 CHOICES=$(gum choose --no-limit \
   --header "Select fonts to install (space to toggle, enter to confirm):" \
   "Space Mono  → ${SPACEMONO_DEST}" \
-  "Recursive   → ${RECURSIVE_DEST}")
+  "Maple Mono  → ${MAPLEMONO_DEST}")
 
 [[ -z "$CHOICES" ]] && abort "Nothing selected. Exiting."
 
 INSTALL_SPACEMONO=false
-INSTALL_RECURSIVE=false
+INSTALL_MAPLEMONO=false
 echo "$CHOICES" | grep -q "Space Mono"  && INSTALL_SPACEMONO=true
-echo "$CHOICES" | grep -q "Recursive"   && INSTALL_RECURSIVE=true
+echo "$CHOICES" | grep -q "Maple Mono"  && INSTALL_MAPLEMONO=true
 
 # ════════════════════════════════════════════════════════
 #  SPACE MONO
@@ -89,7 +108,6 @@ if $INSTALL_SPACEMONO; then
 
   install_font_dir "$SPACEMONO_DEST"
 
-  # Collect font files
   SM_FILES=()
   while IFS= read -r -d '' f; do
     SM_FILES+=("$f")
@@ -106,76 +124,111 @@ if $INSTALL_SPACEMONO; then
 fi
 
 # ════════════════════════════════════════════════════════
-#  RECURSIVE
+#  MAPLE MONO
 # ════════════════════════════════════════════════════════
-if $INSTALL_RECURSIVE; then
-  gum style --bold --margin "1 0" "── Recursive ───────────────────────────"
+if $INSTALL_MAPLEMONO; then
+  gum style --bold --margin "1 0" "── Maple Mono ──────────────────────────"
 
   # ── Fetch latest release metadata via GitHub API ──────
-  gum spin --spinner dot --title "Fetching latest Recursive release info …" \
-    -- bash -c "curl -fsSL '${RECURSIVE_API}' > '${TMP_DIR}/recursive_release.json'"
+  gum spin --spinner dot --title "Fetching latest Maple Mono release info …" \
+    -- bash -c "curl -fsSL 'https://api.github.com/repos/${MAPLEMONO_REPO}/releases/latest' \
+        > '${TMP_DIR}/maplemono_release.json'"
 
-  # Parse tag name and find the matching zip asset (ArrowType-Recursive-*.zip)
-  LATEST_TAG=$(grep -m1 '"tag_name"' "$TMP_DIR/recursive_release.json" \
-    | sed 's/.*"tag_name"[[:space:]]*:[[:space:]]*"\(.*\)".*/\1/')
+  LATEST_TAG=$(jq -r '.tag_name' "$TMP_DIR/maplemono_release.json")
 
-  # Version number without the leading 'v' (e.g. v1.085 → 1.085)
-  VERSION="${LATEST_TAG#v}"
-
-  # Find the browser_download_url for ArrowType-Recursive-*.zip
-  ZIP_URL=$(grep '"browser_download_url"' "$TMP_DIR/recursive_release.json" \
-    | grep -i 'ArrowType-Recursive-.*\.zip' \
-    | head -1 \
-    | sed 's/.*"browser_download_url"[[:space:]]*:[[:space:]]*"\(.*\)".*/\1/')
-
-  if [[ -z "$ZIP_URL" ]]; then
-    # Fallback: construct the canonical URL from the tag
-    ZIP_URL="https://github.com/arrowtype/recursive/releases/download/${LATEST_TAG}/ArrowType-Recursive-${VERSION}.zip"
-    warn "Could not auto-detect zip URL from API; using constructed URL."
+  if [[ -z "$LATEST_TAG" || "$LATEST_TAG" == "null" ]]; then
+    abort "Could not determine latest Maple Mono version."
   fi
 
-  ZIP_NAME="$(basename "$ZIP_URL")"
+  # Check if already up to date
+  if [[ -f "$MAPLEMONO_VERSION_FILE" ]]; then
+    INSTALLED_VERSION=$(cat "$MAPLEMONO_VERSION_FILE")
+    if [[ "$INSTALLED_VERSION" == "$LATEST_TAG" ]]; then
+      info "Maple Mono ${LATEST_TAG} is already installed — skipping."
+      INSTALL_MAPLEMONO=false
+    else
+      warn "Updating Maple Mono from ${INSTALLED_VERSION} to ${LATEST_TAG} …"
+    fi
+  fi
+fi
+
+if $INSTALL_MAPLEMONO; then
+  # Locate the CN-unhinted zip (non-NF variant)
+  ASSET_URL=$(jq -r '
+    .assets[]
+    | select(.name | test("MapleMono-CN-unhinted.*\\.zip$") and (test("NF") | not))
+    | .browser_download_url' "$TMP_DIR/maplemono_release.json" | head -n1)
+
+  CHECKSUM_URL=$(jq -r '
+    .assets[]
+    | select(.name | test("MapleMono-CN-unhinted.*\\.sha256$") and (test("NF") | not))
+    | .browser_download_url' "$TMP_DIR/maplemono_release.json" | head -n1)
+
+  [[ -z "$ASSET_URL"    ]] && abort "Could not find Maple Mono zip asset in release."
+  [[ -z "$CHECKSUM_URL" ]] && abort "Could not find Maple Mono checksum asset in release."
+
+  ZIP_NAME="$(basename "$ASSET_URL")"
   info "Latest release: ${LATEST_TAG}  →  ${ZIP_NAME}"
 
-  gum confirm "Install Recursive ${LATEST_TAG} to ${RECURSIVE_DEST}?" || {
-    warn "Skipping Recursive."
-    INSTALL_RECURSIVE=false
+  gum confirm "Install Maple Mono ${LATEST_TAG} to ${MAPLEMONO_DEST}?" || {
+    warn "Skipping Maple Mono."
+    INSTALL_MAPLEMONO=false
   }
 fi
 
-if $INSTALL_RECURSIVE; then
-  # ── Download zip ──────────────────────────────────────
+if $INSTALL_MAPLEMONO; then
+  ZIP_NAME="$(basename "$ASSET_URL")"
+  CHECKSUM_NAME="$(basename "$CHECKSUM_URL")"
+
+  # ── Download ──────────────────────────────────────────
   gum spin --spinner meter \
     --title "Downloading ${ZIP_NAME} …" \
-    -- curl -fsSL --output "$TMP_DIR/${ZIP_NAME}" "$ZIP_URL"
+    -- curl -fsSL --output "$TMP_DIR/${ZIP_NAME}" "$ASSET_URL"
   info "Downloaded ${ZIP_NAME}"
+
+  gum spin --spinner dot \
+    --title "Downloading checksum …" \
+    -- curl -fsSL --output "$TMP_DIR/${CHECKSUM_NAME}" "$CHECKSUM_URL"
+  info "Downloaded checksum"
+
+  # ── Verify checksum ───────────────────────────────────
+  HASH=$(tr -d '\n' < "$TMP_DIR/${CHECKSUM_NAME}")
+  echo "$HASH  $TMP_DIR/${ZIP_NAME}" > "$TMP_DIR/maple.check"
+
+  gum spin --spinner dot --title "Verifying checksum …" \
+    -- bash -c "sha256sum -c '$TMP_DIR/maple.check' --status" \
+    || abort "Checksum verification failed for ${ZIP_NAME}."
+  info "Checksum verified"
 
   # ── Extract ───────────────────────────────────────────
   gum spin --spinner dot \
     --title "Extracting ${ZIP_NAME} …" \
-    -- unzip -q "$TMP_DIR/${ZIP_NAME}" -d "$TMP_DIR/recursive_extracted"
+    -- unzip -q "$TMP_DIR/${ZIP_NAME}" -d "$TMP_DIR/maple_extracted"
   info "Archive extracted"
 
   # ── Install ───────────────────────────────────────────
-  install_font_dir "$RECURSIVE_DEST"
+  keep_sudo_alive
+  install_font_dir "$MAPLEMONO_DEST"
 
-  # Find all .ttf / .otf / .woff2 files recursively in the extracted archive
-  REC_FILES=()
+  MM_FILES=()
   while IFS= read -r -d '' f; do
-    REC_FILES+=("$f")
-  done < <(find "$TMP_DIR/recursive_extracted" -type f \
-    \( -iname "*.ttf" -o -iname "*.otf" -o -iname "*.woff2" \) -print0)
+    MM_FILES+=("$f")
+  done < <(find "$TMP_DIR/maple_extracted" -type f \
+    \( -iname "*.ttf" -o -iname "*.otf" \) -print0)
 
-  [[ "${#REC_FILES[@]}" -eq 0 ]] && abort "No font files found inside ${ZIP_NAME}."
+  [[ "${#MM_FILES[@]}" -eq 0 ]] && abort "No font files found inside ${ZIP_NAME}."
 
   gum spin --spinner meter \
-    --title "Installing ${#REC_FILES[@]} Recursive font file(s) …" \
-    -- bash -c "find '$TMP_DIR/recursive_extracted' -type f \
-      \( -iname '*.ttf' -o -iname '*.otf' -o -iname '*.woff2' \) \
-      -exec sudo cp -v {} '$RECURSIVE_DEST/' \;" &>/dev/null
-  info "Fonts copied to ${RECURSIVE_DEST}"
+    --title "Installing ${#MM_FILES[@]} Maple Mono font file(s) …" \
+    -- bash -c "find '$TMP_DIR/maple_extracted' -type f \
+      \( -iname '*.ttf' -o -iname '*.otf' \) \
+      -exec sudo cp -v {} '$MAPLEMONO_DEST/' \;" &>/dev/null
+  info "Fonts copied to ${MAPLEMONO_DEST}"
 
-  refresh_cache "$RECURSIVE_DEST"
+  # Save installed version
+  echo "$LATEST_TAG" | sudo tee "$MAPLEMONO_VERSION_FILE" >/dev/null
+
+  refresh_cache "$MAPLEMONO_DEST"
 fi
 
 # ════════════════════════════════════════════════════════
@@ -186,9 +239,9 @@ if $INSTALL_SPACEMONO; then
   SM_COUNT=$(fc-list | grep -ic 'SpaceMono\|Space Mono' || true)
   SUMMARY_LINES+=("✓ Space Mono  — ${SM_COUNT} face(s) registered")
 fi
-if $INSTALL_RECURSIVE; then
-  REC_COUNT=$(fc-list | grep -ic 'Recursive' || true)
-  SUMMARY_LINES+=("✓ Recursive ${LATEST_TAG}  — ${REC_COUNT} face(s) registered")
+if $INSTALL_MAPLEMONO; then
+  MM_COUNT=$(fc-list | grep -ic 'MapleMono\|Maple Mono' || true)
+  SUMMARY_LINES+=("✓ Maple Mono ${LATEST_TAG}  — ${MM_COUNT} face(s) registered")
 fi
 
 if [[ "${#SUMMARY_LINES[@]}" -gt 0 ]]; then

@@ -85,7 +85,7 @@ prevColors="$(grep -vFx "$color" "$loc/colors" | head -n $((limit - 1)))"
 } >"$loc/colors"
 
 # Notification
-notify-send "Color Picker" "This color has been selected: $color" -i "$HOME/.config/swaync/assets/palette.png"
+notify-send "Color Picker" "This color has been selected: $color" -i "$HOME/.config/mako/assets/palette.svg"
 
 # Signal Waybar to refresh
 pkill -RTMIN+1 waybar

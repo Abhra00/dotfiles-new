@@ -12,63 +12,40 @@
 add_newline = true
 command_timeout = 200
 
-# Palette
-palette = "Kintsukuroi"
-
 # Prompt left format
 format = """
-$character$git_branch$git_status$directory[▓▒░ ](fg:bright_black)
+[λ](bright-purple) $directory \
+$git_branch \
+$git_status
+$character
 """
 
 # Character
 [character]
-error_symbol = "[ λ ](bold bg:red fg:foreground_inverse)"
-success_symbol = "[ λ ](bold bg:orange fg:foreground_inverse)"
-format = "$symbol"
+format = "$symbol "
+success_symbol = "[[└](dimmed) ❯](bold bright-green)"
+error_symbol = "[[└](dimmed) ❯](bold bright-red)"
 
 # Directory
 [directory]
-style = "bg:bright_black fg:bright_white"
-read_only_style = "bg:bright_black fg:red"
+style = "bright-white"
+read_only_style = "red"
 home_symbol = "home"
 read_only = " "
-truncation_length = 2
+truncation_length = 1
 truncation_symbol = "…/"
 truncate_to_repo = true
-format = "[ $path ]($style)[$read_only]($read_only_style)"
+format = "[$path]($style)[$read_only]($read_only_style)"
 
 # Git branch
 [git_branch]
-style = "bg:bright_black fg:yellow"
+style = "blue"
 symbol = " "
-format = "[ $symbol$branch ]($style)"
+format = "[[● ](dimmed bright-black)$symbol$branch]($style)"
 
 # Git status
 [git_status]
 stashed = "≡"
-up_to_date = "✦"
-format = '[$all_status$ahead_behind]($style)'
-style = "bg:bright_black fg:red"
-
-# Kintsukuroi
-[palettes.Kintsukuroi]
-black = '#322d28'
-red = '#c06c5c'
-green = '#78997a'
-yellow = '#c09d59'
-blue = '#7f91b2'
-magenta = '#b380b0'
-cyan = '#7b9695'
-white = '#d8be97'
-bright_black = '#4d463e'
-bright_red = '#d97a68'
-bright_green = '#85b695'
-bright_yellow = '#d8b164'
-bright_blue = '#a3a9ce'
-bright_magenta = '#cf9bc2'
-bright_cyan = '#89b3b6'
-bright_white = '#f2d5a9'
-foreground = '#e5c9a0'
-background = '#141210'
-orange = '#d8834c'
-foreground_inverse = '#0b0a09'
+up_to_date = ""
+format = "[$all_status$ahead_behind]($style)"
+style = "red"

@@ -2,10 +2,13 @@
 # ┓┏┏┓┓ ┳┳┳┳┓┏┓  ┏┓┏┓┳┓  
 # ┃┃┃┃┃ ┃┃┃┃┃┣ ━━┃┃┗┓┃┃  
 # ┗┛┗┛┗┛┗┛┛ ┗┗┛  ┗┛┗┛┻┛  
-# 
-
+#
 STEP=5
 iDIR="$HOME/.config/mako/assets"
+
+is_headphone() {
+    pactl list sinks | grep "Active Port" | grep -qi "headphones"
+}
 
 get_volume() {
     wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{
@@ -24,23 +27,40 @@ get_mic_volume() {
 }
 
 pick_vol_icon() {
-    local vol="$1"
-    if   [ "$vol" -eq 0 ];  then echo "$iDIR/volume-mute.svg"
-    elif [ "$vol" -lt 34 ]; then echo "$iDIR/volume-low.svg"
-    elif [ "$vol" -lt 67 ]; then echo "$iDIR/volume-medium.svg"
-    else                         echo "$iDIR/volume-high.svg"
+    local vol="$1" hp="$2"
+    local prefix ext
+    if [ "$hp" = "1" ]; then
+        prefix="headphone"
+        ext="png"
+    else
+        prefix="volume"
+        ext="svg"
+    fi
+
+    if   [ "$vol" -eq 0 ];  then echo "$iDIR/${prefix}-mute.${ext}"
+    elif [ "$vol" -lt 34 ]; then echo "$iDIR/${prefix}-low.${ext}"
+    elif [ "$vol" -lt 67 ]; then echo "$iDIR/${prefix}-medium.${ext}"
+    else                         echo "$iDIR/${prefix}-high.${ext}"
     fi
 }
 
 send_vol_notif() {
     local vol="$1" muted="$2" icon label
+    local hp=0
+    is_headphone && hp=1
+
     if [ "$muted" = "muted" ]; then
-        icon="$iDIR/volume-mute.svg"
+        if [ "$hp" = "1" ]; then
+            icon="$iDIR/headphone-mute.svg"
+        else
+            icon="$iDIR/volume-mute.svg"
+        fi
         label="Muted"
     else
-        icon=$(pick_vol_icon "$vol")
+        icon=$(pick_vol_icon "$vol" "$hp")
         label="${vol}%"
     fi
+
     notify-send \
         -a "VolumeOSD" \
         -i "$icon" \

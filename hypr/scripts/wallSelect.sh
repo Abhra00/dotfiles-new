@@ -25,7 +25,7 @@
 # Dependencies:
 #   → Core: hyprland, rofi, jq, xxhsum (xxhash)
 #   → Media: hyprpaper, imagemagick
-#   → GNU: findutils, coreutils, bc
+#   → GNU: findutils, coreutils
 
 # Set variables
 wall_dir="$HOME/Pictures/Wallpapers"

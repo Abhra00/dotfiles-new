@@ -4,14 +4,14 @@
 #
 
 # Font families
-font-family = "Cascadia Code"
-font-family-bold = "Cascadia Code"
-font-family-italic = "Cascadia Code"
-font-family-bold-italic = "Cascadia Code"
+font-family = "Aporetic Sans Mono"
+font-family-bold = "Aporetic Sans Mono"
+font-family-italic = "Aporetic Sans Mono"
+font-family-bold-italic = "Aporetic Sans Mono"
 font-family = "Symbols Nerd Font Mono"
 
 # Cell height
-adjust-cell-height = 45%
+adjust-cell-height = 35%
 
 # Font size
 font-size = 10
@@ -30,8 +30,8 @@ window-theme = ghostty
 
 # Cursor
 cursor-style = "block"
-adjust-cursor-height = 45%
-adjust-cursor-thickness = 145%
+adjust-cursor-height = 35%
+adjust-cursor-thickness = 135%
 cursor-style-blink = true
 
 # Keybindings

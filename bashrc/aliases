@@ -38,7 +38,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
-# Emacs
+# Editor
 alias e="$EDITOR"
 alias edit="$EDITOR"
 

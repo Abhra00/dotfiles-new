@@ -1,0 +1,10 @@
+# Restart emacs
+rmacs() {
+   killall -9 emacs
+   WAYLAND_DISPLAY=wayland-0 emacs --daemon &
+}
+
+# Clean up emacs dir
+clean_emacs_dir() {
+   rm -rf ~/.config/emacs/{auto-save-list,backups,elpaca,eln-cache,eshell,autosave,config.el,config.elc,history,places,recentf}
+}

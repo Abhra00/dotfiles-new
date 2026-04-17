@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # ═══════════════════════════════════════════════════════════
-#  Font Installer — Space Mono & Maple Mono
+#  Font Installer — Space Mono, Maple Mono & Aporetic
 #  Requires: gum, git, curl, unzip, sha256sum, jq, sudo, fc-cache
 # ═══════════════════════════════════════════════════════════
 
@@ -14,6 +14,9 @@ SPACEMONO_DEST="/usr/share/fonts/SpaceMono"
 MAPLEMONO_REPO="subframe7536/maple-font"
 MAPLEMONO_DEST="/usr/share/fonts/MapleMono"
 MAPLEMONO_VERSION_FILE="$MAPLEMONO_DEST/.version"
+
+APORETIC_REPO="https://github.com/protesilaos/aporetic.git"
+APORETIC_DEST="/usr/share/fonts/Aporetic-Super-Family"
 
 TMP_DIR="$(mktemp -d)"
 SUDO_KEEPER_PID=""
@@ -74,20 +77,23 @@ gum style \
   --margin "1 2" \
   --bold \
   "  Font Installer" \
-  "  Space Mono  ·  Maple Mono  "
+  "  Space Mono  ·  Maple Mono  ·  Aporetic  "
 
 # ── Font selection ───────────────────────────────────────
 CHOICES=$(gum choose --no-limit \
   --header "Select fonts to install (space to toggle, enter to confirm):" \
   "Space Mono  → ${SPACEMONO_DEST}" \
-  "Maple Mono  → ${MAPLEMONO_DEST}")
+  "Maple Mono  → ${MAPLEMONO_DEST}" \
+  "Aporetic    → ${APORETIC_DEST}")
 
 [[ -z "$CHOICES" ]] && abort "Nothing selected. Exiting."
 
 INSTALL_SPACEMONO=false
 INSTALL_MAPLEMONO=false
+INSTALL_APORETIC=false
 echo "$CHOICES" | grep -q "Space Mono"  && INSTALL_SPACEMONO=true
 echo "$CHOICES" | grep -q "Maple Mono"  && INSTALL_MAPLEMONO=true
+echo "$CHOICES" | grep -q "Aporetic"    && INSTALL_APORETIC=true
 
 # ════════════════════════════════════════════════════════
 #  SPACE MONO
@@ -129,7 +135,6 @@ fi
 if $INSTALL_MAPLEMONO; then
   gum style --bold --margin "1 0" "── Maple Mono ──────────────────────────"
 
-  # ── Fetch latest release metadata via GitHub API ──────
   gum spin --spinner dot --title "Fetching latest Maple Mono release info …" \
     -- bash -c "curl -fsSL 'https://api.github.com/repos/${MAPLEMONO_REPO}/releases/latest' \
         > '${TMP_DIR}/maplemono_release.json'"
@@ -140,7 +145,6 @@ if $INSTALL_MAPLEMONO; then
     abort "Could not determine latest Maple Mono version."
   fi
 
-  # Check if already up to date
   if [[ -f "$MAPLEMONO_VERSION_FILE" ]]; then
     INSTALLED_VERSION=$(cat "$MAPLEMONO_VERSION_FILE")
     if [[ "$INSTALLED_VERSION" == "$LATEST_TAG" ]]; then
@@ -153,7 +157,6 @@ if $INSTALL_MAPLEMONO; then
 fi
 
 if $INSTALL_MAPLEMONO; then
-  # Locate the CN-unhinted zip (non-NF variant)
   ASSET_URL=$(jq -r '
     .assets[]
     | select(.name | test("MapleMono-CN-unhinted.*\\.zip$") and (test("NF") | not))
@@ -180,7 +183,6 @@ if $INSTALL_MAPLEMONO; then
   ZIP_NAME="$(basename "$ASSET_URL")"
   CHECKSUM_NAME="$(basename "$CHECKSUM_URL")"
 
-  # ── Download ──────────────────────────────────────────
   gum spin --spinner meter \
     --title "Downloading ${ZIP_NAME} …" \
     -- curl -fsSL --output "$TMP_DIR/${ZIP_NAME}" "$ASSET_URL"
@@ -191,7 +193,6 @@ if $INSTALL_MAPLEMONO; then
     -- curl -fsSL --output "$TMP_DIR/${CHECKSUM_NAME}" "$CHECKSUM_URL"
   info "Downloaded checksum"
 
-  # ── Verify checksum ───────────────────────────────────
   HASH=$(tr -d '\n' < "$TMP_DIR/${CHECKSUM_NAME}")
   echo "$HASH  $TMP_DIR/${ZIP_NAME}" > "$TMP_DIR/maple.check"
 
@@ -200,13 +201,11 @@ if $INSTALL_MAPLEMONO; then
     || abort "Checksum verification failed for ${ZIP_NAME}."
   info "Checksum verified"
 
-  # ── Extract ───────────────────────────────────────────
   gum spin --spinner dot \
     --title "Extracting ${ZIP_NAME} …" \
     -- unzip -q "$TMP_DIR/${ZIP_NAME}" -d "$TMP_DIR/maple_extracted"
   info "Archive extracted"
 
-  # ── Install ───────────────────────────────────────────
   keep_sudo_alive
   install_font_dir "$MAPLEMONO_DEST"
 
@@ -225,10 +224,93 @@ if $INSTALL_MAPLEMONO; then
       -exec sudo cp -v {} '$MAPLEMONO_DEST/' \;" &>/dev/null
   info "Fonts copied to ${MAPLEMONO_DEST}"
 
-  # Save installed version
   echo "$LATEST_TAG" | sudo tee "$MAPLEMONO_VERSION_FILE" >/dev/null
 
   refresh_cache "$MAPLEMONO_DEST"
+fi
+
+# ════════════════════════════════════════════════════════
+#  APORETIC
+# ════════════════════════════════════════════════════════
+if $INSTALL_APORETIC; then
+  gum style --bold --margin "1 0" "── Aporetic ────────────────────────────"
+
+  # ── Variant selection ─────────────────────────────────
+  APORETIC_VARIANT=$(gum choose \
+    --header "Which Aporetic variant do you want to install?" \
+    "TTF          (hinted — recommended for most displays)" \
+    "TTF-Unhinted (better for high-DPI / manual hinting)" \
+    "Both")
+
+  [[ -z "$APORETIC_VARIANT" ]] && {
+    warn "No variant selected — skipping Aporetic."
+    INSTALL_APORETIC=false
+  }
+fi
+
+if $INSTALL_APORETIC; then
+  case "$APORETIC_VARIANT" in
+    TTF\ *)          AP_DIRS=("TTF") ;;
+    TTF-Unhinted\ *) AP_DIRS=("TTF-Unhinted") ;;
+    Both)            AP_DIRS=("TTF" "TTF-Unhinted") ;;
+  esac
+
+  gum confirm "Install Aporetic [${AP_DIRS[*]}] to ${APORETIC_DEST}?" || {
+    warn "Skipping Aporetic."
+    INSTALL_APORETIC=false
+  }
+fi
+
+if $INSTALL_APORETIC; then
+  gum spin --spinner dot --title "Cloning protesilaos/aporetic …" \
+    -- git clone --depth=1 --quiet "$APORETIC_REPO" "$TMP_DIR/aporetic"
+  info "Repository cloned"
+
+  install_font_dir "$APORETIC_DEST"
+
+  AP_TOTAL=0
+
+  # ── Family dirs present in the repo ───────────────────
+  AP_FAMILIES=()
+  while IFS= read -r -d '' d; do
+    AP_FAMILIES+=("$d")
+  done < <(find "$TMP_DIR/aporetic" -mindepth 1 -maxdepth 1 \
+    -type d -name "aporetic-*" -print0 | sort -z)
+
+  [[ "${#AP_FAMILIES[@]}" -eq 0 ]] && abort "No aporetic-* family directories found in repo."
+
+  for family_dir in "${AP_FAMILIES[@]}"; do
+    family_name="$(basename "$family_dir")"
+
+    for variant in "${AP_DIRS[@]}"; do
+      src_dir="${family_dir}/${variant}"
+
+      # Skip gracefully if this variant doesn't exist for a family
+      [[ -d "$src_dir" ]] || {
+        warn "  ${family_name}/${variant} not found — skipping."
+        continue
+      }
+
+      # Mirror structure: Aporetic-Super-Family/<family>/<variant>/
+      dest_subdir="${APORETIC_DEST}/${family_name}/${variant}"
+      sudo mkdir -p "$dest_subdir"
+
+      # Count & copy
+      file_count=0
+      while IFS= read -r -d '' f; do
+        sudo cp "$f" "$dest_subdir/"
+        (( file_count++ )) || true
+      done < <(find "$src_dir" -maxdepth 1 -type f \
+        \( -iname "*.ttf" -o -iname "*.otf" \) -print0)
+
+      (( AP_TOTAL += file_count )) || true
+      info "  ${family_name}/${variant}  →  ${file_count} file(s)"
+    done
+  done
+
+  [[ "$AP_TOTAL" -eq 0 ]] && abort "No font files were installed for Aporetic."
+
+  refresh_cache "$APORETIC_DEST"
 fi
 
 # ════════════════════════════════════════════════════════
@@ -243,7 +325,10 @@ if $INSTALL_MAPLEMONO; then
   MM_COUNT=$(fc-list | grep -ic 'MapleMono\|Maple Mono' || true)
   SUMMARY_LINES+=("✓ Maple Mono ${LATEST_TAG}  — ${MM_COUNT} face(s) registered")
 fi
-
+if $INSTALL_APORETIC; then
+  AP_COUNT=$(fc-list | grep -ic 'Aporetic' || true)
+  SUMMARY_LINES+=("✓ Aporetic [${AP_DIRS[*]}]  — ${AP_COUNT} face(s) registered")
+fi
 if [[ "${#SUMMARY_LINES[@]}" -gt 0 ]]; then
   gum style \
     --border rounded \

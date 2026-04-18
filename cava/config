@@ -7,13 +7,14 @@
 [general]
 framerate = 65
 
-# Kintsukuroi colors
+
+# EF DREAM COLORS
 [color]
 gradient = 1
 gradient_count = 6
-gradient_color_1 = '#7f91b2'
-gradient_color_2 = '#78997a'
-gradient_color_3 = '#c09d59'
-gradient_color_4 = '#c06c5c'
-gradient_color_5 = '#b380b0'
-gradient_color_6 = '#7b9695'
+gradient_color_1 = '#57b0ff'
+gradient_color_2 = '#51b04f'
+gradient_color_3 = '#c0b24f'
+gradient_color_4 = '#ff6f6f'
+gradient_color_5 = '#ffaacf'
+gradient_color_6 = '#6fb3c0'

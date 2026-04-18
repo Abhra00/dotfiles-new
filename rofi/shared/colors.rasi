@@ -2,19 +2,20 @@
  *    ┏┓┏┓┓ ┏┓┳┓┏┓
  *    ┃ ┃┃┃ ┃┃┣┫┗┓
  *    ┗┛┗┛┗┛┗┛┛┗┗┛
- *    KINTSUKUROI COLORS
+ *    EF DREAM COLORS
  */
+
 /*--------Color definitions------------*/
 * {
-       background:                 #141210;
-       background-alpha:           #141210d3;
-       background-alt:             #322d28;
-       background-alt-alpha:       #322d28b3;
-       foreground:                 #e5c9a0;
-       border-color:               #e5c9a0;
-       selected:                   #e5c9a0;
-       selected-alpha:             #e5c9a030;
-       selected-text:              #141210;
-       active:                     #d8834c;
-       urgent:                     #c06c5c;
+       background:                 #232025;
+       background-alpha:           #232025d3;
+       background-alt:             #322f34;
+       background-alt-alpha:       #322f34b3;
+       foreground:                 #efd5c5;
+       border-color:               #efd5c5;
+       selected:                   #efd5c5;
+       selected-alpha:             #efd5c530;
+       selected-text:              #232025;
+       active:                     #deb07a;
+       urgent:                     #ff6f6f;
 }

@@ -2,49 +2,49 @@
  *    ┏┓┏┳┓┓┏┓┏┓  ┏┓┏┓┏┓
  *    ┃┓ ┃ ┃┫ ┃┃  ┃ ┗┓┗┓
  *    ┗┛ ┻ ┛┗┛┗╋  ┗┛┗┛┗┛
- *    KINTSUKUROI COLORS
+ *    EF DREAM COLORS
  */
 
-@define-color window_bg_color #322d28;
-@define-color window_fg_color #e5c9a0;
-@define-color view_bg_color #141210;
-@define-color view_fg_color #e5c9a0;
-@define-color accent_bg_color #7f91b2;
-@define-color accent_fg_color #141210;
-@define-color headerbar_bg_color #322d28;
-@define-color headerbar_fg_color #e5c9a0;
+@define-color window_bg_color #322f34;
+@define-color window_fg_color #efd5c5;
+@define-color view_bg_color #232025;
+@define-color view_fg_color #efd5c5;
+@define-color accent_bg_color #ffaacf;
+@define-color accent_fg_color #232025;
+@define-color headerbar_bg_color #322f34;
+@define-color headerbar_fg_color #efd5c5;
 @define-color headerbar_backdrop_color @window_bg_color;
-@define-color popover_bg_color #322d28;
+@define-color popover_bg_color #322f34;
 @define-color popover_fg_color @view_fg_color;
-@define-color dialog_bg_color #322d28;
+@define-color dialog_bg_color #322f34;
 @define-color dialog_fg_color @view_fg_color;
-@define-color card_bg_color #322d28;
+@define-color card_bg_color #322f34;
 @define-color card_fg_color @view_fg_color;
-@define-color sidebar_bg_color #322d28;
-@define-color sidebar_fg_color #e5c9a0;
+@define-color sidebar_bg_color #322f34;
+@define-color sidebar_fg_color #efd5c5;
 @define-color sidebar_backdrop_color @window_bg_color;
 @define-color sidebar_shade_color rgba(0, 0, 0, 0.25);
 @define-color sidebar_border_color rgba(0, 0, 0, 0.36);
-@define-color secondary_sidebar_bg_color #322d28;
+@define-color secondary_sidebar_bg_color #322f34;
 @define-color secondary_sidebar_fg_color @view_fg_color;
 @define-color secondary_sidebar_backdrop_color @view_bg_color;
 @define-color secondary_sidebar_shade_color rgba(0, 0, 0, 0.25);
 @define-color secondary_sidebar_border_color rgba(0, 0, 0, 0.36);
-@define-color destructive_bg_color #c06c5c;
-@define-color success_bg_color #78997a;
-@define-color warning_bg_color #c09d59;
-@define-color error_bg_color #c06c5c;
+@define-color destructive_bg_color #ff6f6f;
+@define-color success_bg_color #51b04f;
+@define-color warning_bg_color #c0b24f;
+@define-color error_bg_color #ff6f6f;
 
 :root {
-  --accent-blue: #7f91b2;
-  --accent-teal: #7b9695;
-  --accent-green: #78997a;
-  --accent-yellow: #c09d59;
-  --accent-orange: #d8834c;
-  --accent-red: #c06c5c;
-  --accent-pink: #d88095;
-  --accent-purple: #b380b0;
-  --accent-slate: #4d463e;
+  --accent-blue: #57b0ff;
+  --accent-teal: #6fb3c0;
+  --accent-green: #51b04f;
+  --accent-yellow: #c0b24f;
+  --accent-orange: #deb07a;
+  --accent-red: #ff6f6f;
+  --accent-pink: #ffaacf;
+  --accent-purple: #d0b0ff;
+  --accent-slate: #3b393e;
   --accent-bg-color: @accent_bg_color;
   --accent-fg-color: @accent_fg_color;
   --window-bg-color: @window_bg_color;

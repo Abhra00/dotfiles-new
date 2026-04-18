@@ -2,4 +2,5 @@
 # ┃┃┃┃┃┃┃┃┃┃┣┫┃ 
 # ┛┗┛ ┗┣┛┛ ┗┛┗┗┛
 #
+prefix=~/.local/share/npm
 cache=/home/bugs/.cache/npm

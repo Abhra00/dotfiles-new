@@ -51,7 +51,7 @@ if [[ $enable_battery == true ]]; then
 
   # Low battery warning
   if (( capacity <= 20 )) && [[ $is_discharging == true ]]; then
-    echo "<span foreground='#c06c5c'>$icon $capacity%</span>"
+    echo "<span foreground='#ff7a5f'>$icon $capacity%</span>"
   else
     echo "$icon $capacity%"
   fi

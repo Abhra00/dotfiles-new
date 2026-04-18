@@ -1,0 +1,44 @@
+# ┏┓┏┓  ┳┓┳┓┏┓┏┓┳┳┓
+# ┣ ┣ ━━┃┃┣┫┣ ┣┫┃┃┃
+# ┗┛┻   ┻┛┛┗┗┛┛┗┛ ┗
+#
+
+# Theme: EF-DREAM
+# By: Protesilaos
+
+theme[main_bg]="#232025"
+theme[main_fg]="#efd5c5"
+theme[title]="#ffaacf"
+theme[hi_fg]="#ffaacf"
+theme[selected_bg]="#3b393e"
+theme[selected_fg]="#80aadf"
+theme[proc_misc]="#80aadf"
+theme[cpu_box]="#8f8886"
+theme[mem_box]="#8f8886"
+theme[net_box]="#8f8886"
+theme[proc_box]="#8f8886"
+theme[div_line]="#635850"
+theme[temp_start]="#51b04f"
+theme[temp_mid]="#c0b24f"
+theme[temp_end]="#ff6f6f"
+theme[cpu_start]="#51b04f"
+theme[cpu_mid]="#c0b24f"
+theme[cpu_end]="#ff6f6f"
+theme[free_start]="#51b04f"
+theme[free_mid]="#c0b24f"
+theme[free_end]="#ff6f6f"
+theme[cached_start]="#51b04f"
+theme[cached_mid]="#c0b24f"
+theme[cached_end]="#ff6f6f"
+theme[available_start]="#51b04f"
+theme[available_mid]="#c0b24f"
+theme[available_end]="#ff6f6f"
+theme[used_start]="#51b04f"
+theme[used_mid]="#c0b24f"
+theme[used_end]="#ff6f6f"
+theme[download_start]="#51b04f"
+theme[download_mid]="#c0b24f"
+theme[download_end]="#ff6f6f"
+theme[upload_start]="#51b04f"
+theme[upload_mid]="#c0b24f"
+theme[upload_end]="#ff6f6f"

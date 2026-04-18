@@ -1,8 +1,7 @@
-# ┳┳┓┏┓┓┏┓┏┓
-# ┃┃┃┣┫┃┫ ┃┃
-# ┛ ┗┛┗┛┗┛┗┛
+#  ┳┳┓┏┓┓┏┓┏┓
+#  ┃┃┃┣┫┃┫ ┃┃
+#  ┛ ┗┛┗┛┗┛┗┛
 #
-
 
 # ─────────────────────────────────────────────
 #  Layout & Position
@@ -33,9 +32,9 @@ format=<b>%s</b>\n%b
 # ─────────────────────────────────────────────
 #  Base Colors
 # ─────────────────────────────────────────────
-background-color=#141210
-text-color=#e5c9a0
-border-color=#4d463e
+background-color=#232025
+text-color=#efd5c5
+border-color=#3b393e
 border-size=2
 border-radius=0
 
@@ -59,30 +58,30 @@ ignore-timeout=0
 # ─────────────────────────────────────────────
 #  Progress bar
 # ─────────────────────────────────────────────
-progress-color=over #322d28
+progress-color=over #322f34
 
 
 # ─────────────────────────────────────────────
 #  Urgency
 # ─────────────────────────────────────────────
 [urgency=low]
-background-color=#141210
-text-color=#5a5147
-border-color=#3f3933
+background-color=#232025
+text-color=#635850
+border-color=#2e2a31
 border-size=2
 default-timeout=3000
 
 [urgency=normal]
-background-color=#141210
-text-color=#e5c9a0
-border-color=#4d463e
+background-color=#232025
+text-color=#efd5c5
+border-color=#3b393e
 border-size=2
 default-timeout=6000
 
 [urgency=critical]
-background-color=#4b2a24
-text-color=#d97a68
-border-color=#c06c5c
+background-color=#501a2d
+text-color=#ff7a5f
+border-color=#ff6f6f
 border-size=2
 default-timeout=0
 
@@ -100,7 +99,7 @@ format=(%g) <b>%s</b>\n%b
 
 [hidden]
 format=(%h more)
-text-color=#5a4e45
+text-color=#3b393e
 
 
 # ─────────────────────────────────────────────
@@ -110,9 +109,9 @@ text-color=#5a4e45
 # ── Cliphist ──────────────────────────────────
 [app-name=Cliphist]
 anchor=top-right
-background-color=#141210
-text-color=#e5c9a0
-border-color=#7b9695
+background-color=#232025
+text-color=#efd5c5
+border-color=#ffaacf
 border-size=2
 width=400
 padding=20,24
@@ -123,9 +122,9 @@ format=<b>%s</b>\n%b
 # ── VolumeOSD ─────────────────────────────────
 [app-name=VolumeOSD]
 anchor=bottom-center
-background-color=#141210
-text-color=#e5c9a0
-border-color=#7f91b2
+background-color=#232025
+text-color=#efd5c5
+border-color=#ffaacf
 border-size=2
 width=320
 padding=16,24
@@ -136,9 +135,9 @@ format=<b>%s</b>  %b
 # ── BrightnessOSD ─────────────────────────────────
 [app-name=BrightnessOSD]
 anchor=bottom-center
-background-color=#141210
-text-color=#e5c9a0
-border-color=#7f91b2
+background-color=#232025
+text-color=#efd5c5
+border-color=#ffaacf
 border-size=2
 width=320
 padding=16,24
@@ -149,9 +148,9 @@ format=<b>%s</b>  %b
 # ── MediaOSD ──────────────────────────────────
 [app-name=MediaOSD]
 anchor=bottom-center
-background-color=#141210
-text-color=#d8be97
-border-color=#d8834c
+background-color=#232025
+text-color=#8f8886
+border-color=#ffaacf
 border-size=2
 width=440
 padding=20,24
@@ -162,9 +161,9 @@ format=<b>%s</b>
 # ── LayoutOSD ─────────────────────────────────
 [app-name=LayoutOSD]
 anchor=top-center
-background-color=#141210
-text-color=#e5c9a0
-border-color=#d8834c
+background-color=#232025
+text-color=#efd5c5
+border-color=#ffaacf
 border-size=2
 width=310
 padding=16,24

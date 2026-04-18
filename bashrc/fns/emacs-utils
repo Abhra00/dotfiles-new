@@ -6,5 +6,5 @@ rmacs() {
 
 # Clean up emacs dir
 clean_emacs_dir() {
-   rm -rf ~/.config/emacs/{auto-save-list,backups,elpaca,eln-cache,eshell,autosave,config.el,config.elc,history,places,recentf}
+   rm -rf ~/.config/emacs/{auto-save-list,backups,elpaca,eln-cache,eshell,autosave,config.el,config.elc,history,places,recentf,tree-sitter}
 }

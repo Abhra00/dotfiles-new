@@ -167,11 +167,11 @@
             "mode-mon-col": 3,
             "weeks-pos": "left",
             "format": {
-                "months": "<span font='Space Mono 12' color='#c09d59'><b>{}</b></span>",
-                "days": "<span font='Space Mono 12' color='#e5c9a0'><b>{}</b></span>",
-                "weeks": "<span font='Space Mono 12' color='#7f91b2'><b>W{}</b></span>",
-                "weekdays": "<span font='Space Mono 12' color='#7b9695'><b>{}</b></span>",
-                "today": "<span font='Space Mono 12' color='#c09d59'><b>{}</b></span>"
+                "months": "<span font='Space Mono 12' color='#c0b24f'><b>{}</b></span>",
+                "days": "<span font='Space Mono 12' color='#efd5c5'><b>{}</b></span>",
+                "weeks": "<span font='Space Mono 12' color='#57b0ff'><b>W{}</b></span>",
+                "weekdays": "<span font='Space Mono 12' color='#6fb3c0'><b>{}</b></span>",
+                "today": "<span font='Space Mono 12' color='#c0b24f'><b>{}</b></span>"
             }
         },
         "format": "\uf6b8",
@@ -187,11 +187,11 @@
             "mode-mon-col": 3,
             "weeks-pos": "left",
             "format": {
-                "months": "<span font='Space Mono 12' color='#c09d59'><b>{}</b></span>",
-                "days": "<span font='Space Mono 12' color='#e5c9a0'><b>{}</b></span>",
-                "weeks": "<span font='Space Mono 12' color='#7f91b2'><b>W{}</b></span>",
-                "weekdays": "<span font='Space Mono 12' color='#7b9695'><b>{}</b></span>",
-                "today": "<span font='Space Mono 12' color='#c09d59'><b>{}</b></span>"
+                "months": "<span font='Space Mono 12' color='#c0b24f'><b>{}</b></span>",
+                "days": "<span font='Space Mono 12' color='#efd5c5'><b>{}</b></span>",
+                "weeks": "<span font='Space Mono 12' color='#57b0ff'><b>W{}</b></span>",
+                "weekdays": "<span font='Space Mono 12' color='#6fb3c0'><b>{}</b></span>",
+                "today": "<span font='Space Mono 12' color='#c0b24f'><b>{}</b></span>"
             }
         },
         "format": "{:%I:%M %p}",

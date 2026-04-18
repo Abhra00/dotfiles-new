@@ -38,29 +38,29 @@ map [fullscreen] p                print
 map [fullscreen] g                goto top
 map <C-i>                         recolor
 
-# Kintsukoroi Colors
-set notification-error-bg         "#c06c5c" # red
-set notification-error-fg         "#141210" # bg
-set notification-warning-bg       "#c09d59" # yellow
-set notification-warning-fg       "#141210" # bg
-set notification-bg               "#141210" # bg
-set notification-fg               "#e5c9a0" # fg
-set completion-bg                 "#1a1714" # slightly lighter bg
-set completion-fg                 "#85b695" # bright_green
-set completion-group-bg           "#141210" # bg
-set completion-group-fg           "#e5c9a0" # fg
-set completion-highlight-bg       "#a3a9ce" # bright_blue
-set completion-highlight-fg       "#141210" # bg
-set inputbar-bg                   "#141210" # bg
-set inputbar-fg                   "#e5c9a0" # fg
-set statusbar-bg                  "#141210" # bg
-set statusbar-fg                  "#e5c9a0" # fg
-set highlight-color               "#c09d59" # yellow
-set highlight-active-color        "#d88095" # pink
-set default-bg                    "#141210" # bg
-set default-fg                    "#e5c9a0" # fg
+# EF DREAM COLORS
+set notification-error-bg         "#ff6f6f"
+set notification-error-fg         "#232025"
+set notification-warning-bg       "#c0b24f"
+set notification-warning-fg       "#232025"
+set notification-bg               "#232025"
+set notification-fg               "#efd5c5"
+set completion-bg                 "#2e2a31"
+set completion-fg                 "#7fce5f"
+set completion-group-bg           "#232025"
+set completion-group-fg           "#efd5c5"
+set completion-highlight-bg       "#80aadf"
+set completion-highlight-fg       "#232025"
+set inputbar-bg                   "#232025"
+set inputbar-fg                   "#efd5c5"
+set statusbar-bg                  "#232025"
+set statusbar-fg                  "#efd5c5"
+set highlight-color               "#c0b24f"
+set highlight-active-color        "#ffaacf"
+set default-bg                    "#232025"
+set default-fg                    "#efd5c5"
 set render-loading                true
-set render-loading-fg             "#141210" # bg
-set render-loading-bg             "#e5c9a0" # fg
-set recolor-lightcolor            "#141210" # bg
-set recolor-darkcolor             "#e5c9a0" # fg
+set render-loading-fg             "#232025"
+set render-loading-bg             "#efd5c5"
+set recolor-lightcolor            "#232025"
+set recolor-darkcolor             "#efd5c5"

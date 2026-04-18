@@ -9,7 +9,7 @@ export BROWSER="chromium"
 export EDITOR="emacsclient -t -a ''"
 export VISUAL="emacsclient -c -a emacs"
 export SUDO_EDITOR="$EDITOR"
-export BAT_THEME="Kintsukuroi"
+export BAT_THEME="base16"
 
 # XDG Base Directories
 export XDG_CONFIG_HOME="$HOME/.config"

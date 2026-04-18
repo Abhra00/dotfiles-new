@@ -5,18 +5,18 @@
  */
 
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  KINTSUKUROI COLORS
+  EF DREAM COLORS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
-@define-color bg            #141210;
-@define-color bg-alt        #322d28;
-@define-color fg            #e5c9a0;
-@define-color fg-inverse    #0b0a09;
-@define-color red           #c06c5c;
-@define-color green         #78997a;
-@define-color yellow        #c09d59;
-@define-color blue          #7f91b2;
-@define-color magenta       #b380b0;
-@define-color cyan          #7b9695;
+@define-color bg            #232025;
+@define-color bg-alt        #322f34;
+@define-color fg            #efd5c5;
+@define-color fg-inverse    #232025;
+@define-color red           #ff6f6f;
+@define-color green         #51b04f;
+@define-color yellow        #c0b24f;
+@define-color blue          #57b0ff;
+@define-color magenta       #ffaacf;
+@define-color cyan          #6fb3c0;
 
 /*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   GLOBAL
@@ -200,11 +200,11 @@ window#waybar {
 }
 
 #custom-music.playing {
-    color: @green;
+    color: @magenta;
 }
 
 #custom-music.paused {
-    color: @magenta;
+    color: @red;
 }
 
 #custom-music.stopped {
@@ -395,7 +395,7 @@ window#waybar {
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━*/
 tooltip {
     background-color: @bg;
-    border: 1px solid @blue;
+    border: 1px solid @magenta;
     border-radius: 0px;
 }
 
@@ -480,7 +480,7 @@ tooltip label {
 
 /* Music hover */
 #custom-music:hover {
-    background: @blue;
+    background: @magenta;
     color: @fg-inverse;
 }
 

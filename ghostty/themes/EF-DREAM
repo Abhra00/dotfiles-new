@@ -1,0 +1,35 @@
+# ┏┓┏┓  ┳┓┳┓┏┓┏┓┳┳┓
+# ┣ ┣ ━━┃┃┣┫┣ ┣┫┃┃┃
+# ┗┛┻   ┻┛┛┗┗┛┛┗┛ ┗
+#
+# EF DREAM THEME
+# A WARM DREAMY THEME BY PROTESILAOS
+
+# 8 normal colors
+palette = 0=#322f34
+palette = 1=#ff6f6f
+palette = 2=#51b04f
+palette = 3=#c0b24f
+palette = 4=#57b0ff
+palette = 5=#ffaacf
+palette = 6=#6fb3c0
+palette = 7=#8f8886
+
+# 8 bright colors
+palette = 8=#3b393e
+palette = 9=#ff7a5f
+palette = 10=#7fce5f
+palette = 11=#d09950
+palette = 12=#80aadf
+palette = 13=#f498c0
+palette = 14=#8fcfd0
+palette = 15=#efd5c5
+
+# Background, foreground, cursor, selection colors
+foreground = #efd5c5
+background = #232025
+cursor-color = #f3c09a
+cursor-text = #232025
+selection-background = #3b393e
+selection-foreground = #efd5c5
+split-divider-color = #57b0ff

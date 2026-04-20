@@ -11,7 +11,7 @@ font-family-bold-italic = "Aporetic Sans Mono"
 font-family = "Symbols Nerd Font Mono"
 
 # Cell height
-adjust-cell-height = 35%
+adjust-cell-height = 30%
 
 # Font size
 font-size = 10
@@ -30,8 +30,8 @@ window-theme = ghostty
 
 # Cursor
 cursor-style = "block"
-adjust-cursor-height = 35%
-adjust-cursor-thickness = 135%
+adjust-cursor-height = 30%
+adjust-cursor-thickness = 130%
 cursor-style-blink = true
 
 # Keybindings

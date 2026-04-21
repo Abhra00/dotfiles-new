@@ -1,0 +1,11 @@
+[Unit]
+Description=Sync mail with mbsync and index with notmuch
+After=network-online.target
+
+[Service]
+Type=oneshot
+Environment=GNUPGHOME=%h/.local/share/gnupg
+Environment=PASSWORD_STORE_DIR=%h/.local/share/password-store
+Environment=MBSYNCRC=%h/.config/mbsync/config
+Environment=NOTMUCH_CONFIG=%h/.config/notmuch-config
+ExecStart=%h/.local/bin/mailsync

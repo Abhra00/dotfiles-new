@@ -42,6 +42,9 @@ alias ....='cd ../../..'
 alias e="$EDITOR"
 alias edit="$EDITOR"
 
+# Mbsync
+alias mbsync='mbsync -c $MBSYNCRC'
+
 # Tools
 alias g='git'
 alias d='docker'

@@ -1,0 +1,2 @@
+#!/bin/sh
+mbsync -c "$MBSYNCRC" -a && notmuch new

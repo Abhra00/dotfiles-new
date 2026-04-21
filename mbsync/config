@@ -1,0 +1,29 @@
+# ┳┳┓┳┓┏┓┓┏┳┓┏┓  ┏┓┏┓┳┓┏┓┳┏┓
+# ┃┃┃┣┫┗┓┗┫┃┃┃ ━━┃ ┃┃┃┃┣ ┃┃┓
+# ┛ ┗┻┛┗┛┗┛┛┗┗┛  ┗┛┗┛┛┗┻ ┻┗┛
+#
+
+
+IMAPAccount gmail
+Host imap.gmail.com
+Port 993
+User bugsdevelops@gmail.com
+PassCmd "gpg --quiet --decrypt ~/.local/share/tokens/emacs-mail.gpg"
+TLSType IMAPS
+AuthMechs LOGIN
+
+IMAPStore gmail-remote
+Account gmail
+
+MaildirStore gmail-local
+Subfolders Verbatim
+Path ~/Mail/Gmail/
+Inbox ~/Mail/Gmail/Inbox
+
+Channel gmail
+Far :gmail-remote:
+Near :gmail-local:
+Patterns *
+Create Near
+Expunge None
+SyncState *

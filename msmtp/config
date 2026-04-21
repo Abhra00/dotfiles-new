@@ -1,0 +1,22 @@
+# ┳┳┓┏┓┳┳┓┏┳┓┏┓
+# ┃┃┃┗┓┃┃┃ ┃ ┃┃
+# ┛ ┗┗┛┛ ┗ ┻ ┣┛
+#
+
+# Default settings
+defaults
+auth           on
+tls            on
+tls_trust_file /etc/ssl/certs/ca-certificates.crt
+logfile        ~/.local/share/msmtp/msmtp.log
+
+# Gmail account
+account        gmail
+host           smtp.gmail.com
+port           587
+from           bugsdevelops@gmail.com
+user           bugsdevelops@gmail.com
+passwordeval   "gpg --quiet --decrypt ~/.local/share/tokens/emacs-smtp.gpg"
+
+# Default account
+account default : gmail
